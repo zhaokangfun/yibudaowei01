@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.BancibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Bancib">
+    <id column="banciid" jdbcType="INTEGER" property="banciid" />
+    <result column="banciname" jdbcType="VARCHAR" property="banciname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    banciid, banciname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bancib
+    where banciid = #{banciid,jdbcType=INTEGER}
+  </select>
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from banci
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bancib
+    where banciid = #{banciid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Bancib">
+    insert into bancib (banciid, banciname)
+    values (#{banciid,jdbcType=INTEGER}, #{banciname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Bancib">
+    insert into bancib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="banciid != null">
+        banciid,
+      </if>
+      <if test="banciname != null">
+        banciname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="banciid != null">
+        #{banciid,jdbcType=INTEGER},
+      </if>
+      <if test="banciname != null">
+        #{banciname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Bancib">
+    update bancib
+    <set>
+      <if test="banciname != null">
+        banciname = #{banciname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where banciid = #{banciid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Bancib">
+    update bancib
+    set banciname = #{banciname,jdbcType=VARCHAR}
+    where banciid = #{banciid,jdbcType=INTEGER}
+  </update>
+</mapper>

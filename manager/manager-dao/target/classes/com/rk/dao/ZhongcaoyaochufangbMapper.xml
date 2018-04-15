@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhongcaoyaochufangbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhongcaoyaochufangb">
+    <id column="zcaoyid" jdbcType="INTEGER" property="zcaoyid" />
+    <result column="zcaoynumber" jdbcType="VARCHAR" property="zcaoynumber" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="zylyid" jdbcType="INTEGER" property="zylyid" />
+    <result column="zyname" jdbcType="VARCHAR" property="zyname" />
+    <result column="yl" jdbcType="VARCHAR" property="yl" />
+    <result column="jfid" jdbcType="INTEGER" property="jfid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="yizhu" jdbcType="INTEGER" property="yizhu" />
+    <result column="plid" jdbcType="INTEGER" property="plid" />
+    <result column="yizhubeizhu" jdbcType="VARCHAR" property="yizhubeizhu" />
+    <result column="meicijl" jdbcType="INTEGER" property="meicijl" />
+    <result column="summoney" jdbcType="DOUBLE" property="summoney" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zcaoyid, zcaoynumber, hzid, zylyid, zyname, yl, jfid, count, yizhu, plid, yizhubeizhu, 
+    meicijl, summoney
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhongcaoyaochufangb
+    where zcaoyid = #{zcaoyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhongcaoyaochufangb
+    where zcaoyid = #{zcaoyid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhongcaoyaochufangb">
+    insert into zhongcaoyaochufangb (zcaoyid, zcaoynumber, hzid, 
+      zylyid, zyname, yl, 
+      jfid, count, yizhu, 
+      plid, yizhubeizhu, meicijl, 
+      summoney)
+    values (#{zcaoyid,jdbcType=INTEGER}, #{zcaoynumber,jdbcType=VARCHAR}, #{hzid,jdbcType=INTEGER}, 
+      #{zylyid,jdbcType=INTEGER}, #{zyname,jdbcType=VARCHAR}, #{yl,jdbcType=VARCHAR}, 
+      #{jfid,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, #{yizhu,jdbcType=INTEGER}, 
+      #{plid,jdbcType=INTEGER}, #{yizhubeizhu,jdbcType=VARCHAR}, #{meicijl,jdbcType=INTEGER}, 
+      #{summoney,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhongcaoyaochufangb">
+    insert into zhongcaoyaochufangb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zcaoyid != null">
+        zcaoyid,
+      </if>
+      <if test="zcaoynumber != null">
+        zcaoynumber,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="zylyid != null">
+        zylyid,
+      </if>
+      <if test="zyname != null">
+        zyname,
+      </if>
+      <if test="yl != null">
+        yl,
+      </if>
+      <if test="jfid != null">
+        jfid,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="yizhu != null">
+        yizhu,
+      </if>
+      <if test="plid != null">
+        plid,
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu,
+      </if>
+      <if test="meicijl != null">
+        meicijl,
+      </if>
+      <if test="summoney != null">
+        summoney,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zcaoyid != null">
+        #{zcaoyid,jdbcType=INTEGER},
+      </if>
+      <if test="zcaoynumber != null">
+        #{zcaoynumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zylyid != null">
+        #{zylyid,jdbcType=INTEGER},
+      </if>
+      <if test="zyname != null">
+        #{zyname,jdbcType=VARCHAR},
+      </if>
+      <if test="yl != null">
+        #{yl,jdbcType=VARCHAR},
+      </if>
+      <if test="jfid != null">
+        #{jfid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        #{yizhu,jdbcType=INTEGER},
+      </if>
+      <if test="plid != null">
+        #{plid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="meicijl != null">
+        #{meicijl,jdbcType=INTEGER},
+      </if>
+      <if test="summoney != null">
+        #{summoney,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhongcaoyaochufangb">
+    update zhongcaoyaochufangb
+    <set>
+      <if test="zcaoynumber != null">
+        zcaoynumber = #{zcaoynumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zylyid != null">
+        zylyid = #{zylyid,jdbcType=INTEGER},
+      </if>
+      <if test="zyname != null">
+        zyname = #{zyname,jdbcType=VARCHAR},
+      </if>
+      <if test="yl != null">
+        yl = #{yl,jdbcType=VARCHAR},
+      </if>
+      <if test="jfid != null">
+        jfid = #{jfid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        yizhu = #{yizhu,jdbcType=INTEGER},
+      </if>
+      <if test="plid != null">
+        plid = #{plid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="meicijl != null">
+        meicijl = #{meicijl,jdbcType=INTEGER},
+      </if>
+      <if test="summoney != null">
+        summoney = #{summoney,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where zcaoyid = #{zcaoyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhongcaoyaochufangb">
+    update zhongcaoyaochufangb
+    set zcaoynumber = #{zcaoynumber,jdbcType=VARCHAR},
+      hzid = #{hzid,jdbcType=INTEGER},
+      zylyid = #{zylyid,jdbcType=INTEGER},
+      zyname = #{zyname,jdbcType=VARCHAR},
+      yl = #{yl,jdbcType=VARCHAR},
+      jfid = #{jfid,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      yizhu = #{yizhu,jdbcType=INTEGER},
+      plid = #{plid,jdbcType=INTEGER},
+      yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      meicijl = #{meicijl,jdbcType=INTEGER},
+      summoney = #{summoney,jdbcType=DOUBLE}
+    where zcaoyid = #{zcaoyid,jdbcType=INTEGER}
+  </update>
+</mapper>

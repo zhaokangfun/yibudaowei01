@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.CailiaodanweiMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Cailiaodanwei">
+    <id column="cldanweiid" jdbcType="INTEGER" property="cldanweiid" />
+    <result column="cldanweiname" jdbcType="VARCHAR" property="cldanweiname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cldanweiid, cldanweiname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cailiaodanwei
+    where cldanweiid = #{cldanweiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cailiaodanwei
+    where cldanweiid = #{cldanweiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Cailiaodanwei">
+    insert into cailiaodanwei (cldanweiid, cldanweiname)
+    values (#{cldanweiid,jdbcType=INTEGER}, #{cldanweiname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Cailiaodanwei">
+    insert into cailiaodanwei
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cldanweiid != null">
+        cldanweiid,
+      </if>
+      <if test="cldanweiname != null">
+        cldanweiname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cldanweiid != null">
+        #{cldanweiid,jdbcType=INTEGER},
+      </if>
+      <if test="cldanweiname != null">
+        #{cldanweiname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Cailiaodanwei">
+    update cailiaodanwei
+    <set>
+      <if test="cldanweiname != null">
+        cldanweiname = #{cldanweiname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cldanweiid = #{cldanweiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Cailiaodanwei">
+    update cailiaodanwei
+    set cldanweiname = #{cldanweiname,jdbcType=VARCHAR}
+    where cldanweiid = #{cldanweiid,jdbcType=INTEGER}
+  </update>
+</mapper>

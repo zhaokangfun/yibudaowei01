@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.SuifangbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Suifangb">
+    <id column="suifangid" jdbcType="INTEGER" property="suifangid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="jihuatime" jdbcType="VARCHAR" property="jihuatime" />
+    <result column="suifangtype" jdbcType="INTEGER" property="suifangtype" />
+    <result column="suifangfs" jdbcType="INTEGER" property="suifangfs" />
+    <result column="suifangneirogn" jdbcType="VARCHAR" property="suifangneirogn" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="suifangjieguo" jdbcType="VARCHAR" property="suifangjieguo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    suifangid, hzid, jihuatime, suifangtype, suifangfs, suifangneirogn, status, suifangjieguo
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from suifangb
+    where suifangid = #{suifangid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from suifangb
+    where suifangid = #{suifangid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Suifangb">
+    insert into suifangb (suifangid, hzid, jihuatime, 
+      suifangtype, suifangfs, suifangneirogn, 
+      status, suifangjieguo)
+    values (#{suifangid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{jihuatime,jdbcType=VARCHAR}, 
+      #{suifangtype,jdbcType=INTEGER}, #{suifangfs,jdbcType=INTEGER}, #{suifangneirogn,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{suifangjieguo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Suifangb">
+    insert into suifangb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="suifangid != null">
+        suifangid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="jihuatime != null">
+        jihuatime,
+      </if>
+      <if test="suifangtype != null">
+        suifangtype,
+      </if>
+      <if test="suifangfs != null">
+        suifangfs,
+      </if>
+      <if test="suifangneirogn != null">
+        suifangneirogn,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="suifangjieguo != null">
+        suifangjieguo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="suifangid != null">
+        #{suifangid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="jihuatime != null">
+        #{jihuatime,jdbcType=VARCHAR},
+      </if>
+      <if test="suifangtype != null">
+        #{suifangtype,jdbcType=INTEGER},
+      </if>
+      <if test="suifangfs != null">
+        #{suifangfs,jdbcType=INTEGER},
+      </if>
+      <if test="suifangneirogn != null">
+        #{suifangneirogn,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="suifangjieguo != null">
+        #{suifangjieguo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Suifangb">
+    update suifangb
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="jihuatime != null">
+        jihuatime = #{jihuatime,jdbcType=VARCHAR},
+      </if>
+      <if test="suifangtype != null">
+        suifangtype = #{suifangtype,jdbcType=INTEGER},
+      </if>
+      <if test="suifangfs != null">
+        suifangfs = #{suifangfs,jdbcType=INTEGER},
+      </if>
+      <if test="suifangneirogn != null">
+        suifangneirogn = #{suifangneirogn,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="suifangjieguo != null">
+        suifangjieguo = #{suifangjieguo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where suifangid = #{suifangid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Suifangb">
+    update suifangb
+    set hzid = #{hzid,jdbcType=INTEGER},
+      jihuatime = #{jihuatime,jdbcType=VARCHAR},
+      suifangtype = #{suifangtype,jdbcType=INTEGER},
+      suifangfs = #{suifangfs,jdbcType=INTEGER},
+      suifangneirogn = #{suifangneirogn,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      suifangjieguo = #{suifangjieguo,jdbcType=VARCHAR}
+    where suifangid = #{suifangid,jdbcType=INTEGER}
+  </update>
+</mapper>

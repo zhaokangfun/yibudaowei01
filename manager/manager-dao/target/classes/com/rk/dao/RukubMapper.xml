@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.RukubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Rukub">
+    <id column="rkid" jdbcType="INTEGER" property="rkid" />
+    <result column="rknumber" jdbcType="VARCHAR" property="rknumber" />
+    <result column="rktime" jdbcType="VARCHAR" property="rktime" />
+    <result column="rktypeid" jdbcType="INTEGER" property="rktypeid" />
+    <result column="gysid" jdbcType="INTEGER" property="gysid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="gouruprice" jdbcType="DOUBLE" property="gouruprice" />
+    <result column="rkcount" jdbcType="VARCHAR" property="rkcount" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="yaopinid" jdbcType="INTEGER" property="yaopinid" />
+    <result column="yaopinname" jdbcType="VARCHAR" property="yaopinname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rkid, rknumber, rktime, rktypeid, gysid, beizhu, gouruprice, rkcount, status, yaopinid, 
+    yaopinname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rukub
+    where rkid = #{rkid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rukub
+    where rkid = #{rkid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Rukub">
+    insert into rukub (rkid, rknumber, rktime, 
+      rktypeid, gysid, beizhu, 
+      gouruprice, rkcount, status, 
+      yaopinid, yaopinname)
+    values (#{rkid,jdbcType=INTEGER}, #{rknumber,jdbcType=VARCHAR}, #{rktime,jdbcType=VARCHAR}, 
+      #{rktypeid,jdbcType=INTEGER}, #{gysid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}, 
+      #{gouruprice,jdbcType=DOUBLE}, #{rkcount,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{yaopinid,jdbcType=INTEGER}, #{yaopinname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Rukub">
+    insert into rukub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rkid != null">
+        rkid,
+      </if>
+      <if test="rknumber != null">
+        rknumber,
+      </if>
+      <if test="rktime != null">
+        rktime,
+      </if>
+      <if test="rktypeid != null">
+        rktypeid,
+      </if>
+      <if test="gysid != null">
+        gysid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="gouruprice != null">
+        gouruprice,
+      </if>
+      <if test="rkcount != null">
+        rkcount,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="yaopinid != null">
+        yaopinid,
+      </if>
+      <if test="yaopinname != null">
+        yaopinname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rkid != null">
+        #{rkid,jdbcType=INTEGER},
+      </if>
+      <if test="rknumber != null">
+        #{rknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rktime != null">
+        #{rktime,jdbcType=VARCHAR},
+      </if>
+      <if test="rktypeid != null">
+        #{rktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="gysid != null">
+        #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="gouruprice != null">
+        #{gouruprice,jdbcType=DOUBLE},
+      </if>
+      <if test="rkcount != null">
+        #{rkcount,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="yaopinid != null">
+        #{yaopinid,jdbcType=INTEGER},
+      </if>
+      <if test="yaopinname != null">
+        #{yaopinname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Rukub">
+    update rukub
+    <set>
+      <if test="rknumber != null">
+        rknumber = #{rknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rktime != null">
+        rktime = #{rktime,jdbcType=VARCHAR},
+      </if>
+      <if test="rktypeid != null">
+        rktypeid = #{rktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="gysid != null">
+        gysid = #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="gouruprice != null">
+        gouruprice = #{gouruprice,jdbcType=DOUBLE},
+      </if>
+      <if test="rkcount != null">
+        rkcount = #{rkcount,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="yaopinid != null">
+        yaopinid = #{yaopinid,jdbcType=INTEGER},
+      </if>
+      <if test="yaopinname != null">
+        yaopinname = #{yaopinname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rkid = #{rkid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Rukub">
+    update rukub
+    set rknumber = #{rknumber,jdbcType=VARCHAR},
+      rktime = #{rktime,jdbcType=VARCHAR},
+      rktypeid = #{rktypeid,jdbcType=INTEGER},
+      gysid = #{gysid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      gouruprice = #{gouruprice,jdbcType=DOUBLE},
+      rkcount = #{rkcount,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      yaopinid = #{yaopinid,jdbcType=INTEGER},
+      yaopinname = #{yaopinname,jdbcType=VARCHAR}
+    where rkid = #{rkid,jdbcType=INTEGER}
+  </update>
+</mapper>

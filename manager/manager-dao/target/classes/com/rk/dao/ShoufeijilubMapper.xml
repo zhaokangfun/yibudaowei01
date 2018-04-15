@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ShoufeijilubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Shoufeijilub">
+    <id column="shoufeiid" jdbcType="INTEGER" property="shoufeiid" />
+    <result column="danciid" jdbcType="INTEGER" property="danciid" />
+    <result column="shoufeizongjin" jdbcType="DOUBLE" property="shoufeizongjin" />
+    <result column="stauts" jdbcType="INTEGER" property="stauts" />
+    <result column="shishoujine" jdbcType="DOUBLE" property="shishoujine" />
+    <result column="zhifuid" jdbcType="INTEGER" property="zhifuid" />
+    <result column="shoufeiygid" jdbcType="INTEGER" property="shoufeiygid" />
+    <result column="shoufeitime" jdbcType="VARCHAR" property="shoufeitime" />
+    <result column="jiezhangstauts" jdbcType="INTEGER" property="jiezhangstauts" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    shoufeiid, danciid, shoufeizongjin, stauts, shishoujine, zhifuid, shoufeiygid, shoufeitime, 
+    jiezhangstauts
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shoufeijilub
+    where shoufeiid = #{shoufeiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shoufeijilub
+    where shoufeiid = #{shoufeiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Shoufeijilub">
+    insert into shoufeijilub (shoufeiid, danciid, shoufeizongjin, 
+      stauts, shishoujine, zhifuid, 
+      shoufeiygid, shoufeitime, jiezhangstauts
+      )
+    values (#{shoufeiid,jdbcType=INTEGER}, #{danciid,jdbcType=INTEGER}, #{shoufeizongjin,jdbcType=DOUBLE}, 
+      #{stauts,jdbcType=INTEGER}, #{shishoujine,jdbcType=DOUBLE}, #{zhifuid,jdbcType=INTEGER}, 
+      #{shoufeiygid,jdbcType=INTEGER}, #{shoufeitime,jdbcType=VARCHAR}, #{jiezhangstauts,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Shoufeijilub">
+    insert into shoufeijilub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shoufeiid != null">
+        shoufeiid,
+      </if>
+      <if test="danciid != null">
+        danciid,
+      </if>
+      <if test="shoufeizongjin != null">
+        shoufeizongjin,
+      </if>
+      <if test="stauts != null">
+        stauts,
+      </if>
+      <if test="shishoujine != null">
+        shishoujine,
+      </if>
+      <if test="zhifuid != null">
+        zhifuid,
+      </if>
+      <if test="shoufeiygid != null">
+        shoufeiygid,
+      </if>
+      <if test="shoufeitime != null">
+        shoufeitime,
+      </if>
+      <if test="jiezhangstauts != null">
+        jiezhangstauts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shoufeiid != null">
+        #{shoufeiid,jdbcType=INTEGER},
+      </if>
+      <if test="danciid != null">
+        #{danciid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeizongjin != null">
+        #{shoufeizongjin,jdbcType=DOUBLE},
+      </if>
+      <if test="stauts != null">
+        #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="shishoujine != null">
+        #{shishoujine,jdbcType=DOUBLE},
+      </if>
+      <if test="zhifuid != null">
+        #{zhifuid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeiygid != null">
+        #{shoufeiygid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeitime != null">
+        #{shoufeitime,jdbcType=VARCHAR},
+      </if>
+      <if test="jiezhangstauts != null">
+        #{jiezhangstauts,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Shoufeijilub">
+    update shoufeijilub
+    <set>
+      <if test="danciid != null">
+        danciid = #{danciid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeizongjin != null">
+        shoufeizongjin = #{shoufeizongjin,jdbcType=DOUBLE},
+      </if>
+      <if test="stauts != null">
+        stauts = #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="shishoujine != null">
+        shishoujine = #{shishoujine,jdbcType=DOUBLE},
+      </if>
+      <if test="zhifuid != null">
+        zhifuid = #{zhifuid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeiygid != null">
+        shoufeiygid = #{shoufeiygid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeitime != null">
+        shoufeitime = #{shoufeitime,jdbcType=VARCHAR},
+      </if>
+      <if test="jiezhangstauts != null">
+        jiezhangstauts = #{jiezhangstauts,jdbcType=INTEGER},
+      </if>
+    </set>
+    where shoufeiid = #{shoufeiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Shoufeijilub">
+    update shoufeijilub
+    set danciid = #{danciid,jdbcType=INTEGER},
+      shoufeizongjin = #{shoufeizongjin,jdbcType=DOUBLE},
+      stauts = #{stauts,jdbcType=INTEGER},
+      shishoujine = #{shishoujine,jdbcType=DOUBLE},
+      zhifuid = #{zhifuid,jdbcType=INTEGER},
+      shoufeiygid = #{shoufeiygid,jdbcType=INTEGER},
+      shoufeitime = #{shoufeitime,jdbcType=VARCHAR},
+      jiezhangstauts = #{jiezhangstauts,jdbcType=INTEGER}
+    where shoufeiid = #{shoufeiid,jdbcType=INTEGER}
+  </update>
+</mapper>

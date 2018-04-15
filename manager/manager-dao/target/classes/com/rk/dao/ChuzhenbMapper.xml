@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ChuzhenbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Chuzhenb">
+    <id column="czid" jdbcType="INTEGER" property="czid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="zhusu" jdbcType="VARCHAR" property="zhusu" />
+    <result column="xianbingshi" jdbcType="VARCHAR" property="xianbingshi" />
+    <result column="tigecheckid" jdbcType="INTEGER" property="tigecheckid" />
+    <result column="guominmiaoshu" jdbcType="VARCHAR" property="guominmiaoshu" />
+    <result column="chuliyijian" jdbcType="VARCHAR" property="chuliyijian" />
+    <result column="tjjianyi" jdbcType="VARCHAR" property="tjjianyi" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    czid, hzid, zhusu, xianbingshi, tigecheckid, guominmiaoshu, chuliyijian, tjjianyi
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from chuzhenb
+    where czid = #{czid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from chuzhenb
+    where czid = #{czid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Chuzhenb">
+    insert into chuzhenb (czid, hzid, zhusu, 
+      xianbingshi, tigecheckid, guominmiaoshu, 
+      chuliyijian, tjjianyi)
+    values (#{czid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{zhusu,jdbcType=VARCHAR}, 
+      #{xianbingshi,jdbcType=VARCHAR}, #{tigecheckid,jdbcType=INTEGER}, #{guominmiaoshu,jdbcType=VARCHAR}, 
+      #{chuliyijian,jdbcType=VARCHAR}, #{tjjianyi,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Chuzhenb">
+    insert into chuzhenb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="czid != null">
+        czid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="zhusu != null">
+        zhusu,
+      </if>
+      <if test="xianbingshi != null">
+        xianbingshi,
+      </if>
+      <if test="tigecheckid != null">
+        tigecheckid,
+      </if>
+      <if test="guominmiaoshu != null">
+        guominmiaoshu,
+      </if>
+      <if test="chuliyijian != null">
+        chuliyijian,
+      </if>
+      <if test="tjjianyi != null">
+        tjjianyi,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="czid != null">
+        #{czid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zhusu != null">
+        #{zhusu,jdbcType=VARCHAR},
+      </if>
+      <if test="xianbingshi != null">
+        #{xianbingshi,jdbcType=VARCHAR},
+      </if>
+      <if test="tigecheckid != null">
+        #{tigecheckid,jdbcType=INTEGER},
+      </if>
+      <if test="guominmiaoshu != null">
+        #{guominmiaoshu,jdbcType=VARCHAR},
+      </if>
+      <if test="chuliyijian != null">
+        #{chuliyijian,jdbcType=VARCHAR},
+      </if>
+      <if test="tjjianyi != null">
+        #{tjjianyi,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Chuzhenb">
+    update chuzhenb
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zhusu != null">
+        zhusu = #{zhusu,jdbcType=VARCHAR},
+      </if>
+      <if test="xianbingshi != null">
+        xianbingshi = #{xianbingshi,jdbcType=VARCHAR},
+      </if>
+      <if test="tigecheckid != null">
+        tigecheckid = #{tigecheckid,jdbcType=INTEGER},
+      </if>
+      <if test="guominmiaoshu != null">
+        guominmiaoshu = #{guominmiaoshu,jdbcType=VARCHAR},
+      </if>
+      <if test="chuliyijian != null">
+        chuliyijian = #{chuliyijian,jdbcType=VARCHAR},
+      </if>
+      <if test="tjjianyi != null">
+        tjjianyi = #{tjjianyi,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where czid = #{czid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Chuzhenb">
+    update chuzhenb
+    set hzid = #{hzid,jdbcType=INTEGER},
+      zhusu = #{zhusu,jdbcType=VARCHAR},
+      xianbingshi = #{xianbingshi,jdbcType=VARCHAR},
+      tigecheckid = #{tigecheckid,jdbcType=INTEGER},
+      guominmiaoshu = #{guominmiaoshu,jdbcType=VARCHAR},
+      chuliyijian = #{chuliyijian,jdbcType=VARCHAR},
+      tjjianyi = #{tjjianyi,jdbcType=VARCHAR}
+    where czid = #{czid,jdbcType=INTEGER}
+  </update>
+</mapper>

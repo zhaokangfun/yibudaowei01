@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.MenzhenbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Menzhenb">
+    <id column="mzid" jdbcType="INTEGER" property="mzid" />
+    <result column="mzname" jdbcType="VARCHAR" property="mzname" />
+    <result column="mzaddress" jdbcType="VARCHAR" property="mzaddress" />
+    <result column="gsjzcm" jdbcType="VARCHAR" property="gsjzcm" />
+    <result column="mzsyrname" jdbcType="VARCHAR" property="mzsyrname" />
+    <result column="mzsyrsfz" jdbcType="VARCHAR" property="mzsyrsfz" />
+    <result column="mzsyrphone" jdbcType="VARCHAR" property="mzsyrphone" />
+    <result column="mzzgz" jdbcType="INTEGER" property="mzzgz" />
+    <result column="shuliang" jdbcType="INTEGER" property="shuliang" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mzid, mzname, mzaddress, gsjzcm, mzsyrname, mzsyrsfz, mzsyrphone, mzzgz, shuliang
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from menzhenb
+    where mzid = #{mzid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from menzhenb
+    where mzid = #{mzid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Menzhenb">
+    insert into menzhenb (mzid, mzname, mzaddress, 
+      gsjzcm, mzsyrname, mzsyrsfz, 
+      mzsyrphone, mzzgz, shuliang
+      )
+    values (#{mzid,jdbcType=INTEGER}, #{mzname,jdbcType=VARCHAR}, #{mzaddress,jdbcType=VARCHAR}, 
+      #{gsjzcm,jdbcType=VARCHAR}, #{mzsyrname,jdbcType=VARCHAR}, #{mzsyrsfz,jdbcType=VARCHAR}, 
+      #{mzsyrphone,jdbcType=VARCHAR}, #{mzzgz,jdbcType=INTEGER}, #{shuliang,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Menzhenb">
+    insert into menzhenb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mzid != null">
+        mzid,
+      </if>
+      <if test="mzname != null">
+        mzname,
+      </if>
+      <if test="mzaddress != null">
+        mzaddress,
+      </if>
+      <if test="gsjzcm != null">
+        gsjzcm,
+      </if>
+      <if test="mzsyrname != null">
+        mzsyrname,
+      </if>
+      <if test="mzsyrsfz != null">
+        mzsyrsfz,
+      </if>
+      <if test="mzsyrphone != null">
+        mzsyrphone,
+      </if>
+      <if test="mzzgz != null">
+        mzzgz,
+      </if>
+      <if test="shuliang != null">
+        shuliang,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mzid != null">
+        #{mzid,jdbcType=INTEGER},
+      </if>
+      <if test="mzname != null">
+        #{mzname,jdbcType=VARCHAR},
+      </if>
+      <if test="mzaddress != null">
+        #{mzaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="gsjzcm != null">
+        #{gsjzcm,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrname != null">
+        #{mzsyrname,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrsfz != null">
+        #{mzsyrsfz,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrphone != null">
+        #{mzsyrphone,jdbcType=VARCHAR},
+      </if>
+      <if test="mzzgz != null">
+        #{mzzgz,jdbcType=INTEGER},
+      </if>
+      <if test="shuliang != null">
+        #{shuliang,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Menzhenb">
+    update menzhenb
+    <set>
+      <if test="mzname != null">
+        mzname = #{mzname,jdbcType=VARCHAR},
+      </if>
+      <if test="mzaddress != null">
+        mzaddress = #{mzaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="gsjzcm != null">
+        gsjzcm = #{gsjzcm,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrname != null">
+        mzsyrname = #{mzsyrname,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrsfz != null">
+        mzsyrsfz = #{mzsyrsfz,jdbcType=VARCHAR},
+      </if>
+      <if test="mzsyrphone != null">
+        mzsyrphone = #{mzsyrphone,jdbcType=VARCHAR},
+      </if>
+      <if test="mzzgz != null">
+        mzzgz = #{mzzgz,jdbcType=INTEGER},
+      </if>
+      <if test="shuliang != null">
+        shuliang = #{shuliang,jdbcType=INTEGER},
+      </if>
+    </set>
+    where mzid = #{mzid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Menzhenb">
+    update menzhenb
+    set mzname = #{mzname,jdbcType=VARCHAR},
+      mzaddress = #{mzaddress,jdbcType=VARCHAR},
+      gsjzcm = #{gsjzcm,jdbcType=VARCHAR},
+      mzsyrname = #{mzsyrname,jdbcType=VARCHAR},
+      mzsyrsfz = #{mzsyrsfz,jdbcType=VARCHAR},
+      mzsyrphone = #{mzsyrphone,jdbcType=VARCHAR},
+      mzzgz = #{mzzgz,jdbcType=INTEGER},
+      shuliang = #{shuliang,jdbcType=INTEGER}
+    where mzid = #{mzid,jdbcType=INTEGER}
+  </update>
+</mapper>

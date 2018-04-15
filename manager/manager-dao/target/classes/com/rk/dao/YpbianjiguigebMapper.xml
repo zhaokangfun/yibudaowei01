@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.YpbianjiguigebMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Ypbianjiguigeb">
+    <id column="ybbianjiid" jdbcType="INTEGER" property="ybbianjiid" />
+    <result column="jiliang" jdbcType="INTEGER" property="jiliang" />
+    <result column="danweiid" jdbcType="INTEGER" property="danweiid" />
+    <result column="zhijishuliang" jdbcType="INTEGER" property="zhijishuliang" />
+    <result column="zhijidanweiid" jdbcType="INTEGER" property="zhijidanweiid" />
+    <result column="kcdanwei" jdbcType="INTEGER" property="kcdanwei" />
+    <result column="ypid" jdbcType="INTEGER" property="ypid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ybbianjiid, jiliang, danweiid, zhijishuliang, zhijidanweiid, kcdanwei, ypid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ypbianjiguigeb
+    where ybbianjiid = #{ybbianjiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ypbianjiguigeb
+    where ybbianjiid = #{ybbianjiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Ypbianjiguigeb">
+    insert into ypbianjiguigeb (ybbianjiid, jiliang, danweiid, 
+      zhijishuliang, zhijidanweiid, kcdanwei, 
+      ypid)
+    values (#{ybbianjiid,jdbcType=INTEGER}, #{jiliang,jdbcType=INTEGER}, #{danweiid,jdbcType=INTEGER}, 
+      #{zhijishuliang,jdbcType=INTEGER}, #{zhijidanweiid,jdbcType=INTEGER}, #{kcdanwei,jdbcType=INTEGER}, 
+      #{ypid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Ypbianjiguigeb">
+    insert into ypbianjiguigeb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ybbianjiid != null">
+        ybbianjiid,
+      </if>
+      <if test="jiliang != null">
+        jiliang,
+      </if>
+      <if test="danweiid != null">
+        danweiid,
+      </if>
+      <if test="zhijishuliang != null">
+        zhijishuliang,
+      </if>
+      <if test="zhijidanweiid != null">
+        zhijidanweiid,
+      </if>
+      <if test="kcdanwei != null">
+        kcdanwei,
+      </if>
+      <if test="ypid != null">
+        ypid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ybbianjiid != null">
+        #{ybbianjiid,jdbcType=INTEGER},
+      </if>
+      <if test="jiliang != null">
+        #{jiliang,jdbcType=INTEGER},
+      </if>
+      <if test="danweiid != null">
+        #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="zhijishuliang != null">
+        #{zhijishuliang,jdbcType=INTEGER},
+      </if>
+      <if test="zhijidanweiid != null">
+        #{zhijidanweiid,jdbcType=INTEGER},
+      </if>
+      <if test="kcdanwei != null">
+        #{kcdanwei,jdbcType=INTEGER},
+      </if>
+      <if test="ypid != null">
+        #{ypid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Ypbianjiguigeb">
+    update ypbianjiguigeb
+    <set>
+      <if test="jiliang != null">
+        jiliang = #{jiliang,jdbcType=INTEGER},
+      </if>
+      <if test="danweiid != null">
+        danweiid = #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="zhijishuliang != null">
+        zhijishuliang = #{zhijishuliang,jdbcType=INTEGER},
+      </if>
+      <if test="zhijidanweiid != null">
+        zhijidanweiid = #{zhijidanweiid,jdbcType=INTEGER},
+      </if>
+      <if test="kcdanwei != null">
+        kcdanwei = #{kcdanwei,jdbcType=INTEGER},
+      </if>
+      <if test="ypid != null">
+        ypid = #{ypid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ybbianjiid = #{ybbianjiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Ypbianjiguigeb">
+    update ypbianjiguigeb
+    set jiliang = #{jiliang,jdbcType=INTEGER},
+      danweiid = #{danweiid,jdbcType=INTEGER},
+      zhijishuliang = #{zhijishuliang,jdbcType=INTEGER},
+      zhijidanweiid = #{zhijidanweiid,jdbcType=INTEGER},
+      kcdanwei = #{kcdanwei,jdbcType=INTEGER},
+      ypid = #{ypid,jdbcType=INTEGER}
+    where ybbianjiid = #{ybbianjiid,jdbcType=INTEGER}
+  </update>
+</mapper>

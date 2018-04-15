@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.JxcxiangxijilubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Jxcxiangxijilub">
+    <id column="jxcid" jdbcType="INTEGER" property="jxcid" />
+    <result column="crfangshi" jdbcType="INTEGER" property="crfangshi" />
+    <result column="riqi" jdbcType="VARCHAR" property="riqi" />
+    <result column="danhao" jdbcType="VARCHAR" property="danhao" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jxcid, crfangshi, riqi, danhao, count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jxcxiangxijilub
+    where jxcid = #{jxcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jxcxiangxijilub
+    where jxcid = #{jxcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Jxcxiangxijilub">
+    insert into jxcxiangxijilub (jxcid, crfangshi, riqi, 
+      danhao, count)
+    values (#{jxcid,jdbcType=INTEGER}, #{crfangshi,jdbcType=INTEGER}, #{riqi,jdbcType=VARCHAR}, 
+      #{danhao,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Jxcxiangxijilub">
+    insert into jxcxiangxijilub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jxcid != null">
+        jxcid,
+      </if>
+      <if test="crfangshi != null">
+        crfangshi,
+      </if>
+      <if test="riqi != null">
+        riqi,
+      </if>
+      <if test="danhao != null">
+        danhao,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jxcid != null">
+        #{jxcid,jdbcType=INTEGER},
+      </if>
+      <if test="crfangshi != null">
+        #{crfangshi,jdbcType=INTEGER},
+      </if>
+      <if test="riqi != null">
+        #{riqi,jdbcType=VARCHAR},
+      </if>
+      <if test="danhao != null">
+        #{danhao,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jxcxiangxijilub">
+    update jxcxiangxijilub
+    <set>
+      <if test="crfangshi != null">
+        crfangshi = #{crfangshi,jdbcType=INTEGER},
+      </if>
+      <if test="riqi != null">
+        riqi = #{riqi,jdbcType=VARCHAR},
+      </if>
+      <if test="danhao != null">
+        danhao = #{danhao,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+    </set>
+    where jxcid = #{jxcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jxcxiangxijilub">
+    update jxcxiangxijilub
+    set crfangshi = #{crfangshi,jdbcType=INTEGER},
+      riqi = #{riqi,jdbcType=VARCHAR},
+      danhao = #{danhao,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER}
+    where jxcid = #{jxcid,jdbcType=INTEGER}
+  </update>
+</mapper>

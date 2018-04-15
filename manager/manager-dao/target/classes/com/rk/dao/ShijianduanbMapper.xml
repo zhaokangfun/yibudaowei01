@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ShijianduanbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Shijianduanb">
+    <id column="shijianduanid" jdbcType="INTEGER" property="shijianduanid" />
+    <result column="sjdtime" jdbcType="VARCHAR" property="sjdtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    shijianduanid, sjdtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shijianduanb
+    where shijianduanid = #{shijianduanid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shijianduanb
+    where shijianduanid = #{shijianduanid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Shijianduanb">
+    insert into shijianduanb (shijianduanid, sjdtime)
+    values (#{shijianduanid,jdbcType=INTEGER}, #{sjdtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Shijianduanb">
+    insert into shijianduanb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shijianduanid != null">
+        shijianduanid,
+      </if>
+      <if test="sjdtime != null">
+        sjdtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shijianduanid != null">
+        #{shijianduanid,jdbcType=INTEGER},
+      </if>
+      <if test="sjdtime != null">
+        #{sjdtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Shijianduanb">
+    update shijianduanb
+    <set>
+      <if test="sjdtime != null">
+        sjdtime = #{sjdtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where shijianduanid = #{shijianduanid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Shijianduanb">
+    update shijianduanb
+    set sjdtime = #{sjdtime,jdbcType=VARCHAR}
+    where shijianduanid = #{shijianduanid,jdbcType=INTEGER}
+  </update>
+</mapper>

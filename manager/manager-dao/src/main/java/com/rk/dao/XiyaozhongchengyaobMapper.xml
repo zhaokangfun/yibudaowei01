@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.XiyaozhongchengyaobMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Xiyaozhongchengyaob">
+    <id column="xyid" jdbcType="INTEGER" property="xyid" />
+    <result column="xyname" jdbcType="VARCHAR" property="xyname" />
+    <result column="guige" jdbcType="VARCHAR" property="guige" />
+    <result column="jixingid" jdbcType="INTEGER" property="jixingid" />
+    <result column="guoyaozhunzi" jdbcType="VARCHAR" property="guoyaozhunzi" />
+    <result column="yptypeid" jdbcType="INTEGER" property="yptypeid" />
+    <result column="scsid" jdbcType="INTEGER" property="scsid" />
+    <result column="gysid" jdbcType="INTEGER" property="gysid" />
+    <result column="tiaoxingma" jdbcType="VARCHAR" property="tiaoxingma" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="ypbenweima" jdbcType="VARCHAR" property="ypbenweima" />
+    <result column="lsprice" jdbcType="DOUBLE" property="lsprice" />
+    <result column="maxprice" jdbcType="DOUBLE" property="maxprice" />
+    <result column="shifouchailing" jdbcType="INTEGER" property="shifouchailing" />
+    <result column="shifoukangjun" jdbcType="INTEGER" property="shifoukangjun" />
+    <result column="yonfaid" jdbcType="INTEGER" property="yonfaid" />
+    <result column="plid" jdbcType="INTEGER" property="plid" />
+    <result column="morenyongliang" jdbcType="VARCHAR" property="morenyongliang" />
+    <result column="yingyezhizhao" jdbcType="VARCHAR" property="yingyezhizhao" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    xyid, xyname, guige, jixingid, guoyaozhunzi, yptypeid, scsid, gysid, tiaoxingma, 
+    goodsname, ypbenweima, lsprice, maxprice, shifouchailing, shifoukangjun, yonfaid, 
+    plid, morenyongliang, yingyezhizhao
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from xiyaozhongchengyaob
+    where xyid = #{xyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from xiyaozhongchengyaob
+    where xyid = #{xyid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Xiyaozhongchengyaob">
+    insert into xiyaozhongchengyaob (xyid, xyname, guige, 
+      jixingid, guoyaozhunzi, yptypeid, 
+      scsid, gysid, tiaoxingma, 
+      goodsname, ypbenweima, lsprice, 
+      maxprice, shifouchailing, shifoukangjun, 
+      yonfaid, plid, morenyongliang, 
+      yingyezhizhao)
+    values (#{xyid,jdbcType=INTEGER}, #{xyname,jdbcType=VARCHAR}, #{guige,jdbcType=VARCHAR}, 
+      #{jixingid,jdbcType=INTEGER}, #{guoyaozhunzi,jdbcType=VARCHAR}, #{yptypeid,jdbcType=INTEGER}, 
+      #{scsid,jdbcType=INTEGER}, #{gysid,jdbcType=INTEGER}, #{tiaoxingma,jdbcType=VARCHAR}, 
+      #{goodsname,jdbcType=VARCHAR}, #{ypbenweima,jdbcType=VARCHAR}, #{lsprice,jdbcType=DOUBLE}, 
+      #{maxprice,jdbcType=DOUBLE}, #{shifouchailing,jdbcType=INTEGER}, #{shifoukangjun,jdbcType=INTEGER}, 
+      #{yonfaid,jdbcType=INTEGER}, #{plid,jdbcType=INTEGER}, #{morenyongliang,jdbcType=VARCHAR}, 
+      #{yingyezhizhao,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Xiyaozhongchengyaob">
+    insert into xiyaozhongchengyaob
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="xyid != null">
+        xyid,
+      </if>
+      <if test="xyname != null">
+        xyname,
+      </if>
+      <if test="guige != null">
+        guige,
+      </if>
+      <if test="jixingid != null">
+        jixingid,
+      </if>
+      <if test="guoyaozhunzi != null">
+        guoyaozhunzi,
+      </if>
+      <if test="yptypeid != null">
+        yptypeid,
+      </if>
+      <if test="scsid != null">
+        scsid,
+      </if>
+      <if test="gysid != null">
+        gysid,
+      </if>
+      <if test="tiaoxingma != null">
+        tiaoxingma,
+      </if>
+      <if test="goodsname != null">
+        goodsname,
+      </if>
+      <if test="ypbenweima != null">
+        ypbenweima,
+      </if>
+      <if test="lsprice != null">
+        lsprice,
+      </if>
+      <if test="maxprice != null">
+        maxprice,
+      </if>
+      <if test="shifouchailing != null">
+        shifouchailing,
+      </if>
+      <if test="shifoukangjun != null">
+        shifoukangjun,
+      </if>
+      <if test="yonfaid != null">
+        yonfaid,
+      </if>
+      <if test="plid != null">
+        plid,
+      </if>
+      <if test="morenyongliang != null">
+        morenyongliang,
+      </if>
+      <if test="yingyezhizhao != null">
+        yingyezhizhao,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="xyid != null">
+        #{xyid,jdbcType=INTEGER},
+      </if>
+      <if test="xyname != null">
+        #{xyname,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="jixingid != null">
+        #{jixingid,jdbcType=INTEGER},
+      </if>
+      <if test="guoyaozhunzi != null">
+        #{guoyaozhunzi,jdbcType=VARCHAR},
+      </if>
+      <if test="yptypeid != null">
+        #{yptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="scsid != null">
+        #{scsid,jdbcType=INTEGER},
+      </if>
+      <if test="gysid != null">
+        #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="tiaoxingma != null">
+        #{tiaoxingma,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsname != null">
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="ypbenweima != null">
+        #{ypbenweima,jdbcType=VARCHAR},
+      </if>
+      <if test="lsprice != null">
+        #{lsprice,jdbcType=DOUBLE},
+      </if>
+      <if test="maxprice != null">
+        #{maxprice,jdbcType=DOUBLE},
+      </if>
+      <if test="shifouchailing != null">
+        #{shifouchailing,jdbcType=INTEGER},
+      </if>
+      <if test="shifoukangjun != null">
+        #{shifoukangjun,jdbcType=INTEGER},
+      </if>
+      <if test="yonfaid != null">
+        #{yonfaid,jdbcType=INTEGER},
+      </if>
+      <if test="plid != null">
+        #{plid,jdbcType=INTEGER},
+      </if>
+      <if test="morenyongliang != null">
+        #{morenyongliang,jdbcType=VARCHAR},
+      </if>
+      <if test="yingyezhizhao != null">
+        #{yingyezhizhao,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Xiyaozhongchengyaob">
+    update xiyaozhongchengyaob
+    <set>
+      <if test="xyname != null">
+        xyname = #{xyname,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        guige = #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="jixingid != null">
+        jixingid = #{jixingid,jdbcType=INTEGER},
+      </if>
+      <if test="guoyaozhunzi != null">
+        guoyaozhunzi = #{guoyaozhunzi,jdbcType=VARCHAR},
+      </if>
+      <if test="yptypeid != null">
+        yptypeid = #{yptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="scsid != null">
+        scsid = #{scsid,jdbcType=INTEGER},
+      </if>
+      <if test="gysid != null">
+        gysid = #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="tiaoxingma != null">
+        tiaoxingma = #{tiaoxingma,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsname != null">
+        goodsname = #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="ypbenweima != null">
+        ypbenweima = #{ypbenweima,jdbcType=VARCHAR},
+      </if>
+      <if test="lsprice != null">
+        lsprice = #{lsprice,jdbcType=DOUBLE},
+      </if>
+      <if test="maxprice != null">
+        maxprice = #{maxprice,jdbcType=DOUBLE},
+      </if>
+      <if test="shifouchailing != null">
+        shifouchailing = #{shifouchailing,jdbcType=INTEGER},
+      </if>
+      <if test="shifoukangjun != null">
+        shifoukangjun = #{shifoukangjun,jdbcType=INTEGER},
+      </if>
+      <if test="yonfaid != null">
+        yonfaid = #{yonfaid,jdbcType=INTEGER},
+      </if>
+      <if test="plid != null">
+        plid = #{plid,jdbcType=INTEGER},
+      </if>
+      <if test="morenyongliang != null">
+        morenyongliang = #{morenyongliang,jdbcType=VARCHAR},
+      </if>
+      <if test="yingyezhizhao != null">
+        yingyezhizhao = #{yingyezhizhao,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where xyid = #{xyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Xiyaozhongchengyaob">
+    update xiyaozhongchengyaob
+    set xyname = #{xyname,jdbcType=VARCHAR},
+      guige = #{guige,jdbcType=VARCHAR},
+      jixingid = #{jixingid,jdbcType=INTEGER},
+      guoyaozhunzi = #{guoyaozhunzi,jdbcType=VARCHAR},
+      yptypeid = #{yptypeid,jdbcType=INTEGER},
+      scsid = #{scsid,jdbcType=INTEGER},
+      gysid = #{gysid,jdbcType=INTEGER},
+      tiaoxingma = #{tiaoxingma,jdbcType=VARCHAR},
+      goodsname = #{goodsname,jdbcType=VARCHAR},
+      ypbenweima = #{ypbenweima,jdbcType=VARCHAR},
+      lsprice = #{lsprice,jdbcType=DOUBLE},
+      maxprice = #{maxprice,jdbcType=DOUBLE},
+      shifouchailing = #{shifouchailing,jdbcType=INTEGER},
+      shifoukangjun = #{shifoukangjun,jdbcType=INTEGER},
+      yonfaid = #{yonfaid,jdbcType=INTEGER},
+      plid = #{plid,jdbcType=INTEGER},
+      morenyongliang = #{morenyongliang,jdbcType=VARCHAR},
+      yingyezhizhao = #{yingyezhizhao,jdbcType=VARCHAR}
+    where xyid = #{xyid,jdbcType=INTEGER}
+  </update>
+</mapper>

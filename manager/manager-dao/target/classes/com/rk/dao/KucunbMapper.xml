@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.KucunbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Kucunb">
+    <id column="kcid" jdbcType="INTEGER" property="kcid" />
+    <result column="kcnunmber" jdbcType="VARCHAR" property="kcnunmber" />
+    <result column="youxiaoqi" jdbcType="VARCHAR" property="youxiaoqi" />
+    <result column="gysid" jdbcType="INTEGER" property="gysid" />
+    <result column="scsid" jdbcType="INTEGER" property="scsid" />
+    <result column="ypname" jdbcType="VARCHAR" property="ypname" />
+    <result column="guige" jdbcType="VARCHAR" property="guige" />
+    <result column="danweiid" jdbcType="INTEGER" property="danweiid" />
+    <result column="jinhuoprice" jdbcType="DOUBLE" property="jinhuoprice" />
+    <result column="lingshouprice" jdbcType="DOUBLE" property="lingshouprice" />
+    <result column="kccount" jdbcType="INTEGER" property="kccount" />
+    <result column="jinjiasumprice" jdbcType="DOUBLE" property="jinjiasumprice" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="shoujiaprice" jdbcType="DOUBLE" property="shoujiaprice" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="kcshangxian" jdbcType="INTEGER" property="kcshangxian" />
+    <result column="kcxiaxian" jdbcType="INTEGER" property="kcxiaxian" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    kcid, kcnunmber, youxiaoqi, gysid, scsid, ypname, guige, danweiid, jinhuoprice, lingshouprice, 
+    kccount, jinjiasumprice, beizhu, shoujiaprice, status, kcshangxian, kcxiaxian
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kucunb
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kucunb
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Kucunb">
+    insert into kucunb (kcid, kcnunmber, youxiaoqi, 
+      gysid, scsid, ypname, 
+      guige, danweiid, jinhuoprice, 
+      lingshouprice, kccount, jinjiasumprice, 
+      beizhu, shoujiaprice, status, 
+      kcshangxian, kcxiaxian)
+    values (#{kcid,jdbcType=INTEGER}, #{kcnunmber,jdbcType=VARCHAR}, #{youxiaoqi,jdbcType=VARCHAR}, 
+      #{gysid,jdbcType=INTEGER}, #{scsid,jdbcType=INTEGER}, #{ypname,jdbcType=VARCHAR}, 
+      #{guige,jdbcType=VARCHAR}, #{danweiid,jdbcType=INTEGER}, #{jinhuoprice,jdbcType=DOUBLE}, 
+      #{lingshouprice,jdbcType=DOUBLE}, #{kccount,jdbcType=INTEGER}, #{jinjiasumprice,jdbcType=DOUBLE}, 
+      #{beizhu,jdbcType=VARCHAR}, #{shoujiaprice,jdbcType=DOUBLE}, #{status,jdbcType=INTEGER}, 
+      #{kcshangxian,jdbcType=INTEGER}, #{kcxiaxian,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Kucunb">
+    insert into kucunb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="kcid != null">
+        kcid,
+      </if>
+      <if test="kcnunmber != null">
+        kcnunmber,
+      </if>
+      <if test="youxiaoqi != null">
+        youxiaoqi,
+      </if>
+      <if test="gysid != null">
+        gysid,
+      </if>
+      <if test="scsid != null">
+        scsid,
+      </if>
+      <if test="ypname != null">
+        ypname,
+      </if>
+      <if test="guige != null">
+        guige,
+      </if>
+      <if test="danweiid != null">
+        danweiid,
+      </if>
+      <if test="jinhuoprice != null">
+        jinhuoprice,
+      </if>
+      <if test="lingshouprice != null">
+        lingshouprice,
+      </if>
+      <if test="kccount != null">
+        kccount,
+      </if>
+      <if test="jinjiasumprice != null">
+        jinjiasumprice,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="shoujiaprice != null">
+        shoujiaprice,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="kcshangxian != null">
+        kcshangxian,
+      </if>
+      <if test="kcxiaxian != null">
+        kcxiaxian,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="kcid != null">
+        #{kcid,jdbcType=INTEGER},
+      </if>
+      <if test="kcnunmber != null">
+        #{kcnunmber,jdbcType=VARCHAR},
+      </if>
+      <if test="youxiaoqi != null">
+        #{youxiaoqi,jdbcType=VARCHAR},
+      </if>
+      <if test="gysid != null">
+        #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="scsid != null">
+        #{scsid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="danweiid != null">
+        #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="jinhuoprice != null">
+        #{jinhuoprice,jdbcType=DOUBLE},
+      </if>
+      <if test="lingshouprice != null">
+        #{lingshouprice,jdbcType=DOUBLE},
+      </if>
+      <if test="kccount != null">
+        #{kccount,jdbcType=INTEGER},
+      </if>
+      <if test="jinjiasumprice != null">
+        #{jinjiasumprice,jdbcType=DOUBLE},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="shoujiaprice != null">
+        #{shoujiaprice,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="kcshangxian != null">
+        #{kcshangxian,jdbcType=INTEGER},
+      </if>
+      <if test="kcxiaxian != null">
+        #{kcxiaxian,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Kucunb">
+    update kucunb
+    <set>
+      <if test="kcnunmber != null">
+        kcnunmber = #{kcnunmber,jdbcType=VARCHAR},
+      </if>
+      <if test="youxiaoqi != null">
+        youxiaoqi = #{youxiaoqi,jdbcType=VARCHAR},
+      </if>
+      <if test="gysid != null">
+        gysid = #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="scsid != null">
+        scsid = #{scsid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        ypname = #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        guige = #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="danweiid != null">
+        danweiid = #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="jinhuoprice != null">
+        jinhuoprice = #{jinhuoprice,jdbcType=DOUBLE},
+      </if>
+      <if test="lingshouprice != null">
+        lingshouprice = #{lingshouprice,jdbcType=DOUBLE},
+      </if>
+      <if test="kccount != null">
+        kccount = #{kccount,jdbcType=INTEGER},
+      </if>
+      <if test="jinjiasumprice != null">
+        jinjiasumprice = #{jinjiasumprice,jdbcType=DOUBLE},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="shoujiaprice != null">
+        shoujiaprice = #{shoujiaprice,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="kcshangxian != null">
+        kcshangxian = #{kcshangxian,jdbcType=INTEGER},
+      </if>
+      <if test="kcxiaxian != null">
+        kcxiaxian = #{kcxiaxian,jdbcType=INTEGER},
+      </if>
+    </set>
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Kucunb">
+    update kucunb
+    set kcnunmber = #{kcnunmber,jdbcType=VARCHAR},
+      youxiaoqi = #{youxiaoqi,jdbcType=VARCHAR},
+      gysid = #{gysid,jdbcType=INTEGER},
+      scsid = #{scsid,jdbcType=INTEGER},
+      ypname = #{ypname,jdbcType=VARCHAR},
+      guige = #{guige,jdbcType=VARCHAR},
+      danweiid = #{danweiid,jdbcType=INTEGER},
+      jinhuoprice = #{jinhuoprice,jdbcType=DOUBLE},
+      lingshouprice = #{lingshouprice,jdbcType=DOUBLE},
+      kccount = #{kccount,jdbcType=INTEGER},
+      jinjiasumprice = #{jinjiasumprice,jdbcType=DOUBLE},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      shoujiaprice = #{shoujiaprice,jdbcType=DOUBLE},
+      status = #{status,jdbcType=INTEGER},
+      kcshangxian = #{kcshangxian,jdbcType=INTEGER},
+      kcxiaxian = #{kcxiaxian,jdbcType=INTEGER}
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </update>
+</mapper>

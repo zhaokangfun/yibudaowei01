@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.GouyaobMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Gouyaob">
+    <id column="gyid" jdbcType="INTEGER" property="gyid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="yplxid" jdbcType="INTEGER" property="yplxid" />
+    <result column="gysl" jdbcType="INTEGER" property="gysl" />
+    <result column="zongjia" jdbcType="DOUBLE" property="zongjia" />
+    <result column="gytime" jdbcType="VARCHAR" property="gytime" />
+    <result column="gystatus" jdbcType="INTEGER" property="gystatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    gyid, hzid, yplxid, gysl, zongjia, gytime, gystatus
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from gouyaob
+    where gyid = #{gyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from gouyaob
+    where gyid = #{gyid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Gouyaob">
+    insert into gouyaob (gyid, hzid, yplxid, 
+      gysl, zongjia, gytime, 
+      gystatus)
+    values (#{gyid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{yplxid,jdbcType=INTEGER}, 
+      #{gysl,jdbcType=INTEGER}, #{zongjia,jdbcType=DOUBLE}, #{gytime,jdbcType=VARCHAR}, 
+      #{gystatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Gouyaob">
+    insert into gouyaob
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gyid != null">
+        gyid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="yplxid != null">
+        yplxid,
+      </if>
+      <if test="gysl != null">
+        gysl,
+      </if>
+      <if test="zongjia != null">
+        zongjia,
+      </if>
+      <if test="gytime != null">
+        gytime,
+      </if>
+      <if test="gystatus != null">
+        gystatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gyid != null">
+        #{gyid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yplxid != null">
+        #{yplxid,jdbcType=INTEGER},
+      </if>
+      <if test="gysl != null">
+        #{gysl,jdbcType=INTEGER},
+      </if>
+      <if test="zongjia != null">
+        #{zongjia,jdbcType=DOUBLE},
+      </if>
+      <if test="gytime != null">
+        #{gytime,jdbcType=VARCHAR},
+      </if>
+      <if test="gystatus != null">
+        #{gystatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Gouyaob">
+    update gouyaob
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yplxid != null">
+        yplxid = #{yplxid,jdbcType=INTEGER},
+      </if>
+      <if test="gysl != null">
+        gysl = #{gysl,jdbcType=INTEGER},
+      </if>
+      <if test="zongjia != null">
+        zongjia = #{zongjia,jdbcType=DOUBLE},
+      </if>
+      <if test="gytime != null">
+        gytime = #{gytime,jdbcType=VARCHAR},
+      </if>
+      <if test="gystatus != null">
+        gystatus = #{gystatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where gyid = #{gyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Gouyaob">
+    update gouyaob
+    set hzid = #{hzid,jdbcType=INTEGER},
+      yplxid = #{yplxid,jdbcType=INTEGER},
+      gysl = #{gysl,jdbcType=INTEGER},
+      zongjia = #{zongjia,jdbcType=DOUBLE},
+      gytime = #{gytime,jdbcType=VARCHAR},
+      gystatus = #{gystatus,jdbcType=INTEGER}
+    where gyid = #{gyid,jdbcType=INTEGER}
+  </update>
+</mapper>

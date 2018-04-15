@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.JixingbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Jixingb">
+    <id column="jxid" jdbcType="INTEGER" property="jxid" />
+    <result column="jixingname" jdbcType="VARCHAR" property="jixingname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jxid, jixingname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jixingb
+    where jxid = #{jxid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jixingb
+    where jxid = #{jxid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Jixingb">
+    insert into jixingb (jxid, jixingname)
+    values (#{jxid,jdbcType=INTEGER}, #{jixingname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Jixingb">
+    insert into jixingb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jxid != null">
+        jxid,
+      </if>
+      <if test="jixingname != null">
+        jixingname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jxid != null">
+        #{jxid,jdbcType=INTEGER},
+      </if>
+      <if test="jixingname != null">
+        #{jixingname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jixingb">
+    update jixingb
+    <set>
+      <if test="jixingname != null">
+        jixingname = #{jixingname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jxid = #{jxid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jixingb">
+    update jixingb
+    set jixingname = #{jixingname,jdbcType=VARCHAR}
+    where jxid = #{jxid,jdbcType=INTEGER}
+  </update>
+</mapper>

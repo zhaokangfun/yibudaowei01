@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.JichufuleibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Jichufuleib">
+    <id column="jcid" jdbcType="INTEGER" property="jcid" />
+    <result column="shuoming" jdbcType="VARCHAR" property="shuoming" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jcid, shuoming
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jichufuleib
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jichufuleib
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Jichufuleib">
+    insert into jichufuleib (jcid, shuoming)
+    values (#{jcid,jdbcType=INTEGER}, #{shuoming,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Jichufuleib">
+    insert into jichufuleib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jcid != null">
+        jcid,
+      </if>
+      <if test="shuoming != null">
+        shuoming,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jcid != null">
+        #{jcid,jdbcType=INTEGER},
+      </if>
+      <if test="shuoming != null">
+        #{shuoming,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jichufuleib">
+    update jichufuleib
+    <set>
+      <if test="shuoming != null">
+        shuoming = #{shuoming,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jichufuleib">
+    update jichufuleib
+    set shuoming = #{shuoming,jdbcType=VARCHAR}
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </update>
+</mapper>

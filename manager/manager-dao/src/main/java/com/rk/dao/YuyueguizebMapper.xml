@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.YuyueguizebMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Yuyueguizeb">
+    <id column="yygzid" jdbcType="INTEGER" property="yygzid" />
+    <result column="yygzname" jdbcType="VARCHAR" property="yygzname" />
+    <result column="canshuzhi" jdbcType="VARCHAR" property="canshuzhi" />
+    <result column="canshushuoming" jdbcType="VARCHAR" property="canshushuoming" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    yygzid, yygzname, canshuzhi, canshushuoming
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yuyueguizeb
+    where yygzid = #{yygzid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yuyueguizeb
+    where yygzid = #{yygzid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Yuyueguizeb">
+    insert into yuyueguizeb (yygzid, yygzname, canshuzhi, 
+      canshushuoming)
+    values (#{yygzid,jdbcType=INTEGER}, #{yygzname,jdbcType=VARCHAR}, #{canshuzhi,jdbcType=VARCHAR}, 
+      #{canshushuoming,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Yuyueguizeb">
+    insert into yuyueguizeb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="yygzid != null">
+        yygzid,
+      </if>
+      <if test="yygzname != null">
+        yygzname,
+      </if>
+      <if test="canshuzhi != null">
+        canshuzhi,
+      </if>
+      <if test="canshushuoming != null">
+        canshushuoming,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="yygzid != null">
+        #{yygzid,jdbcType=INTEGER},
+      </if>
+      <if test="yygzname != null">
+        #{yygzname,jdbcType=VARCHAR},
+      </if>
+      <if test="canshuzhi != null">
+        #{canshuzhi,jdbcType=VARCHAR},
+      </if>
+      <if test="canshushuoming != null">
+        #{canshushuoming,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Yuyueguizeb">
+    update yuyueguizeb
+    <set>
+      <if test="yygzname != null">
+        yygzname = #{yygzname,jdbcType=VARCHAR},
+      </if>
+      <if test="canshuzhi != null">
+        canshuzhi = #{canshuzhi,jdbcType=VARCHAR},
+      </if>
+      <if test="canshushuoming != null">
+        canshushuoming = #{canshushuoming,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where yygzid = #{yygzid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Yuyueguizeb">
+    update yuyueguizeb
+    set yygzname = #{yygzname,jdbcType=VARCHAR},
+      canshuzhi = #{canshuzhi,jdbcType=VARCHAR},
+      canshushuoming = #{canshushuoming,jdbcType=VARCHAR}
+    where yygzid = #{yygzid,jdbcType=INTEGER}
+  </update>
+</mapper>

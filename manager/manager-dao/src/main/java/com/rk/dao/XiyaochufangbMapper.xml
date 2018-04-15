@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.XiyaochufangbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Xiyaochufangb">
+    <id column="xiyaochufangid" jdbcType="INTEGER" property="xiyaochufangid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="yaopin" jdbcType="VARCHAR" property="yaopin" />
+    <result column="guige" jdbcType="VARCHAR" property="guige" />
+    <result column="yongfaid" jdbcType="INTEGER" property="yongfaid" />
+    <result column="di" jdbcType="INTEGER" property="di" />
+    <result column="jiliang" jdbcType="DOUBLE" property="jiliang" />
+    <result column="daycount" jdbcType="INTEGER" property="daycount" />
+    <result column="sumcount" jdbcType="INTEGER" property="sumcount" />
+    <result column="danweiid" jdbcType="INTEGER" property="danweiid" />
+    <result column="laiyuanid" jdbcType="INTEGER" property="laiyuanid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="pishi" jdbcType="INTEGER" property="pishi" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    xiyaochufangid, hzid, yaopin, guige, yongfaid, di, jiliang, daycount, sumcount, danweiid, 
+    laiyuanid, beizhu, pishi
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from xiyaochufangb
+    where xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from xiyaochufangb
+    where xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Xiyaochufangb">
+    insert into xiyaochufangb (xiyaochufangid, hzid, yaopin, 
+      guige, yongfaid, di, 
+      jiliang, daycount, sumcount, 
+      danweiid, laiyuanid, beizhu, 
+      pishi)
+    values (#{xiyaochufangid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{yaopin,jdbcType=VARCHAR}, 
+      #{guige,jdbcType=VARCHAR}, #{yongfaid,jdbcType=INTEGER}, #{di,jdbcType=INTEGER}, 
+      #{jiliang,jdbcType=DOUBLE}, #{daycount,jdbcType=INTEGER}, #{sumcount,jdbcType=INTEGER}, 
+      #{danweiid,jdbcType=INTEGER}, #{laiyuanid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}, 
+      #{pishi,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Xiyaochufangb">
+    insert into xiyaochufangb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="xiyaochufangid != null">
+        xiyaochufangid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="yaopin != null">
+        yaopin,
+      </if>
+      <if test="guige != null">
+        guige,
+      </if>
+      <if test="yongfaid != null">
+        yongfaid,
+      </if>
+      <if test="di != null">
+        di,
+      </if>
+      <if test="jiliang != null">
+        jiliang,
+      </if>
+      <if test="daycount != null">
+        daycount,
+      </if>
+      <if test="sumcount != null">
+        sumcount,
+      </if>
+      <if test="danweiid != null">
+        danweiid,
+      </if>
+      <if test="laiyuanid != null">
+        laiyuanid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="pishi != null">
+        pishi,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="xiyaochufangid != null">
+        #{xiyaochufangid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yaopin != null">
+        #{yaopin,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="yongfaid != null">
+        #{yongfaid,jdbcType=INTEGER},
+      </if>
+      <if test="di != null">
+        #{di,jdbcType=INTEGER},
+      </if>
+      <if test="jiliang != null">
+        #{jiliang,jdbcType=DOUBLE},
+      </if>
+      <if test="daycount != null">
+        #{daycount,jdbcType=INTEGER},
+      </if>
+      <if test="sumcount != null">
+        #{sumcount,jdbcType=INTEGER},
+      </if>
+      <if test="danweiid != null">
+        #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="laiyuanid != null">
+        #{laiyuanid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="pishi != null">
+        #{pishi,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Xiyaochufangb">
+    update xiyaochufangb
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yaopin != null">
+        yaopin = #{yaopin,jdbcType=VARCHAR},
+      </if>
+      <if test="guige != null">
+        guige = #{guige,jdbcType=VARCHAR},
+      </if>
+      <if test="yongfaid != null">
+        yongfaid = #{yongfaid,jdbcType=INTEGER},
+      </if>
+      <if test="di != null">
+        di = #{di,jdbcType=INTEGER},
+      </if>
+      <if test="jiliang != null">
+        jiliang = #{jiliang,jdbcType=DOUBLE},
+      </if>
+      <if test="daycount != null">
+        daycount = #{daycount,jdbcType=INTEGER},
+      </if>
+      <if test="sumcount != null">
+        sumcount = #{sumcount,jdbcType=INTEGER},
+      </if>
+      <if test="danweiid != null">
+        danweiid = #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="laiyuanid != null">
+        laiyuanid = #{laiyuanid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="pishi != null">
+        pishi = #{pishi,jdbcType=INTEGER},
+      </if>
+    </set>
+    where xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Xiyaochufangb">
+    update xiyaochufangb
+    set hzid = #{hzid,jdbcType=INTEGER},
+      yaopin = #{yaopin,jdbcType=VARCHAR},
+      guige = #{guige,jdbcType=VARCHAR},
+      yongfaid = #{yongfaid,jdbcType=INTEGER},
+      di = #{di,jdbcType=INTEGER},
+      jiliang = #{jiliang,jdbcType=DOUBLE},
+      daycount = #{daycount,jdbcType=INTEGER},
+      sumcount = #{sumcount,jdbcType=INTEGER},
+      danweiid = #{danweiid,jdbcType=INTEGER},
+      laiyuanid = #{laiyuanid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      pishi = #{pishi,jdbcType=INTEGER}
+    where xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER}
+  </update>
+</mapper>

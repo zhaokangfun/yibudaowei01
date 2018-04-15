@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhiliaoxiangmufenleibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhiliaoxiangmufenleib">
+    <id column="zkxmtypeid" jdbcType="INTEGER" property="zkxmtypeid" />
+    <result column="zlxmtypename" jdbcType="VARCHAR" property="zlxmtypename" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="wubi" jdbcType="VARCHAR" property="wubi" />
+    <result column="paixu" jdbcType="INTEGER" property="paixu" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zkxmtypeid, zlxmtypename, pinyin, wubi, paixu, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhiliaoxiangmufenleib
+    where zkxmtypeid = #{zkxmtypeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhiliaoxiangmufenleib
+    where zkxmtypeid = #{zkxmtypeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhiliaoxiangmufenleib">
+    insert into zhiliaoxiangmufenleib (zkxmtypeid, zlxmtypename, pinyin, 
+      wubi, paixu, status
+      )
+    values (#{zkxmtypeid,jdbcType=INTEGER}, #{zlxmtypename,jdbcType=VARCHAR}, #{pinyin,jdbcType=VARCHAR}, 
+      #{wubi,jdbcType=VARCHAR}, #{paixu,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhiliaoxiangmufenleib">
+    insert into zhiliaoxiangmufenleib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zkxmtypeid != null">
+        zkxmtypeid,
+      </if>
+      <if test="zlxmtypename != null">
+        zlxmtypename,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="wubi != null">
+        wubi,
+      </if>
+      <if test="paixu != null">
+        paixu,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zkxmtypeid != null">
+        #{zkxmtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="zlxmtypename != null">
+        #{zlxmtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="wubi != null">
+        #{wubi,jdbcType=VARCHAR},
+      </if>
+      <if test="paixu != null">
+        #{paixu,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhiliaoxiangmufenleib">
+    update zhiliaoxiangmufenleib
+    <set>
+      <if test="zlxmtypename != null">
+        zlxmtypename = #{zlxmtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="wubi != null">
+        wubi = #{wubi,jdbcType=VARCHAR},
+      </if>
+      <if test="paixu != null">
+        paixu = #{paixu,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where zkxmtypeid = #{zkxmtypeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhiliaoxiangmufenleib">
+    update zhiliaoxiangmufenleib
+    set zlxmtypename = #{zlxmtypename,jdbcType=VARCHAR},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      wubi = #{wubi,jdbcType=VARCHAR},
+      paixu = #{paixu,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where zkxmtypeid = #{zkxmtypeid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.LiaochengbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Liaochengb">
+    <id column="lcid" jdbcType="INTEGER" property="lcid" />
+    <result column="lcnumber" jdbcType="VARCHAR" property="lcnumber" />
+    <result column="lcname" jdbcType="VARCHAR" property="lcname" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="yizhubeizhu" jdbcType="VARCHAR" property="yizhubeizhu" />
+    <result column="yishiid" jdbcType="INTEGER" property="yishiid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="liaochengcount" jdbcType="INTEGER" property="liaochengcount" />
+    <result column="liaochengtype" jdbcType="INTEGER" property="liaochengtype" />
+    <result column="ygid" jdbcType="INTEGER" property="ygid" />
+    <result column="pinlvid" jdbcType="INTEGER" property="pinlvid" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="lcprice" jdbcType="DOUBLE" property="lcprice" />
+    <result column="lcticheng" jdbcType="VARCHAR" property="lcticheng" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="xinzengid" jdbcType="INTEGER" property="xinzengid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    lcid, lcnumber, lcname, hzid, xiangmuid, yizhubeizhu, yishiid, count, liaochengcount, 
+    liaochengtype, ygid, pinlvid, pinyin, lcprice, lcticheng, status, xinzengid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from liaochengb
+    where lcid = #{lcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from liaochengb
+    where lcid = #{lcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Liaochengb">
+    insert into liaochengb (lcid, lcnumber, lcname, 
+      hzid, xiangmuid, yizhubeizhu, 
+      yishiid, count, liaochengcount, 
+      liaochengtype, ygid, pinlvid, 
+      pinyin, lcprice, lcticheng, 
+      status, xinzengid)
+    values (#{lcid,jdbcType=INTEGER}, #{lcnumber,jdbcType=VARCHAR}, #{lcname,jdbcType=VARCHAR}, 
+      #{hzid,jdbcType=INTEGER}, #{xiangmuid,jdbcType=INTEGER}, #{yizhubeizhu,jdbcType=VARCHAR}, 
+      #{yishiid,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, #{liaochengcount,jdbcType=INTEGER}, 
+      #{liaochengtype,jdbcType=INTEGER}, #{ygid,jdbcType=INTEGER}, #{pinlvid,jdbcType=INTEGER}, 
+      #{pinyin,jdbcType=VARCHAR}, #{lcprice,jdbcType=DOUBLE}, #{lcticheng,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{xinzengid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Liaochengb">
+    insert into liaochengb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lcid != null">
+        lcid,
+      </if>
+      <if test="lcnumber != null">
+        lcnumber,
+      </if>
+      <if test="lcname != null">
+        lcname,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu,
+      </if>
+      <if test="yishiid != null">
+        yishiid,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="liaochengcount != null">
+        liaochengcount,
+      </if>
+      <if test="liaochengtype != null">
+        liaochengtype,
+      </if>
+      <if test="ygid != null">
+        ygid,
+      </if>
+      <if test="pinlvid != null">
+        pinlvid,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="lcprice != null">
+        lcprice,
+      </if>
+      <if test="lcticheng != null">
+        lcticheng,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="xinzengid != null">
+        xinzengid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lcid != null">
+        #{lcid,jdbcType=INTEGER},
+      </if>
+      <if test="lcnumber != null">
+        #{lcnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lcname != null">
+        #{lcname,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        #{yishiid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengcount != null">
+        #{liaochengcount,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengtype != null">
+        #{liaochengtype,jdbcType=INTEGER},
+      </if>
+      <if test="ygid != null">
+        #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="pinlvid != null">
+        #{pinlvid,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="lcprice != null">
+        #{lcprice,jdbcType=DOUBLE},
+      </if>
+      <if test="lcticheng != null">
+        #{lcticheng,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="xinzengid != null">
+        #{xinzengid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Liaochengb">
+    update liaochengb
+    <set>
+      <if test="lcnumber != null">
+        lcnumber = #{lcnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lcname != null">
+        lcname = #{lcname,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        yishiid = #{yishiid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengcount != null">
+        liaochengcount = #{liaochengcount,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengtype != null">
+        liaochengtype = #{liaochengtype,jdbcType=INTEGER},
+      </if>
+      <if test="ygid != null">
+        ygid = #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="pinlvid != null">
+        pinlvid = #{pinlvid,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="lcprice != null">
+        lcprice = #{lcprice,jdbcType=DOUBLE},
+      </if>
+      <if test="lcticheng != null">
+        lcticheng = #{lcticheng,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="xinzengid != null">
+        xinzengid = #{xinzengid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lcid = #{lcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Liaochengb">
+    update liaochengb
+    set lcnumber = #{lcnumber,jdbcType=VARCHAR},
+      lcname = #{lcname,jdbcType=VARCHAR},
+      hzid = #{hzid,jdbcType=INTEGER},
+      xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      yishiid = #{yishiid,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      liaochengcount = #{liaochengcount,jdbcType=INTEGER},
+      liaochengtype = #{liaochengtype,jdbcType=INTEGER},
+      ygid = #{ygid,jdbcType=INTEGER},
+      pinlvid = #{pinlvid,jdbcType=INTEGER},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      lcprice = #{lcprice,jdbcType=DOUBLE},
+      lcticheng = #{lcticheng,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      xinzengid = #{xinzengid,jdbcType=INTEGER}
+    where lcid = #{lcid,jdbcType=INTEGER}
+  </update>
+</mapper>

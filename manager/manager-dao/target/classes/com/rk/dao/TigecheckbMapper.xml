@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.TigecheckbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Tigecheckb">
+    <id column="tigechekid" jdbcType="INTEGER" property="tigechekid" />
+    <result column="tiwen" jdbcType="DOUBLE" property="tiwen" />
+    <result column="xueya" jdbcType="DOUBLE" property="xueya" />
+    <result column="gaoya" jdbcType="DOUBLE" property="gaoya" />
+    <result column="diya" jdbcType="DOUBLE" property="diya" />
+    <result column="maibo" jdbcType="DOUBLE" property="maibo" />
+    <result column="huxi" jdbcType="INTEGER" property="huxi" />
+    <result column="hight" jdbcType="DOUBLE" property="hight" />
+    <result column="tizhong" jdbcType="DOUBLE" property="tizhong" />
+    <result column="BMI" jdbcType="DOUBLE" property="bmi" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    tigechekid, tiwen, xueya, gaoya, diya, maibo, huxi, hight, tizhong, BMI
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tigecheckb
+    where tigechekid = #{tigechekid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tigecheckb
+    where tigechekid = #{tigechekid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Tigecheckb">
+    insert into tigecheckb (tigechekid, tiwen, xueya, 
+      gaoya, diya, maibo, huxi, 
+      hight, tizhong, BMI)
+    values (#{tigechekid,jdbcType=INTEGER}, #{tiwen,jdbcType=DOUBLE}, #{xueya,jdbcType=DOUBLE}, 
+      #{gaoya,jdbcType=DOUBLE}, #{diya,jdbcType=DOUBLE}, #{maibo,jdbcType=DOUBLE}, #{huxi,jdbcType=INTEGER}, 
+      #{hight,jdbcType=DOUBLE}, #{tizhong,jdbcType=DOUBLE}, #{bmi,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Tigecheckb">
+    insert into tigecheckb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tigechekid != null">
+        tigechekid,
+      </if>
+      <if test="tiwen != null">
+        tiwen,
+      </if>
+      <if test="xueya != null">
+        xueya,
+      </if>
+      <if test="gaoya != null">
+        gaoya,
+      </if>
+      <if test="diya != null">
+        diya,
+      </if>
+      <if test="maibo != null">
+        maibo,
+      </if>
+      <if test="huxi != null">
+        huxi,
+      </if>
+      <if test="hight != null">
+        hight,
+      </if>
+      <if test="tizhong != null">
+        tizhong,
+      </if>
+      <if test="bmi != null">
+        BMI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tigechekid != null">
+        #{tigechekid,jdbcType=INTEGER},
+      </if>
+      <if test="tiwen != null">
+        #{tiwen,jdbcType=DOUBLE},
+      </if>
+      <if test="xueya != null">
+        #{xueya,jdbcType=DOUBLE},
+      </if>
+      <if test="gaoya != null">
+        #{gaoya,jdbcType=DOUBLE},
+      </if>
+      <if test="diya != null">
+        #{diya,jdbcType=DOUBLE},
+      </if>
+      <if test="maibo != null">
+        #{maibo,jdbcType=DOUBLE},
+      </if>
+      <if test="huxi != null">
+        #{huxi,jdbcType=INTEGER},
+      </if>
+      <if test="hight != null">
+        #{hight,jdbcType=DOUBLE},
+      </if>
+      <if test="tizhong != null">
+        #{tizhong,jdbcType=DOUBLE},
+      </if>
+      <if test="bmi != null">
+        #{bmi,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Tigecheckb">
+    update tigecheckb
+    <set>
+      <if test="tiwen != null">
+        tiwen = #{tiwen,jdbcType=DOUBLE},
+      </if>
+      <if test="xueya != null">
+        xueya = #{xueya,jdbcType=DOUBLE},
+      </if>
+      <if test="gaoya != null">
+        gaoya = #{gaoya,jdbcType=DOUBLE},
+      </if>
+      <if test="diya != null">
+        diya = #{diya,jdbcType=DOUBLE},
+      </if>
+      <if test="maibo != null">
+        maibo = #{maibo,jdbcType=DOUBLE},
+      </if>
+      <if test="huxi != null">
+        huxi = #{huxi,jdbcType=INTEGER},
+      </if>
+      <if test="hight != null">
+        hight = #{hight,jdbcType=DOUBLE},
+      </if>
+      <if test="tizhong != null">
+        tizhong = #{tizhong,jdbcType=DOUBLE},
+      </if>
+      <if test="bmi != null">
+        BMI = #{bmi,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where tigechekid = #{tigechekid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Tigecheckb">
+    update tigecheckb
+    set tiwen = #{tiwen,jdbcType=DOUBLE},
+      xueya = #{xueya,jdbcType=DOUBLE},
+      gaoya = #{gaoya,jdbcType=DOUBLE},
+      diya = #{diya,jdbcType=DOUBLE},
+      maibo = #{maibo,jdbcType=DOUBLE},
+      huxi = #{huxi,jdbcType=INTEGER},
+      hight = #{hight,jdbcType=DOUBLE},
+      tizhong = #{tizhong,jdbcType=DOUBLE},
+      BMI = #{bmi,jdbcType=DOUBLE}
+    where tigechekid = #{tigechekid,jdbcType=INTEGER}
+  </update>
+</mapper>

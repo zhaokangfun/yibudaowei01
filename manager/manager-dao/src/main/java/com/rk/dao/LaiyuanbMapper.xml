@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.LaiyuanbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Laiyuanb">
+    <id column="lyid" jdbcType="INTEGER" property="lyid" />
+    <result column="lyname" jdbcType="VARCHAR" property="lyname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    lyid, lyname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from laiyuanb
+    where lyid = #{lyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from laiyuanb
+    where lyid = #{lyid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Laiyuanb">
+    insert into laiyuanb (lyid, lyname)
+    values (#{lyid,jdbcType=INTEGER}, #{lyname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Laiyuanb">
+    insert into laiyuanb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="lyid != null">
+        lyid,
+      </if>
+      <if test="lyname != null">
+        lyname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="lyid != null">
+        #{lyid,jdbcType=INTEGER},
+      </if>
+      <if test="lyname != null">
+        #{lyname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Laiyuanb">
+    update laiyuanb
+    <set>
+      <if test="lyname != null">
+        lyname = #{lyname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where lyid = #{lyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Laiyuanb">
+    update laiyuanb
+    set lyname = #{lyname,jdbcType=VARCHAR}
+    where lyid = #{lyid,jdbcType=INTEGER}
+  </update>
+</mapper>

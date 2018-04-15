@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.YaopintypebMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Yaopintypeb">
+    <id column="yptypeid" jdbcType="INTEGER" property="yptypeid" />
+    <result column="yptypename" jdbcType="VARCHAR" property="yptypename" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="shunxun" jdbcType="INTEGER" property="shunxun" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    yptypeid, yptypename, pinyin, shunxun, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yaopintypeb
+    where yptypeid = #{yptypeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yaopintypeb
+    where yptypeid = #{yptypeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Yaopintypeb">
+    insert into yaopintypeb (yptypeid, yptypename, pinyin, 
+      shunxun, status)
+    values (#{yptypeid,jdbcType=INTEGER}, #{yptypename,jdbcType=VARCHAR}, #{pinyin,jdbcType=VARCHAR}, 
+      #{shunxun,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Yaopintypeb">
+    insert into yaopintypeb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="yptypeid != null">
+        yptypeid,
+      </if>
+      <if test="yptypename != null">
+        yptypename,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="shunxun != null">
+        shunxun,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="yptypeid != null">
+        #{yptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="yptypename != null">
+        #{yptypename,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="shunxun != null">
+        #{shunxun,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Yaopintypeb">
+    update yaopintypeb
+    <set>
+      <if test="yptypename != null">
+        yptypename = #{yptypename,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="shunxun != null">
+        shunxun = #{shunxun,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where yptypeid = #{yptypeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Yaopintypeb">
+    update yaopintypeb
+    set yptypename = #{yptypename,jdbcType=VARCHAR},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      shunxun = #{shunxun,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where yptypeid = #{yptypeid,jdbcType=INTEGER}
+  </update>
+</mapper>

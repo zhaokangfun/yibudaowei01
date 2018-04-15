@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhiweibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhiweib">
+    <id column="zhiweiid" jdbcType="INTEGER" property="zhiweiid" />
+    <result column="zhiweiname" jdbcType="VARCHAR" property="zhiweiname" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="shunxu" jdbcType="INTEGER" property="shunxu" />
+    <result column="sfyiwurenyuan" jdbcType="INTEGER" property="sfyiwurenyuan" />
+    <result column="zwid" jdbcType="INTEGER" property="zwid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zhiweiid, zhiweiname, status, pinyin, shunxu, sfyiwurenyuan, zwid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhiweib
+    where zhiweiid = #{zhiweiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhiweib
+    where zhiweiid = #{zhiweiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhiweib">
+    insert into zhiweib (zhiweiid, zhiweiname, status, 
+      pinyin, shunxu, sfyiwurenyuan, 
+      zwid)
+    values (#{zhiweiid,jdbcType=INTEGER}, #{zhiweiname,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{pinyin,jdbcType=VARCHAR}, #{shunxu,jdbcType=INTEGER}, #{sfyiwurenyuan,jdbcType=INTEGER}, 
+      #{zwid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhiweib">
+    insert into zhiweib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zhiweiid != null">
+        zhiweiid,
+      </if>
+      <if test="zhiweiname != null">
+        zhiweiname,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="shunxu != null">
+        shunxu,
+      </if>
+      <if test="sfyiwurenyuan != null">
+        sfyiwurenyuan,
+      </if>
+      <if test="zwid != null">
+        zwid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zhiweiid != null">
+        #{zhiweiid,jdbcType=INTEGER},
+      </if>
+      <if test="zhiweiname != null">
+        #{zhiweiname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="shunxu != null">
+        #{shunxu,jdbcType=INTEGER},
+      </if>
+      <if test="sfyiwurenyuan != null">
+        #{sfyiwurenyuan,jdbcType=INTEGER},
+      </if>
+      <if test="zwid != null">
+        #{zwid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhiweib">
+    update zhiweib
+    <set>
+      <if test="zhiweiname != null">
+        zhiweiname = #{zhiweiname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="shunxu != null">
+        shunxu = #{shunxu,jdbcType=INTEGER},
+      </if>
+      <if test="sfyiwurenyuan != null">
+        sfyiwurenyuan = #{sfyiwurenyuan,jdbcType=INTEGER},
+      </if>
+      <if test="zwid != null">
+        zwid = #{zwid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where zhiweiid = #{zhiweiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhiweib">
+    update zhiweib
+    set zhiweiname = #{zhiweiname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      shunxu = #{shunxu,jdbcType=INTEGER},
+      sfyiwurenyuan = #{sfyiwurenyuan,jdbcType=INTEGER},
+      zwid = #{zwid,jdbcType=INTEGER}
+    where zhiweiid = #{zhiweiid,jdbcType=INTEGER}
+  </update>
+</mapper>

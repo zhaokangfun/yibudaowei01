@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.HuanzheyuyuebMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Huanzheyuyueb">
+    <id column="hzyyid" jdbcType="INTEGER" property="hzyyid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="yyhcid" jdbcType="INTEGER" property="yyhcid" />
+    <result column="dqtime" jdbcType="VARCHAR" property="dqtime" />
+    <result column="keshiid" jdbcType="INTEGER" property="keshiid" />
+    <result column="yystatusid" jdbcType="INTEGER" property="yystatusid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="yishengid" jdbcType="INTEGER" property="yishengid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    hzyyid, hzid, yyhcid, dqtime, keshiid, yystatusid, beizhu, yishengid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from huanzheyuyueb
+    where hzyyid = #{hzyyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from huanzheyuyueb
+    where hzyyid = #{hzyyid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Huanzheyuyueb">
+    insert into huanzheyuyueb (hzyyid, hzid, yyhcid, 
+      dqtime, keshiid, yystatusid, 
+      beizhu, yishengid)
+    values (#{hzyyid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{yyhcid,jdbcType=INTEGER}, 
+      #{dqtime,jdbcType=VARCHAR}, #{keshiid,jdbcType=INTEGER}, #{yystatusid,jdbcType=INTEGER}, 
+      #{beizhu,jdbcType=VARCHAR}, #{yishengid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Huanzheyuyueb">
+    insert into huanzheyuyueb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hzyyid != null">
+        hzyyid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="yyhcid != null">
+        yyhcid,
+      </if>
+      <if test="dqtime != null">
+        dqtime,
+      </if>
+      <if test="keshiid != null">
+        keshiid,
+      </if>
+      <if test="yystatusid != null">
+        yystatusid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="yishengid != null">
+        yishengid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hzyyid != null">
+        #{hzyyid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yyhcid != null">
+        #{yyhcid,jdbcType=INTEGER},
+      </if>
+      <if test="dqtime != null">
+        #{dqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshiid != null">
+        #{keshiid,jdbcType=INTEGER},
+      </if>
+      <if test="yystatusid != null">
+        #{yystatusid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishengid != null">
+        #{yishengid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Huanzheyuyueb">
+    update huanzheyuyueb
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="yyhcid != null">
+        yyhcid = #{yyhcid,jdbcType=INTEGER},
+      </if>
+      <if test="dqtime != null">
+        dqtime = #{dqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshiid != null">
+        keshiid = #{keshiid,jdbcType=INTEGER},
+      </if>
+      <if test="yystatusid != null">
+        yystatusid = #{yystatusid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishengid != null">
+        yishengid = #{yishengid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where hzyyid = #{hzyyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Huanzheyuyueb">
+    update huanzheyuyueb
+    set hzid = #{hzid,jdbcType=INTEGER},
+      yyhcid = #{yyhcid,jdbcType=INTEGER},
+      dqtime = #{dqtime,jdbcType=VARCHAR},
+      keshiid = #{keshiid,jdbcType=INTEGER},
+      yystatusid = #{yystatusid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      yishengid = #{yishengid,jdbcType=INTEGER}
+    where hzyyid = #{hzyyid,jdbcType=INTEGER}
+  </update>
+</mapper>

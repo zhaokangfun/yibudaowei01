@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhoubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhoub">
+    <id column="zhouid" jdbcType="INTEGER" property="zhouid" />
+    <result column="howtime" jdbcType="VARCHAR" property="howtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zhouid, howtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhoub
+    where zhouid = #{zhouid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhoub
+    where zhouid = #{zhouid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhoub">
+    insert into zhoub (zhouid, howtime)
+    values (#{zhouid,jdbcType=INTEGER}, #{howtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhoub">
+    insert into zhoub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zhouid != null">
+        zhouid,
+      </if>
+      <if test="howtime != null">
+        howtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zhouid != null">
+        #{zhouid,jdbcType=INTEGER},
+      </if>
+      <if test="howtime != null">
+        #{howtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhoub">
+    update zhoub
+    <set>
+      <if test="howtime != null">
+        howtime = #{howtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where zhouid = #{zhouid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhoub">
+    update zhoub
+    set howtime = #{howtime,jdbcType=VARCHAR}
+    where zhouid = #{zhouid,jdbcType=INTEGER}
+  </update>
+</mapper>

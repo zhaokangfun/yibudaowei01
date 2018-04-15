@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.PandianbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Pandianb">
+    <id column="pdid" jdbcType="INTEGER" property="pdid" />
+    <result column="pdnumber" jdbcType="VARCHAR" property="pdnumber" />
+    <result column="ypid" jdbcType="INTEGER" property="ypid" />
+    <result column="ypname" jdbcType="VARCHAR" property="ypname" />
+    <result column="kcid" jdbcType="INTEGER" property="kcid" />
+    <result column="kccount" jdbcType="INTEGER" property="kccount" />
+    <result column="sjcount" jdbcType="INTEGER" property="sjcount" />
+    <result column="lingshouyingkui" jdbcType="DOUBLE" property="lingshouyingkui" />
+    <result column="jinhuoyingkui" jdbcType="DOUBLE" property="jinhuoyingkui" />
+    <result column="pdtime" jdbcType="VARCHAR" property="pdtime" />
+    <result column="ygid" jdbcType="INTEGER" property="ygid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="yptypeid" jdbcType="INTEGER" property="yptypeid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    pdid, pdnumber, ypid, ypname, kcid, kccount, sjcount, lingshouyingkui, jinhuoyingkui, 
+    pdtime, ygid, beizhu, yptypeid, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from pandianb
+    where pdid = #{pdid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from pandianb
+    where pdid = #{pdid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Pandianb">
+    insert into pandianb (pdid, pdnumber, ypid, 
+      ypname, kcid, kccount, 
+      sjcount, lingshouyingkui, jinhuoyingkui, 
+      pdtime, ygid, beizhu, 
+      yptypeid, status)
+    values (#{pdid,jdbcType=INTEGER}, #{pdnumber,jdbcType=VARCHAR}, #{ypid,jdbcType=INTEGER}, 
+      #{ypname,jdbcType=VARCHAR}, #{kcid,jdbcType=INTEGER}, #{kccount,jdbcType=INTEGER}, 
+      #{sjcount,jdbcType=INTEGER}, #{lingshouyingkui,jdbcType=DOUBLE}, #{jinhuoyingkui,jdbcType=DOUBLE}, 
+      #{pdtime,jdbcType=VARCHAR}, #{ygid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}, 
+      #{yptypeid,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Pandianb">
+    insert into pandianb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pdid != null">
+        pdid,
+      </if>
+      <if test="pdnumber != null">
+        pdnumber,
+      </if>
+      <if test="ypid != null">
+        ypid,
+      </if>
+      <if test="ypname != null">
+        ypname,
+      </if>
+      <if test="kcid != null">
+        kcid,
+      </if>
+      <if test="kccount != null">
+        kccount,
+      </if>
+      <if test="sjcount != null">
+        sjcount,
+      </if>
+      <if test="lingshouyingkui != null">
+        lingshouyingkui,
+      </if>
+      <if test="jinhuoyingkui != null">
+        jinhuoyingkui,
+      </if>
+      <if test="pdtime != null">
+        pdtime,
+      </if>
+      <if test="ygid != null">
+        ygid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="yptypeid != null">
+        yptypeid,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pdid != null">
+        #{pdid,jdbcType=INTEGER},
+      </if>
+      <if test="pdnumber != null">
+        #{pdnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ypid != null">
+        #{ypid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="kcid != null">
+        #{kcid,jdbcType=INTEGER},
+      </if>
+      <if test="kccount != null">
+        #{kccount,jdbcType=INTEGER},
+      </if>
+      <if test="sjcount != null">
+        #{sjcount,jdbcType=INTEGER},
+      </if>
+      <if test="lingshouyingkui != null">
+        #{lingshouyingkui,jdbcType=DOUBLE},
+      </if>
+      <if test="jinhuoyingkui != null">
+        #{jinhuoyingkui,jdbcType=DOUBLE},
+      </if>
+      <if test="pdtime != null">
+        #{pdtime,jdbcType=VARCHAR},
+      </if>
+      <if test="ygid != null">
+        #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yptypeid != null">
+        #{yptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Pandianb">
+    update pandianb
+    <set>
+      <if test="pdnumber != null">
+        pdnumber = #{pdnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ypid != null">
+        ypid = #{ypid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        ypname = #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="kcid != null">
+        kcid = #{kcid,jdbcType=INTEGER},
+      </if>
+      <if test="kccount != null">
+        kccount = #{kccount,jdbcType=INTEGER},
+      </if>
+      <if test="sjcount != null">
+        sjcount = #{sjcount,jdbcType=INTEGER},
+      </if>
+      <if test="lingshouyingkui != null">
+        lingshouyingkui = #{lingshouyingkui,jdbcType=DOUBLE},
+      </if>
+      <if test="jinhuoyingkui != null">
+        jinhuoyingkui = #{jinhuoyingkui,jdbcType=DOUBLE},
+      </if>
+      <if test="pdtime != null">
+        pdtime = #{pdtime,jdbcType=VARCHAR},
+      </if>
+      <if test="ygid != null">
+        ygid = #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yptypeid != null">
+        yptypeid = #{yptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where pdid = #{pdid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Pandianb">
+    update pandianb
+    set pdnumber = #{pdnumber,jdbcType=VARCHAR},
+      ypid = #{ypid,jdbcType=INTEGER},
+      ypname = #{ypname,jdbcType=VARCHAR},
+      kcid = #{kcid,jdbcType=INTEGER},
+      kccount = #{kccount,jdbcType=INTEGER},
+      sjcount = #{sjcount,jdbcType=INTEGER},
+      lingshouyingkui = #{lingshouyingkui,jdbcType=DOUBLE},
+      jinhuoyingkui = #{jinhuoyingkui,jdbcType=DOUBLE},
+      pdtime = #{pdtime,jdbcType=VARCHAR},
+      ygid = #{ygid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      yptypeid = #{yptypeid,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where pdid = #{pdid,jdbcType=INTEGER}
+  </update>
+</mapper>

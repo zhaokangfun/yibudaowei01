@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.PaibantimebMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Paibantimeb">
+    <id column="pbid" jdbcType="INTEGER" property="pbid" />
+    <result column="banciid" jdbcType="INTEGER" property="banciid" />
+    <result column="yishengid" jdbcType="INTEGER" property="yishengid" />
+    <result column="zhouid" jdbcType="INTEGER" property="zhouid" />
+    <result column="nowtime" jdbcType="VARCHAR" property="nowtime" />
+    <result column="keshiid" jdbcType="INTEGER" property="keshiid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    pbid, banciid, yishengid, zhouid, nowtime, keshiid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from paibantimeb
+    where pbid = #{pbid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from paibantimeb
+    where pbid = #{pbid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Paibantimeb">
+    insert into paibantimeb (pbid, banciid, yishengid, 
+      zhouid, nowtime, keshiid
+      )
+    values (#{pbid,jdbcType=INTEGER}, #{banciid,jdbcType=INTEGER}, #{yishengid,jdbcType=INTEGER}, 
+      #{zhouid,jdbcType=INTEGER}, #{nowtime,jdbcType=VARCHAR}, #{keshiid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Paibantimeb">
+    insert into paibantimeb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pbid != null">
+        pbid,
+      </if>
+      <if test="banciid != null">
+        banciid,
+      </if>
+      <if test="yishengid != null">
+        yishengid,
+      </if>
+      <if test="zhouid != null">
+        zhouid,
+      </if>
+      <if test="nowtime != null">
+        nowtime,
+      </if>
+      <if test="keshiid != null">
+        keshiid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pbid != null">
+        #{pbid,jdbcType=INTEGER},
+      </if>
+      <if test="banciid != null">
+        #{banciid,jdbcType=INTEGER},
+      </if>
+      <if test="yishengid != null">
+        #{yishengid,jdbcType=INTEGER},
+      </if>
+      <if test="zhouid != null">
+        #{zhouid,jdbcType=INTEGER},
+      </if>
+      <if test="nowtime != null">
+        #{nowtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshiid != null">
+        #{keshiid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Paibantimeb">
+    update paibantimeb
+    <set>
+      <if test="banciid != null">
+        banciid = #{banciid,jdbcType=INTEGER},
+      </if>
+      <if test="yishengid != null">
+        yishengid = #{yishengid,jdbcType=INTEGER},
+      </if>
+      <if test="zhouid != null">
+        zhouid = #{zhouid,jdbcType=INTEGER},
+      </if>
+      <if test="nowtime != null">
+        nowtime = #{nowtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshiid != null">
+        keshiid = #{keshiid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where pbid = #{pbid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Paibantimeb">
+    update paibantimeb
+    set banciid = #{banciid,jdbcType=INTEGER},
+      yishengid = #{yishengid,jdbcType=INTEGER},
+      zhouid = #{zhouid,jdbcType=INTEGER},
+      nowtime = #{nowtime,jdbcType=VARCHAR},
+      keshiid = #{keshiid,jdbcType=INTEGER}
+    where pbid = #{pbid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.QianmingbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Qianmingb">
+    <result column="qmid" jdbcType="INTEGER" property="qmid" />
+    <result column="zcaoyid" jdbcType="INTEGER" property="zcaoyid" />
+    <result column="shqm" jdbcType="VARCHAR" property="shqm" />
+    <result column="dpqm" jdbcType="VARCHAR" property="dpqm" />
+    <result column="ysqm" jdbcType="VARCHAR" property="ysqm" />
+    <result column="hdqm" jdbcType="VARCHAR" property="hdqm" />
+    <result column="fyqm" jdbcType="VARCHAR" property="fyqm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.rk.entity.Qianmingb">
+    insert into qianmingb (qmid, zcaoyid, shqm, 
+      dpqm, ysqm, hdqm, fyqm
+      )
+    values (#{qmid,jdbcType=INTEGER}, #{zcaoyid,jdbcType=INTEGER}, #{shqm,jdbcType=VARCHAR}, 
+      #{dpqm,jdbcType=VARCHAR}, #{ysqm,jdbcType=VARCHAR}, #{hdqm,jdbcType=VARCHAR}, #{fyqm,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Qianmingb">
+    insert into qianmingb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="qmid != null">
+        qmid,
+      </if>
+      <if test="zcaoyid != null">
+        zcaoyid,
+      </if>
+      <if test="shqm != null">
+        shqm,
+      </if>
+      <if test="dpqm != null">
+        dpqm,
+      </if>
+      <if test="ysqm != null">
+        ysqm,
+      </if>
+      <if test="hdqm != null">
+        hdqm,
+      </if>
+      <if test="fyqm != null">
+        fyqm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="qmid != null">
+        #{qmid,jdbcType=INTEGER},
+      </if>
+      <if test="zcaoyid != null">
+        #{zcaoyid,jdbcType=INTEGER},
+      </if>
+      <if test="shqm != null">
+        #{shqm,jdbcType=VARCHAR},
+      </if>
+      <if test="dpqm != null">
+        #{dpqm,jdbcType=VARCHAR},
+      </if>
+      <if test="ysqm != null">
+        #{ysqm,jdbcType=VARCHAR},
+      </if>
+      <if test="hdqm != null">
+        #{hdqm,jdbcType=VARCHAR},
+      </if>
+      <if test="fyqm != null">
+        #{fyqm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

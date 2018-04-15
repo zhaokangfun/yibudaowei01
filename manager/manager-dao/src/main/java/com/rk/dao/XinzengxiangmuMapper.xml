@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.XinzengxiangmuMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Xinzengxiangmu">
+    <id column="xinzengid" jdbcType="INTEGER" property="xinzengid" />
+    <result column="xinzengtypeid" jdbcType="INTEGER" property="xinzengtypeid" />
+    <result column="xmnumber" jdbcType="INTEGER" property="xmnumber" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    xinzengid, xinzengtypeid, xmnumber, count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from xinzengxiangmu
+    where xinzengid = #{xinzengid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from xinzengxiangmu
+    where xinzengid = #{xinzengid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Xinzengxiangmu">
+    insert into xinzengxiangmu (xinzengid, xinzengtypeid, xmnumber, 
+      count)
+    values (#{xinzengid,jdbcType=INTEGER}, #{xinzengtypeid,jdbcType=INTEGER}, #{xmnumber,jdbcType=INTEGER}, 
+      #{count,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Xinzengxiangmu">
+    insert into xinzengxiangmu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="xinzengid != null">
+        xinzengid,
+      </if>
+      <if test="xinzengtypeid != null">
+        xinzengtypeid,
+      </if>
+      <if test="xmnumber != null">
+        xmnumber,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="xinzengid != null">
+        #{xinzengid,jdbcType=INTEGER},
+      </if>
+      <if test="xinzengtypeid != null">
+        #{xinzengtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="xmnumber != null">
+        #{xmnumber,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Xinzengxiangmu">
+    update xinzengxiangmu
+    <set>
+      <if test="xinzengtypeid != null">
+        xinzengtypeid = #{xinzengtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="xmnumber != null">
+        xmnumber = #{xmnumber,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+    </set>
+    where xinzengid = #{xinzengid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Xinzengxiangmu">
+    update xinzengxiangmu
+    set xinzengtypeid = #{xinzengtypeid,jdbcType=INTEGER},
+      xmnumber = #{xmnumber,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER}
+    where xinzengid = #{xinzengid,jdbcType=INTEGER}
+  </update>
+</mapper>

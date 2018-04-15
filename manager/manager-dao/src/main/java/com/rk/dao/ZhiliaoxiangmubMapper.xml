@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhiliaoxiangmubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhiliaoxiangmub">
+    <id column="zlxmid" jdbcType="INTEGER" property="zlxmid" />
+    <result column="zlxmbianma" jdbcType="VARCHAR" property="zlxmbianma" />
+    <result column="zlxmname" jdbcType="VARCHAR" property="zlxmname" />
+    <result column="zlxmdanjia" jdbcType="DOUBLE" property="zlxmdanjia" />
+    <result column="zlxmdanwei" jdbcType="INTEGER" property="zlxmdanwei" />
+    <result column="xiangmufenleiid" jdbcType="INTEGER" property="xiangmufenleiid" />
+    <result column="maxprice" jdbcType="DOUBLE" property="maxprice" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="ticheng" jdbcType="INTEGER" property="ticheng" />
+    <result column="shifoumenzhen" jdbcType="INTEGER" property="shifoumenzhen" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zlxmid, zlxmbianma, zlxmname, zlxmdanjia, zlxmdanwei, xiangmufenleiid, maxprice, 
+    pinyin, beizhu, ticheng, shifoumenzhen, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhiliaoxiangmub
+    where zlxmid = #{zlxmid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhiliaoxiangmub
+    where zlxmid = #{zlxmid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhiliaoxiangmub">
+    insert into zhiliaoxiangmub (zlxmid, zlxmbianma, zlxmname, 
+      zlxmdanjia, zlxmdanwei, xiangmufenleiid, 
+      maxprice, pinyin, beizhu, 
+      ticheng, shifoumenzhen, status
+      )
+    values (#{zlxmid,jdbcType=INTEGER}, #{zlxmbianma,jdbcType=VARCHAR}, #{zlxmname,jdbcType=VARCHAR}, 
+      #{zlxmdanjia,jdbcType=DOUBLE}, #{zlxmdanwei,jdbcType=INTEGER}, #{xiangmufenleiid,jdbcType=INTEGER}, 
+      #{maxprice,jdbcType=DOUBLE}, #{pinyin,jdbcType=VARCHAR}, #{beizhu,jdbcType=VARCHAR}, 
+      #{ticheng,jdbcType=INTEGER}, #{shifoumenzhen,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhiliaoxiangmub">
+    insert into zhiliaoxiangmub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zlxmid != null">
+        zlxmid,
+      </if>
+      <if test="zlxmbianma != null">
+        zlxmbianma,
+      </if>
+      <if test="zlxmname != null">
+        zlxmname,
+      </if>
+      <if test="zlxmdanjia != null">
+        zlxmdanjia,
+      </if>
+      <if test="zlxmdanwei != null">
+        zlxmdanwei,
+      </if>
+      <if test="xiangmufenleiid != null">
+        xiangmufenleiid,
+      </if>
+      <if test="maxprice != null">
+        maxprice,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="ticheng != null">
+        ticheng,
+      </if>
+      <if test="shifoumenzhen != null">
+        shifoumenzhen,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zlxmid != null">
+        #{zlxmid,jdbcType=INTEGER},
+      </if>
+      <if test="zlxmbianma != null">
+        #{zlxmbianma,jdbcType=VARCHAR},
+      </if>
+      <if test="zlxmname != null">
+        #{zlxmname,jdbcType=VARCHAR},
+      </if>
+      <if test="zlxmdanjia != null">
+        #{zlxmdanjia,jdbcType=DOUBLE},
+      </if>
+      <if test="zlxmdanwei != null">
+        #{zlxmdanwei,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmufenleiid != null">
+        #{xiangmufenleiid,jdbcType=INTEGER},
+      </if>
+      <if test="maxprice != null">
+        #{maxprice,jdbcType=DOUBLE},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="ticheng != null">
+        #{ticheng,jdbcType=INTEGER},
+      </if>
+      <if test="shifoumenzhen != null">
+        #{shifoumenzhen,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhiliaoxiangmub">
+    update zhiliaoxiangmub
+    <set>
+      <if test="zlxmbianma != null">
+        zlxmbianma = #{zlxmbianma,jdbcType=VARCHAR},
+      </if>
+      <if test="zlxmname != null">
+        zlxmname = #{zlxmname,jdbcType=VARCHAR},
+      </if>
+      <if test="zlxmdanjia != null">
+        zlxmdanjia = #{zlxmdanjia,jdbcType=DOUBLE},
+      </if>
+      <if test="zlxmdanwei != null">
+        zlxmdanwei = #{zlxmdanwei,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmufenleiid != null">
+        xiangmufenleiid = #{xiangmufenleiid,jdbcType=INTEGER},
+      </if>
+      <if test="maxprice != null">
+        maxprice = #{maxprice,jdbcType=DOUBLE},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="ticheng != null">
+        ticheng = #{ticheng,jdbcType=INTEGER},
+      </if>
+      <if test="shifoumenzhen != null">
+        shifoumenzhen = #{shifoumenzhen,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where zlxmid = #{zlxmid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhiliaoxiangmub">
+    update zhiliaoxiangmub
+    set zlxmbianma = #{zlxmbianma,jdbcType=VARCHAR},
+      zlxmname = #{zlxmname,jdbcType=VARCHAR},
+      zlxmdanjia = #{zlxmdanjia,jdbcType=DOUBLE},
+      zlxmdanwei = #{zlxmdanwei,jdbcType=INTEGER},
+      xiangmufenleiid = #{xiangmufenleiid,jdbcType=INTEGER},
+      maxprice = #{maxprice,jdbcType=DOUBLE},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      ticheng = #{ticheng,jdbcType=INTEGER},
+      shifoumenzhen = #{shifoumenzhen,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where zlxmid = #{zlxmid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhengjianlleixingbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhengjianlleixingb">
+    <id column="zjtypeid" jdbcType="INTEGER" property="zjtypeid" />
+    <result column="zjtypename" jdbcType="VARCHAR" property="zjtypename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zjtypeid, zjtypename
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhengjianlleixingb
+    where zjtypeid = #{zjtypeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhengjianlleixingb
+    where zjtypeid = #{zjtypeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhengjianlleixingb">
+    insert into zhengjianlleixingb (zjtypeid, zjtypename)
+    values (#{zjtypeid,jdbcType=INTEGER}, #{zjtypename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhengjianlleixingb">
+    insert into zhengjianlleixingb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zjtypeid != null">
+        zjtypeid,
+      </if>
+      <if test="zjtypename != null">
+        zjtypename,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zjtypeid != null">
+        #{zjtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="zjtypename != null">
+        #{zjtypename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhengjianlleixingb">
+    update zhengjianlleixingb
+    <set>
+      <if test="zjtypename != null">
+        zjtypename = #{zjtypename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where zjtypeid = #{zjtypeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhengjianlleixingb">
+    update zhengjianlleixingb
+    set zjtypename = #{zjtypename,jdbcType=VARCHAR}
+    where zjtypeid = #{zjtypeid,jdbcType=INTEGER}
+  </update>
+</mapper>

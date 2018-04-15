@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.GuominshibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Guominshib">
+    <id column="gmsid" jdbcType="INTEGER" property="gmsid" />
+    <result column="gmsname" jdbcType="VARCHAR" property="gmsname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    gmsid, gmsname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from guominshib
+    where gmsid = #{gmsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from guominshib
+    where gmsid = #{gmsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Guominshib">
+    insert into guominshib (gmsid, gmsname)
+    values (#{gmsid,jdbcType=INTEGER}, #{gmsname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Guominshib">
+    insert into guominshib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gmsid != null">
+        gmsid,
+      </if>
+      <if test="gmsname != null">
+        gmsname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gmsid != null">
+        #{gmsid,jdbcType=INTEGER},
+      </if>
+      <if test="gmsname != null">
+        #{gmsname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Guominshib">
+    update guominshib
+    <set>
+      <if test="gmsname != null">
+        gmsname = #{gmsname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gmsid = #{gmsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Guominshib">
+    update guominshib
+    set gmsname = #{gmsname,jdbcType=VARCHAR}
+    where gmsid = #{gmsid,jdbcType=INTEGER}
+  </update>
+</mapper>

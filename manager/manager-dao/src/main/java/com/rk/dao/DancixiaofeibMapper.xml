@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.DancixiaofeibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Dancixiaofeib">
+    <id column="danciid" jdbcType="INTEGER" property="danciid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="jianyanid" jdbcType="INTEGER" property="jianyanid" />
+    <result column="jianchaid" jdbcType="INTEGER" property="jianchaid" />
+    <result column="xiyaochufangid" jdbcType="INTEGER" property="xiyaochufangid" />
+    <result column="zhongyaoid" jdbcType="INTEGER" property="zhongyaoid" />
+    <result column="zhongchengyaoid" jdbcType="INTEGER" property="zhongchengyaoid" />
+    <result column="liliaodanid" jdbcType="INTEGER" property="liliaodanid" />
+    <result column="zhiliaoxiangmuid" jdbcType="INTEGER" property="zhiliaoxiangmuid" />
+    <result column="liaochengdi" jdbcType="INTEGER" property="liaochengdi" />
+    <result column="zhenjiuid" jdbcType="INTEGER" property="zhenjiuid" />
+    <result column="kongid" jdbcType="INTEGER" property="kongid" />
+    <result column="tiefuid" jdbcType="INTEGER" property="tiefuid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="stauts" jdbcType="INTEGER" property="stauts" />
+    <result column="zongmonery" jdbcType="DOUBLE" property="zongmonery" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    danciid, hzid, jianyanid, jianchaid, xiyaochufangid, zhongyaoid, zhongchengyaoid, 
+    liliaodanid, zhiliaoxiangmuid, liaochengdi, zhenjiuid, kongid, tiefuid, count, stauts, 
+    zongmonery
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from dancixiaofeib
+    where danciid = #{danciid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dancixiaofeib
+    where danciid = #{danciid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Dancixiaofeib">
+    insert into dancixiaofeib (danciid, hzid, jianyanid, 
+      jianchaid, xiyaochufangid, zhongyaoid, 
+      zhongchengyaoid, liliaodanid, zhiliaoxiangmuid, 
+      liaochengdi, zhenjiuid, kongid, 
+      tiefuid, count, stauts, 
+      zongmonery)
+    values (#{danciid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{jianyanid,jdbcType=INTEGER}, 
+      #{jianchaid,jdbcType=INTEGER}, #{xiyaochufangid,jdbcType=INTEGER}, #{zhongyaoid,jdbcType=INTEGER}, 
+      #{zhongchengyaoid,jdbcType=INTEGER}, #{liliaodanid,jdbcType=INTEGER}, #{zhiliaoxiangmuid,jdbcType=INTEGER}, 
+      #{liaochengdi,jdbcType=INTEGER}, #{zhenjiuid,jdbcType=INTEGER}, #{kongid,jdbcType=INTEGER}, 
+      #{tiefuid,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, #{stauts,jdbcType=INTEGER}, 
+      #{zongmonery,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Dancixiaofeib">
+    insert into dancixiaofeib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="danciid != null">
+        danciid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="jianyanid != null">
+        jianyanid,
+      </if>
+      <if test="jianchaid != null">
+        jianchaid,
+      </if>
+      <if test="xiyaochufangid != null">
+        xiyaochufangid,
+      </if>
+      <if test="zhongyaoid != null">
+        zhongyaoid,
+      </if>
+      <if test="zhongchengyaoid != null">
+        zhongchengyaoid,
+      </if>
+      <if test="liliaodanid != null">
+        liliaodanid,
+      </if>
+      <if test="zhiliaoxiangmuid != null">
+        zhiliaoxiangmuid,
+      </if>
+      <if test="liaochengdi != null">
+        liaochengdi,
+      </if>
+      <if test="zhenjiuid != null">
+        zhenjiuid,
+      </if>
+      <if test="kongid != null">
+        kongid,
+      </if>
+      <if test="tiefuid != null">
+        tiefuid,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="stauts != null">
+        stauts,
+      </if>
+      <if test="zongmonery != null">
+        zongmonery,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="danciid != null">
+        #{danciid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="jianyanid != null">
+        #{jianyanid,jdbcType=INTEGER},
+      </if>
+      <if test="jianchaid != null">
+        #{jianchaid,jdbcType=INTEGER},
+      </if>
+      <if test="xiyaochufangid != null">
+        #{xiyaochufangid,jdbcType=INTEGER},
+      </if>
+      <if test="zhongyaoid != null">
+        #{zhongyaoid,jdbcType=INTEGER},
+      </if>
+      <if test="zhongchengyaoid != null">
+        #{zhongchengyaoid,jdbcType=INTEGER},
+      </if>
+      <if test="liliaodanid != null">
+        #{liliaodanid,jdbcType=INTEGER},
+      </if>
+      <if test="zhiliaoxiangmuid != null">
+        #{zhiliaoxiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengdi != null">
+        #{liaochengdi,jdbcType=INTEGER},
+      </if>
+      <if test="zhenjiuid != null">
+        #{zhenjiuid,jdbcType=INTEGER},
+      </if>
+      <if test="kongid != null">
+        #{kongid,jdbcType=INTEGER},
+      </if>
+      <if test="tiefuid != null">
+        #{tiefuid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="stauts != null">
+        #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="zongmonery != null">
+        #{zongmonery,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Dancixiaofeib">
+    update dancixiaofeib
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="jianyanid != null">
+        jianyanid = #{jianyanid,jdbcType=INTEGER},
+      </if>
+      <if test="jianchaid != null">
+        jianchaid = #{jianchaid,jdbcType=INTEGER},
+      </if>
+      <if test="xiyaochufangid != null">
+        xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER},
+      </if>
+      <if test="zhongyaoid != null">
+        zhongyaoid = #{zhongyaoid,jdbcType=INTEGER},
+      </if>
+      <if test="zhongchengyaoid != null">
+        zhongchengyaoid = #{zhongchengyaoid,jdbcType=INTEGER},
+      </if>
+      <if test="liliaodanid != null">
+        liliaodanid = #{liliaodanid,jdbcType=INTEGER},
+      </if>
+      <if test="zhiliaoxiangmuid != null">
+        zhiliaoxiangmuid = #{zhiliaoxiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="liaochengdi != null">
+        liaochengdi = #{liaochengdi,jdbcType=INTEGER},
+      </if>
+      <if test="zhenjiuid != null">
+        zhenjiuid = #{zhenjiuid,jdbcType=INTEGER},
+      </if>
+      <if test="kongid != null">
+        kongid = #{kongid,jdbcType=INTEGER},
+      </if>
+      <if test="tiefuid != null">
+        tiefuid = #{tiefuid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="stauts != null">
+        stauts = #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="zongmonery != null">
+        zongmonery = #{zongmonery,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where danciid = #{danciid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Dancixiaofeib">
+    update dancixiaofeib
+    set hzid = #{hzid,jdbcType=INTEGER},
+      jianyanid = #{jianyanid,jdbcType=INTEGER},
+      jianchaid = #{jianchaid,jdbcType=INTEGER},
+      xiyaochufangid = #{xiyaochufangid,jdbcType=INTEGER},
+      zhongyaoid = #{zhongyaoid,jdbcType=INTEGER},
+      zhongchengyaoid = #{zhongchengyaoid,jdbcType=INTEGER},
+      liliaodanid = #{liliaodanid,jdbcType=INTEGER},
+      zhiliaoxiangmuid = #{zhiliaoxiangmuid,jdbcType=INTEGER},
+      liaochengdi = #{liaochengdi,jdbcType=INTEGER},
+      zhenjiuid = #{zhenjiuid,jdbcType=INTEGER},
+      kongid = #{kongid,jdbcType=INTEGER},
+      tiefuid = #{tiefuid,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      stauts = #{stauts,jdbcType=INTEGER},
+      zongmonery = #{zongmonery,jdbcType=DOUBLE}
+    where danciid = #{danciid,jdbcType=INTEGER}
+  </update>
+</mapper>

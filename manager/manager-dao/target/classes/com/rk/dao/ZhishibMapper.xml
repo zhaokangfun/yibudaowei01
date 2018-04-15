@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhishibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhishib">
+    <id column="zsid" jdbcType="INTEGER" property="zsid" />
+    <result column="guanjianzi" jdbcType="VARCHAR" property="guanjianzi" />
+    <result column="zuozhe" jdbcType="VARCHAR" property="zuozhe" />
+    <result column="laiyuan" jdbcType="VARCHAR" property="laiyuan" />
+    <result column="neirong" jdbcType="VARCHAR" property="neirong" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="ksid" jdbcType="INTEGER" property="ksid" />
+    <result column="zsstatus" jdbcType="INTEGER" property="zsstatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zsid, guanjianzi, zuozhe, laiyuan, neirong, time, ksid, zsstatus
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhishib
+    where zsid = #{zsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhishib
+    where zsid = #{zsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhishib">
+    insert into zhishib (zsid, guanjianzi, zuozhe, 
+      laiyuan, neirong, time, 
+      ksid, zsstatus)
+    values (#{zsid,jdbcType=INTEGER}, #{guanjianzi,jdbcType=VARCHAR}, #{zuozhe,jdbcType=VARCHAR}, 
+      #{laiyuan,jdbcType=VARCHAR}, #{neirong,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, 
+      #{ksid,jdbcType=INTEGER}, #{zsstatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhishib">
+    insert into zhishib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zsid != null">
+        zsid,
+      </if>
+      <if test="guanjianzi != null">
+        guanjianzi,
+      </if>
+      <if test="zuozhe != null">
+        zuozhe,
+      </if>
+      <if test="laiyuan != null">
+        laiyuan,
+      </if>
+      <if test="neirong != null">
+        neirong,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="ksid != null">
+        ksid,
+      </if>
+      <if test="zsstatus != null">
+        zsstatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zsid != null">
+        #{zsid,jdbcType=INTEGER},
+      </if>
+      <if test="guanjianzi != null">
+        #{guanjianzi,jdbcType=VARCHAR},
+      </if>
+      <if test="zuozhe != null">
+        #{zuozhe,jdbcType=VARCHAR},
+      </if>
+      <if test="laiyuan != null">
+        #{laiyuan,jdbcType=VARCHAR},
+      </if>
+      <if test="neirong != null">
+        #{neirong,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="ksid != null">
+        #{ksid,jdbcType=INTEGER},
+      </if>
+      <if test="zsstatus != null">
+        #{zsstatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhishib">
+    update zhishib
+    <set>
+      <if test="guanjianzi != null">
+        guanjianzi = #{guanjianzi,jdbcType=VARCHAR},
+      </if>
+      <if test="zuozhe != null">
+        zuozhe = #{zuozhe,jdbcType=VARCHAR},
+      </if>
+      <if test="laiyuan != null">
+        laiyuan = #{laiyuan,jdbcType=VARCHAR},
+      </if>
+      <if test="neirong != null">
+        neirong = #{neirong,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="ksid != null">
+        ksid = #{ksid,jdbcType=INTEGER},
+      </if>
+      <if test="zsstatus != null">
+        zsstatus = #{zsstatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where zsid = #{zsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhishib">
+    update zhishib
+    set guanjianzi = #{guanjianzi,jdbcType=VARCHAR},
+      zuozhe = #{zuozhe,jdbcType=VARCHAR},
+      laiyuan = #{laiyuan,jdbcType=VARCHAR},
+      neirong = #{neirong,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      ksid = #{ksid,jdbcType=INTEGER},
+      zsstatus = #{zsstatus,jdbcType=INTEGER}
+    where zsid = #{zsid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.LiliaobMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Liliaob">
+    <id column="llid" jdbcType="INTEGER" property="llid" />
+    <result column="llnumber" jdbcType="VARCHAR" property="llnumber" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="yizhubeizhu" jdbcType="VARCHAR" property="yizhubeizhu" />
+    <result column="yishiid" jdbcType="INTEGER" property="yishiid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    llid, llnumber, hzid, xiangmuid, yizhubeizhu, yishiid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from liliaob
+    where llid = #{llid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from liliaob
+    where llid = #{llid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Liliaob">
+    insert into liliaob (llid, llnumber, hzid, 
+      xiangmuid, yizhubeizhu, yishiid
+      )
+    values (#{llid,jdbcType=INTEGER}, #{llnumber,jdbcType=VARCHAR}, #{hzid,jdbcType=INTEGER}, 
+      #{xiangmuid,jdbcType=INTEGER}, #{yizhubeizhu,jdbcType=VARCHAR}, #{yishiid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Liliaob">
+    insert into liliaob
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="llid != null">
+        llid,
+      </if>
+      <if test="llnumber != null">
+        llnumber,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu,
+      </if>
+      <if test="yishiid != null">
+        yishiid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="llid != null">
+        #{llid,jdbcType=INTEGER},
+      </if>
+      <if test="llnumber != null">
+        #{llnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        #{yishiid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Liliaob">
+    update liliaob
+    <set>
+      <if test="llnumber != null">
+        llnumber = #{llnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        yishiid = #{yishiid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where llid = #{llid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Liliaob">
+    update liliaob
+    set llnumber = #{llnumber,jdbcType=VARCHAR},
+      hzid = #{hzid,jdbcType=INTEGER},
+      xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      yishiid = #{yishiid,jdbcType=INTEGER}
+    where llid = #{llid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.YuyuehcbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Yuyuehcb">
+    <id column="yyhcid" jdbcType="INTEGER" property="yyhcid" />
+    <result column="banciid" jdbcType="INTEGER" property="banciid" />
+    <result column="kssjduan" jdbcType="INTEGER" property="kssjduan" />
+    <result column="jssjduan" jdbcType="INTEGER" property="jssjduan" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    yyhcid, banciid, kssjduan, jssjduan
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yuyuehcb
+    where yyhcid = #{yyhcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yuyuehcb
+    where yyhcid = #{yyhcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Yuyuehcb">
+    insert into yuyuehcb (yyhcid, banciid, kssjduan, 
+      jssjduan)
+    values (#{yyhcid,jdbcType=INTEGER}, #{banciid,jdbcType=INTEGER}, #{kssjduan,jdbcType=INTEGER}, 
+      #{jssjduan,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Yuyuehcb">
+    insert into yuyuehcb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="yyhcid != null">
+        yyhcid,
+      </if>
+      <if test="banciid != null">
+        banciid,
+      </if>
+      <if test="kssjduan != null">
+        kssjduan,
+      </if>
+      <if test="jssjduan != null">
+        jssjduan,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="yyhcid != null">
+        #{yyhcid,jdbcType=INTEGER},
+      </if>
+      <if test="banciid != null">
+        #{banciid,jdbcType=INTEGER},
+      </if>
+      <if test="kssjduan != null">
+        #{kssjduan,jdbcType=INTEGER},
+      </if>
+      <if test="jssjduan != null">
+        #{jssjduan,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Yuyuehcb">
+    update yuyuehcb
+    <set>
+      <if test="banciid != null">
+        banciid = #{banciid,jdbcType=INTEGER},
+      </if>
+      <if test="kssjduan != null">
+        kssjduan = #{kssjduan,jdbcType=INTEGER},
+      </if>
+      <if test="jssjduan != null">
+        jssjduan = #{jssjduan,jdbcType=INTEGER},
+      </if>
+    </set>
+    where yyhcid = #{yyhcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Yuyuehcb">
+    update yuyuehcb
+    set banciid = #{banciid,jdbcType=INTEGER},
+      kssjduan = #{kssjduan,jdbcType=INTEGER},
+      jssjduan = #{jssjduan,jdbcType=INTEGER}
+    where yyhcid = #{yyhcid,jdbcType=INTEGER}
+  </update>
+</mapper>

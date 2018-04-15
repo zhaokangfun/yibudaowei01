@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry location="D:\mysql-connector-java-5.1.6.jar" />
+	<context id="context1">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳 -->
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://47.94.167.68/ybdw" userId="root"
+			password="123" />
+		<javaTypeResolver>
+			<!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short） -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成实体类 -->
+		<javaModelGenerator targetPackage="com.rk.entity"
+			targetProject="manager-entity" />
+		<!-- 生成映射文件 -->
+		<sqlMapGenerator targetPackage="com.rk.dao"
+			targetProject="manager-dao" />
+	  <!-- 生成DAO --> 
+	   <javaClientGenerator targetPackage="com.rk.dao" targetProject="manager-dao" type="XMLMAPPER" />
+	  
+	  <table tableName="%" enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false"></table>
+		 
+	</context>
+</generatorConfiguration>

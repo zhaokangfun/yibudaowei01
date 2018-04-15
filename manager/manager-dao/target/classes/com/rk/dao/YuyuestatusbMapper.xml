@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.YuyuestatusbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Yuyuestatusb">
+    <id column="yystatusid" jdbcType="INTEGER" property="yystatusid" />
+    <result column="yystatusname" jdbcType="VARCHAR" property="yystatusname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    yystatusid, yystatusname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yuyuestatusb
+    where yystatusid = #{yystatusid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yuyuestatusb
+    where yystatusid = #{yystatusid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Yuyuestatusb">
+    insert into yuyuestatusb (yystatusid, yystatusname)
+    values (#{yystatusid,jdbcType=INTEGER}, #{yystatusname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Yuyuestatusb">
+    insert into yuyuestatusb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="yystatusid != null">
+        yystatusid,
+      </if>
+      <if test="yystatusname != null">
+        yystatusname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="yystatusid != null">
+        #{yystatusid,jdbcType=INTEGER},
+      </if>
+      <if test="yystatusname != null">
+        #{yystatusname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Yuyuestatusb">
+    update yuyuestatusb
+    <set>
+      <if test="yystatusname != null">
+        yystatusname = #{yystatusname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where yystatusid = #{yystatusid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Yuyuestatusb">
+    update yuyuestatusb
+    set yystatusname = #{yystatusname,jdbcType=VARCHAR}
+    where yystatusid = #{yystatusid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ChuukufangshibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Chuukufangshib">
+    <id column="ckfsid" jdbcType="INTEGER" property="ckfsid" />
+    <result column="cktype" jdbcType="VARCHAR" property="cktype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ckfsid, cktype
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from chuukufangshib
+    where ckfsid = #{ckfsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from chuukufangshib
+    where ckfsid = #{ckfsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Chuukufangshib">
+    insert into chuukufangshib (ckfsid, cktype)
+    values (#{ckfsid,jdbcType=INTEGER}, #{cktype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Chuukufangshib">
+    insert into chuukufangshib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ckfsid != null">
+        ckfsid,
+      </if>
+      <if test="cktype != null">
+        cktype,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ckfsid != null">
+        #{ckfsid,jdbcType=INTEGER},
+      </if>
+      <if test="cktype != null">
+        #{cktype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Chuukufangshib">
+    update chuukufangshib
+    <set>
+      <if test="cktype != null">
+        cktype = #{cktype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ckfsid = #{ckfsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Chuukufangshib">
+    update chuukufangshib
+    set cktype = #{cktype,jdbcType=VARCHAR}
+    where ckfsid = #{ckfsid,jdbcType=INTEGER}
+  </update>
+</mapper>

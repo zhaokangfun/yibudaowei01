@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.XiangmubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Xiangmub">
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="xiangmuname" jdbcType="VARCHAR" property="xiangmuname" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="bianma" jdbcType="VARCHAR" property="bianma" />
+    <result column="danweiid" jdbcType="INTEGER" property="danweiid" />
+    <result column="didian" jdbcType="INTEGER" property="didian" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="zxdj" jdbcType="DOUBLE" property="zxdj" />
+    <result column="xmtcheng" jdbcType="INTEGER" property="xmtcheng" />
+    <result column="ticheng" jdbcType="VARCHAR" property="ticheng" />
+    <result column="xinzengid" jdbcType="INTEGER" property="xinzengid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.rk.entity.Xiangmub">
+    insert into xiangmub (xiangmuid, xiangmuname, price, 
+      bianma, danweiid, didian, 
+      pinyin, beizhu, zxdj, 
+      xmtcheng, ticheng, xinzengid
+      )
+    values (#{xiangmuid,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
+      #{bianma,jdbcType=VARCHAR}, #{danweiid,jdbcType=INTEGER}, #{didian,jdbcType=INTEGER}, 
+      #{pinyin,jdbcType=VARCHAR}, #{beizhu,jdbcType=VARCHAR}, #{zxdj,jdbcType=DOUBLE}, 
+      #{xmtcheng,jdbcType=INTEGER}, #{ticheng,jdbcType=VARCHAR}, #{xinzengid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Xiangmub">
+    insert into xiangmub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="xiangmuname != null">
+        xiangmuname,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="bianma != null">
+        bianma,
+      </if>
+      <if test="danweiid != null">
+        danweiid,
+      </if>
+      <if test="didian != null">
+        didian,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="zxdj != null">
+        zxdj,
+      </if>
+      <if test="xmtcheng != null">
+        xmtcheng,
+      </if>
+      <if test="ticheng != null">
+        ticheng,
+      </if>
+      <if test="xinzengid != null">
+        xinzengid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuname != null">
+        #{xiangmuname,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="bianma != null">
+        #{bianma,jdbcType=VARCHAR},
+      </if>
+      <if test="danweiid != null">
+        #{danweiid,jdbcType=INTEGER},
+      </if>
+      <if test="didian != null">
+        #{didian,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="zxdj != null">
+        #{zxdj,jdbcType=DOUBLE},
+      </if>
+      <if test="xmtcheng != null">
+        #{xmtcheng,jdbcType=INTEGER},
+      </if>
+      <if test="ticheng != null">
+        #{ticheng,jdbcType=VARCHAR},
+      </if>
+      <if test="xinzengid != null">
+        #{xinzengid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

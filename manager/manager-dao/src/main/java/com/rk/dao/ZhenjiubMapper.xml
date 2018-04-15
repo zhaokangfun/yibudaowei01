@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhenjiubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhenjiub">
+    <id column="zjid" jdbcType="INTEGER" property="zjid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="yizhubeizhu" jdbcType="VARCHAR" property="yizhubeizhu" />
+    <result column="yishiid" jdbcType="INTEGER" property="yishiid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="buweiid" jdbcType="INTEGER" property="buweiid" />
+    <result column="cifa" jdbcType="INTEGER" property="cifa" />
+    <result column="shoufa" jdbcType="INTEGER" property="shoufa" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="sum" jdbcType="INTEGER" property="sum" />
+    <result column="yizhu" jdbcType="VARCHAR" property="yizhu" />
+    <result column="zongjia" jdbcType="DOUBLE" property="zongjia" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zjid, hzid, xiangmuid, yizhubeizhu, yishiid, count, buweiid, cifa, shoufa, time, 
+    beizhu, price, sum, yizhu, zongjia
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhenjiub
+    where zjid = #{zjid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhenjiub
+    where zjid = #{zjid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhenjiub">
+    insert into zhenjiub (zjid, hzid, xiangmuid, 
+      yizhubeizhu, yishiid, count, 
+      buweiid, cifa, shoufa, 
+      time, beizhu, price, 
+      sum, yizhu, zongjia)
+    values (#{zjid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{xiangmuid,jdbcType=INTEGER}, 
+      #{yizhubeizhu,jdbcType=VARCHAR}, #{yishiid,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, 
+      #{buweiid,jdbcType=INTEGER}, #{cifa,jdbcType=INTEGER}, #{shoufa,jdbcType=INTEGER}, 
+      #{time,jdbcType=VARCHAR}, #{beizhu,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
+      #{sum,jdbcType=INTEGER}, #{yizhu,jdbcType=VARCHAR}, #{zongjia,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhenjiub">
+    insert into zhenjiub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zjid != null">
+        zjid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu,
+      </if>
+      <if test="yishiid != null">
+        yishiid,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="buweiid != null">
+        buweiid,
+      </if>
+      <if test="cifa != null">
+        cifa,
+      </if>
+      <if test="shoufa != null">
+        shoufa,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="sum != null">
+        sum,
+      </if>
+      <if test="yizhu != null">
+        yizhu,
+      </if>
+      <if test="zongjia != null">
+        zongjia,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zjid != null">
+        #{zjid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        #{yishiid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="buweiid != null">
+        #{buweiid,jdbcType=INTEGER},
+      </if>
+      <if test="cifa != null">
+        #{cifa,jdbcType=INTEGER},
+      </if>
+      <if test="shoufa != null">
+        #{shoufa,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="sum != null">
+        #{sum,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        #{yizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="zongjia != null">
+        #{zongjia,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhenjiub">
+    update zhenjiub
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="yizhubeizhu != null">
+        yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="yishiid != null">
+        yishiid = #{yishiid,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="buweiid != null">
+        buweiid = #{buweiid,jdbcType=INTEGER},
+      </if>
+      <if test="cifa != null">
+        cifa = #{cifa,jdbcType=INTEGER},
+      </if>
+      <if test="shoufa != null">
+        shoufa = #{shoufa,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="sum != null">
+        sum = #{sum,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        yizhu = #{yizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="zongjia != null">
+        zongjia = #{zongjia,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where zjid = #{zjid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhenjiub">
+    update zhenjiub
+    set hzid = #{hzid,jdbcType=INTEGER},
+      xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      yizhubeizhu = #{yizhubeizhu,jdbcType=VARCHAR},
+      yishiid = #{yishiid,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      buweiid = #{buweiid,jdbcType=INTEGER},
+      cifa = #{cifa,jdbcType=INTEGER},
+      shoufa = #{shoufa,jdbcType=INTEGER},
+      time = #{time,jdbcType=VARCHAR},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      sum = #{sum,jdbcType=INTEGER},
+      yizhu = #{yizhu,jdbcType=VARCHAR},
+      zongjia = #{zongjia,jdbcType=DOUBLE}
+    where zjid = #{zjid,jdbcType=INTEGER}
+  </update>
+</mapper>

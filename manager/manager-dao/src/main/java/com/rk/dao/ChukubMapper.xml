@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ChukubMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Chukub">
+    <id column="ckid" jdbcType="INTEGER" property="ckid" />
+    <result column="cknumber" jdbcType="VARCHAR" property="cknumber" />
+    <result column="cktime" jdbcType="VARCHAR" property="cktime" />
+    <result column="cktypeid" jdbcType="INTEGER" property="cktypeid" />
+    <result column="keshiid" jdbcType="INTEGER" property="keshiid" />
+    <result column="ygid" jdbcType="INTEGER" property="ygid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="ypid" jdbcType="INTEGER" property="ypid" />
+    <result column="ypname" jdbcType="VARCHAR" property="ypname" />
+    <result column="ckcount" jdbcType="INTEGER" property="ckcount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ckid, cknumber, cktime, cktypeid, keshiid, ygid, beizhu, ypid, ypname, ckcount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from chukub
+    where ckid = #{ckid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from chukub
+    where ckid = #{ckid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Chukub">
+    insert into chukub (ckid, cknumber, cktime, 
+      cktypeid, keshiid, ygid, 
+      beizhu, ypid, ypname, 
+      ckcount)
+    values (#{ckid,jdbcType=INTEGER}, #{cknumber,jdbcType=VARCHAR}, #{cktime,jdbcType=VARCHAR}, 
+      #{cktypeid,jdbcType=INTEGER}, #{keshiid,jdbcType=INTEGER}, #{ygid,jdbcType=INTEGER}, 
+      #{beizhu,jdbcType=VARCHAR}, #{ypid,jdbcType=INTEGER}, #{ypname,jdbcType=VARCHAR}, 
+      #{ckcount,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Chukub">
+    insert into chukub
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ckid != null">
+        ckid,
+      </if>
+      <if test="cknumber != null">
+        cknumber,
+      </if>
+      <if test="cktime != null">
+        cktime,
+      </if>
+      <if test="cktypeid != null">
+        cktypeid,
+      </if>
+      <if test="keshiid != null">
+        keshiid,
+      </if>
+      <if test="ygid != null">
+        ygid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="ypid != null">
+        ypid,
+      </if>
+      <if test="ypname != null">
+        ypname,
+      </if>
+      <if test="ckcount != null">
+        ckcount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ckid != null">
+        #{ckid,jdbcType=INTEGER},
+      </if>
+      <if test="cknumber != null">
+        #{cknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cktime != null">
+        #{cktime,jdbcType=VARCHAR},
+      </if>
+      <if test="cktypeid != null">
+        #{cktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="keshiid != null">
+        #{keshiid,jdbcType=INTEGER},
+      </if>
+      <if test="ygid != null">
+        #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="ypid != null">
+        #{ypid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="ckcount != null">
+        #{ckcount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Chukub">
+    update chukub
+    <set>
+      <if test="cknumber != null">
+        cknumber = #{cknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cktime != null">
+        cktime = #{cktime,jdbcType=VARCHAR},
+      </if>
+      <if test="cktypeid != null">
+        cktypeid = #{cktypeid,jdbcType=INTEGER},
+      </if>
+      <if test="keshiid != null">
+        keshiid = #{keshiid,jdbcType=INTEGER},
+      </if>
+      <if test="ygid != null">
+        ygid = #{ygid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="ypid != null">
+        ypid = #{ypid,jdbcType=INTEGER},
+      </if>
+      <if test="ypname != null">
+        ypname = #{ypname,jdbcType=VARCHAR},
+      </if>
+      <if test="ckcount != null">
+        ckcount = #{ckcount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ckid = #{ckid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Chukub">
+    update chukub
+    set cknumber = #{cknumber,jdbcType=VARCHAR},
+      cktime = #{cktime,jdbcType=VARCHAR},
+      cktypeid = #{cktypeid,jdbcType=INTEGER},
+      keshiid = #{keshiid,jdbcType=INTEGER},
+      ygid = #{ygid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      ypid = #{ypid,jdbcType=INTEGER},
+      ypname = #{ypname,jdbcType=VARCHAR},
+      ckcount = #{ckcount,jdbcType=INTEGER}
+    where ckid = #{ckid,jdbcType=INTEGER}
+  </update>
+</mapper>

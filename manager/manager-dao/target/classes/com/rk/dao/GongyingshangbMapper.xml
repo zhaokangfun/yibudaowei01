@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.GongyingshangbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Gongyingshangb">
+    <id column="gysid" jdbcType="INTEGER" property="gysid" />
+    <result column="gysnumber" jdbcType="VARCHAR" property="gysnumber" />
+    <result column="gysname" jdbcType="VARCHAR" property="gysname" />
+    <result column="cptypeid" jdbcType="INTEGER" property="cptypeid" />
+    <result column="gysaddress" jdbcType="VARCHAR" property="gysaddress" />
+    <result column="gysjiancheng" jdbcType="VARCHAR" property="gysjiancheng" />
+    <result column="yyzznumber" jdbcType="VARCHAR" property="yyzznumber" />
+    <result column="wubi" jdbcType="VARCHAR" property="wubi" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="jyxknumber" jdbcType="VARCHAR" property="jyxknumber" />
+    <result column="ylqxnumber" jdbcType="VARCHAR" property="ylqxnumber" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    gysid, gysnumber, gysname, cptypeid, gysaddress, gysjiancheng, yyzznumber, wubi, 
+    pinyin, jyxknumber, ylqxnumber, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from gongyingshangb
+    where gysid = #{gysid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from gongyingshangb
+    where gysid = #{gysid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Gongyingshangb">
+    insert into gongyingshangb (gysid, gysnumber, gysname, 
+      cptypeid, gysaddress, gysjiancheng, 
+      yyzznumber, wubi, pinyin, 
+      jyxknumber, ylqxnumber, status
+      )
+    values (#{gysid,jdbcType=INTEGER}, #{gysnumber,jdbcType=VARCHAR}, #{gysname,jdbcType=VARCHAR}, 
+      #{cptypeid,jdbcType=INTEGER}, #{gysaddress,jdbcType=VARCHAR}, #{gysjiancheng,jdbcType=VARCHAR}, 
+      #{yyzznumber,jdbcType=VARCHAR}, #{wubi,jdbcType=VARCHAR}, #{pinyin,jdbcType=VARCHAR}, 
+      #{jyxknumber,jdbcType=VARCHAR}, #{ylqxnumber,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Gongyingshangb">
+    insert into gongyingshangb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gysid != null">
+        gysid,
+      </if>
+      <if test="gysnumber != null">
+        gysnumber,
+      </if>
+      <if test="gysname != null">
+        gysname,
+      </if>
+      <if test="cptypeid != null">
+        cptypeid,
+      </if>
+      <if test="gysaddress != null">
+        gysaddress,
+      </if>
+      <if test="gysjiancheng != null">
+        gysjiancheng,
+      </if>
+      <if test="yyzznumber != null">
+        yyzznumber,
+      </if>
+      <if test="wubi != null">
+        wubi,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+      <if test="jyxknumber != null">
+        jyxknumber,
+      </if>
+      <if test="ylqxnumber != null">
+        ylqxnumber,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gysid != null">
+        #{gysid,jdbcType=INTEGER},
+      </if>
+      <if test="gysnumber != null">
+        #{gysnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="gysname != null">
+        #{gysname,jdbcType=VARCHAR},
+      </if>
+      <if test="cptypeid != null">
+        #{cptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="gysaddress != null">
+        #{gysaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="gysjiancheng != null">
+        #{gysjiancheng,jdbcType=VARCHAR},
+      </if>
+      <if test="yyzznumber != null">
+        #{yyzznumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wubi != null">
+        #{wubi,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="jyxknumber != null">
+        #{jyxknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ylqxnumber != null">
+        #{ylqxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Gongyingshangb">
+    update gongyingshangb
+    <set>
+      <if test="gysnumber != null">
+        gysnumber = #{gysnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="gysname != null">
+        gysname = #{gysname,jdbcType=VARCHAR},
+      </if>
+      <if test="cptypeid != null">
+        cptypeid = #{cptypeid,jdbcType=INTEGER},
+      </if>
+      <if test="gysaddress != null">
+        gysaddress = #{gysaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="gysjiancheng != null">
+        gysjiancheng = #{gysjiancheng,jdbcType=VARCHAR},
+      </if>
+      <if test="yyzznumber != null">
+        yyzznumber = #{yyzznumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wubi != null">
+        wubi = #{wubi,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="jyxknumber != null">
+        jyxknumber = #{jyxknumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ylqxnumber != null">
+        ylqxnumber = #{ylqxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where gysid = #{gysid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Gongyingshangb">
+    update gongyingshangb
+    set gysnumber = #{gysnumber,jdbcType=VARCHAR},
+      gysname = #{gysname,jdbcType=VARCHAR},
+      cptypeid = #{cptypeid,jdbcType=INTEGER},
+      gysaddress = #{gysaddress,jdbcType=VARCHAR},
+      gysjiancheng = #{gysjiancheng,jdbcType=VARCHAR},
+      yyzznumber = #{yyzznumber,jdbcType=VARCHAR},
+      wubi = #{wubi,jdbcType=VARCHAR},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      jyxknumber = #{jyxknumber,jdbcType=VARCHAR},
+      ylqxnumber = #{ylqxnumber,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER}
+    where gysid = #{gysid,jdbcType=INTEGER}
+  </update>
+</mapper>

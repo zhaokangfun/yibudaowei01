@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.JianchabMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Jianchab">
+    <id column="jcid" jdbcType="INTEGER" property="jcid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="biaoben" jdbcType="VARCHAR" property="biaoben" />
+    <result column="diya" jdbcType="DOUBLE" property="diya" />
+    <result column="maibo" jdbcType="DOUBLE" property="maibo" />
+    <result column="huxi" jdbcType="INTEGER" property="huxi" />
+    <result column="hight" jdbcType="DOUBLE" property="hight" />
+    <result column="tizhong" jdbcType="DOUBLE" property="tizhong" />
+    <result column="BMI" jdbcType="DOUBLE" property="bmi" />
+    <result column="xmtcheng" jdbcType="INTEGER" property="xmtcheng" />
+    <result column="ticheng" jdbcType="VARCHAR" property="ticheng" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jcid, hzid, xiangmuid, biaoben, diya, maibo, huxi, hight, tizhong, BMI, xmtcheng, 
+    ticheng
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jianchab
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jianchab
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Jianchab">
+    insert into jianchab (jcid, hzid, xiangmuid, 
+      biaoben, diya, maibo, 
+      huxi, hight, tizhong, 
+      BMI, xmtcheng, ticheng
+      )
+    values (#{jcid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{xiangmuid,jdbcType=INTEGER}, 
+      #{biaoben,jdbcType=VARCHAR}, #{diya,jdbcType=DOUBLE}, #{maibo,jdbcType=DOUBLE}, 
+      #{huxi,jdbcType=INTEGER}, #{hight,jdbcType=DOUBLE}, #{tizhong,jdbcType=DOUBLE}, 
+      #{bmi,jdbcType=DOUBLE}, #{xmtcheng,jdbcType=INTEGER}, #{ticheng,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Jianchab">
+    insert into jianchab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jcid != null">
+        jcid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="biaoben != null">
+        biaoben,
+      </if>
+      <if test="diya != null">
+        diya,
+      </if>
+      <if test="maibo != null">
+        maibo,
+      </if>
+      <if test="huxi != null">
+        huxi,
+      </if>
+      <if test="hight != null">
+        hight,
+      </if>
+      <if test="tizhong != null">
+        tizhong,
+      </if>
+      <if test="bmi != null">
+        BMI,
+      </if>
+      <if test="xmtcheng != null">
+        xmtcheng,
+      </if>
+      <if test="ticheng != null">
+        ticheng,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jcid != null">
+        #{jcid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="biaoben != null">
+        #{biaoben,jdbcType=VARCHAR},
+      </if>
+      <if test="diya != null">
+        #{diya,jdbcType=DOUBLE},
+      </if>
+      <if test="maibo != null">
+        #{maibo,jdbcType=DOUBLE},
+      </if>
+      <if test="huxi != null">
+        #{huxi,jdbcType=INTEGER},
+      </if>
+      <if test="hight != null">
+        #{hight,jdbcType=DOUBLE},
+      </if>
+      <if test="tizhong != null">
+        #{tizhong,jdbcType=DOUBLE},
+      </if>
+      <if test="bmi != null">
+        #{bmi,jdbcType=DOUBLE},
+      </if>
+      <if test="xmtcheng != null">
+        #{xmtcheng,jdbcType=INTEGER},
+      </if>
+      <if test="ticheng != null">
+        #{ticheng,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jianchab">
+    update jianchab
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="biaoben != null">
+        biaoben = #{biaoben,jdbcType=VARCHAR},
+      </if>
+      <if test="diya != null">
+        diya = #{diya,jdbcType=DOUBLE},
+      </if>
+      <if test="maibo != null">
+        maibo = #{maibo,jdbcType=DOUBLE},
+      </if>
+      <if test="huxi != null">
+        huxi = #{huxi,jdbcType=INTEGER},
+      </if>
+      <if test="hight != null">
+        hight = #{hight,jdbcType=DOUBLE},
+      </if>
+      <if test="tizhong != null">
+        tizhong = #{tizhong,jdbcType=DOUBLE},
+      </if>
+      <if test="bmi != null">
+        BMI = #{bmi,jdbcType=DOUBLE},
+      </if>
+      <if test="xmtcheng != null">
+        xmtcheng = #{xmtcheng,jdbcType=INTEGER},
+      </if>
+      <if test="ticheng != null">
+        ticheng = #{ticheng,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jianchab">
+    update jianchab
+    set hzid = #{hzid,jdbcType=INTEGER},
+      xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      biaoben = #{biaoben,jdbcType=VARCHAR},
+      diya = #{diya,jdbcType=DOUBLE},
+      maibo = #{maibo,jdbcType=DOUBLE},
+      huxi = #{huxi,jdbcType=INTEGER},
+      hight = #{hight,jdbcType=DOUBLE},
+      tizhong = #{tizhong,jdbcType=DOUBLE},
+      BMI = #{bmi,jdbcType=DOUBLE},
+      xmtcheng = #{xmtcheng,jdbcType=INTEGER},
+      ticheng = #{ticheng,jdbcType=VARCHAR}
+    where jcid = #{jcid,jdbcType=INTEGER}
+  </update>
+</mapper>

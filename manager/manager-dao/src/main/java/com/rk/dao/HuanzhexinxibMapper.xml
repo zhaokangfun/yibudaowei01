@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.HuanzhexinxibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Huanzhexinxib">
+    <id column="hzxxid" jdbcType="INTEGER" property="hzxxid" />
+    <result column="huanzheid" jdbcType="INTEGER" property="huanzheid" />
+    <result column="lxrtypeid" jdbcType="INTEGER" property="lxrtypeid" />
+    <result column="lxrname" jdbcType="VARCHAR" property="lxrname" />
+    <result column="lxrphone" jdbcType="VARCHAR" property="lxrphone" />
+    <result column="vipxx" jdbcType="INTEGER" property="vipxx" />
+    <result column="zjlxid" jdbcType="INTEGER" property="zjlxid" />
+    <result column="zjidentity" jdbcType="VARCHAR" property="zjidentity" />
+    <result column="jsr" jdbcType="VARCHAR" property="jsr" />
+    <result column="brtype" jdbcType="VARCHAR" property="brtype" />
+    <result column="guoji" jdbcType="VARCHAR" property="guoji" />
+    <result column="minzu" jdbcType="VARCHAR" property="minzu" />
+    <result column="zhiye" jdbcType="VARCHAR" property="zhiye" />
+    <result column="dwname" jdbcType="VARCHAR" property="dwname" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="hunyin" jdbcType="VARCHAR" property="hunyin" />
+    <result column="xuexingid" jdbcType="VARCHAR" property="xuexingid" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="addressxx" jdbcType="VARCHAR" property="addressxx" />
+    <result column="ysid" jdbcType="INTEGER" property="ysid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    hzxxid, huanzheid, lxrtypeid, lxrname, lxrphone, vipxx, zjlxid, zjidentity, jsr, 
+    brtype, guoji, minzu, zhiye, dwname, email, hunyin, xuexingid, address, addressxx, 
+    ysid, beizhu
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from huanzhexinxib
+    where hzxxid = #{hzxxid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from huanzhexinxib
+    where hzxxid = #{hzxxid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Huanzhexinxib">
+    insert into huanzhexinxib (hzxxid, huanzheid, lxrtypeid, 
+      lxrname, lxrphone, vipxx, 
+      zjlxid, zjidentity, jsr, 
+      brtype, guoji, minzu, 
+      zhiye, dwname, email, 
+      hunyin, xuexingid, address, 
+      addressxx, ysid, beizhu
+      )
+    values (#{hzxxid,jdbcType=INTEGER}, #{huanzheid,jdbcType=INTEGER}, #{lxrtypeid,jdbcType=INTEGER}, 
+      #{lxrname,jdbcType=VARCHAR}, #{lxrphone,jdbcType=VARCHAR}, #{vipxx,jdbcType=INTEGER}, 
+      #{zjlxid,jdbcType=INTEGER}, #{zjidentity,jdbcType=VARCHAR}, #{jsr,jdbcType=VARCHAR}, 
+      #{brtype,jdbcType=VARCHAR}, #{guoji,jdbcType=VARCHAR}, #{minzu,jdbcType=VARCHAR}, 
+      #{zhiye,jdbcType=VARCHAR}, #{dwname,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{hunyin,jdbcType=VARCHAR}, #{xuexingid,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{addressxx,jdbcType=VARCHAR}, #{ysid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Huanzhexinxib">
+    insert into huanzhexinxib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hzxxid != null">
+        hzxxid,
+      </if>
+      <if test="huanzheid != null">
+        huanzheid,
+      </if>
+      <if test="lxrtypeid != null">
+        lxrtypeid,
+      </if>
+      <if test="lxrname != null">
+        lxrname,
+      </if>
+      <if test="lxrphone != null">
+        lxrphone,
+      </if>
+      <if test="vipxx != null">
+        vipxx,
+      </if>
+      <if test="zjlxid != null">
+        zjlxid,
+      </if>
+      <if test="zjidentity != null">
+        zjidentity,
+      </if>
+      <if test="jsr != null">
+        jsr,
+      </if>
+      <if test="brtype != null">
+        brtype,
+      </if>
+      <if test="guoji != null">
+        guoji,
+      </if>
+      <if test="minzu != null">
+        minzu,
+      </if>
+      <if test="zhiye != null">
+        zhiye,
+      </if>
+      <if test="dwname != null">
+        dwname,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="hunyin != null">
+        hunyin,
+      </if>
+      <if test="xuexingid != null">
+        xuexingid,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="addressxx != null">
+        addressxx,
+      </if>
+      <if test="ysid != null">
+        ysid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hzxxid != null">
+        #{hzxxid,jdbcType=INTEGER},
+      </if>
+      <if test="huanzheid != null">
+        #{huanzheid,jdbcType=INTEGER},
+      </if>
+      <if test="lxrtypeid != null">
+        #{lxrtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="lxrname != null">
+        #{lxrname,jdbcType=VARCHAR},
+      </if>
+      <if test="lxrphone != null">
+        #{lxrphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vipxx != null">
+        #{vipxx,jdbcType=INTEGER},
+      </if>
+      <if test="zjlxid != null">
+        #{zjlxid,jdbcType=INTEGER},
+      </if>
+      <if test="zjidentity != null">
+        #{zjidentity,jdbcType=VARCHAR},
+      </if>
+      <if test="jsr != null">
+        #{jsr,jdbcType=VARCHAR},
+      </if>
+      <if test="brtype != null">
+        #{brtype,jdbcType=VARCHAR},
+      </if>
+      <if test="guoji != null">
+        #{guoji,jdbcType=VARCHAR},
+      </if>
+      <if test="minzu != null">
+        #{minzu,jdbcType=VARCHAR},
+      </if>
+      <if test="zhiye != null">
+        #{zhiye,jdbcType=VARCHAR},
+      </if>
+      <if test="dwname != null">
+        #{dwname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="hunyin != null">
+        #{hunyin,jdbcType=VARCHAR},
+      </if>
+      <if test="xuexingid != null">
+        #{xuexingid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addressxx != null">
+        #{addressxx,jdbcType=VARCHAR},
+      </if>
+      <if test="ysid != null">
+        #{ysid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Huanzhexinxib">
+    update huanzhexinxib
+    <set>
+      <if test="huanzheid != null">
+        huanzheid = #{huanzheid,jdbcType=INTEGER},
+      </if>
+      <if test="lxrtypeid != null">
+        lxrtypeid = #{lxrtypeid,jdbcType=INTEGER},
+      </if>
+      <if test="lxrname != null">
+        lxrname = #{lxrname,jdbcType=VARCHAR},
+      </if>
+      <if test="lxrphone != null">
+        lxrphone = #{lxrphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vipxx != null">
+        vipxx = #{vipxx,jdbcType=INTEGER},
+      </if>
+      <if test="zjlxid != null">
+        zjlxid = #{zjlxid,jdbcType=INTEGER},
+      </if>
+      <if test="zjidentity != null">
+        zjidentity = #{zjidentity,jdbcType=VARCHAR},
+      </if>
+      <if test="jsr != null">
+        jsr = #{jsr,jdbcType=VARCHAR},
+      </if>
+      <if test="brtype != null">
+        brtype = #{brtype,jdbcType=VARCHAR},
+      </if>
+      <if test="guoji != null">
+        guoji = #{guoji,jdbcType=VARCHAR},
+      </if>
+      <if test="minzu != null">
+        minzu = #{minzu,jdbcType=VARCHAR},
+      </if>
+      <if test="zhiye != null">
+        zhiye = #{zhiye,jdbcType=VARCHAR},
+      </if>
+      <if test="dwname != null">
+        dwname = #{dwname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="hunyin != null">
+        hunyin = #{hunyin,jdbcType=VARCHAR},
+      </if>
+      <if test="xuexingid != null">
+        xuexingid = #{xuexingid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addressxx != null">
+        addressxx = #{addressxx,jdbcType=VARCHAR},
+      </if>
+      <if test="ysid != null">
+        ysid = #{ysid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where hzxxid = #{hzxxid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Huanzhexinxib">
+    update huanzhexinxib
+    set huanzheid = #{huanzheid,jdbcType=INTEGER},
+      lxrtypeid = #{lxrtypeid,jdbcType=INTEGER},
+      lxrname = #{lxrname,jdbcType=VARCHAR},
+      lxrphone = #{lxrphone,jdbcType=VARCHAR},
+      vipxx = #{vipxx,jdbcType=INTEGER},
+      zjlxid = #{zjlxid,jdbcType=INTEGER},
+      zjidentity = #{zjidentity,jdbcType=VARCHAR},
+      jsr = #{jsr,jdbcType=VARCHAR},
+      brtype = #{brtype,jdbcType=VARCHAR},
+      guoji = #{guoji,jdbcType=VARCHAR},
+      minzu = #{minzu,jdbcType=VARCHAR},
+      zhiye = #{zhiye,jdbcType=VARCHAR},
+      dwname = #{dwname,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      hunyin = #{hunyin,jdbcType=VARCHAR},
+      xuexingid = #{xuexingid,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      addressxx = #{addressxx,jdbcType=VARCHAR},
+      ysid = #{ysid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR}
+    where hzxxid = #{hzxxid,jdbcType=INTEGER}
+  </update>
+</mapper>

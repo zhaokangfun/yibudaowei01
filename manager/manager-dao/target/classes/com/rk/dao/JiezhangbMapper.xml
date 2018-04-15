@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.JiezhangbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Jiezhangb">
+    <id column="jiezhangid" jdbcType="INTEGER" property="jiezhangid" />
+    <result column="shoufeijiluid" jdbcType="INTEGER" property="shoufeijiluid" />
+    <result column="jiezhangygid" jdbcType="INTEGER" property="jiezhangygid" />
+    <result column="jiezhangtime" jdbcType="VARCHAR" property="jiezhangtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jiezhangid, shoufeijiluid, jiezhangygid, jiezhangtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jiezhangb
+    where jiezhangid = #{jiezhangid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jiezhangb
+    where jiezhangid = #{jiezhangid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Jiezhangb">
+    insert into jiezhangb (jiezhangid, shoufeijiluid, jiezhangygid, 
+      jiezhangtime)
+    values (#{jiezhangid,jdbcType=INTEGER}, #{shoufeijiluid,jdbcType=INTEGER}, #{jiezhangygid,jdbcType=INTEGER}, 
+      #{jiezhangtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Jiezhangb">
+    insert into jiezhangb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jiezhangid != null">
+        jiezhangid,
+      </if>
+      <if test="shoufeijiluid != null">
+        shoufeijiluid,
+      </if>
+      <if test="jiezhangygid != null">
+        jiezhangygid,
+      </if>
+      <if test="jiezhangtime != null">
+        jiezhangtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jiezhangid != null">
+        #{jiezhangid,jdbcType=INTEGER},
+      </if>
+      <if test="shoufeijiluid != null">
+        #{shoufeijiluid,jdbcType=INTEGER},
+      </if>
+      <if test="jiezhangygid != null">
+        #{jiezhangygid,jdbcType=INTEGER},
+      </if>
+      <if test="jiezhangtime != null">
+        #{jiezhangtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jiezhangb">
+    update jiezhangb
+    <set>
+      <if test="shoufeijiluid != null">
+        shoufeijiluid = #{shoufeijiluid,jdbcType=INTEGER},
+      </if>
+      <if test="jiezhangygid != null">
+        jiezhangygid = #{jiezhangygid,jdbcType=INTEGER},
+      </if>
+      <if test="jiezhangtime != null">
+        jiezhangtime = #{jiezhangtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jiezhangid = #{jiezhangid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jiezhangb">
+    update jiezhangb
+    set shoufeijiluid = #{shoufeijiluid,jdbcType=INTEGER},
+      jiezhangygid = #{jiezhangygid,jdbcType=INTEGER},
+      jiezhangtime = #{jiezhangtime,jdbcType=VARCHAR}
+    where jiezhangid = #{jiezhangid,jdbcType=INTEGER}
+  </update>
+</mapper>

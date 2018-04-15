@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.ZhiliaoxiangmuzhongjianbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Zhiliaoxiangmuzhongjianb">
+    <id column="zlid" jdbcType="INTEGER" property="zlid" />
+    <result column="hzid" jdbcType="INTEGER" property="hzid" />
+    <result column="zltype" jdbcType="INTEGER" property="zltype" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="xiangmuid" jdbcType="INTEGER" property="xiangmuid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="summonry" jdbcType="DOUBLE" property="summonry" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    zlid, hzid, zltype, count, xiangmuid, beizhu, price, summonry
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zhiliaoxiangmuzhongjianb
+    where zlid = #{zlid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zhiliaoxiangmuzhongjianb
+    where zlid = #{zlid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Zhiliaoxiangmuzhongjianb">
+    insert into zhiliaoxiangmuzhongjianb (zlid, hzid, zltype, 
+      count, xiangmuid, beizhu, 
+      price, summonry)
+    values (#{zlid,jdbcType=INTEGER}, #{hzid,jdbcType=INTEGER}, #{zltype,jdbcType=INTEGER}, 
+      #{count,jdbcType=INTEGER}, #{xiangmuid,jdbcType=INTEGER}, #{beizhu,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DOUBLE}, #{summonry,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Zhiliaoxiangmuzhongjianb">
+    insert into zhiliaoxiangmuzhongjianb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zlid != null">
+        zlid,
+      </if>
+      <if test="hzid != null">
+        hzid,
+      </if>
+      <if test="zltype != null">
+        zltype,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="summonry != null">
+        summonry,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zlid != null">
+        #{zlid,jdbcType=INTEGER},
+      </if>
+      <if test="hzid != null">
+        #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zltype != null">
+        #{zltype,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="summonry != null">
+        #{summonry,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Zhiliaoxiangmuzhongjianb">
+    update zhiliaoxiangmuzhongjianb
+    <set>
+      <if test="hzid != null">
+        hzid = #{hzid,jdbcType=INTEGER},
+      </if>
+      <if test="zltype != null">
+        zltype = #{zltype,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="xiangmuid != null">
+        xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="summonry != null">
+        summonry = #{summonry,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where zlid = #{zlid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Zhiliaoxiangmuzhongjianb">
+    update zhiliaoxiangmuzhongjianb
+    set hzid = #{hzid,jdbcType=INTEGER},
+      zltype = #{zltype,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      xiangmuid = #{xiangmuid,jdbcType=INTEGER},
+      beizhu = #{beizhu,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      summonry = #{summonry,jdbcType=DOUBLE}
+    where zlid = #{zlid,jdbcType=INTEGER}
+  </update>
+</mapper>

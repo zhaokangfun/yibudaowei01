@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.PinlvbMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Pinlvb">
+    <id column="plid" jdbcType="INTEGER" property="plid" />
+    <result column="plname" jdbcType="VARCHAR" property="plname" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    plid, plname, beizhu
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from pinlvb
+    where plid = #{plid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from pinlvb
+    where plid = #{plid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Pinlvb">
+    insert into pinlvb (plid, plname, beizhu
+      )
+    values (#{plid,jdbcType=INTEGER}, #{plname,jdbcType=VARCHAR}, #{beizhu,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Pinlvb">
+    insert into pinlvb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="plid != null">
+        plid,
+      </if>
+      <if test="plname != null">
+        plname,
+      </if>
+      <if test="beizhu != null">
+        beizhu,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="plid != null">
+        #{plid,jdbcType=INTEGER},
+      </if>
+      <if test="plname != null">
+        #{plname,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Pinlvb">
+    update pinlvb
+    <set>
+      <if test="plname != null">
+        plname = #{plname,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null">
+        beizhu = #{beizhu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where plid = #{plid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Pinlvb">
+    update pinlvb
+    set plname = #{plname,jdbcType=VARCHAR},
+      beizhu = #{beizhu,jdbcType=VARCHAR}
+    where plid = #{plid,jdbcType=INTEGER}
+  </update>
+</mapper>

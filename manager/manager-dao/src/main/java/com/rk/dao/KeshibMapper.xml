@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.KeshibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Keshib">
+    <id column="keshiid" jdbcType="INTEGER" property="keshiid" />
+    <result column="keshiname" jdbcType="VARCHAR" property="keshiname" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="createtime" jdbcType="VARCHAR" property="createtime" />
+    <result column="keshitypeid" jdbcType="INTEGER" property="keshitypeid" />
+    <result column="yuyuestatus" jdbcType="INTEGER" property="yuyuestatus" />
+    <result column="keshiaddress" jdbcType="VARCHAR" property="keshiaddress" />
+    <result column="keshimiaoshu" jdbcType="VARCHAR" property="keshimiaoshu" />
+    <result column="parentid" jdbcType="INTEGER" property="parentid" />
+    <result column="shuxun" jdbcType="INTEGER" property="shuxun" />
+    <result column="zwid" jdbcType="INTEGER" property="zwid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    keshiid, keshiname, status, createtime, keshitypeid, yuyuestatus, keshiaddress, keshimiaoshu, 
+    parentid, shuxun, zwid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from keshib
+    where keshiid = #{keshiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from keshib
+    where keshiid = #{keshiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Keshib">
+    insert into keshib (keshiid, keshiname, status, 
+      createtime, keshitypeid, yuyuestatus, 
+      keshiaddress, keshimiaoshu, parentid, 
+      shuxun, zwid)
+    values (#{keshiid,jdbcType=INTEGER}, #{keshiname,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=VARCHAR}, #{keshitypeid,jdbcType=INTEGER}, #{yuyuestatus,jdbcType=INTEGER}, 
+      #{keshiaddress,jdbcType=VARCHAR}, #{keshimiaoshu,jdbcType=VARCHAR}, #{parentid,jdbcType=INTEGER}, 
+      #{shuxun,jdbcType=INTEGER}, #{zwid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Keshib">
+    insert into keshib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="keshiid != null">
+        keshiid,
+      </if>
+      <if test="keshiname != null">
+        keshiname,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="keshitypeid != null">
+        keshitypeid,
+      </if>
+      <if test="yuyuestatus != null">
+        yuyuestatus,
+      </if>
+      <if test="keshiaddress != null">
+        keshiaddress,
+      </if>
+      <if test="keshimiaoshu != null">
+        keshimiaoshu,
+      </if>
+      <if test="parentid != null">
+        parentid,
+      </if>
+      <if test="shuxun != null">
+        shuxun,
+      </if>
+      <if test="zwid != null">
+        zwid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="keshiid != null">
+        #{keshiid,jdbcType=INTEGER},
+      </if>
+      <if test="keshiname != null">
+        #{keshiname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshitypeid != null">
+        #{keshitypeid,jdbcType=INTEGER},
+      </if>
+      <if test="yuyuestatus != null">
+        #{yuyuestatus,jdbcType=INTEGER},
+      </if>
+      <if test="keshiaddress != null">
+        #{keshiaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="keshimiaoshu != null">
+        #{keshimiaoshu,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="shuxun != null">
+        #{shuxun,jdbcType=INTEGER},
+      </if>
+      <if test="zwid != null">
+        #{zwid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Keshib">
+    update keshib
+    <set>
+      <if test="keshiname != null">
+        keshiname = #{keshiname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="keshitypeid != null">
+        keshitypeid = #{keshitypeid,jdbcType=INTEGER},
+      </if>
+      <if test="yuyuestatus != null">
+        yuyuestatus = #{yuyuestatus,jdbcType=INTEGER},
+      </if>
+      <if test="keshiaddress != null">
+        keshiaddress = #{keshiaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="keshimiaoshu != null">
+        keshimiaoshu = #{keshimiaoshu,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        parentid = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="shuxun != null">
+        shuxun = #{shuxun,jdbcType=INTEGER},
+      </if>
+      <if test="zwid != null">
+        zwid = #{zwid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where keshiid = #{keshiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Keshib">
+    update keshib
+    set keshiname = #{keshiname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=VARCHAR},
+      keshitypeid = #{keshitypeid,jdbcType=INTEGER},
+      yuyuestatus = #{yuyuestatus,jdbcType=INTEGER},
+      keshiaddress = #{keshiaddress,jdbcType=VARCHAR},
+      keshimiaoshu = #{keshimiaoshu,jdbcType=VARCHAR},
+      parentid = #{parentid,jdbcType=INTEGER},
+      shuxun = #{shuxun,jdbcType=INTEGER},
+      zwid = #{zwid,jdbcType=INTEGER}
+    where keshiid = #{keshiid,jdbcType=INTEGER}
+  </update>
+</mapper>

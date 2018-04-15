@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.KongbaibMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.Kongbaib">
+    <id column="kbid" jdbcType="INTEGER" property="kbid" />
+    <result column="biaoti" jdbcType="VARCHAR" property="biaoti" />
+    <result column="neirong" jdbcType="VARCHAR" property="neirong" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="cishu" jdbcType="INTEGER" property="cishu" />
+    <result column="yizhu" jdbcType="VARCHAR" property="yizhu" />
+    <result column="zongjia" jdbcType="DOUBLE" property="zongjia" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    kbid, biaoti, neirong, price, cishu, yizhu, zongjia
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kongbaib
+    where kbid = #{kbid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kongbaib
+    where kbid = #{kbid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rk.entity.Kongbaib">
+    insert into kongbaib (kbid, biaoti, neirong, 
+      price, cishu, yizhu, 
+      zongjia)
+    values (#{kbid,jdbcType=INTEGER}, #{biaoti,jdbcType=VARCHAR}, #{neirong,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DOUBLE}, #{cishu,jdbcType=INTEGER}, #{yizhu,jdbcType=VARCHAR}, 
+      #{zongjia,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.Kongbaib">
+    insert into kongbaib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="kbid != null">
+        kbid,
+      </if>
+      <if test="biaoti != null">
+        biaoti,
+      </if>
+      <if test="neirong != null">
+        neirong,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="cishu != null">
+        cishu,
+      </if>
+      <if test="yizhu != null">
+        yizhu,
+      </if>
+      <if test="zongjia != null">
+        zongjia,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="kbid != null">
+        #{kbid,jdbcType=INTEGER},
+      </if>
+      <if test="biaoti != null">
+        #{biaoti,jdbcType=VARCHAR},
+      </if>
+      <if test="neirong != null">
+        #{neirong,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="cishu != null">
+        #{cishu,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        #{yizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="zongjia != null">
+        #{zongjia,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Kongbaib">
+    update kongbaib
+    <set>
+      <if test="biaoti != null">
+        biaoti = #{biaoti,jdbcType=VARCHAR},
+      </if>
+      <if test="neirong != null">
+        neirong = #{neirong,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="cishu != null">
+        cishu = #{cishu,jdbcType=INTEGER},
+      </if>
+      <if test="yizhu != null">
+        yizhu = #{yizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="zongjia != null">
+        zongjia = #{zongjia,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where kbid = #{kbid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rk.entity.Kongbaib">
+    update kongbaib
+    set biaoti = #{biaoti,jdbcType=VARCHAR},
+      neirong = #{neirong,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      cishu = #{cishu,jdbcType=INTEGER},
+      yizhu = #{yizhu,jdbcType=VARCHAR},
+      zongjia = #{zongjia,jdbcType=DOUBLE}
+    where kbid = #{kbid,jdbcType=INTEGER}
+  </update>
+</mapper>
