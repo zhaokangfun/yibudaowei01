@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="patientBaseInfo_files/switch.js"></script><link rel="stylesheet" href="patientBaseInfo_files/base.css"><link rel="stylesheet" href="patientBaseInfo_files/base_002.css">
+    <link rel="stylesheet" href="patientBaseInfo_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="patientBaseInfo_files/patientBaseInfo.css">
+    <title>患者信息</title>
+<link rel="stylesheet" href="patientBaseInfo_files/layer.css" id="layuicss-skinlayercss"></head>
+
+<body class="static-public-css patient-base-info-css">
+    <div class="content-inner  outpatient">
+        <div class="tab-content   clear">
+            <!-- 患者基本信息 -->
+            <div class="patientArch_patBaseInfo base-info">
+                <div class="infoCard clear">
+                    <div class="left-title fl">
+                        <span>基本信息</span>
+                    </div>
+                    <div class="infoContent">
+                        <span id="btn_modifyPat" class="compileIcon" title="修改患者信息"></span>
+                        <span id="btn_bindState" class="wxBind" title="绑定微信" style=""></span>
+                        <span id="btn_unBindState" class="wxUnbind" title="解绑微信" style="display:none;"></span>
+                        <div id="pa-info" class="infoBox employeeInfo" style="display:none;">
+                            <ul>
+                                <li class="info-item"><span>UM账号：</span><span id="paUmAccount"></span></li>
+                                <li class="info-item"><span>公司名称：</span><span id="paCompanyName"></span></li>
+                                <li class="info-item"><span>员工ID：</span><span id="paStaffId"></span></li>
+                                <li class="info-item"><span>公司部门：</span><span id="paDepartmentName"></span></li>
+                                <li class="info-item"><span>入司日期：</span><span id="paEntryDateStr"></span></li>
+                            </ul>
+                        </div>
+                        <div id="base-info" class="infoBox">
+                            <ul>
+                                <li class="info-item"><span>姓名：</span><span id="patientName">许冲冲</span></li>
+                                <li class="info-item"><span>性别：</span><span id="patientGender">男</span></li>
+                                <li class="info-item"><span>病历号：</span><span id="patientNo">P1804030001</span></li>
+                                <li class="info-item"><span>年龄：</span><span id="patientBirthDate">18岁   （2000-04-03）</span></li>
+                                <li class="info-item"><span>手机号：</span><span id="mobilePhoneNumber">13949283345</span></li>
+                                <li class="info-item"><span>来源：</span><span id="patientSource">附近居民</span></li>
+                                <li class="info-item"><span>联系人：</span><span id="contactPersonName">许甲甲</span></li>
+                                <li class="info-item"><span>联系电话：</span><span id="extendPatientInfo">110</span></li>
+                                <li class="info-item"><span>会员信息：</span><span id="patientMemberInfo">-</span></li>
+                                <li class="info-item full"><span>标签：</span><span id="patientLabels">-</span></li>
+                                <li class="info-item full"><span>备注：</span><span id="remark">-</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="infoCard clear">
+                    <div class="left-title fl detailInfo">
+                        <span>详细信息</span>
+                    </div>
+                    <div class="infoContent">
+                        <!--<span id="btn_modifyPat" class="compileIcon" title="修改患者信息"></span>-->
+                        <div class="infoBox">
+                            <ul>
+                                <li class="info-item"><span>证件类型：</span><span id="cardType">护照</span></li>
+                                <li class="info-item"><span>证件号码：</span><span id="cardNum">-</span></li>
+                                <li class="info-item"><span>介绍人：</span><span id="introducerName">-</span></li>
+                                <li class="info-item"><span>病人类别：</span><span id="paymentTypeName">自费</span></li>
+                                <li class="info-item"><span>电子邮箱：</span><span id="email">-</span></li>
+                                <li class="info-item"><span>民族：</span><span id="national">基诺族</span></li>
+                                <li class="info-item"><span>国籍：</span><span id="nationality">外国</span></li>
+                                <li class="info-item"><span>职业：</span><span id="occupational">学生</span></li>
+                                <li class="info-item"><span>婚姻：</span><span id="marriage">丧偶</span></li>
+                                <li class="info-item"><span>单位名称：</span><span id="entity">-</span></li>
+                                <li class="info-item"><span>ABO血型：</span><span id="ABOBloodGroup">AB型</span></li>
+                                <li class="info-item"><span>RH血型：</span><span id="RHBloodGroup">不详</span></li>
+                                <li class="info-item full"><span>住址：</span><span id="livingAddress">天津市市辖区河西区</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="infoCard clear">
+                    <div class="left-title fl seeDoctorInfo">
+                        <span>就诊信息</span>
+                    </div>
+                    <div class="infoContent">
+                        <div class="infoBox">
+                            <ul>
+                                <li class="info-item tipsColor"><span>过敏史：</span><span id="allergiesHistory">普鲁卡因</span></li>
+                                <li class="info-item tipsColor"><span>既往史：</span><span id="personalHistory">冠心病</span></li>
+                                <li class="info-item"><span>就诊次数：</span><span id="aocNum">2</span></li>
+                                <li class="info-item"><span>最近就诊：</span><span id="nearDate">2018-04-08 10:29:56</span></li>
+                                <li class="info-item"><span>消费总额：</span><span class="moneyIcon">￥</span><span id="totalMoney">100.00</span></li>
+                                <li class="info-item"><span>目前欠款：</span><span class="moneyIcon">￥</span><span id="oweMoney">0.00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--绑定微信弹窗-->
+        <div id="wxBindPop" class="wxBindPop dsn">
+            <div class="popHead">
+                <span class="closePop"></span>
+            </div>
+            <div class="popContent">
+                <div class="QrCode">
+                    <div class="codeImg">
+                        <!-- <img src="images/codeImg.png" alt=""/>-->
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="codeTips">请扫一扫<br>绑定患者微信</div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="patientBaseInfo_files/jquery_002.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/public.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/jquery.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/pawj.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/cache.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/layer.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/patientArchUrl.js"></script>
+<script type="text/javascript" src="patientBaseInfo_files/patientBaseInfo.js"></script>
+<script>
+    $(function() {
+
+    })
+</script>
+
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

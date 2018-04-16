@@ -12,6 +12,7 @@ import com.rk.service.BancibService;
 @Controller
 @RequestMapping("banci")
 public class indexController {
+	
 	@Autowired
 	private BancibService bancibService;
 	
@@ -19,7 +20,7 @@ public class indexController {
 	public String show(Model model) {
 		List<Bancib> list=bancibService.getAll();
 		model.addAttribute("list", list);
-		return "index";
+		return "assistLab";
 	}
 
 }	

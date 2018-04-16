@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="physiotherapy_files/pawj.js"></script><script src="physiotherapy_files/CLodopfuncs_002.js"></script><script src="physiotherapy_files/CLodopfuncs_003.js"></script><script src="physiotherapy_files/CLodopfuncs.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="physiotherapy_files/switch.js"></script><link rel="stylesheet" href="physiotherapy_files/base.css"><link rel="stylesheet" href="physiotherapy_files/base_002.css">
+    <link rel="stylesheet" type="text/css" href="physiotherapy_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="physiotherapy_files/physiotherapy.css">
+    <title>理疗单</title>
+<script type="text/javascript" src="physiotherapy_files/ipquery.html"></script></head>
+<body class="static-public-css physiotherapy-css">
+<!-- 主体部分 -->
+<div class="content-inner clear " style="display: block;">
+    <!--static-menu为三级菜单 理疗师工作站中显示，并content-inner加上 pt55 class-->
+    <div class="static-menu clear" style="display: none">
+        <ul class="fl">
+            <li class="fl choose"><a href="javascript:void(0)">理疗单</a></li>
+            <li class="fl"><a href="javascript:void(0)">疗程单</a></li>
+        </ul>
+        <span class="static-menu-finish fr">完成开单</span>
+        <div class="static-menu-drop fr hide" id="menuDoctorDiv">
+            <span class="fl">就诊医生：</span>
+            <div class="drop">
+                <input id="menuDoctor" class="input-text" readonly="readonly" type="text"> <i class="drop-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content clear">
+        <div class="left-prescription fl">
+            <div class="recipe-label fl">
+                <ul><li class="recipe-label-item checked" itemindex="0">	<i class="corner"></i>	<span>理疗单 1</span>	<i class="delete" style="display: inline;"></i></li></ul>
+                <div class="fr add-recipe" title="新建理疗单"></div>
+            </div>
+            <div class="pill-wrap fl">
+                <div class="pill-status">
+                    <i chargestatus=""></i>
+                </div>
+                <div class="pill-top-info">
+                    <div class="clear">
+                        <div class="pill-number-tag fl">NO.<span class="pill-number acography-serial-no">LF8377960581</span></div>
+                        <div class="pill-type-tag fr">
+                            <span>共 <span class="page">1</span> 页</span>
+                        </div>
+                    </div>
+                    <h2 class="pill-title clinic-name">zz</h2>
+                    <p class="pill-subtitle"><span>理疗单</span></p>
+                    <div class="pill-detailInfo">
+                        <div class="healthCard-line">
+                            <span class="pill-detailInfo-title fl">医疗证/医保卡号：</span>
+                            <span class="patient-healthCard">-</span>
+                        </div>
+                        <ul class="pill-detailInfo-one clear">
+                            <li>
+                                <span class="pill-detailInfo-title fl">姓名：</span>
+                                <span class="patient-name">许冲冲</span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">性别：</span>
+                                <span class="patient-gender">男</span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">年龄：</span>
+                                <span class="patient-age">18岁</span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">科室：</span>
+                                <span class="department-name">外科</span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">费别：</span>
+                                <span class="payment-type-name">自费</span>
+                            </li>
+                        </ul>
+                        <ul class="pill-detailInfo-two clear">
+                            <li>
+                                <span class="pill-detailInfo-title">病历号：</span>
+                                <span class="patient-no">P1804030001</span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">住址/电话：</span>
+                                <span class="living-address-countryside" title="天津市市辖区河西区/13949283345">天津市市辖区河西区/13949283345</span>
+                            </li>
+                        </ul>
+                        <ul class="pill-detailInfo-three clear">
+                            <li>
+                                <span class="pill-detailInfo-title">临床诊断及证型：</span>
+                                <span class="showDiagnose"><span class="diagnosis" title="-">-</span><i class="editorBtn"></i></span>
+                            </li>
+                            <li>
+                                <span class="pill-detailInfo-title">开具日期：</span>
+                                <span class="add-date">2018-04-08</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pill-middle-info">
+                    <div class="pill-list-content">
+                        <div class="listBox-header clear">
+                            <span class="drug-40per">项目名称</span>
+                            <span class="drug-20per">单价</span>
+                            <span class="drug-10per">数量</span>
+                            <span class="drug-20per">备注</span>
+                        </div>
+                        <div class="pill-listBox" style="display: none;">
+
+                            <ul></ul>
+
+                            <!--以下空白-查看状态显示-->
+                            <p class="pill-list-hint dsn" style="display: none;"><i>（以下空白）</i></p>
+                        </div>
+
+                        <div class="recipe-info">
+                            <span class="totalMoney">总计金额：<span class="china-totalPrice2">￥0.00</span></span>
+                            <span style="display: none;">医师：</span>
+                            <div class="drop doctorName mr15" style="border: 0px;display: none;">
+                                <!--<input type="text" class="input-text china-doctorName" readonly="readonly" value=""> <i class="drop-icon"></i>-->
+                                <input class="china-doctorName" readonly="readonly" value="许甲甲" type="text">
+                            </div>
+                            <span>执行人：</span>
+                            <div class="drop doctorName">
+                                <input class="input-text excutorName" readonly="readonly" val="" value="未指定" type="text"> <i class="drop-icon"></i>
+                            <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="未指定" value="" data-value="">未指定</li><li class="drop-item drop_odd" title="刘晓洋" value="ccae0144-6636-4d59-b675-e5c7b5d844e0" data-value="ccae0144-6636-4d59-b675-e5c7b5d844e0">刘晓洋</li><li class="drop-item drop_even" title="许冲" value="c731b016-3e4a-4c6e-bed3-8d40f7eabc77" data-value="c731b016-3e4a-4c6e-bed3-8d40f7eabc77">许冲</li><li class="drop-item drop_odd" title="许甲甲" value="d5d00881-3d38-4ac9-b378-b37acee78a87" data-value="d5d00881-3d38-4ac9-b378-b37acee78a87">许甲甲</li></ul></div>
+                        </div>
+
+                        <div class="without-drugs dsn" style="display: block;">
+                            <p class="guideTips">请在下方添加理疗项目</p>
+                            <i class="guideArrow"></i>
+                        </div>
+                    </div>
+                    <div class="importInfo">
+                        <div class="drug-input clear">
+                            <div class="drugName-input fl">
+                                <input class="enterNext input-text thinkBoxInputArea validate(required)" placeholder="项目名称/五笔/拼音/编码" autocomplete="off" type="text">
+                                <input id="treatmentId" value="" type="hidden">
+                                <input id="treatmentName" value="" type="hidden">
+                                <input id="treatmentUnitId" value="" type="hidden">
+                                <input id="treatmentUnitName" value="" type="hidden">
+                                <input id="treatmentPrice" value="" type="hidden">
+                                <input id="treatmentiItemIndex" value="" type="hidden">
+                                <input id="treatmentType" value="" type="hidden">
+
+                            </div>
+                            <div class="drug-dosage fl">
+                                <input class="enterNext input-text china-drugDose validate(notspace,required,digits,range(1,9999))" placeholder="数量" type="text">
+                                <!--<span class="china-drugUnitName">次</span>-->
+                            </div>
+                            <div class="remark-advice fl">
+                                <input class="enterNext input-text description validate(maxlength(25))" placeholder="填写备注" type="text">
+                            </div>
+                            <div class="drug-operate fl">
+                                <i class="add-drug" title="添加"></i>
+                                <i class="update-drug" style="display: none" title="更新"></i>
+                                <i class="empty-drug" title="清空"></i>
+                                <i class="delete-drug" title="删除" style="display: none;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--查看状态下显示-->
+                <div class="pill-bottom-info dsn" style="display: none;">
+                    <div class="fillOut">
+                        <ul>
+                            <li class="last-column"><span>执行人：</span><span class="underline readOnly-excutorName"></span></li>
+                            <li class="last-column"><span>医师：</span><span class="underline doctorName">许甲甲</span></li>
+                            <li class="last-column"><span>总金额（元）：</span><span class="underline total-money china-totalPrice">0.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-btn fl">
+                <div class="left-btn fl">
+                    <span class="saveAs">存为模板</span>
+                    <span class="print">打印</span>
+                </div>
+                <div class="right-btn fr">
+                    <span class="btn submit-btn savePhysiotherapys">保存</span>
+                </div>
+            </div>
+        </div>
+        <div class="right-switchInfo fl">
+            <div class="topNav-wrap">
+                <div class="topNav">
+                    <ul>
+                        <li class="topNav-item choose">历史记录</li>
+                        <li class="topNav-item">理疗模板</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightInfo-wrap">
+                <div class="noDataHint dsn" style="display: block;">
+                    <img src="physiotherapy_files/no-searchResults.png" alt="暂无历史病历">
+                    <p class="noDataHint-text">暂无历史记录</p>
+                </div>
+                <div class="historyRecipe" style="display: none;">
+                    <div class="dateChooser clear">
+                        <i class="t-aft fr next"></i>
+                        <div class="drop dopdiv">
+                            <input class="input-text dateChoose" readonly="readonly" type="text">
+                            <i class="drop-icon"></i>
+                        </div>
+                        <i class="t-pre fr prev"></i>
+                    </div>
+                    <div class="historyRecipe-project">
+                        <div class="historyRecipe-Info clear">
+                            <div class="historyStores" style="display: none">-</div>
+                            <div class="doctorName hisDoctor">-</div>
+                            <span class="treatmentType">-</span>
+                        </div>
+                        <div class="historyRecipe-diagnose">
+                            <span id="hisDiagnosis">-</span>
+                        </div>
+                        <div class="historyDetail">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-template dsn">
+                    <div class="css_search_wrap">
+                        <div class="search-box clear">
+                            <input id="" class="input-text fl searchTemplateName" placeholder="输入模板名点击搜索" type="text">
+                            <a href="javascript:;" class="btn search-btn js_search_btn fl" id="teml_btn_search"></a>
+                        </div>
+                    </div>
+                    <div class="tmpl-css-wrap">
+                        <ul>
+                            <li id="china-tmpl-doctor-dl" class="recipe-template-title collapse" title="">个人模板</li>
+                            <li>
+                                <ul id="china-tmpl-doctor-ul">
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li id="china-tmpl-clinic-dl" class="recipe-template-title" title="">诊所模板</li>
+                            <li class="dsn">
+                                <ul id="china-tmpl-clinic-ul">
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <!-- <li id="china-tmpl-platform-dl" class="recipe-template-title-li recipe-template-title collapse" title="">平台模板</li>
+                            <li>
+                               <ul id="china-tmpl-platform-ul">
+                               </ul>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="physiotherapy_files/space-bg.png" class="space-bg">
+        <!--添加诊断弹窗-->
+        <div id="addDiagnosisPop" class="dsn">
+            <div class="pop-mask"></div>
+            <div class="popup" style="">
+                <div class="popstyle">
+                    <div class="poptitle">
+                        添加诊断<span class="close" id="closeDiagnosis"></span>
+                    </div>
+                    <div class="popcontent">
+                        <div class="diagnosis-input">
+                            <div>
+                                <span><i class="necessary">*</i>中医诊断：</span> <input id="chineseTraDiagnosis" class="input-text think-text validate(required)" maxlength="500" autocomplete="off" val="">
+                            </div>
+                            <div>
+                                <span><i>&nbsp;&nbsp;</i>西医诊断：</span> <input id="westDiagnosis" class="input-text think-text " maxlength="" autocomplete="off" val="" type="text">
+                            </div>
+                        </div>
+                        <div class="pop-foot-btn clear">
+                            <span class="btn normal-inverse-btn" id="add-cancel">取消</span>
+                            <span class="btn normal-btn" id="add-save">确认</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--添加保存模板弹窗-->
+        <div id="addPhysiotherapyPop" class="dsn">
+            <div class="pop-mask"></div>
+            <div class="popup" style="">
+                <div class="popstyle">
+                    <div class="poptitle">
+                        <!--存为模板--><span class="close" id="closePhysiotherapy"></span>
+                    </div>
+                    <div class="popcontent">
+                        <div class="physiotherapy-input">
+                            <div id="templateType">
+                                <span style="padding-left: 12px">模板类型：</span>
+                                <span class="radio checked" val="3">个人模板</span>
+                                <span class="radio" val="2">诊所模板</span>
+                            </div>
+                            <div>
+                                <span><i class="necessary">*</i>模板名称：</span>
+                                <input id="templateName" class="input-text think-text validate(notEmpty,required,maxlength(30))" maxlength="500">
+                            </div>
+
+                        </div>
+                        <div class="pop-foot-btn clear">
+                            <span class="btn normal-inverse-btn" id="physiotherapy-cancel">取消</span>
+                            <span class="btn normal-btn" id="physiotherapy-save">确认</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--今日就诊-候诊状态显示-->
+<div id="treat-waitingState" style="display: none;">
+    <div class="waitingState-hint">未接诊，请先接诊</div>
+    <div class="waitingState-line">
+        <span class="through-line"></span>
+        <span class="through-text">可在以下途径进行接诊</span>
+    </div>
+    <div class="waitingState-img"></div>
+</div>
+<!--今日就诊-已完成-无数据情况显示-->
+<div id="treat-completedNoData" style="display: none;">
+    <div class="waitingState-hint">当前暂无理疗记录</div>
+    <div class="waitingState-line">
+        <span class="through-line"></span>
+        <span class="through-text">如需填写，可在以下途径重新接诊</span>
+    </div>
+    <div class="waitingState-img"></div>
+</div>
+<!--今日就诊-候诊状态并有历史记录显示-->
+<div id="treat-waitingState-historyRec" style="display: none;">
+    <div class="completedNoData-historyRec-border">
+        <div class="waitingState-hint">未接诊，请先接诊；可查看右侧历史记录</div>
+        <div class="waitingState-line">
+            <span class="through-line"></span>
+            <span class="through-text">可在以下途径进行接诊</span>
+        </div>
+        <div class="waitingState-img"></div>
+    </div>
+</div>
+<!--今日就诊-已完成-无数据并有历史记录情况显示-->
+<div id="treat-completedNoData-historyRec" style="display: none;">
+    <div class="completedNoData-historyRec-border">
+        <div class="waitingState-hint">当前暂无理疗记录，可查看右侧历史记录</div>
+        <div class="waitingState-line">
+            <span class="through-line"></span>
+            <span class="through-text">如需填写，可在以下途径重新接诊</span>
+        </div>
+        <div class="waitingState-img"></div>
+    </div>
+</div>
+<!--理疗师工作站-候诊状态显示-->
+<div id="phy-waitingState" style="display: none;">
+    <div class="waitingState-hint">未开单，请先开单</div>
+    <div class="waitingState-line">
+        <span class="through-line"></span>
+        <span class="through-text">可在以下途径进行开单</span>
+    </div>
+    <div class="waitingState-img"></div>
+</div>
+<!--理疗师工作站-已完成-无数据情况显示-->
+<div id="phy-completedNoData" style="display: none;">
+    <div class="waitingState-hint">当前暂无理疗记录</div>
+    <div class="waitingState-line">
+        <span class="through-line"></span>
+        <span class="through-text">如需填写，可在以下途径重新开单</span>
+    </div>
+    <div class="waitingState-img"></div>
+</div>
+<!--理疗师工作站-候诊状态并有历史记录显示-->
+<div id="phy-waitingState-historyRec" style="display: none;">
+    <div class="completedNoData-historyRec-border">
+        <div class="waitingState-hint">未开单，请先开单；可查看右侧历史记录</div>
+        <div class="waitingState-line">
+            <span class="through-line"></span>
+            <span class="through-text">可在以下途径进行开单</span>
+        </div>
+        <div class="waitingState-img"></div>
+    </div>
+</div>
+<!--理疗师工作站-已完成-无数据并有历史记录情况显示-->
+<div id="phy-completedNoData-historyRec" style="display: none;">
+    <div class="completedNoData-historyRec-border">
+        <div class="waitingState-hint">当前暂无理疗记录，可查看右侧历史记录</div>
+        <div class="waitingState-line">
+            <span class="through-line"></span>
+            <span class="through-text">如需填写，可在以下途径重新开单</span>
+        </div>
+        <div class="waitingState-img"></div>
+    </div>
+</div>
+<script type="text/javascript" src="physiotherapy_files/pawj-pro.js"></script>
+<script type="text/javascript" src="physiotherapy_files/cache.js"></script>
+<script type="text/javascript" src="physiotherapy_files/jquery.js"></script>
+<script type="text/javascript" src="physiotherapy_files/pawj_002.js"></script>
+<script type="text/javascript" src="physiotherapy_files/physiotherapy_url.js"></script>
+<script type="text/javascript" src="physiotherapy_files/print.js"></script>
+<script type="text/javascript" src="physiotherapy_files/printUtils.js"></script>
+<script type="text/javascript" src="physiotherapy_files/PhysiotherapyPrint.js"></script>
+<script type="text/javascript" src="physiotherapy_files/physiotherapy.js"></script>
+<script type="text/javascript">
+    //数据采集
+    var _maq = _maq || [];
+    _maq.push(['sysType', 'B'],['sysModel', 'HZZX'],['sysMenu', 'TCM_DWS19']);
+    function async_ipquery(){
+    	var script = document.createElement("script");  
+    	script.setAttribute("type","text/javascript"); 
+    	  script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+    	document.getElementsByTagName("head")[0].appendChild(script);
+    	var collection = document.createElement('script');
+    	collection.type = 'text/javascript';
+    	collection.async = true;
+    	collection.src ='../resources/js/pawj.collection.js';
+    	var sCollection = document.getElementsByTagName('script')[0];
+    	sCollection.parentNode.insertBefore(collection, sCollection);
+    }
+    $(function(){
+        if (window.attachEvent) {
+            window.attachEvent('onload', async_ipquery);
+        } else {
+            window.addEventListener('load', async_ipquery);
+        }
+    });
+</script>
+
+
+
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

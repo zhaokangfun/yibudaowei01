@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Bancib {
+import java.io.Serializable;
+
+public class Bancib implements Serializable {
     private Integer banciid;
 
     private String banciname;

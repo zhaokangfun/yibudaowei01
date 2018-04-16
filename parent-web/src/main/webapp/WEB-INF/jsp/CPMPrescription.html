@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="CPMPrescription_files/pawj.js"></script><script src="CPMPrescription_files/CLodopfuncs_002.js"></script><script src="CPMPrescription_files/CLodopfuncs_003.js"></script><script src="CPMPrescription_files/CLodopfuncs.js"></script>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="">
+	    <meta name="Keywords" content="">
+    <script type="text/javascript" src="CPMPrescription_files/switch.js"></script><link rel="stylesheet" href="CPMPrescription_files/base.css"><link rel="stylesheet" href="CPMPrescription_files/base_002.css">
+	    <link rel="stylesheet" type="text/css" href="CPMPrescription_files/pawj.css">
+	    <link rel="stylesheet" type="text/css" href="CPMPrescription_files/CPMPrescription.css">
+	    <title>成药处方</title>
+	<script type="text/javascript" src="CPMPrescription_files/ipquery.html"></script></head>
+	<body class="static-public-css CPMPrescription-css">
+		<!-- 主体部分 -->
+		<div class="content-inner clear">
+		    <div class="tab-content clear">
+		        <div class="left-prescription fl">
+		            <div class="recipe-label fl">
+		                <ul>
+		                    <li class="recipe-label-item prescription-tab-clone dsn" data-index="0">
+		                        <i class="corner"></i>
+		                        <span></span>
+		                        <i class="delete"></i>
+		                    </li>
+		                <li class="recipe-label-item dsn allowEdit checked" data-index="1" style="display: list-item;">
+		                        <i class="corner"></i>
+		                        <span>成药方1</span>
+		                        <i class="delete" style="display: inline;"></i>
+		                    </li></ul>
+		                <div class="fr add-recipe" title="新建处方"></div>
+		            </div>
+		            <div class="pill-wrap fl prescription-body-clone" style="display:none">
+		                <div class="pill-status">
+		                    <i class="new"></i>
+		                </div>
+		                <div class="pill-top-info">
+		                    <div class="clear">
+		                        <div class="pill-number-tag fl">NO.<span class="pill-number acography-serial-no">20170712005</span></div>
+		                        <div class="pill-type-tag fr">
+		                            <div class="pill-type">普</div>
+		                            <span>共 <span class="page">1</span> 页</span>
+		                        </div>
+		                    </div>
+		                    <h2 class="pill-title clinic-name"></h2>
+		                    <p class="pill-subtitle"><span>成药</span><span>处方笺</span></p>
+		                    <div class="pill-detailInfo">
+                                <div class="healthCard-line clear">
+                                    <span class="pill-detailInfo-title fl">医疗证/医保卡号：</span>
+                                    <span class="patient-healthCard"></span>
+                                </div>
+		                        <ul class="pill-detailInfo-one clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title fl">姓名：</span>
+		                                <span class="patient-name"></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">性别：</span>
+		                                <span class="patient-gender"></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">年龄：</span>
+		                                <span class="patient-age"></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">科室：</span>
+		                                <span class="department-name"></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">费别：</span>
+		                                <span class="payment-type-name"></span>
+		                            </li>
+		                        </ul>
+		                        <ul class="pill-detailInfo-two clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title">病历号：</span>
+		                                <span class="patient-no"></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">住址/电话：</span>
+		                                <span class="living-address-countryside"></span>
+		                            </li>
+		                        </ul>
+		                        <ul class="pill-detailInfo-three clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title">临床诊断及证型：</span>
+		                                <span class="showDiagnose"><span class="diagnosis"></span><i class="editorBtn"></i></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">开具日期：</span>
+		                                <span class="add-date"></span>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		                <div class="pill-middle-info">
+		                    <p class="pill-list clear">
+		                        <span class="pill-list-tag fl">Rp：</span>
+		                        <span class="understock-tag fr dsn"><span class="freeIcon"></span><span>/</span><span class="ourHospitalIcon"></span>库存不足</span>
+		                    </p>
+		                    <div class="pill-list-content">
+		                        <div class="pill-listBox dsn">
+		                            <ul class="pill-list-item-ul">
+		                                <li class="pill-list-item clear drug-list-operational prescription-cell-clone dsn">
+		                                    <div class="pill-list-leftInfo">
+		                                        <div class="list-number"></div>
+		                                        <div class="pill-list-leftInfo-right list-special-line">
+		                                            <div class="leftInfo-right-drug rightDrugClone">
+		                                                <div class="drug-list-row drug-list-operational drugListRowClone dsn">
+		                                                    <span class="drug-30per drugName" title=""></span>
+		                                                    <span class="drug-38per drugSpec" title=""></span>
+		                                                    <span class="drug-12per drugDose"></span>
+		                                                    <span class="drug-12per totalQty"></span>
+		                                                    <span class="close-order-list">×</span>
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="pill-list-rightInfo">
+		                                        <span class="drug-40per drugUsageName" title=""></span>
+		                                        <span class="drug-20per frequencyName" title=""></span>
+		                                        <span class="drug-20per totalDay" title=""></span>
+		                                    </div>
+		                                </li>
+		                            </ul>
+		                            <!--以下空白-查看状态显示-->
+		                            <p class="pill-list-hint dsn" style="display: none;"><i>（以下空白）</i></p>
+		                        </div>
+		
+		                        <div class="without-drugs">
+		                            <p class="guideTips">请在下方添加成药</p>
+		                            <i class="guideArrow"></i>
+		                        </div>
+
+                                <div class="recipe-info">
+                                    <span class="totalMoney">总计金额：<span>￥</span><input class="input-text  china-totalPrice2 validate(maxlength(10),decimal(2),min(0.00))" maxlength="10" value="0.00" type="text"></span>
+                                </div>
+		                    </div>
+		                    <div class="importInfo">
+		                        <div class="drug-input clear">
+		                            <div class="fl">
+		                                <input class="input-text groupNum" placeholder="组号" onkeyup="value=value.replace(/[^\d]/g,'')" type="text">
+		                            </div>
+		                            <div class="drop cn-source">
+		                                <input class="input-text drug-source" readonly="readonly" placeholder="来源" type="text">
+		                                <i class="drop-icon"></i>
+		                            </div>
+		                            <div class="drugName-input fl">
+		                                <input class="input-text thinkBoxInputArea" placeholder="药品名称/五笔/拼音/编码" type="text">
+		                            </div>
+		                            <div class="drug-amount fl drugPackageSpec"></div>
+		                        </div>
+		                        <div class="drug-input clear">
+		                            <div class="drug-dosage fl">
+		                                <input class="input-text china-drugDose validate(maxlength(9),decimal(5),min(0.00001),max(999.99999))" maxlength="9" placeholder="剂量" type="text">
+		                                <span class="china-drugUnitName"></span>
+		                            </div>
+		                            <div class="drop drug-usage">
+		                                <input class="input-text china-footnote validate(maxlength(5))" readonly="readonly" placeholder="用法" type="text">
+		                                <i class="drop-icon"></i>
+		                            </div>
+		                            <div class="drop drug-frequency">
+		                                <input class="input-text frequencyName frequencyNameDropDown validate(maxlength(5))" placeholder="频率" type="text">
+		                                <i class="drop-icon"></i>
+		                            </div>
+		                            <div class="drug-days fl">
+		                                <input class="input-text totalDay validate(required,digits,maxlength(5),min(1))" maxlength="3" placeholder="天数" type="text">
+		                            </div>
+		                            <div class="drug-total fl">
+		                            	<input class="input-text totalQty validate(digits,maxlength(6))" maxlength="6" placeholder="总量" type="text">
+                                       	<div style="width: 66px;min-width: 66px;float:right;" class="drop drug-unit">
+			                               	<input class="input-text drug-total-unit" placeholder="单位" readonly="readonly" type="text">
+			                                <i class="drop-icon"></i>
+		                            	</div>
+		                            </div>
+		                            <div class="drug-operate fl">
+		                                <i class="add-drug" title="添加"></i>
+		                                <i class="empty-drug" title="清空"></i>
+		                            </div>
+		                            <div class="drug-understock dsn">库存不足</div>
+		                        </div>
+		                        <div class="doctor-advice clear">
+		                            <div class="fl doctor-advice-title">医嘱：</div>
+		                            <div class="doctor-advice-content">
+		                                <div class="doctor-advice-box">
+		                                    <textarea placeholder="请填写医嘱" class="china-advice" maxlength="100"></textarea>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <!--查看状态下显示-->
+		                    <div class="already-importInfo dsn" style="display: none;">
+		                        <span>医嘱：</span><span class="china-advice"></span>
+		                    </div>
+		                </div>
+		                <!--查看状态下显示-->
+		                <div class="pill-bottom-info dsn" style="display: none;">
+		                    <div class="fillOut">
+		                        <ul>
+		                            <li><span>审核：</span><span class="underline"></span></li>
+		                            <li><span>调配：</span><span class="underline"></span></li>
+		                            <li class="last-column"><span>医师：</span><span class="underline doctorName doctorNameShow"></span></li>
+		                            <li><span>核对：</span><span class="underline"></span></li>
+		                            <li><span>发药：</span><span class="underline"></span></li>
+		                            <li class="last-column"><span>处方总金额（元）：</span><span class="underline total-money china-totalPrice"></span></li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="pill-wrap fl" data-index="1">
+		                <div class="pill-status">
+		                    <i class="new"></i>
+		                </div>
+		                <div class="pill-top-info">
+		                    <div class="clear">
+		                        <div class="pill-number-tag fl">NO.<span class="pill-number acography-serial-no">LF8377960581</span></div>
+		                        <div class="pill-type-tag fr">
+		                            <div class="pill-type">普</div>
+		                            <span>共 <span class="page">1</span> 页</span>
+		                        </div>
+		                    </div>
+		                    <h2 class="pill-title clinic-name">zz</h2>
+		                    <p class="pill-subtitle"><span>成药</span><span>处方笺</span></p>
+		                    <div class="pill-detailInfo">
+                                <div class="healthCard-line clear">
+                                    <span class="pill-detailInfo-title fl">医疗证/医保卡号：</span>
+                                    <span class="patient-healthCard">-</span>
+                                </div>
+		                        <ul class="pill-detailInfo-one clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title fl">姓名：</span>
+		                                <span class="patient-name" title="许冲冲">许冲冲</span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">性别：</span>
+		                                <span class="patient-gender">男</span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">年龄：</span>
+		                                <span class="patient-age">18岁</span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">科室：</span>
+		                                <span class="department-name">外科</span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">费别：</span>
+		                                <span class="payment-type-name">自费</span>
+		                            </li>
+		                        </ul>
+		                        <ul class="pill-detailInfo-two clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title">病历号：</span>
+		                                <span class="patient-no">P1804030001</span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">住址/电话：</span>
+		                                <span class="living-address-countryside" title="天津市市辖区河西区/13949283345">天津市市辖区河西区/13949283345</span>
+		                            </li>
+		                        </ul>
+		                        <ul class="pill-detailInfo-three clear">
+		                            <li>
+		                                <span class="pill-detailInfo-title">临床诊断及证型：</span>
+		                                <span class="showDiagnose"><span class="diagnosis" title="-" cn_medical_id="">-</span><i class="editorBtn"></i></span>
+		                            </li>
+		                            <li>
+		                                <span class="pill-detailInfo-title">开具日期：</span>
+		                                <span class="add-date">2018-04-08</span>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		                <div class="pill-middle-info">
+		                    <p class="pill-list clear">
+		                        <span class="pill-list-tag fl">Rp：</span>
+		                        <span class="understock-tag fr dsn"><span class="freeIcon"></span><span>/</span><span class="ourHospitalIcon"></span>库存不足</span>
+		                    </p>
+		                    <div class="pill-list-content">
+		                        <div class="pill-listBox dsn">
+		                            <ul class="pill-list-item-ul">
+		                                <li class="pill-list-item clear drug-list-operational prescription-cell-clone dsn">
+		                                    <div class="pill-list-leftInfo">
+		                                        <div class="list-number"></div>
+		                                        <div class="pill-list-leftInfo-right list-special-line">
+		                                            <div class="leftInfo-right-drug rightDrugClone">
+		                                                <div class="drug-list-row drug-list-operational drugListRowClone dsn">
+		                                                    <span class="drug-30per drugName" title=""></span>
+		                                                    <span class="drug-38per drugSpec" title=""></span>
+		                                                    <span class="drug-12per drugDose"></span>
+		                                                    <span class="drug-12per totalQty"></span>
+		                                                    <span class="close-order-list">×</span>
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="pill-list-rightInfo">
+		                                        <span class="drug-40per drugUsageName" title=""></span>
+		                                        <span class="drug-20per frequencyName" title=""></span>
+		                                        <span class="drug-20per totalDay" title=""></span>
+		                                    </div>
+		                                </li>
+		                            </ul>
+		                            <!--以下空白-查看状态显示-->
+		                            <p class="pill-list-hint dsn" style="display: none;"><i>（以下空白）</i></p>
+		                        </div>
+		
+		                        <div class="without-drugs">
+		                            <p class="guideTips">请在下方添加成药</p>
+		                            <i class="guideArrow"></i>
+		                        </div>
+
+                                <div class="recipe-info">
+                                    <span class="totalMoney">总计金额：<span>￥</span><input class="input-text  china-totalPrice2 validate(maxlength(10),decimal(2),min(0.00))" maxlength="10" value="0.00" type="text"></span>
+                                </div>
+		                    </div>
+		                    <div class="importInfo">
+		                        <div class="drug-input clear">
+		                            <div class="fl">
+		                                <input class="input-text groupNum" placeholder="组号" onkeyup="value=value.replace(/[^\d]/g,'')" type="text">
+		                            </div>
+		                            <div class="drop cn-source">
+		                                <input class="input-text drug-source" readonly="readonly" placeholder="来源" val="0" value="本院" type="text">
+		                                <i class="drop-icon"></i>
+		                            <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="本院" value="0" data-value="0">本院</li><li class="drop-item drop_odd" title="外购" value="1" data-value="1">外购</li><li class="drop-item drop_even" title="免费" value="2" data-value="2">免费</li></ul></div>
+		                            <div class="drugName-input fl">
+		                                <input class="input-text thinkBoxInputArea" placeholder="药品名称/五笔/拼音/编码" autocomplete="off" type="text">
+		                            </div>
+		                            <div class="drug-amount fl drugPackageSpec"></div>
+		                        </div>
+		                        <div class="drug-input clear">
+		                            <div class="drug-dosage fl">
+		                                <input class="input-text china-drugDose validate(maxlength(9),decimal(5),min(0.00001),max(999.99999))" maxlength="9" placeholder="剂量" type="text">
+		                                <span class="china-drugUnitName"></span>
+		                            </div>
+		                            <div class="drop drug-usage">
+		                                <input class="input-text china-footnote validate(maxlength(5))" readonly="readonly" placeholder="用法" type="text">
+		                                <i class="drop-icon"></i>
+		                            <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="口服" value="YF09001" data-value="YF09001">口服</li><li class="drop-item drop_odd" title="舌下含服" value="YF09002" data-value="YF09002">舌下含服</li><li class="drop-item drop_even" title="雾化吸入" value="YF09003" data-value="YF09003">雾化吸入</li><li class="drop-item drop_odd" title="喷喉" value="YF09004" data-value="YF09004">喷喉</li><li class="drop-item drop_even" title="静滴" value="YF09005" data-value="YF09005">静滴</li><li class="drop-item drop_odd" title="肌肉注射" value="YF09006" data-value="YF09006">肌肉注射</li><li class="drop-item drop_even" title="嚼服" value="YF09007" data-value="YF09007">嚼服</li><li class="drop-item drop_odd" title="冲服" value="YF09008" data-value="YF09008">冲服</li><li class="drop-item drop_even" title="外用" value="YF09009" data-value="YF09009">外用</li><li class="drop-item drop_odd" title="外敷" value="YF09010" data-value="YF09010">外敷</li><li class="drop-item drop_even" title="外洗" value="YF09011" data-value="YF09011">外洗</li><li class="drop-item drop_odd" title="滴眼" value="YF09012" data-value="YF09012">滴眼</li><li class="drop-item drop_even" title="滴鼻" value="YF09013" data-value="YF09013">滴鼻</li><li class="drop-item drop_odd" title="滴耳" value="YF09014" data-value="YF09014">滴耳</li><li class="drop-item drop_even" title="塞肛用" value="YF09015" data-value="YF09015">塞肛用</li><li class="drop-item drop_odd" title="阴道用" value="YF09016" data-value="YF09016">阴道用</li><li class="drop-item drop_even" title="吸入" value="YF09017" data-value="YF09017">吸入</li><li class="drop-item drop_odd" title="烊化（服）" value="YF09018" data-value="YF09018">烊化（服）</li><li class="drop-item drop_even" title="皮试" value="YF09019" data-value="YF09019">皮试</li><li class="drop-item drop_odd" title="喷鼻" value="YF09020" data-value="YF09020">喷鼻</li><li class="drop-item drop_even" title="含服" value="YF09021" data-value="YF09021">含服</li><li class="drop-item drop_odd" title="含漱" value="YF09022" data-value="YF09022">含漱</li><li class="drop-item drop_even" title="皮下注射" value="YF09023" data-value="YF09023">皮下注射</li><li class="drop-item drop_odd" title="皮内注射" value="YF09024" data-value="YF09024">皮内注射</li><li class="drop-item drop_even" title="静脉注射" value="YF09025" data-value="YF09025">静脉注射</li><li class="drop-item drop_odd" title="水煎服" value="YF09026" data-value="YF09026">水煎服</li><li class="drop-item drop_even" title="磨粉" value="YF09027" data-value="YF09027">磨粉</li><li class="drop-item drop_odd" title="饭前服" value="YF09028" data-value="YF09028">饭前服</li><li class="drop-item drop_even" title="饭后服" value="YF09029" data-value="YF09029">饭后服</li><li class="drop-item drop_odd" title="空腹服" value="YF09030" data-value="YF09030">空腹服</li><li class="drop-item drop_even" title="灌肠" value="8a23c67ee588482fa419a34f65a925dd" data-value="8a23c67ee588482fa419a34f65a925dd">灌肠</li><li class="drop-item drop_odd" title="入壶" value="b8892c8feb7b4c1f9e6f3ead847c726e" data-value="b8892c8feb7b4c1f9e6f3ead847c726e">入壶</li><li class="drop-item drop_even" title="晨服" value="ca054c962cc44f5bae37ec84f6a6948a" data-value="ca054c962cc44f5bae37ec84f6a6948a">晨服</li><li class="drop-item drop_odd" title="关节腔注射" value="7622daf43ffd4d4f8dc72b3a62a69cb3" data-value="7622daf43ffd4d4f8dc72b3a62a69cb3">关节腔注射</li><li class="drop-item drop_even" title="续滴" value="3cc788d5b8514c2494df355ee34d1fd2" data-value="3cc788d5b8514c2494df355ee34d1fd2">续滴</li></ul></div>
+		                            <div class="drop drug-frequency">
+		                                <input class="input-text frequencyName frequencyNameDropDown validate(maxlength(5))" placeholder="频率" readonly="readonly" type="text">
+		                                <i class="drop-icon"></i>
+		                            <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="每天1次" value="PL07001" data-value="PL07001">每天1次</li><li class="drop-item drop_odd" title="每天2次" value="PL07002" data-value="PL07002">每天2次</li><li class="drop-item drop_even" title="每天3次" value="PL07003" data-value="PL07003">每天3次</li><li class="drop-item drop_odd" title="每天4次" value="PL07004" data-value="PL07004">每天4次</li><li class="drop-item drop_even" title="隔日1次" value="PL07005" data-value="PL07005">隔日1次</li><li class="drop-item drop_odd" title="每周1次" value="PL07006" data-value="PL07006">每周1次</li><li class="drop-item drop_even" title="必要时" value="PL07007" data-value="PL07007">必要时</li><li class="drop-item drop_odd" title="隔周1次" value="f9749892bfde4e5a9e433061cb3a0818" data-value="f9749892bfde4e5a9e433061cb3a0818">隔周1次</li><li class="drop-item drop_even" title="每晚1次" value="293bf4c6b86b4f50b0c0b452a3c2ed45" data-value="293bf4c6b86b4f50b0c0b452a3c2ed45">每晚1次</li><li class="drop-item drop_odd" title="立即" value="8dedefff21b24ceeb83892ae19e4f522" data-value="8dedefff21b24ceeb83892ae19e4f522">立即</li><li class="drop-item drop_even" title="每6小时1次" value="5902e039edea4ab5b7223c801c986961" data-value="5902e039edea4ab5b7223c801c986961">每6小时1次</li><li class="drop-item drop_odd" title="每8小时1次" value="af8454c068b24c528238241942fb7bc1" data-value="af8454c068b24c528238241942fb7bc1">每8小时1次</li><li class="drop-item drop_even" title="每12小时1次" value="6eeba8959bd1415c8733bd53a56edaad" data-value="6eeba8959bd1415c8733bd53a56edaad">每12小时1次</li><li class="drop-item drop_odd" title="每天6次" value="11e7161d57b14952be54aba64a90e514" data-value="11e7161d57b14952be54aba64a90e514">每天6次</li></ul></div>
+		                            <div class="drug-days fl">
+		                                <input class="input-text totalDay validate(required,digits,maxlength(5),min(1))" maxlength="3" placeholder="天数" type="text">
+		                            </div>
+		                            <div class="drug-total fl">
+		                            	<input class="input-text totalQty validate(digits,maxlength(6))" maxlength="6" placeholder="总量" type="text">
+                                       	<div style="width: 66px;min-width: 66px;float:right;" class="drop drug-unit">
+			                               	<input class="input-text drug-total-unit" placeholder="单位" readonly="readonly" type="text">
+			                                <i class="drop-icon"></i>
+		                            	</div>
+		                            </div>
+		                            <div class="drug-operate fl">
+		                                <i class="add-drug" title="添加"></i>
+		                                <i class="empty-drug" title="清空"></i>
+		                            </div>
+		                            <div class="drug-understock dsn">库存不足</div>
+		                        </div>
+		                        <div class="doctor-advice clear">
+		                            <div class="fl doctor-advice-title">医嘱：</div>
+		                            <div class="doctor-advice-content">
+		                                <div class="doctor-advice-box">
+		                                    <textarea placeholder="请填写医嘱" class="china-advice" maxlength="100"></textarea>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <!--查看状态下显示-->
+		                    <div class="already-importInfo dsn" style="display: none;">
+		                        <span>医嘱：</span><span class="china-advice"></span>
+		                    </div>
+		                </div>
+		                <!--查看状态下显示-->
+		                <div class="pill-bottom-info dsn" style="display: none;">
+		                    <div class="fillOut">
+		                        <ul>
+		                            <li><span>审核：</span><span class="underline"></span></li>
+		                            <li><span>调配：</span><span class="underline"></span></li>
+		                            <li class="last-column"><span>医师：</span><span class="underline doctorName doctorNameShow">许甲甲</span></li>
+		                            <li><span>核对：</span><span class="underline"></span></li>
+		                            <li><span>发药：</span><span class="underline"></span></li>
+		                            <li class="last-column"><span>处方总金额（元）：</span><span class="underline total-money china-totalPrice"></span></li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div><div class="foot-btn fl">
+		                <div class="left-btn fl">
+		                    <span class="saveAs" title="处方1存为模板">存为模板</span>
+		                    <span class="print" title="打印处方1">打印</span>
+		                    <span class="applyRefund" style="display: none;">申请退药</span>
+		                </div>
+		                <div class="right-btn fr">
+		                    <span class="btn submit-btn save">保存</span>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="right-switchInfo fl">
+		            <div class="topNav-wrap">
+		                <div class="topNav">
+		                    <ul>
+		                        <li class="topNav-item choose">历史处方</li>
+		                        <li class="topNav-item">处方模板</li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <div class="rightInfo-wrap">
+                        <div class="noDataHint dsn" hashistoryrecipe="1">
+                            <img src="CPMPrescription_files/no-searchResults.png" alt="暂无历史病历">
+                            <p class="noDataHint-text">暂无历史处方</p>
+                        </div>
+		                <div class="historyRecipe">
+		                    <div class="dateChooser clear">
+		                        <i class="t-aft fr next"></i>
+		                        <div class="drop dopdiv">
+		                            <input class="input-text dateChoose" readonly="readonly" value="2018-04-03" val="cf052be075b24e7aa702fbdeff4937ad" type="text">
+		                            <i class="drop-icon"></i>
+		                        <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="2018-04-03" value="cf052be075b24e7aa702fbdeff4937ad" data-value="cf052be075b24e7aa702fbdeff4937ad">2018-04-03</li></ul></div>
+		                        <i class="t-pre fr prev"></i>
+		                    </div>
+		                    <div class="historyRecipe-project recipe-history-clone dsn">
+		                        <div class="historyRecipe-Info clear">
+                                    <div class="historyStores dsn" title="分店名称："></div>
+		                            <div class="doctorName" title="就诊医生："></div>
+		                            <span class="treatmentType"></span>
+		                        </div>
+		                        <div class="historyRecipe-diagnose" title="诊断：">
+		                            <span id="hisDiagnosis"></span>
+		                        </div>
+		                        <div class="historyDetail">
+		                            <ul>
+		                                <li class="historyDetail-item history-clone choose dsn">
+		                                    <div class="historyDetail-head">
+		                                        <span class="prescription-title"></span>
+		                                        <i class="collapse fr"></i>
+		                                    </div>
+		                                    <div class="historyDetail-content">
+                                                <p style="margin-bottom: 6px;">Rp：</p>
+		                                        <ul class="historyDetail-content-list">
+		                                            <li class="historyDetail-content-row history-cell-clone dsn">
+		                                                <span class="group-title groupNum"></span>
+		                                                <div class="row-content">
+		                                                    <span class="row-drugName drugName"></span>
+		                                                    <span class="drugPackageSpec"></span>
+		                                                    <span class="drugDose">单次用量：</span>
+		                                                    <span class="drugUsage">用法：</span>
+		                                                    <span class="frequency">频率：</span>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+		                                        <div class="history-doctor-advice advice">
+		                                            
+		                                        </div>
+		                                        <div class="history-quote">
+		                                            <span class="btn normal-btn quote">引用成药方</span>
+		                                        </div>
+		                                    </div>
+		                                </li>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                <div class="historyRecipe-project dsn" style="display: block;" acography-id="cf052be075b24e7aa702fbdeff4937ad">
+		                        <div class="historyRecipe-Info clear">
+                                    <div class="historyStores dsn" title="分店名称："></div>
+		                            <div class="doctorName" title="就诊医生：许甲甲">许甲甲</div>
+		                            <span class="treatmentType">初诊</span>
+		                        </div>
+		                        <div class="historyRecipe-diagnose" title="诊断：阳痿了">
+		                            <span id="hisDiagnosis">阳痿了</span>
+		                        </div>
+		                        <div class="historyDetail">
+		                            <ul>
+		                                <li class="historyDetail-item history-clone choose dsn">
+		                                    <div class="historyDetail-head">
+		                                        <span class="prescription-title"></span>
+		                                        <i class="collapse fr"></i>
+		                                    </div>
+		                                    <div class="historyDetail-content">
+                                                <p style="margin-bottom: 6px;">Rp：</p>
+		                                        <ul class="historyDetail-content-list">
+		                                            <li class="historyDetail-content-row history-cell-clone dsn">
+		                                                <span class="group-title groupNum"></span>
+		                                                <div class="row-content">
+		                                                    <span class="row-drugName drugName"></span>
+		                                                    <span class="drugPackageSpec"></span>
+		                                                    <span class="drugDose">单次用量：</span>
+		                                                    <span class="drugUsage">用法：</span>
+		                                                    <span class="frequency">频率：</span>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+		                                        <div class="history-doctor-advice advice">
+		                                            
+		                                        </div>
+		                                        <div class="history-quote">
+		                                            <span class="btn normal-btn quote">引用成药方</span>
+		                                        </div>
+		                                    </div>
+		                                </li>
+		                            <li class="historyDetail-item choose dsn" style="display: list-item;">
+		                                    <div class="historyDetail-head">
+		                                        <span class="prescription-title">成药方 1</span>
+		                                        <i class="collapse fr"></i>
+		                                    </div>
+		                                    <div class="historyDetail-content" recipe-id="8a52e1b0578b4cd9b2fd196a23736226">
+                                                <p style="margin-bottom: 6px;">Rp：</p>
+		                                        <ul class="historyDetail-content-list">
+		                                            <li class="historyDetail-content-row history-cell-clone dsn">
+		                                                <span class="group-title groupNum"></span>
+		                                                <div class="row-content">
+		                                                    <span class="row-drugName drugName"></span>
+		                                                    <span class="drugPackageSpec"></span>
+		                                                    <span class="drugDose">单次用量：</span>
+		                                                    <span class="drugUsage">用法：</span>
+		                                                    <span class="frequency">频率：</span>
+		                                                </div>
+		                                            </li>
+		                                        <li class="historyDetail-content-row dsn" style="display: list-item;">
+		                                                <span class="group-title groupNum">组 1</span>
+		                                                <div class="row-content">
+		                                                    <span class="row-drugName drugName" title="雌二醇片/雌二醇地屈孕酮片复合包装">雌二醇片/雌二醇地屈孕酮片复合包装</span>
+		                                                    <span class="drugPackageSpec">雌二醇片含雌二醇2mg;雌二醇地屈孕酮片含雌二醇2mg,地屈孕酮10mg</span>
+		                                                    <span class="drugDose">单次用量：2片</span>
+		                                                    <span class="drugUsage">用法：口服</span>
+		                                                    <span class="frequency">频率：bid</span>
+		                                                </div>
+		                                            </li></ul>
+		                                        <div class="history-doctor-advice advice"></div>
+		                                        <div class="history-quote">
+		                                            <span class="btn normal-btn quote" data-index="1" recipe-id="8a52e1b0578b4cd9b2fd196a23736226">引用成药方</span>
+		                                        </div>
+		                                    </div>
+		                                </li></ul>
+		                        </div>
+		                    </div></div>
+		                <div class="recipe-template dsn">
+		                    <div class="css_search_wrap">
+		                        <div class="search-box clear">
+		                            <input id="" class="input-text fl templateName" placeholder="输入模板名点击搜索" type="text">
+		                            <a href="javascript:;" class="btn search-btn js_search_btn fl" id="teml_btn_search"></a>
+		                        </div>
+		                    </div>
+		                    <div class="tmpl-css-wrap">
+		                        <ul>
+		                            <li id="china-tmpl-doctor-dl" class="recipe-template-title-li recipe-template-title collapse" title="">个人模板</li>
+		                            <li>
+		                                <ul id="china-tmpl-doctor-ul">
+		                                </ul>
+		                            </li>
+		                        </ul>
+		                        <ul>
+		                            <li id="china-tmpl-clinic-dl" class="recipe-template-title-li recipe-template-title" title="">诊所模板</li>
+		                            <li class="dsn">
+		                                <ul id="china-tmpl-clinic-ul">
+		                                </ul>
+		                            </li>
+		                        </ul>
+		                        <ul>
+		                            <!-- <li id="china-tmpl-platform-dl" class="recipe-template-title-li recipe-template-title collapse" title="">平台模板</li>
+		                            <li>
+		                               <ul id="china-tmpl-platform-ul">
+		                               </ul>
+		                            </li>
+		                            -->
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <img src="CPMPrescription_files/space-bg.png" class="space-bg">
+		        <!--添加诊断弹窗-->
+		        <div id="addDiagnosisPop" class="dsn">
+		            <div class="pop-mask"></div>
+		            <div class="popup" style="">
+		                <div class="popstyle">
+		                    <div class="poptitle">
+		                        添加诊断<span class="close" id="closeDiagnosis"></span>
+		                    </div>
+		                    <div class="popcontent">
+		                        <div class="diagnosis-input">
+		                            <div>
+		                                <span><i class="necessary">*</i>中医诊断：</span> <input class="input-text think-text validate(required)" maxlength="500" id="chineseTraDiagnosis" autocomplete="off" val="">
+		                            </div>
+		                            <div>
+		                                <span><i>&nbsp;&nbsp;</i>西医诊断：</span> <input id="westDiagnosis" class="input-text think-text " maxlength="" autocomplete="off" type="text">
+		                            </div>
+		                        </div>
+		                        <div class="pop-foot-btn clear">
+		                            <span class="btn normal-inverse-btn" id="add-cancel">取消</span>
+		                            <span class="btn normal-btn" id="add-save">确认</span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+        <!--今日就诊-候诊状态显示-->
+        <div id="treat-waitingState" style="display: none;">
+            <div class="waitingState-hint">未接诊，请先接诊</div>
+            <div class="waitingState-line">
+                <span class="through-line"></span>
+                <span class="through-text">可在以下途径进行接诊</span>
+            </div>
+            <div class="waitingState-img"></div>
+        </div>
+        <!--今日就诊-已完成-无数据情况显示-->
+        <div id="treat-completedNoData" style="display: none;">
+            <div class="waitingState-hint">当前暂无处方记录</div>
+            <div class="waitingState-line">
+                <span class="through-line"></span>
+                <span class="through-text">如需填写，可在以下途径重新接诊</span>
+            </div>
+            <div class="waitingState-img"></div>
+        </div>
+        <!--今日就诊-候诊状态并有历史记显示-->
+        <div id="treat-waitingState-historyRec" style="display: none;">
+            <div class="completedNoData-historyRec-border">
+                <div class="waitingState-hint">未接诊，请先接诊；可查看右侧历史处方</div>
+                <div class="waitingState-line">
+                    <span class="through-line"></span>
+                    <span class="through-text">可在以下途径进行接诊</span>
+                </div>
+                <div class="waitingState-img"></div>
+            </div>
+        </div>
+        <!--今日就诊-已完成-无数据并有历史记录情况显示-->
+        <div id="treat-completedNoData-historyRec" style="display: none;">
+            <div class="completedNoData-historyRec-border">
+                <div class="waitingState-hint">当前暂无处方记录，可查看右侧历史处方</div>
+                <div class="waitingState-line">
+                    <span class="through-line"></span>
+                    <span class="through-text">如需填写，可在以下途径重新接诊</span>
+                </div>
+                <div class="waitingState-img"></div>
+            </div>
+        </div>
+		
+		<div class="popup" id="drugs_testing" style="display: none">
+	    	<div class="popstyle">
+	        <div class="poptitle"><span class="title">合理用药检测</span><span class="close"></span></div>
+	        <div class="popcontent">
+	           <!--  <div class="drugs_line_wrap clear">
+	                <span>西药处方1：</span>
+	                <span class="testing_reason">用药严重过度！</span>
+	            </div>
+	            <div class="drugs_line_wrap clear">
+	                <span>西药处方1：</span>
+	                <span class="testing_reason">用药严重过度！</span>
+	            </div> -->
+	        </div>
+	    	</div>
+		</div>
+		<script type="text/javascript" src="CPMPrescription_files/pawj-pro.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/cache.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/jquery.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/docstation_url.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/print.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/printUtils.js"></script>
+        <script type="text/javascript" src="CPMPrescription_files/CPMPrescriptionPrint.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/CPMPrescription.js"></script>
+		<script type="text/javascript" src="CPMPrescription_files/reasonableMedication.js"></script>
+		
+		<script type="text/javascript">
+		    //数据采集
+		    var _maq = _maq || [];
+		    _maq.push(['sysType', 'B'],['sysModel', 'HZZX'],['sysMenu', 'TCM_DWS18']);
+		    function async_ipquery(){
+		    	var script = document.createElement("script");  
+		    	script.setAttribute("type","text/javascript"); 
+		    	  script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+		    	document.getElementsByTagName("head")[0].appendChild(script);
+		    	var collection = document.createElement('script');
+		    	collection.type = 'text/javascript';
+		    	collection.async = true;
+		    	collection.src ='../resources/js/pawj.collection.js';
+		    	var sCollection = document.getElementsByTagName('script')[0];
+		    	sCollection.parentNode.insertBefore(collection, sCollection);
+		    }
+		    $(function(){
+		        if (window.attachEvent) {
+		            window.attachEvent('onload', async_ipquery);
+		        } else {
+		            window.addEventListener('load', async_ipquery);
+		        }
+		    });
+		</script>
+	
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

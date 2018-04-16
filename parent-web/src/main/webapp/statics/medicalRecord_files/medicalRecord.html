@@ -1,0 +1,345 @@
+<!Doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="" />
+    <meta name="Keywords" content="" />
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/switch.js?20180402173531"></script>
+    <script type="text/javascript">
+    	addNewCssFile("nurstation");
+    </script>
+    <link href="../resources/plugin/iat/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://static.pinganwj.com/static/resources/css/pawj.min.css?20180402173531"/>
+    <link rel="stylesheet" type="text/css" href="css/doctorWorkstation.css?20180402173531" />
+    <link rel="stylesheet" type="text/css" href="../nurstation/css/slider.css?20180402173531">
+    <link rel="stylesheet" type="text/css" href="../main/style/base.css?20180402173531">
+    <!-- link rel="stylesheet" href="http://cdss.huimeionline.com/v2/assets/css/app.min.css" type="text/css" -->
+    
+    <title></title>
+<style>
+
+</style>
+</head>
+
+<body class="static-public-css index-protocol-css voice-input-css doctor-workstation-css slider-css">
+
+    <div class="content-inner clear">
+        <div class="cdss_container_wrapper">
+            <!-- <div class="cdss-context-display-btn"></div> -->
+            <div id="cdss_container" class="cdss-parent-context-part">
+             </div>
+        </div>
+        <div class="tab-content-wrapper">
+        
+            <div class="tab-content mtr">
+	            <div class="tab-content-top clear">
+	        	    <div class="com_status_left left-menu">
+	                    <ul class="clear">
+	                        <li class="treatType" value="1" id="firDiag">初诊</li>
+	                        <li class="treatType" value="2" id="secDiag">复诊</li>
+	                    </ul>
+	                </div>
+	                <!-- <a class="fl" href="javascript:;">门诊病历</a> -->
+	                <span class="open-csds-panel diagnosis-btn" title="智能诊断"></span>
+	                <span class="print" title="打印"></span>
+	                <span class="print printReview" style="background: url(../dws/images/printReview_template.png) no-repeat;" title="打印预览"></span>
+	                <span class="save_tmpl" id="medRecSaveTmplBtn" title="存为模板"></span>
+	                <span class="choose_tmpl" id="medRecTmplBtn" title="选择模板"></span>
+	                    
+	            </div>
+	            <ul class="inner-form">
+	                <li class="cc clear input-think"><span class="form-item-title">主诉：</span>
+	
+	                    <div class="model"></div>
+	                    <div class="zhusu-wrapper">
+	                        <div class="cc_input">
+	                            <input type="text" class="mtr_necessary input-text think-text validate(maxlength(500))" id="chiefComplaint" value="">
+	                        </div>
+	
+	                        <div class="popup popup-model dsn">
+	                            <div class="popstyle">
+	                                <div class="poptitle">
+	                                    病历模板<span class="close"></span>
+	                                </div>
+	                                <div class="popsearch static-public-css">
+										<input class="search-input" type="text" name="templateName" placeholder="输入名称搜索">
+										<a href="javascript:;" class="btn search-btn js_search_btn" id="teml_btn_search"></a>  						
+									</div>
+	                                
+	                                <div class="popcontent">
+	                                    <div class="popCon">
+	                                        <dl id="medRec_planform_tmpl">
+	                                        </dl>
+	                                        <dl id="medRec_person_tmpl">
+	                                        </dl>
+	                                    </div>
+	                                    <p id="noDataHint" class="noDataHint dsn">暂无模板数据！</p>
+	                                    <!--  end of .popCon -->
+	                                </div>
+	                                <!-- end of .popcontent -->
+	                            </div>
+	                            <!-- end of .popstyle -->
+	                        </div>
+	                        <!-- end of .popup -->
+	                    </div>
+	                    <!-- end of .zhusu-wrapper -->
+	                </li>
+	                <!-- end of .cc -->
+	                <li class="hpi input-think hisPreIll"><span class="form-item-title">现病史：</span>
+	                   <!-- <div class="bl-textarea">
+	                        <textarea class="tmpl-textarea think-text validate(maxlength(500))" cols="50" rows="10" id="historyOfPresentIllness"></textarea>
+	                    </div> -->
+	                    <div class="followup-input input_drop">
+		                        <textarea type="text" class="result input-text followUpContent validate(maxlength(500))" id="historyOfPresentIllness"  rows="2" style="height: 50px;line-height: 18px;"></textarea>
+		                </div>
+	                </li>
+	                     	           
+	                <li class="hpi input-think pastHis"><span class="form-item-title">既往史：</span>
+	                    <!-- <div class="ph_input followup-input input_drop">
+	                        <input type="text" class="result input-text followUpContent input-text-full think-text validate(maxlength(500))" id="pastHistory">
+	                    </div> -->
+	                    <div class="followup-input input_drop">
+		                        <input type="text" class="result input-text followUpContent validate(maxlength(500))" id="pastHistory">
+		                </div>
+	                </li>
+	                <li class="hpi input-think allerHis"><span class="form-item-title">&nbsp;&nbsp;&nbsp;&nbsp;过敏史：</span>
+	
+	                    <!-- <div class="ah_input followup-input input_drop">
+	                        <input type="text" class="result input-text followUpContent input-text-full think-text validate(maxlength(500))" id="allergiesHistory">
+	                    </div> -->
+						<div class="followup-input input_drop">
+		                        <input type="text" class="result input-text followUpContent validate(maxlength(500))" id="allergiesHistory">
+		                </div>
+	                    <ul class="med-checkboxes clear">
+	                        <li id="grs">个人史</li>
+	                        <li id="yfbds">预防接种史</li>
+	                        <li id="jzs">家族史</li>
+	                        <li id="fk" class="dsn">妇科</li>
+	                        <li id="qt">其他</li>
+	                    </ul>
+	                </li>
+	                <li class="input-grs dsn input-think">
+	                    <span class="form-item-title">个人史：</span>
+	                    <!-- <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="personalHistory">
+	                    </div> -->
+	                    <div class="followup-input input_drop">
+		                       <input type="text" class="result input-text followUpContent validate(maxlength(500))" id="personalHistory">
+		                </div>
+	                    </li>
+	                <li class="input-yfbds dsn input-think">
+	                    <span class="form-item-title">预防接种史：</span>
+	                    <!-- <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="historyOfPreventiveIno">
+	                    </div> -->
+	                    <div class="followup-input input_drop">
+		                       <input type="text" class="result input-text followUpContent validate(maxlength(500))" id="historyOfPreventiveIno">
+		                </div>
+	                </li>
+	                <li class="input-jzs dsn input-think">
+	                    <span class="form-item-title">家族史：</span>
+	                    <!-- <div class="case-item">
+	                    	<input type="text" class="input-text think-text validate(maxlength(500))" id="familyHistory">
+	                    </div> -->
+	                    <div class="followup-input input_drop">
+		                       <input type="text" class="result input-text followUpContent validate(maxlength(500))" id="familyHistory">
+		                </div>
+	                </li>       
+	                <li class="input-fk dsn input-think">
+	                    <span class="form-item-title">月经史：</span>
+	                    <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="mensesHistory">
+	                    </div>
+	                </li>
+	                <li class="input-fk dsn input-think">
+	                    <span class="form-item-title">生育史：</span>
+	                    <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="procreateHistory">
+	                   	</div>
+	                    <br/>
+	                </li>
+	                <li class="input-fk dsn input-think">
+	                    <span class="form-item-title">手术史：</span>
+	                    <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="operationHistory">
+	                    </div>
+	                </li>
+	                
+	                <li class="input-qt dsn input-think">
+	                    <span class="form-item-title">其他：</span>
+	                    <div class="case-item">
+	                    <input type="text" class="input-text think-text validate(maxlength(500))" id="othersInfo">
+	                    </div>
+	                </li>
+	                <li class="pe">
+	                    <span class="form-item-title">体格检查：</span> 
+	                    <div class="css_sam_wrap" id="validateArea">
+	                        <span class="check-length">
+                                体温：<input class="input-text" type="text" maxlength="4" id="temperature"><p class="unit">℃</p>
+	                        </span> 
+	                        <span class="check-length">
+                                血压：<input class="input-text check-input-length" type="text" maxlength="3" id="bloodPressureMax" placeholder="收缩压"> / <input class="input-text check-input-length" type="text" maxlength="3" id="bloodPressureMin" placeholder="舒张压"><p class="unit">mmHg</p>
+	                        </span> 
+	                        <span class="check-length">
+                                脉搏：<input class="input-text" type="text" maxlength="3" id="heartRate"><p class="unit">bpm</p>
+	                        </span>
+	                        <span class="check-length">
+                                呼吸：<input class="input-text" type="text" maxlength="3" id="breathRate"><p class="unit">次/分</p>
+	                        </span>
+		                        <span class="check-length">
+	                                身高：<input class="input-text validate(number)" type="text" maxlength="4" id="height"><p class="unit">cm</p>
+		                        </span>
+		                        <span class="check-length">
+	                                体重：<input class="input-text validate(number)" type="text" maxlength="4"  id="weight"><p class="unit">kg</p>
+		                        </span>
+		                        <span class="check-length">
+	                                 BMI指数：<input class="input-text" type="text" maxlength="4" id="bmi" disabled="disabled" >
+                                     <span class="bmi-level" id="bmiLevelArea" title="偏瘦：低于18.5；正常：18.5-24；肥胖：大于24">正常</span>
+		                        </span>
+                            <div id="bloodInfo">
+                                <span class="check-length">
+	                                血糖：<input class="input-text validate(digits)" type="text" maxlength="3"  id="bloodSugar" disabled="disabled"><p class="unit">mmol/L</p>
+		                        </span>
+                                <span class="check-length">
+	                                血氧：<input class="input-text validate(digits)" type="text" maxlength="3"  id="bloodOxygen" disabled="disabled"><p class="unit">%</p>
+		                        </span>
+                            </div>
+                            <div style="float: right;margin-right: 50px;display:none;">
+                            	<span>
+                            		<a style="color: #01a9db;" class="pictureLink">查看人体成分报告</a>
+                            	</span>
+                            </div>
+	                    </div>   
+	                </li>
+	                <li class="ope">
+	                    <div class="bl-textarea bl-textarea_2">
+	                        <textarea class="tmpl-textarea think-text validate(maxlength(500))" placeholder="其他体格检查" cols="50" rows="10" id="otherPhysicalExamination">
+	                        </textarea>
+	                    </div>
+	                </li>
+	                <li id="diagnosis-input" class="hpi input-think">
+	                	<span class="form-item-title"><i class="necessary">*</i>诊断：</span>
+	                    <div class="dn_input">
+	                    	<div>	           
+		                        <input index="0"  type="text" class="input-text input-diagnosis validate(maxlength(500))"  style="box-sizing: border-box;width:99.51%;">
+		                   		<a href="javascript:;" class="add-cf addDiagnosis" title="添加诊断" style="margin-left:-26px;">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	                   		</div>  
+	                   		<div>
+		                   		<input index="1" placeholder="请添加副诊断" type="text" class="dsn input-text  input-diagnosis validate(maxlength(500))" style="box-sizing: border-box;margin-top: 10px;width:99.51%;">
+		                   		<a href="javascript:;" class="dsn delete-cf addDiagnosis" title="删除诊断" style="margin-left:-26px;">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	                   		</div>
+	                   		<div>
+		                   		<input index="2" placeholder="请添加副诊断" type="text" class="dsn input-text  input-diagnosis validate(maxlength(500))"  style="box-sizing: border-box;margin-top: 10px;width:99.51%;">
+		                   		<a href="javascript:;" class="dsn delete-cf addDiagnosis" title="删除诊断" style="margin-left:-26px;">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	                   		</div>
+	                   		<div>
+		                   		<input index="3" placeholder="请添加副诊断" type="text" class="dsn input-text  input-diagnosis validate(maxlength(500))"  style="box-sizing: border-box;margin-top: 10px;width:99.51%;">
+		                   		<a href="javascript:;" class="dsn delete-cf addDiagnosis" title="删除诊断" style="margin-left:-26px;">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	                   		</div>
+	                   		<div>
+		                   		<input index="4" placeholder="请添加副诊断" type="text" class="dsn input-text  input-diagnosis validate(maxlength(500))"  style="box-sizing: border-box;margin-top: 10px;width:99.51%;">
+		                   		<a href="javascript:;" class="dsn delete-cf addDiagnosis" title="删除诊断" style="margin-left:-26px;">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	                   		</div>
+	                    </div>
+	                </li>
+	                <li class="input-think">         
+		                <span class="form-item-title">处理意见：</span>
+		                 	<div class="da_input clear" style="margin-left: 100px; overflow: visible; position: relative;">
+		                        <textarea class="tmpl-textarea think-text validate(maxlength(500))" cols="50" rows="10" id="doctorAdvice"></textarea>
+		                   		<div class="mtr-footBtn clear sub-menu-outer solove_box">
+				                    <span class="btn-finish-visit fr dsn" id="search_patient" title="引用处方"></span>
+				                </div>
+				                <div style="margin-top: 20px;">
+				                
+									<!-- <div class="component_drop_doctor_readonly can_not_edit dsn" id="doci" inputId="doci-input" style=" float: right; margin-left: 0; margin-right: 2px;"></div>						 
+								    <div class="component_drop_doctor docs can_edit drop" id="docs" inputId="docs-input" style=" float: right; margin-right: 0; margin-left: 0;"></div>
+								    <span class="form-item-title" style="float: right;">医生： </span> -->
+									<div class="mtr-footBtn clear">
+						                 <span class="btn submit-btn fr mc_submit dsn" id="saveBtn" style="margin-right: 0;">保存</span>
+						                 <span class="btn submit-btn fr dsn" id="editeBtn" style="margin-right: 0;">修改</span>
+						            </div>
+						        </div>
+		                	</div>
+	                </li>  
+				</ul>
+				
+			
+	        </div>
+	        <!-- end of .tab-content -->
+            <div class="mtr-historyRecord">
+            </div>
+
+        </div>
+        <!-- 图片浏览start -->
+	    <div class="pop_up2 paypop" id="photo_slide" style="display:none;" fatherName="medicalRecord">
+	        <div class="popstyle"></div>
+	        <div class="popcontent">
+	            <i class="close"></i>
+	            <div class="photo-browse">
+		          <div class="out">
+		              <ul class="img">
+		                  <li><a href='#'><img src='#' width='514' height='auto'></a></li>
+		              </ul>
+		              <div class="left btn"></div>
+		              <div class="right btn"></div>
+		              <div class="img-resize" id="rotate"></div>
+		              <div class="img-resize" id="enlarge">+</div>
+					  <div class="img-resize" id="narrow">-</div>
+		          </div>
+		          <a href="javascript:;" class="btn normal-btn yuantu">显示原图</a>
+	      		</div>
+	        </div>
+	    </div>
+	    <!-- 图片浏览END -->
+    </div>
+    <!-- end of .content-inner -->
+
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/jquery.min.js?20180402173531"></script>
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/public.js?20180402173531"></script>
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/jquery.placeholder.min.js?20180402173531"></script>
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/pawj.min.js?20180402173531"></script>
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/uuid.js?20180402173531"></script>
+    <script type="text/javascript" src="https://static.pinganwj.com/static/resources/js/underscore-min.js?20180402173531"></script>
+    <script type="text/javascript" src="../patientManagement/js/jquery.input_drop.js?20180402173531"></script>
+    <script type="text/javascript" src="../resources/js/cache.js?20180402173531"></script>
+	<script type="text/javascript" src="../resources/plugin/iat/js/uns_iot_sdk.min.js?20180402173531"></script>
+	<script type="text/javascript" src="../resources/plugin/iat/js/iflytek.js?20180402173531"></script>
+    <script type="text/javascript" src="https://cdss.huimeionline.com/v2/cdss.min.js"></script>
+    <script type="text/javascript" src="../dws/js/docstation_url.js?20180402173531"></script>
+  	<script type="text/javascript" src="../dws/js/cacheMap.js?20180402173531"></script>
+    <script type="text/javascript" src="../dws/js/medicalRecord.js?20180402173531"></script>
+    <script type="text/javascript" src="../resources/js/print.js?20180402173531"></script>
+    <script type="text/javascript" src="../print/js/printUtils.js?20180402173531"></script>
+    <script type="text/javascript" src="js/doctorWorkstationPrint.js?20180402173531"></script>
+    <script type="text/javascript" src="../nurstation/js/pictureShow.js?20180402173531"></script>
+    
+
+<script type="text/javascript">
+	  //数据采集      
+	    var _maq = _maq || [];
+	    _maq.push(['sysType', 'B'],['sysModel', 'HZZX'],['sysMenu', 'OPC_DWS04']);
+	    function async_ipquery(){
+	    	var script = document.createElement("script");  
+	    	script.setAttribute("type","text/javascript"); 
+	    	script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+	    	document.getElementsByTagName("head")[0].appendChild(script);
+	    	var collection = document.createElement('script');
+	    	collection.type = 'text/javascript';
+	    	collection.async = true;
+	    	collection.src ='../resources/js/pawj.collection.js';
+	    	var sCollection = document.getElementsByTagName('script')[0];
+	    	sCollection.parentNode.insertBefore(collection, sCollection);
+	    }
+	    $(function(){
+	    	if (window.attachEvent) {
+	    		window.attachEvent('onload', async_ipquery);
+	    	} else {
+	    		window.addEventListener('load', async_ipquery);
+	    	}
+	    });
+    </script>
+</body>
+
+</html>

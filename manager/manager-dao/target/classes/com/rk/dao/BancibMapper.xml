@@ -15,7 +15,7 @@
     where banciid = #{banciid,jdbcType=INTEGER}
   </select>
   <select id="getAll" resultMap="BaseResultMap">
-  	select * from banci
+  	select * from bancib
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from bancib

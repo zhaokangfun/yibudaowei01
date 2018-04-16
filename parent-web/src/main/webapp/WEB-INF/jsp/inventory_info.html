@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" async="" src="inventory_info_files/pawj.js"></script><script type="text/javascript" src="inventory_info_files/switch.js"></script><link rel="stylesheet" href="inventory_info_files/base.css"><link rel="stylesheet" href="inventory_info_files/base_002.css">
+    <link rel="stylesheet" type="text/css" href="inventory_info_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="inventory_info_files/inventory.css">
+
+    <link rel="stylesheet" type="text/css" href="inventory_info_files/pawj_002.css">
+    <link rel="stylesheet" type="text/css" href="inventory_info_files/statis.css">
+    <title>库存管理</title>
+<script type="text/javascript" src="inventory_info_files/ipquery.html"></script></head>
+<body class="static-public-css inventory-css pawj-tree-css statis-css">
+<div class="content-inner">
+    <!--查看帮助视频-->
+    <a href="https://www.pinganwj.com/help/1-2-2/63693879-81e3-4873-86a3-c794259a2663" target="_blank" class="help_video_button_css" title="点击查看帮助视频" style="top: 64px;right: 2px;">?</a>
+    <div class="tab-content clear bornone inventoryInfo">
+        <div class="tab-top clear" style="top: 9px; padding-right: 26px;">
+            <div class="clear">
+                <a href="javascript:;" id="inventory_set" class="btn  top-btn  fl tipso_style">库存设置</a>
+                <a href="javascript:;" id="inventory_valid" class="btn top-btn fl" style="margin-left: 5px;">有效期查询</a>
+                <a href="javascript:;" id="inventory_export" class="btn top-btn fl tipso_style" style="margin-left: 5px;">导出</a>
+                <a href="javascript:;" id="inventory_search" class="btn top-btn fl hide" style="margin-left: 5px;">库存查询</a>
+                <!-- <a href="inventory_chain.html" class="btn top-btn fl" style="margin-left:5px;" id="chain_inventory" style="display:none;">连锁库存</a>  -->
+                <div class="fr" style="padding-top: 0px;">
+                    <div class="fl">
+                        <span class="">进货总额：</span> <input id="totalPurchaseAmountSum" class="text" readonly="readonly" value="6322.00">
+                    </div>
+                    <div class="fl">
+                        <span class="">零售总额：</span> <input id="totalRetailAmountSum" class="text" readonly="readonly" value="7741.00">
+                    </div>
+                </div>
+            </div>
+            <div class="clear tab-top-search inventoryInfoTopSearch">
+                <div class="fl hide" id="store">
+                    <span class="form-item-title">门店：</span>
+
+                    <div class="drop" id="clinicNamesBox">
+                        <input id="select-store-input" class="input-text" readonly="readonly" value="全部 " type="text"> <input id="clinicIds" class="input-text" readonly="readonly" value="全部 " type="hidden">
+                        <i class="drop-icon"></i>
+                    </div>
+                </div>
+                <div class="fl hide" id="warningTypeCmp">
+                    <span class="form-item-title">预警类型：</span>
+
+                    <div class="drop">
+                        <input id="warning_type" class="input-text" readonly="readonly" value="全部" val="all" type="text"> <i class="drop-icon"></i>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="全部" value="all" data-value="all">全部</li><li class="drop-item drop_odd" title="上限预警" value="1" data-value="1">上限预警</li><li class="drop-item drop_even" title="下限预警" value="2" data-value="2">下限预警</li><li class="drop-item drop_odd" title="0库存预警" value="3" data-value="3">0库存预警</li></ul></div>
+                </div>
+                <div class="fl inventoryDrugType">
+                    <span class="form-item-title">药品类型：</span>
+
+                    <div class="drop">
+                        <input id="inventory_type" class="input-text" readonly="readonly" value="全部 " type="text"> <i class="drop-icon"></i>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="全部" value="all" data-value="all">全部</li><li class="drop-item drop_odd" title="西药" value="67780CBCA1FC0C72E053086E10ACD8CF" data-value="67780CBCA1FC0C72E053086E10ACD8CF">西药</li><li class="drop-item drop_even" title="中成药" value="67780CBCA1FD0C72E053086E10ACD8CF" data-value="67780CBCA1FD0C72E053086E10ACD8CF">中成药</li><li class="drop-item drop_odd" title="中草药" value="67780CBCA1FE0C72E053086E10ACD8CF" data-value="67780CBCA1FE0C72E053086E10ACD8CF">中草药</li><li class="drop-item drop_even" title="材料" value="67780CBCA1FF0C72E053086E10ACD8CF" data-value="67780CBCA1FF0C72E053086E10ACD8CF">材料</li></ul></div>
+                </div>
+                <div class="" style="padding-top: 5px;">
+                    <ul class="checkbox-box">
+                        <li class="checkbox-item tipso_style" id="zeroselect"><input checked="checked" class="checked" type="checkbox"> <!-- <span class="active">0库存不展示</span> -->
+                            <span class="active">0库存不展示</span></li>
+                        <li class="checkbox-item tipso_style" id="inventorywarn"><input type="checkbox"> <span class="form-item-title">库存预警</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-box fr">
+                    <input id="search_text" class="input-text fl" placeholder="名称/编码/拼音码" type="text"> <a href="javascript:void(0);" class="btn search-btn js_search_btn fl"></a>
+                </div>
+            </div>
+        </div>
+        <!-- end of .tab-top -->
+        <div class="table_content_wrap fixed-head">
+            <div class="table_content">
+                <div class="tableBox-head">
+                    <table class="common-table full-width-table">
+                        <tbody><tr>
+                            <!--<th width="7%">编码</th> -->
+                            <th width="5%">药品类型</th>
+                            <th width="15%">名称</th>
+                            <th width="8%">规格</th>
+                            <th class="hide" id="warningTypeTh" width="10%">预警类型</th>
+                            <th width="12%">生产厂家</th>
+                            <th width="8%">零售价（元）</th>
+                            <th width="8%">进货价（元） <i class="question-tips" title="最近一次入库的进货价">?</i></th>
+                            <th width="10%">库存总量</th>
+                            <th width="10%">有效库存总量 <!-- <i class="question-tips" title="有效期之内且处于非收费中的库存量">?</i> --></th>
+                            <th id="storeNameTh" class="hide" width="10%">门店名称</th>
+                            <th>操作</th>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="tableBox-cont">
+                    <table id="inventory_table" class="common-table full-width-table"><tbody><tr data-drug-id="67780CBCA2180C72E053086E10ACD8CF" data-drug-name="阿奇霉素片" data-drug-spec="0.25g(25万U)" data-drug-retail-price="15" data-clinic-id="e2147bbb-f9de-4768-9d30-881f73dba191"><td width="5%">西药</td><td width="15%">阿奇霉素片</td><td width="8%">0.25g(25万U)</td><td width="12%">上海现代制药股份有限公司</td><td style="text-align: right;padding-right:9px;" width="8%">15</td><td style="text-align: right;padding-right:9px;" width="8%">9</td><td class="data_detail" width="10%"><span class="text_theme_color">111</span>盒<div class="data_detail_box dsn"><p>已过期：<span>0盒</span></p><p>收费中：<span>0盒</span></p></div></td><td class="data_detail" width="10%"><span class="text_theme_color">111</span>盒<div class="data_detail_box dsn"><p>已过期：<span>0盒</span></p><p>收费中：<span>0盒</span></p></div></td><td><a width="10%" class="inventory_detail tipso_style" href="javascript:;">进销存详情</a> <a class="batch_num_search tipso_style" href="javascript:;">批次详情</a></td></tr><tr data-drug-id="67780CBCA2170C72E053086E10ACD8CF" data-drug-name="盐酸环丙沙星片" data-drug-spec="0.25g(按环丙沙星计)" data-drug-retail-price="15" data-clinic-id="e2147bbb-f9de-4768-9d30-881f73dba191"><td width="5%">西药</td><td width="15%">盐酸环丙沙星片</td><td width="8%">0.25g(按环丙沙星计)</td><td width="12%">杭州民生药业有限公司</td><td style="text-align: right;padding-right:9px;" width="8%">15</td><td style="text-align: right;padding-right:9px;" width="8%">12</td><td class="data_detail" width="10%"><span class="text_theme_color">111</span>盒<div class="data_detail_box dsn"><p>已过期：<span>111盒</span></p><p>收费中：<span>0盒</span></p></div></td><td class="data_detail" width="10%"><span class="text_theme_color">0</span> 盒<div class="data_detail_box dsn"><p>已过期：<span>111盒</span></p><p>收费中：<span>0盒</span></p></div></td><td><a width="10%" class="inventory_detail tipso_style" href="javascript:;">进销存详情</a> <a class="batch_num_search tipso_style" href="javascript:;">批次详情</a></td></tr><tr data-drug-id="e32f63791f4740ffb022787c9746d0d0" data-drug-name="火烧馍" data-drug-spec="q" data-drug-retail-price="12" data-clinic-id="e2147bbb-f9de-4768-9d30-881f73dba191"><td width="5%">西药</td><td width="15%">火烧馍</td><td width="8%">q</td><td width="12%">九多肉多</td><td style="text-align: right;padding-right:9px;" width="8%">12</td><td style="text-align: right;padding-right:9px;" width="8%">12</td><td class="data_detail" width="10%"><span class="text_theme_color">128</span>瓶<div class="data_detail_box dsn"><p>已过期：<span>0瓶</span></p><p>收费中：<span>0瓶</span></p></div></td><td class="data_detail" width="10%"><span class="text_theme_color">128</span>瓶<div class="data_detail_box dsn"><p>已过期：<span>0瓶</span></p><p>收费中：<span>0瓶</span></p></div></td><td><a width="10%" class="inventory_detail tipso_style" href="javascript:;">进销存详情</a> <a class="batch_num_search tipso_style" href="javascript:;">批次详情</a></td></tr><tr data-drug-id="9f05fd7dfcf946188f0fc5a187ee4c3b" data-drug-name="雌二醇片/雌二醇地屈孕酮片复合包装" data-drug-spec="雌二醇片含雌二醇2mg;雌二醇地屈孕酮片含雌二醇2mg,地屈孕酮10mg" data-drug-retail-price="12" data-clinic-id="e2147bbb-f9de-4768-9d30-881f73dba191"><td width="5%">中成药</td><td width="15%">雌二醇片/雌二醇地屈孕酮片复合包装</td><td width="8%">雌二醇片含雌二醇2mg;雌二醇地屈孕酮片含雌二醇2mg,地屈孕酮10mg</td><td width="12%">AbbottHealthcareProductsB.V.</td><td style="text-align: right;padding-right:9px;" width="8%">12</td><td style="text-align: right;padding-right:9px;" width="8%">2</td><td class="data_detail" width="10%"><span class="text_theme_color">11</span>盒<div class="data_detail_box dsn"><p>已过期：<span>0盒</span></p><p>收费中：<span>0盒</span></p></div></td><td class="data_detail" width="10%"><span class="text_theme_color">11</span>盒<div class="data_detail_box dsn"><p>已过期：<span>0盒</span></p><p>收费中：<span>0盒</span></p></div></td><td><a width="10%" class="inventory_detail tipso_style" href="javascript:;">进销存详情</a> <a class="batch_num_search tipso_style" href="javascript:;">批次详情</a></td></tr><tr data-drug-id="5f3722123b904acd9cb2019a78b5586d" data-drug-name="当归" data-drug-spec="1" data-drug-retail-price="13" data-clinic-id="e2147bbb-f9de-4768-9d30-881f73dba191"><td width="5%">中草药</td><td width="15%">当归</td><td width="8%">1</td><td width="12%">阿萨德</td><td style="text-align: right;padding-right:9px;" width="8%">13</td><td style="text-align: right;padding-right:9px;" width="8%">12</td><td class="data_detail" width="10%"><span class="text_theme_color">211</span>g<div class="data_detail_box dsn"><p>已过期：<span>100g</span></p><p>收费中：<span>0g</span></p></div></td><td class="data_detail" width="10%"><span class="text_theme_color">111</span>g<div class="data_detail_box dsn"><p>已过期：<span>100g</span></p><p>收费中：<span>0g</span></p></div></td><td><a width="10%" class="inventory_detail tipso_style" href="javascript:;">进销存详情</a> <a class="batch_num_search tipso_style" href="javascript:;">批次详情</a></td></tr></tbody></table>
+                </div>
+            </div>
+        </div>
+        <div class="clear table-page">
+            <div id="my-page" class="page-nav"><div class="pagination_tips">                                    共<span class="pagination_counts">5</span>条数据                                     <div class="pagination_select">                                        <span class="pagination_cell_count">20</span>                                        <span class="pagination_arrow"></span>                                        <div class="pagination_options_panel" style=""><span class="pagination_option" value="50">50</span><span class="pagination_option" value="20">20</span><span class="pagination_option" value="10">10</span></div>                                    </div> 条/页                            </div></div>
+            <div id="my-page-summary" class="page-nav hide"><div class="pagination_tips">                                    共<span class="pagination_counts"></span>条数据                                     <div class="pagination_select">                                        <span class="pagination_cell_count">20</span>                                        <span class="pagination_arrow"></span>                                        <div class="pagination_options_panel" style=""><span class="pagination_option" value="50">50</span><span class="pagination_option" value="20">20</span><span class="pagination_option" value="10">10</span></div>                                    </div> 条/页                            </div><ul class="pagination"><li class="disabled"><a href="javascript:;" id="prePg">上一页</a></li><li class="active" pageno="1"><a href="javascript:;">1</a></li><li class=""><a href="javascript:;" id=""></a></li><li class=""><a href="javascript:;" id="nextPg">下一页</a></li></ul></div>
+        </div>
+
+        <!-- popup -->
+        <div class="popup detail-popup" style="display: none;">
+            <div class="popstyle">
+                <div class="poptitle">
+                    批次详情<span class="close"></span>
+                </div>
+                <div class="popcontent clear">
+                    <div class="popup-inner clear">
+                        <table>
+                            <tbody><tr>
+                                <th width="100px">药品名称</th>
+                                <th width="110px">药品规格</th>
+                                <th width="90px">当前数量</th>
+                                <th width="80px">进货价</th>
+                                <th width="90px">批号</th>
+                                <th width="90px">有效期</th>
+                                <th width="70px">供应商</th>
+                                <th>生产商家</th>
+                            </tr>
+                        </tbody></table>
+                        <div class="table-scroll-area">
+                            <table id="batch_num_table">
+                            </table>
+                        </div>
+                        <!-- end of .table-scroll-area -->
+                    </div>
+                    <!-- end of .popup-inner -->
+                </div>
+                <!-- end of .popcontent -->
+            </div>
+            <!-- end of .popstyle -->
+        </div>
+        <!-- end of .popup -->
+
+    </div>
+    <!-- end of .tab-content -->
+</div>
+<!--右侧浮动侧边窗-->
+
+<div class="tips-floating-wrap" style="display: block;">
+    <div class="tips-floating tips-floating-hide">
+        <div class="no-longer-tips">
+            <div class="no-longer-tips-text">不再提示</div>
+        </div>
+        <div class="tips-guide">
+            <div class="guide-bird"></div>
+            <div class="guide-text">安安指引</div>
+        </div>
+        <div class="tips-list">
+            <ul>
+                <li>库存设置</li>
+                <li>导出</li>
+                <li>库存预警</li>
+                <li>进销存详情</li>
+                <li>批次详情</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pop-sure tips-floating-pop">
+        <div class="pop_head">
+            <div class="remind"> 确认要关闭安安引导吗？</div>
+            <span class="close">x</span>
+        </div>
+        <div class="pop_content">
+            <div class="sure-content">
+                <div>如需再次了解具体操作，以后可以进入右上角的帮助中心学习，</div>
+                <div>以后此页面不会再弹出引导。</div>
+            </div>
+            <div class="content_bottom">
+                <div class="bottom_btn btn-cancel">取消</div>
+                <div class="bottom_btn make_sure">确认</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="inventory_info_files/jquery_002.js"></script>
+
+<script type="text/javascript" src="inventory_info_files/jquery_003.js"></script>
+<script type="text/javascript" src="inventory_info_files/public.js"></script>
+<script type="text/javascript" src="inventory_info_files/cache.js"></script>
+<script type="text/javascript" src="inventory_info_files/pawj_003.js"></script>
+<script type="text/javascript" src="inventory_info_files/tipso.js"></script>
+
+<script type="text/javascript" src="inventory_info_files/jquery.js"></script>
+<script type="text/javascript" src="inventory_info_files/drugUtils.js"></script>
+<script type="text/javascript" src="inventory_info_files/inventory.js"></script>
+<script type="text/javascript" src="inventory_info_files/commonStoreTree.js"></script>
+<script type="text/javascript" src="inventory_info_files/pawj_002.js"></script>
+<script type="text/javascript" src="inventory_info_files/setTipsoEvent.js"></script>
+
+<script type="text/javascript">
+    //数据采集
+    var _maq = _maq || [];
+    _maq.push(['sysType', 'B'], ['sysModel', 'DRUG'], ['sysMenu', 'DRUG02']);
+
+    function async_ipquery() {
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+        document.getElementsByTagName("head")[0].appendChild(script);
+        var collection = document.createElement('script');
+        collection.type = 'text/javascript';
+        collection.async = true;
+        collection.src = '../resources/js/pawj.collection.js';
+        var sCollection = document.getElementsByTagName('script')[0];
+        sCollection.parentNode.insertBefore(collection, sCollection);
+    }
+
+    $(function () {
+        if (window.attachEvent) {
+            window.attachEvent('onload', async_ipquery);
+        } else {
+            window.addEventListener('load', async_ipquery);
+        }
+    });
+</script>
+<div class="popup popretrieval select-clinic" style="display:none;left:auto;">	<div class="popstyle">		<div class="poptitle" style="cursor: default;">门店选择<span class="close"></span></div>		<div class="popcontent clear">		<div class="tree-tools">			<span class="select-all-checkbox" title="全选"></span>			<span class="select-none-checkbox" title="全不选"></span>			<span class="select-all-childs-checkbox" title="全选子节点"></span>			<span class="select-none-childs-checkbox" title="全不选子节点"></span>		</div>			<div class="tree-box clear checkbox-tree"><div class="treeM"><ul style="display: block;"><li class="tree-item parent open"><i class="tree-checkbox"></i><span class="tree-mark"></span><a class="tree-name checkbox e2147bbb-f9de-4768-9d30-881f73dba191 active" title="zz">zz</a><ul style=""></ul></li></ul></div></div>			<div class="btn-group fr m-b-10">				<a href="javascript:;" class="btn btn-cancel fl m-r-12">取消</a>				<a href="javascript:;" class="btn btn-sure fl">确认</a>			</div>		</div>	</div></div><div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body><!-- end of .content-inner --></html>

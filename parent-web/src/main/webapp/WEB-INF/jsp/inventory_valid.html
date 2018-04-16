@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" async="" src="inventory_valid_files/pawj.js"></script><script type="text/javascript" src="inventory_valid_files/switch.js"></script><link rel="stylesheet" href="inventory_valid_files/base.css"><link rel="stylesheet" href="inventory_valid_files/base_002.css">
+    <link rel="stylesheet" type="text/css" href="inventory_valid_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="inventory_valid_files/inventory.css">
+    <title>有效期查询</title>
+<script type="text/javascript" src="inventory_valid_files/ipquery.html"></script></head>
+<body class="static-public-css inventory-css">
+<div class="content-inner">
+    <div class="tab-content clear">
+        <div class="tab-top clear">
+            <div class="bl-title fl">
+                <h2>有效期查询</h2>
+            </div>
+            <div class="fr">
+           		<ul class="checkbox-box fl" style="padding: 7px;">
+					<li class="checkbox-item" id="zeroselect"><input checked="checked" class="checked" type="checkbox"><span class="active">0库存不展示</span></li>
+				</ul>
+                <div class="fl">
+                    <span class="form-item-title">有效期：</span>
+                    <div class="drop">
+                        <input id="valid_day" class="input-text" readonly="readonly" placeholder="已过期" val="0" value="已过期" type="text">
+                        <i class="drop-icon"></i>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="已过期" value="0" data-value="0">已过期</li><li class="drop-item drop_odd" title="30天内过期" value="30" data-value="30">30天内过期</li><li class="drop-item drop_even" title="90天内过期" value="90" data-value="90">90天内过期</li><li class="drop-item drop_odd" title="6个月内过期" value="183" data-value="183">6个月内过期</li><li class="drop-item drop_even" title="一年内过期" value="365" data-value="365">一年内过期</li></ul></div>
+                </div>
+                <div class="fl">
+                    <span class="form-item-title">药品类型：</span>
+                    <div class="drop">
+                        <input id="drug_type" class="input-text" readonly="readonly" value="全部 " type="text">
+                        <i class="drop-icon"></i>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="全部" value="all" data-value="all">全部</li><li class="drop-item drop_odd" title="西药" value="67780CBCA1FC0C72E053086E10ACD8CF" data-value="67780CBCA1FC0C72E053086E10ACD8CF">西药</li><li class="drop-item drop_even" title="中成药" value="67780CBCA1FD0C72E053086E10ACD8CF" data-value="67780CBCA1FD0C72E053086E10ACD8CF">中成药</li><li class="drop-item drop_odd" title="中草药" value="67780CBCA1FE0C72E053086E10ACD8CF" data-value="67780CBCA1FE0C72E053086E10ACD8CF">中草药</li><li class="drop-item drop_even" title="材料" value="67780CBCA1FF0C72E053086E10ACD8CF" data-value="67780CBCA1FF0C72E053086E10ACD8CF">材料</li></ul></div>
+                </div>
+                <div class="search-box fl">
+                    <input id="search_text" class="input-text fl" placeholder="名称/编码/拼音码" type="text">
+                    <a id="search_btn" href="javascript:;" class="btn search-btn js_search_btn fl"></a>
+                </div>
+            </div>
+        </div>
+        <!-- end of .tab-top -->
+        <div class="table_content_wrap fixed-head" style="padding: 50px 0 120px 0;">
+        <div class="table_content">
+            <div class="tableBox-head">
+                <table class="common-table full-width-table">
+                    <tbody><tr>
+                        <th width="8%">药品类型</th>
+                        <th width="15%">药品名称</th>
+                        <th width="12%">规格</th>
+                        <th width="8%">剂型</th>
+                        <th width="10%">进货价</th>
+                        <th width="10%">库存</th>
+                        <th width="10%">批号</th>
+                        <th width="10%">有效期</th>
+                        <th>生产厂商</th>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="tableBox-cont">
+                <table id="inventory_table" class="common-table full-width-table"><tbody><tr><td width="8%">西药</td><td width="15%">盐酸环丙沙星片</td><td width="12%">0.25g(按环丙沙星计)</td><td width="8%">片剂</td><td width="10%">12.00/盒</td><td width="10%">111盒</td><td width="10%"></td><td width="10%">2018-04-07</td><td>杭州民生药业有限公司</td></tr><tr><td width="8%">中草药</td><td width="15%">当归</td><td width="12%">1</td><td width="8%">--</td><td width="10%">12.00/g</td><td width="10%">100g</td><td width="10%"></td><td width="10%">2018-04-07</td><td>阿萨德</td></tr></tbody></table>
+            </div>
+
+        </div>
+        </div>
+        <div class="clear table-page" style="bottom: 35px;">
+            <div id="my-page" class="page-nav"><div class="pagination_tips">                                    共<span class="pagination_counts">2</span>条数据                                     <div class="pagination_select">                                        <span class="pagination_cell_count">20</span>                                        <span class="pagination_arrow"></span>                                        <div class="pagination_options_panel" style=""><span class="pagination_option" value="50">50</span><span class="pagination_option" value="20">20</span><span class="pagination_option" value="10">10</span></div>                                    </div> 条/页                            </div></div>
+        </div>
+        <div class="btn-group fr clear table-btn" style="margin-bottom: 0;">
+            <a href="javascript:;" class="btn btn-cancel fl">返回</a>
+        </div>
+    </div>
+    <!-- end of .tab-content -->
+</div>
+
+<script type="text/javascript" src="inventory_valid_files/jquery_002.js"></script>
+<script type="text/javascript" src="inventory_valid_files/public.js"></script>
+<script type="text/javascript" src="inventory_valid_files/pawj_002.js"></script>
+<script type="text/javascript" src="inventory_valid_files/jquery.js"></script>
+<script type="text/javascript" src="inventory_valid_files/drugUtils.js"></script>
+<script type="text/javascript" src="inventory_valid_files/inventory_valid.js"></script>
+<script type="text/javascript">
+  	//数据采集      
+    var _maq = _maq || [];
+    _maq.push(['sysType', 'B'],['sysModel', 'DRUG'],['sysMenu', 'DRUG02']);
+    function async_ipquery(){
+    	var script = document.createElement("script");  
+    	script.setAttribute("type","text/javascript"); 
+    	script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+    	document.getElementsByTagName("head")[0].appendChild(script);
+    	var collection = document.createElement('script');
+    	collection.type = 'text/javascript';
+    	collection.async = true;
+    	collection.src ='../resources/js/pawj.collection.js';
+    	var sCollection = document.getElementsByTagName('script')[0];
+    	sCollection.parentNode.insertBefore(collection, sCollection);
+    }
+    $(function(){
+    	if (window.attachEvent) {
+    		window.attachEvent('onload', async_ipquery);
+    	} else {
+    		window.addEventListener('load', async_ipquery);
+    	}
+    });
+</script>
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

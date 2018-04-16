@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="treatment_files/pawj.js"></script><script src="treatment_files/CLodopfuncs.js"></script><script src="treatment_files/CLodopfuncs_002.js"></script><script src="treatment_files/CLodopfuncs_003.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="treatment_files/switch.js"></script><link rel="stylesheet" href="treatment_files/base.css"><link rel="stylesheet" href="treatment_files/base_002.css">
+    <link rel="stylesheet" type="text/css" href="treatment_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="treatment_files/easy.css">
+    <link rel="stylesheet" type="text/css" href="treatment_files/doctorWorkstation.css">
+    <title>治疗项目</title>
+<link rel="stylesheet" href="treatment_files/layer.css" id="layuicss-skinlayercss"><script type="text/javascript" src="treatment_files/ipquery.html"></script></head>
+
+<body class="static-public-css doctor-workstation-css">
+    <div class="content-inner">
+        <div class="tab-content treatment-project clear">
+            <div class="tab-content-top clear">
+               <!-- <a class="fl" href="javascript:;">治疗项目</a>-->
+                <span class="print" title="打印"></span>
+                <span class="save_tmpl" id="treatmentSaveTmplBtn" title="存为模板" style="display: none;"></span>
+                <span class="choose_tmpl" id="zlmb_model_btn" title="选择模板"></span>
+
+                <div class="popup popup-model" style="display: none" id="treatmentTmplDetail">
+                    <div class="popstyle">
+                        <div class="poptitle">
+                            治疗模板<span class="close"></span>
+                        </div>
+                        <div class="popsearch static-public-css">
+							<input class="search-input" name="templateName" placeholder="输入名称搜索" type="text">
+							<a href="javascript:;" class="btn search-btn js_search_btn" id="teml_btn_search"></a>  						
+						</div>
+                        <div class="popcontent">
+                            <div class="popCon">
+                                <dl id="tmpl_tp_platform">
+                                </dl>
+                                <dl id="tmpl_tp_persion">
+                                </dl>
+                            </div>
+                            <p id="noDataHint" class="noDataHint dsn">暂无模板数据！</p>
+                            <!--  end of .popCon -->
+                        </div>
+                        <!-- end of .popcontent -->
+                    </div>
+                    <!-- end of .popstyle -->
+                </div>
+                <!-- end of .popup -->
+            </div>
+            <!-- end of .tab-content-top -->
+
+            <div id="myForm" class="table-wrapper">
+                <table class="common-table full-width-table">
+                    <tbody><tr>
+                        <th width="6%">序号</th>
+                        <th width="6%">类型</th>
+                        <th width="30%">项目名称</th>
+                        <!-- <th width="10%">医生</th> -->
+                        <!--<th>频率</th>-->
+                        <th width="10%">数量</th>
+                        <th>备注</th>
+                        <th class="price_head" width="10%">单价(元)</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                    </tbody><tbody id="table_tp"><tr del_flag="1" class="tp_newtr">                        <td class="teamnum">                            <input readonly="readonly" class="enterNext _tp_tab_ip_teamnum placeholder=" 序号"="" validate(required,number,maxlength(6))"="" value="1" maxlength="8" type="text">                        </td>                        <td><div class="drop can_edit_t"><input class="input-text item-type-input-1" val="0" readonly="readonly" value="诊疗" type="text"><i class="drop-icon"></i><ul class="wjzs-drop-menu dsn"><li class="drop-item drop_even" title="诊疗" value="0" data-value="0">诊疗</li><li class="drop-item drop_odd" title="材料" value="1" data-value="1">材料</li></ul></div></td>                        <td class="_tp_tab_td_pro  input-think">                            <input class="enterNext _tp_tab_ip_pro validate(maxlength(50))" placeholder="项目名称/五笔码/拼音码/编码" maxlength="50" type="text">							<input class="_tp_tab_ip_pro_old" value="" maxlength="50" type="hidden">                            <input class="_tp_tab_ip_pro_id" value="" type="hidden">                            <ul class="easy-resault"></ul>                        </td>                        <td class="treatnum">                            <input class="enterNext _tp_tab_ip_treatnum validate(notspace,required,digits,maxlength(3),range(1,999))" placeholder="数量" maxlength="3" type="text">                        </td>                        <td class="remark">                        <input class="enterNext _tp_tab_ip_remark validate(maxlength(50))" placeholder="备注" maxlength="50" type="text">                        </td>                        <td class="price">                            <input class="enterNext _tp_tab_ip_price validate(required,number)" value="0.00" type="text">                        </td>                        <td>                            <a class="delete" href="javascript:;" onclick="_tpMain.logicDeleteDwsTpByID(null,this)">删除</a>                        </td>                    </tr></tbody>
+                </table>
+                <div class="total-price">
+                    <div class="total-price-left">总价（元）：<input class="fr validate(required,number)" name="" id="sumprice_tp" value="0.00" readonly="readonly" type="text"></div>
+                </div>
+                
+                
+            </div>
+            <!-- end of .table-wrapper -->
+
+			<!-- <div id="docs">
+				医生: <select id="doctor">
+				</select>
+			</div>
+			<div id="doci">
+				医生:<input type="text" readonly="readonly" id="doc" />
+			</div> -->
+			
+			
+
+			<div class="treatment-footBtn clear">
+                <span class="btn submit-btn fr tp_submit dsn" id="saveBtn" style="display: inline;">保存</span>
+                <span class="btn submit-btn fr dsn " id="editeBtn" style="display: none;">修改</span>
+                
+            </div>
+
+            <div class="historyRecord"><div class="history_record_item" acographyid="cf052be075b24e7aa702fbdeff4937ad" listid="0">						<div class="head-line history">							<span class="check-style">初诊</span>							就诊时间:<span class="checkDate">2018-04-03 16:06:23</span>							就诊医生:<span class="doctorName">许甲甲</span>							<span class="branchOffice" style="display: none;">门店:<span class="clinicName"></span></span>							<button class="expand">								<i></i>							</button>						</div>						<div class="detail" style="display: none">						    <div class="history-top-btn">                                <span class="print history_print" title="打印"></span><span class="quote" title="引用" style="display: inline;"></span>                            </div>							<div class="table-wrapper history-table-wrapper">							<table class="common-table full-width-table history-treatment-record">					    <tbody><tr>                            <th width="40%">项目名称</th>							<th>数量</th>                            <th>备注</th>							<th class="price_head">单价</th>							<th>收费状态</th>                        </tr>					<tr>                        <td class="treatmentName">雾化吸入</td>						<td class="treatmentNum">1</td>                        <td class="treatmentRemark">--</td>						<td class="price treatmentPrice">10.00</td>						<td class="treatmentChargeStatus">已收费</td>                    </tr></tbody></table></div>						</div>					</div></div>
+        </div>
+        <!-- end of .tab-content -->
+    </div>
+    <!-- end of .popup_plan -->
+<script type="text/javascript" src="treatment_files/jquery.js"></script>
+<script type="text/javascript" src="treatment_files/public.js"></script>
+<script type="text/javascript" src="treatment_files/slidelf.js"></script>
+<script type="text/javascript" src="treatment_files/pawj_003.js"></script>
+<script type="text/javascript" src="treatment_files/pawj_002.js"></script>
+<script type="text/javascript" src="treatment_files/layer.js"></script>
+<script type="text/javascript" src="treatment_files/underscore-min.js"></script>
+<script type="text/javascript" src="treatment_files/easy.js"></script>
+<script type="text/javascript" src="treatment_files/cache.js"></script>
+<script type="text/javascript" src="treatment_files/print.js"></script>
+<script type="text/javascript" src="treatment_files/printUtils.js"></script>
+<script type="text/javascript" src="treatment_files/component_drop_doctor.js"></script><!-- 医生下拉框组件 -->
+<script type="text/javascript" src="treatment_files/sessionCache.js"></script>
+<script type="text/javascript" src="treatment_files/cacheMap.js"></script>
+<script type="text/javascript" src="treatment_files/docstation_url.js"></script>
+<script type="text/javascript" src="treatment_files/treatProjectHistory.js"></script>
+<script type="text/javascript" src="treatment_files/treatProject.js"></script>
+<script type="text/javascript" src="treatment_files/TreatmentReportPrint.js"></script>
+<script type="text/javascript" src="treatment_files/hmoPrint.js"></script>
+<script type="text/javascript" src="treatment_files/tp_audit.js"></script>
+<script type="text/javascript">
+	//数据采集      
+	 var _maq = _maq || [];
+	 _maq.push(['sysType', 'B'],['sysModel', 'HZZX'],['sysMenu', 'OPC_DWS03']);
+	 function async_ipquery(){
+	 	var script = document.createElement("script");  
+	 	script.setAttribute("type","text/javascript"); 
+	 	script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+	 	document.getElementsByTagName("head")[0].appendChild(script);
+	 	var collection = document.createElement('script');
+	 	collection.type = 'text/javascript';
+	 	collection.async = true;
+	 	collection.src ='../resources/js/pawj.collection.js';
+	 	var sCollection = document.getElementsByTagName('script')[0];
+	 	sCollection.parentNode.insertBefore(collection, sCollection);
+	 }
+	 $(function(){
+	 	if (window.attachEvent) {
+	 		window.attachEvent('onload', async_ipquery);
+	 	} else {
+	 		window.addEventListener('load', async_ipquery);
+	 	}
+	 });
+</script>
+
+
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

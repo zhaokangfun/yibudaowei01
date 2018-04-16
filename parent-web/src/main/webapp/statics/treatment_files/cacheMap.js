@@ -1,0 +1,1 @@
+var cacheMapContext="doctorStation";var cacheMap={treatmentTmplList:cacheMapContext+"treatmentTmplList",assistLabTmplList:cacheMapContext+"assistLabTmplList",MedRecTmplList:cacheMapContext+"MedRecTmplList",hisMedRecList:cacheMapContext+"hisMedRecList",};

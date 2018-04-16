@@ -1,0 +1,6 @@
+/** 
+ * cdss-api - v0.1.0 
+ * Create Date -2017-09-29 19:54:29
+ * Copyright (c) 2017 jerry; Licensed GPLv2 
+ */
+window.$cdssConfig={api:"apollo.huimeionline.com"},function(){function a(){var a=c+"//"+window.$cdssConfig.api;return d?"":a}function b(){for(var a="",b="/cdss.min.js",c=document.getElementsByTagName("script"),d=0;d<c.length;d++){var e=c[d],f=e.getAttribute("src");if(f){var g=f.indexOf(b);if(-1!=g){a=f.substring(0,g);break}}}return a}var c=window.location.protocol,d=!1;window.__cdssInitDataInfo={isDeveloper:d,rootPath:a(),imgUrl:""};var e=b()||"",f=(new Date).getTime();window.__cdssInitDataInfo.imgUrl=e+"/assets/images/1.gif";var g=["/assets/css/app.min.css?v="+f,"/plugs/diagnosis_basis.min.css?v="+f,"/plugs/medication.min.css?v="+f];window.__cdssInitDataInfo.staticPath=e;for(var h=0;h<g.length;h++)document.write('<link rel="stylesheet" type="text/css" href="'+e+g[h]+'"/>');for(var i=["/script/app.min.js?v="+f,"/plugs/public.min.js?v="+f,"/plugs/diagnosis_basis.min.js?v="+f,"/plugs/medication.min.js?v="+f],h=0;h<i.length;h++)document.write('<script type="text/javascript" charset="utf-8" src="'+e+i[h]+'"></script>')}();

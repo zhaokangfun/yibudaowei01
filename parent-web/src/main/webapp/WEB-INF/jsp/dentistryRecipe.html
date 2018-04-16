@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="dentistryRecipe_files/pawj.js"></script><script src="dentistryRecipe_files/CLodopfuncs.js"></script><script src="dentistryRecipe_files/CLodopfuncs_002.js"></script><script src="dentistryRecipe_files/CLodopfuncs_003.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="dentistryRecipe_files/switch.js"></script><link rel="stylesheet" href="dentistryRecipe_files/base.css"><link rel="stylesheet" href="dentistryRecipe_files/base_002.css">
+    <link rel="stylesheet" type="text/css" href="dentistryRecipe_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="dentistryRecipe_files/dentistryRecipe.css">
+    <title>西药处方</title>
+<link rel="stylesheet" href="dentistryRecipe_files/layer.css" id="layuicss-skinlayercss"><script type="text/javascript" src="dentistryRecipe_files/ipquery.html"></script></head>
+
+<body class="static-public-css dentistry-recipe-css">
+<div class="content-inner">
+    <div class="tab-content dentistry-project clear">
+        <div class="tab-content-top clear west-recipe">
+            <a class="cf-btn fl dsn recipe1 recipe_lable current" data-index="0" recipename="1" style="display: inline;">处方<span class="index">1</span> <i class="delete-cf dsn" style="display: none;"></i></a><a class="cf-btn fl dsn recipe_lable_clone" data-index="0">处方<span class="index">0</span> <i class="delete-cf dsn"></i></a>
+            <i class="fl add-cf dsn" style="display: inline;"></i>
+            <span class="print" title="打印处方1"></span>
+            <span class="fr save_tmpl dsn" id="medRecSaveTmplBtn" title="存为模板"></span>
+            <span class="fr dsn choose_tmpl" id="xycf_model_btn" title="选择模板"></span>
+
+            <div class="popup popup-model popup-model-west dsn" style="">
+                <div class="popstyle">
+                    <div class="poptitle">
+                        处方模板<span class="close"></span>
+                    </div>
+					<div class="popsearch static-public-css">
+						<input class="search-input" style="background:#fff;text-indent:9px;width:107px;border:1px solid transparent;line-height:28px;height:28px;margin-bottom:5px;float:left;margin-left:10px;border-right:none;" name="templateName" placeholder="输入名称搜索" type="text">
+						<a href="javascript:;" class="btn search-btn js_search_btn" style="float:right;margin-right: 10px;" id="teml_btn_search"></a>
+					</div>
+                    <div class="popcontent">
+                        <div class="popCon">
+                            <dd class="west-tmpl-dd dsn" id="west-tmpl-dd-clone"></dd>
+
+                            <dl id="west-tmpl-person-dl">
+                                <dt class="topIcon">个人模版</dt>
+                            </dl>
+							<dl id="west-tmpl-clinic-dl">
+								<dt>诊所模版</dt>
+							</dl>
+                        </div>
+                        <p id="noDataHint" class="noDataHint dsn">暂无模板数据！</p>
+                        <!--  end of .popCon -->
+                    </div>
+                    <!-- end of .popcontent -->
+                </div>
+                <!-- end of .popstyle -->
+            </div>
+            <!-- end of .popup -->
+    
+		    <!-- 选择打印内容弹窗 -->
+		    <div class="popup popup-tip dsn" id="print_type_popup" style="">
+   				<div class="popstyle">
+                    <div class="poptitle">请选择打印格式<span class="close tmpl-close"></span></div>
+                    <div class="popcontent">
+                      		<div style="height: 90px;width: 160px;float: center;margin: auto;margin-top: 30px;">
+                      			<p style="float: left;margin-bottom: 7px;">请选择打印单据：</p>
+                      			<ul class="checkboxes_ul">
+                       			<li class="checkbox_li" id="recip_print">处方</li>
+                       			<li class="checkbox_li" id="zs_print">注射单</li>
+                       			<li class="checkbox_li" id="fj_print">附加材料</li>
+                      			</ul>
+                      		</div>
+               			<div class="btn-group" style="float:right;width: 270px;">
+               				<a href="javascript:;" id="print_review" class="btn normal-inverse-btn" style="float:left;margin-right: 20px;margin-top: 20px">预览</a>
+               				<a href="javascript:;" id="print_sure" class="btn normal-btn" style="float:left;margin-right: 20px;margin-top: 20px">打印</a>
+               			</div>
+                  	 </div>
+      			</div>
+		    </div>
+            
+        </div>
+        <!-- end of .tab-content-top -->
+			<div class="table-wrapper" id="west-input-table">
+
+				<!--西药信息begin-->						
+				<div class="total-price">
+					<div style="float:left; margin-top: -20px;">
+						<span style="line-height:25px;">西药信息</span>
+					</div>							
+				</div>
+				<!-- 西药信息end -->
+				<!-- 西药表单 -->
+				<table class="common-table full-width-table west-table dsn" style="display: table;">
+					<thead>
+						<tr>
+							<th class="hidden" width="1%"><i id="check_all" class="hidden checkbox"></i></th>
+							<th width="4%">组号</th>
+							<th width="14%">药品名称</th>
+							<th width="9%">规格</th>
+							<th width="9%">用法</th>
+							<th width="4%">滴/分</th>
+							<th width="9%">剂量</th>
+							<th width="9%">频率</th>
+							<th width="4%">天数</th>
+							<th width="9%">总量</th>
+							<th class="priceHide" width="7%">单价</th>
+							<th width="8%">来源</th>
+							<th width="5%">备注</th>
+							<th name="skin" width="3%">皮试</th>
+							<th width="8%">编辑</th>
+						</tr>
+					</thead>
+					<tbody class="dsn recipe_tbody recipe1" recipename="1" style="display: table-row-group;">
+
+						<!-- 模拟行-西药 -->
+						<tr class="table-data dsn recipe-line recipe1" recipename="1" style="display: table-row;">
+							<td><input data-colum="groupNum" class="enterNext west-groupNum readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text"></td>
+							<td class="input-think"><input data-colum="drugName" class="enterNext thinkBoxInputArea west-drugName readWrite" thinkboxquerytype="west" placeholder="药品名称/五笔码/拼音/编码" autocomplete="off" type="text"></td>	
+							<td><input disabled="disabled" readonly="readonly" data-colum="drugSpec" class="enterNext west-drugSpec readWrite" type="text"></td>
+							
+							<!-- <td class="input-think"><input type="text"
+								data-colum="drugUsageName"
+								class="enterNext west-drugUsageName readWrite"
+								thinkBoxQueryType="west" placeholder="拼音首字母"></td> -->
+							<td class="drugDrugUsageArea">
+								<div class="drop">
+									<input class="enterNext input-text west-drugUsageName readWrite" mdfrequencyid="" placeholder="用法" readonly="readonly" type="text"> <i class="drop-icon"></i>
+								<ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="口服" value="YF09001" data-value="YF09001">口服</li><li class="drop-item drop_even" title="静滴" value="YF09005" data-value="YF09005">静滴</li><li class="drop-item drop_odd" title="续滴" value="3cc788d5b8514c2494df355ee34d1fd2" data-value="3cc788d5b8514c2494df355ee34d1fd2">续滴</li><li class="drop-item drop_even" title="静脉注射" value="YF09025" data-value="YF09025">静脉注射</li><li class="drop-item drop_odd" title="外用" value="YF09009" data-value="YF09009">外用</li><li class="drop-item drop_even" title="冲服" value="YF09008" data-value="YF09008">冲服</li><li class="drop-item drop_odd" title="含服" value="YF09021" data-value="YF09021">含服</li><li class="drop-item drop_even" title="滴眼" value="YF09012" data-value="YF09012">滴眼</li><li class="drop-item drop_odd" title="雾化吸入" value="YF09003" data-value="YF09003">雾化吸入</li><li class="drop-item drop_even" title="滴鼻" value="YF09013" data-value="YF09013">滴鼻</li><li class="drop-item drop_odd" title="饭后服" value="YF09029" data-value="YF09029">饭后服</li><li class="drop-item drop_even" title="喷喉" value="YF09004" data-value="YF09004">喷喉</li><li class="drop-item drop_odd" title="塞肛用" value="YF09015" data-value="YF09015">塞肛用</li><li class="drop-item drop_even" title="皮下注射" value="YF09023" data-value="YF09023">皮下注射</li><li class="drop-item drop_odd" title="喷鼻" value="YF09020" data-value="YF09020">喷鼻</li><li class="drop-item drop_even" title="外洗" value="YF09011" data-value="YF09011">外洗</li><li class="drop-item drop_odd" title="舌下含服" value="YF09002" data-value="YF09002">舌下含服</li><li class="drop-item drop_even" title="外敷" value="YF09010" data-value="YF09010">外敷</li><li class="drop-item drop_odd" title="含漱" value="YF09022" data-value="YF09022">含漱</li><li class="drop-item drop_even" title="饭前服" value="YF09028" data-value="YF09028">饭前服</li><li class="drop-item drop_odd" title="肌肉注射" value="YF09006" data-value="YF09006">肌肉注射</li><li class="drop-item drop_even" title="灌肠" value="8a23c67ee588482fa419a34f65a925dd" data-value="8a23c67ee588482fa419a34f65a925dd">灌肠</li><li class="drop-item drop_odd" title="阴道用" value="YF09016" data-value="YF09016">阴道用</li><li class="drop-item drop_even" title="嚼服" value="YF09007" data-value="YF09007">嚼服</li><li class="drop-item drop_odd" title="皮内注射" value="YF09024" data-value="YF09024">皮内注射</li><li class="drop-item drop_even" title="皮试" value="YF09019" data-value="YF09019">皮试</li><li class="drop-item drop_odd" title="滴耳" value="YF09014" data-value="YF09014">滴耳</li><li class="drop-item drop_even" title="吸入" value="YF09017" data-value="YF09017">吸入</li><li class="drop-item drop_odd" title="空腹服" value="YF09030" data-value="YF09030">空腹服</li><li class="drop-item drop_even" title="磨粉" value="YF09027" data-value="YF09027">磨粉</li><li class="drop-item drop_odd" title="水煎服" value="YF09026" data-value="YF09026">水煎服</li><li class="drop-item drop_even" title="烊化（服）" value="YF09018" data-value="YF09018">烊化（服）</li><li class="drop-item drop_odd" title="入壶" value="b8892c8feb7b4c1f9e6f3ead847c726e" data-value="b8892c8feb7b4c1f9e6f3ead847c726e">入壶</li><li class="drop-item drop_even" title="晨服" value="ca054c962cc44f5bae37ec84f6a6948a" data-value="ca054c962cc44f5bae37ec84f6a6948a">晨服</li><li class="drop-item drop_odd" title="关节腔注射" value="7622daf43ffd4d4f8dc72b3a62a69cb3" data-value="7622daf43ffd4d4f8dc72b3a62a69cb3">关节腔注射</li></ul></div>
+							</td>
+							<td>
+								<input style="width: 40px;" class="enterNext valChangeArea west-drop " valtype="drop" maxlength="5" readonly="readonly" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+							</td>
+							<td><input style="width: 60px;" data-colum="drugDose" class="enterNext valChangeArea west-drugDose readWrite" valtype="singleDose" maxlength="10" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								<input readonly="readonly" data-colum="drugUnitName" class="enterNext west-drugUnit" style="width: 30px;" type="text"></td>
+							<td class="drugFrequencyArea">
+								<div class="drop">
+									<input class="enterNext input-text west-frequencyName readWrite" mdfrequencyid="" placeholder="频率" readonly="readonly" type="text"> <i class="drop-icon" placeholder="频率"></i>
+								<ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="qd" value="PL07001" data-value="PL07001">qd</li><li class="drop-item drop_even" title="bid" value="PL07002" data-value="PL07002">bid</li><li class="drop-item drop_odd" title="tid" value="PL07003" data-value="PL07003">tid</li><li class="drop-item drop_even" title="qid" value="PL07004" data-value="PL07004">qid</li><li class="drop-item drop_odd" title="qod" value="PL07005" data-value="PL07005">qod</li><li class="drop-item drop_even" title="qw" value="PL07006" data-value="PL07006">qw</li><li class="drop-item drop_odd" title="prn" value="PL07007" data-value="PL07007">prn</li><li class="drop-item drop_even" title="qwd" value="f9749892bfde4e5a9e433061cb3a0818" data-value="f9749892bfde4e5a9e433061cb3a0818">qwd</li><li class="drop-item drop_odd" title="qn" value="293bf4c6b86b4f50b0c0b452a3c2ed45" data-value="293bf4c6b86b4f50b0c0b452a3c2ed45">qn</li><li class="drop-item drop_even" title="st" value="8dedefff21b24ceeb83892ae19e4f522" data-value="8dedefff21b24ceeb83892ae19e4f522">st</li><li class="drop-item drop_odd" title="q6h" value="5902e039edea4ab5b7223c801c986961" data-value="5902e039edea4ab5b7223c801c986961">q6h</li><li class="drop-item drop_even" title="q8h" value="af8454c068b24c528238241942fb7bc1" data-value="af8454c068b24c528238241942fb7bc1">q8h</li><li class="drop-item drop_odd" title="q12h" value="6eeba8959bd1415c8733bd53a56edaad" data-value="6eeba8959bd1415c8733bd53a56edaad">q12h</li><li class="drop-item drop_even" title="q4h" value="11e7161d57b14952be54aba64a90e514" data-value="11e7161d57b14952be54aba64a90e514">q4h</li></ul></div>
+							</td>
+							<td><input data-colum="totalDay" class="enterNext valChangeArea west-totalDay readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+
+							</td>
+							<td class="amount">
+								<span style="float:left;width:50%;">
+									<input style="width: 50%;" data-colum="totalQty" class="enterNext west-totalQty readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								    </span>
+								<span style="float:left;width:50%;margin-left:-10px;">
+									<div class="drop dopdiv" style="width:60px">
+		                        		<input name="bn" class="input-text west-recipeUnit" readonly="readonly" data-colum="recipeUnit" type="text"> <i class="drop-icon"></i>
+				                        <ul class="drop-menu dsn" style="display: none;">
+				                        </ul>
+                    				</div>
+								</span>
+								
+									
+							</td>
+							<td class="priceHide">
+								<input style="width: 60px;" readonly="readonly" class="enterNext west-drugPrice validate(required,number,maxlength(6),decimal(3),min(0.001)) readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">元
+							</td>
+							<td class="source">
+								<div class="drop">
+									<input class="enterNext input-text west-source" placeholder="来源" readonly="readonly" type="text"> <i class="drop-icon"></i>
+								<ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="本院" value="0" data-value="0">本院</li><li class="drop-item drop_even" title="外购" value="1" data-value="1">外购</li><li class="drop-item drop_odd" title="免费" value="2" data-value="2">免费</li></ul></div>
+							</td>
+							<td><input data-colum="remark" class="enterNext west-remark readWrite" maxlength="50" title="" type="text"></td>
+								
+							<td name="skin" class="skin">
+								<!-- <li id="skinTest" class="checked"></li>-->
+								<ul class="checkboxes_ul">
+									<li class="checkbox_li" id="skinTest"></li>
+									<input class="west-skinTest" type="hidden">
+								</ul>
+	                			
+							</td>	
+							<td class="operate"><a class="west-delete">删除</a></td>
+						</tr><tr class="table-data recipe-line-clone dsn">
+							<td><input data-colum="groupNum" class="enterNext west-groupNum readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text"></td>
+							<td class="input-think"><input data-colum="drugName" class="enterNext thinkBoxInputArea west-drugName readWrite" thinkboxquerytype="west" placeholder="药品名称/五笔码/拼音/编码" type="text"></td>	
+							<td><input disabled="disabled" readonly="readonly" data-colum="drugSpec" class="enterNext west-drugSpec readWrite" type="text"></td>
+							
+							<!-- <td class="input-think"><input type="text"
+								data-colum="drugUsageName"
+								class="enterNext west-drugUsageName readWrite"
+								thinkBoxQueryType="west" placeholder="拼音首字母"></td> -->
+							<td class="drugDrugUsageArea">
+								<div class="drop">
+									<input class="enterNext input-text west-drugUsageName readWrite" mdfrequencyid="" placeholder="用法" type="text"> <i class="drop-icon"></i>
+								</div>
+							</td>
+							<td>
+								<input style="width: 40px;" class="enterNext valChangeArea west-drop " valtype="drop" maxlength="5" readonly="readonly" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+							</td>
+							<td><input style="width: 60px;" data-colum="drugDose" class="enterNext valChangeArea west-drugDose readWrite" valtype="singleDose" maxlength="10" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								<input readonly="readonly" data-colum="drugUnitName" class="enterNext west-drugUnit" style="width: 30px;" type="text"></td>
+							<td class="drugFrequencyArea">
+								<div class="drop">
+									<input class="enterNext input-text west-frequencyName readWrite" mdfrequencyid="" placeholder="频率" type="text"> <i class="drop-icon" placeholder="频率"></i>
+								</div>
+							</td>
+							<td><input data-colum="totalDay" class="enterNext valChangeArea west-totalDay readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+
+							</td>
+							<td class="amount">
+								<span style="float:left;width:50%;">
+									<input style="width: 50%;" data-colum="totalQty" class="enterNext west-totalQty readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								    </span>
+								<span style="float:left;width:50%;margin-left:-10px;">
+									<div class="drop dopdiv" style="width:60px">
+		                        		<input name="bn" class="input-text west-recipeUnit" readonly="readonly" data-colum="recipeUnit" type="text"> <i class="drop-icon"></i>
+				                        <ul class="drop-menu dsn" style="display: none;">
+				                        </ul>
+                    				</div>
+								</span>
+								
+									
+							</td>
+							<td class="priceHide">
+								<input style="width: 60px;" readonly="readonly" class="enterNext west-drugPrice validate(required,number,maxlength(6),decimal(3),min(0.001)) readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">元
+							</td>
+							<td class="source">
+								<div class="drop">
+									<input class="enterNext input-text west-source" placeholder="来源" type="text"> <i class="drop-icon"></i>
+								</div>
+							</td>
+							<td><input data-colum="remark" class="enterNext west-remark readWrite" maxlength="50" title="" type="text"></td>
+								
+							<td name="skin" class="skin">
+								<!-- <li id="skinTest" class="checked"></li>-->
+								<ul class="checkboxes_ul">
+									<li class="checkbox_li" id="skinTest"></li>
+									<input class="west-skinTest" type="hidden">
+								</ul>
+	                			
+							</td>	
+							<td class="operate"><a class="west-delete">删除</a></td>
+						</tr>
+
+						
+					</tbody><tbody id="west-tbody-clone" class="recipe_tbody_clone dsn">
+
+						<!-- 模拟行-西药 -->
+						<tr class="table-data recipe-line-clone dsn">
+							<td><input data-colum="groupNum" class="enterNext west-groupNum readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text"></td>
+							<td class="input-think"><input data-colum="drugName" class="enterNext thinkBoxInputArea west-drugName readWrite" thinkboxquerytype="west" placeholder="药品名称/五笔码/拼音/编码" type="text"></td>	
+							<td><input disabled="disabled" readonly="readonly" data-colum="drugSpec" class="enterNext west-drugSpec readWrite" type="text"></td>
+							
+							<!-- <td class="input-think"><input type="text"
+								data-colum="drugUsageName"
+								class="enterNext west-drugUsageName readWrite"
+								thinkBoxQueryType="west" placeholder="拼音首字母"></td> -->
+							<td class="drugDrugUsageArea">
+								<div class="drop">
+									<input class="enterNext input-text west-drugUsageName readWrite" mdfrequencyid="" placeholder="用法" type="text"> <i class="drop-icon"></i>
+								</div>
+							</td>
+							<td>
+								<input style="width: 40px;" class="enterNext valChangeArea west-drop " valtype="drop" maxlength="5" readonly="readonly" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+							</td>
+							<td><input style="width: 60px;" data-colum="drugDose" class="enterNext valChangeArea west-drugDose readWrite" valtype="singleDose" maxlength="10" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								<input readonly="readonly" data-colum="drugUnitName" class="enterNext west-drugUnit" style="width: 30px;" type="text"></td>
+							<td class="drugFrequencyArea">
+								<div class="drop">
+									<input class="enterNext input-text west-frequencyName readWrite" mdfrequencyid="" placeholder="频率" type="text"> <i class="drop-icon" placeholder="频率"></i>
+								</div>
+							</td>
+							<td><input data-colum="totalDay" class="enterNext valChangeArea west-totalDay readWrite" maxlength="3" valtype="days" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+
+							</td>
+							<td class="amount">
+								<span style="float:left;width:50%;">
+									<input style="width: 50%;" data-colum="totalQty" class="enterNext west-totalQty readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+								    </span>
+								<span style="float:left;width:50%;margin-left:-10px;">
+									<div class="drop dopdiv" style="width:60px">
+		                        		<input name="bn" class="input-text west-recipeUnit" readonly="readonly" data-colum="recipeUnit" type="text"> <i class="drop-icon"></i>
+				                        <ul class="drop-menu dsn" style="display: none;">
+				                        </ul>
+                    				</div>
+								</span>
+								
+									
+							</td>
+							<td class="priceHide">
+								<input style="width: 60px;" readonly="readonly" class="enterNext west-drugPrice validate(required,number,maxlength(6),decimal(3),min(0.001)) readWrite" maxlength="6" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">元
+							</td>
+							<td class="source">
+								<div class="drop">
+									<input class="enterNext input-text west-source" placeholder="来源" type="text"> <i class="drop-icon"></i>
+								</div>
+							</td>
+							<td><input data-colum="remark" class="enterNext west-remark readWrite" maxlength="50" title="" type="text"></td>
+								
+							<td name="skin" class="skin">
+								<!-- <li id="skinTest" class="checked"></li>-->
+								<ul class="checkboxes_ul">
+									<li class="checkbox_li" id="skinTest"></li>
+									<input class="west-skinTest" type="hidden">
+								</ul>
+	                			
+							</td>	
+							<td class="operate"><a class="west-delete">删除</a></td>
+						</tr>
+
+						
+					</tbody>
+				</table>
+				<!-- 西药表单end -->
+				<!-- 处方金额west-drugtotalPrice -->
+				<div class="total-price-right priceHide" style="margin-bottom: 20px;">
+						<span style="line-height:25px;">药品总金额：￥</span>
+						<input id="drug-totalPrice" class="fr west-totalPrice" name="" value="0.00" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" placeholder="0.00" style="margin-top:1px;margin-left:10px;border: 1px solid #dfdfdf; border-radius: 3px;" type="text">
+				</div>
+				<!-- 处方金额end -->
+				
+				<div class="fjxm dsn" style="margin-top: 40px; display: none;">
+					<div>
+						<hr style="height:1px;border:none;border-top:1px solid #dfdfdf; margin-top:60px">
+					</div>
+					<!--附加项目begin-->
+					<!-- <div class="total-price">
+					</div> -->
+					<div style="float:left; margin-bottom:15px;">
+						<span style="line-height:25px; margin-top:50px;">附加项目</span>
+					</div>							
+					<!--附加项目end-->
+					<!-- 附加表单 -->
+					<table class="common-table full-width-table west-table2 " style="display: table;">
+						<thead>
+							<tr>
+								
+								<th width="5%">序号</th>
+								<th width="15%">项目名称</th>
+								<th width="15%">规格</th>
+								<th class="priceHide" width="15%">单价</th>
+								<th width="10%">数量</th>
+								<th width="30%">备注</th>
+								<th width="15%">编辑</th>
+							</tr>
+						</thead>
+						<!-- <tbody class="nofjxmData"><tr id="nofjxmData" class="dsn"><td style="line-height:20px;" class="no_data_msg" colspan="6">当前暂无附加项目记录！</td></tr></tbody> -->	
+						<tbody id="fjmnClone" class="fjmn-clone dsn">
+							
+							<!-- 模拟行-附加材料项 -->
+							<tr class="table-data recipe-addition-clone dsn">
+								<td><input data-colum="" maxlength="1" class="enterNext west-number readWrite" type="text"></td>
+								<td class="input-think"><input data-colum="additionName" class="enterNext west-additionName readWrite" thinkboxquerytype="west" placeholder="项目名称/五笔码/拼音/编码" type="text"></td>
+
+								<td><input data-colum="" class="west-additionSpec readWrite" maxlength="50" title="" readonly="readonly" type="text"></td>
+
+								<td class="priceHide"><input data-colum="" class="enterNext valChangeArea west-additionPrice readWrite" valtype="singleDose" maxlength="14" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text"></td>
+
+								<td><input style="width: 60px;" data-colum="" class="enterNext valChangeArea west-additionRm readWrite" valtype="singleDose" maxlength="9" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" type="text">
+									</td>
+
+								<td><input data-colum="" class="enterNext west-additionRemake readWrite" maxlength="50" title="" type="text"></td>
+									
+									
+								<td class="operate"><a class="west-delete">删除</a></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+					<!-- 附加表单end -->	
+					<!-- 附加金额 -->
+					<div class="total-price-right priceHide">
+							<span style="line-height:25px;">附加总金额：￥</span>
+							<input id="west-additionTotalPrice" class="fr west-additionTotalPrice" name="" value="0" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" placeholder="0.00" style="margin-top:3px;margin-left:10px;border: 1px solid #dfdfdf; border-radius: 3px;" type="text">
+					</div>
+					<!-- 附加金额end -->
+				</div>
+					
+				<div>
+						<hr style="height:1px;border:none;border-top:1px solid #dfdfdf; margin-top:60px">
+				</div>
+				<!-- 合计金额begin -->
+				<div class="total-price ">
+					<div class="total-price-right priceHide">
+					<span style="line-height:25px;">合计总金额：￥</span>
+					<input class="fr hj" name="" readonly="readonly" value="0.00" onkeyup="value=value.replace(/[^\d\.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" placeholder="0.00" style="margin-top:3px;margin-left:10px;" type="text">
+					</div>
+					<!--<div class="total-price-right">
+						<span style="line-height:25px;">医生：</span>
+						<input id="doci-input" class="fr" type="text" name="" readonly="readonly" style="width:155px;margin-top:3px; margin-left:10px;" />
+					</div>-->
+				</div>
+				<!-- 合计金额end -->			
+			
+			
+			 
+    <div class="treatment-footBtn clear">
+        <span class="btn submit-btn fr tp_submit dsn aBtn" style="display: inline;">保存</span>
+        <span class="btn submit-btn fr tp_modify dsn aBtn" style="display: none">修改</span>
+    	<span class="btn submit-btn fr tp_return dsn aBtn" style="display: none">申请退药</span>
+    	
+    </div>
+
+    <div id="history_record">
+    </div>
+    </div>
+	<div class="popup" id="drugs_testing" style="display: none">
+	    <div class="popstyle">
+	        <div class="poptitle"><span class="title">合理用药检测</span><span class="close"></span></div>
+	        <div class="popcontent">
+	           <!--  <div class="drugs_line_wrap clear">
+	                <span>西药处方1：</span>
+	                <span class="testing_reason">用药严重过度！</span>
+	            </div>
+	            <div class="drugs_line_wrap clear">
+	                <span>西药处方1：</span>
+	                <span class="testing_reason">用药严重过度！</span>
+	            </div> -->
+	        </div>
+	    </div>
+	</div>
+<script type="text/javascript" src="dentistryRecipe_files/jquery_002.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/public.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/jquery.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/underscore-min.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/pawj_003.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/uuid.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/layer.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/pawj_002.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/cache.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/print.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/printUtils.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/component_drop_doctor.js"></script><!-- 医生下拉框引入 -->
+<script type="text/javascript" src="dentistryRecipe_files/dentistryRecipeHistory.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/dentistryRecipe.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/printZS.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/WMPrescriptionPrint.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/reasonableMedication.js"></script>
+<script type="text/javascript" src="dentistryRecipe_files/AdditionPrint.js"></script>
+
+<script type="text/javascript">
+//数据采集	
+var _maq = _maq || [];
+_maq.push(['sysType', 'B'],['sysModel', 'HZZX'],['sysMenu', 'OPC_DWS06']);
+function async_ipquery(){
+	var script = document.createElement("script");  
+	script.setAttribute("type","text/javascript"); 
+	  script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+	document.getElementsByTagName("head")[0].appendChild(script);
+	var collection = document.createElement('script');
+	collection.type = 'text/javascript';
+	collection.async = true;
+	collection.src ='../resources/js/pawj.collection.js';
+	var sCollection = document.getElementsByTagName('script')[0];
+	sCollection.parentNode.insertBefore(collection, sCollection);
+}
+
+
+$(function(){
+    if (window.attachEvent) {
+        window.attachEvent('onload', async_ipquery);
+    } else {
+        window.addEventListener('load', async_ipquery);
+    }
+});
+</script>
+
+
+</div></div><div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

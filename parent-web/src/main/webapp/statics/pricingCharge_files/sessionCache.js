@@ -1,0 +1,1 @@
+var session_cache=Class.create({getCache:function(a){return JSON.parse(sessionStorage.getItem(a))},setCache:function(a,b){sessionStorage.setItem(a,JSON.stringify(b))},removeCache:function(a){sessionStorage.removeItem(a)},clearCache:function(){sessionStorage.clear()},checkCache:function(a){return session_cache.getCache(a)!=null?true:false}});
