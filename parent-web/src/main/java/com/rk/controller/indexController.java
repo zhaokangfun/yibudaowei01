@@ -20,7 +20,12 @@ public class indexController {
 	public String show(Model model) {
 		List<Bancib> list=bancibService.getAll();
 		model.addAttribute("list", list);
-		return "assistLab";
+		return "shouye";
+	}
+	
+	@RequestMapping("main")
+	public String main(Model model) {
+		return "main";
 	}
 
 }	
