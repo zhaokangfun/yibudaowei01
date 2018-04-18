@@ -27,6 +27,7 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
 	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubservice" />
+	<dubbo:service interface="com.rk.service.RukubService" ref="rukubService" />
 	<!-- <dubbo:service interface="com.mr.service.ShopGoodsTypeService" ref="ShopGoodsTypeService" />
 	<dubbo:service interface="com.mr.service.PictureService" ref="pictureService" /> -->
  	<dubbo:consumer check="false" timeout="300000" />

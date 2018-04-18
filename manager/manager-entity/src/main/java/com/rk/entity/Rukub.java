@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Rukub {
+import java.io.Serializable;
+
+public class Rukub implements Serializable {
     private Integer rkid;
 
     private String rknumber;
@@ -22,8 +24,33 @@ public class Rukub {
     private Integer yaopinid;
 
     private String yaopinname;
+    
+    //入库方式拓展实体类
+    private Rukufangshib rkfs;
+    
+    //供应啥拓展实体类
+    private Gongyingshangb gys;
+    
+    
+    
 
-    public Integer getRkid() {
+	public Rukufangshib getRkfs() {
+		return rkfs;
+	}
+
+	public void setRkfs(Rukufangshib rkfs) {
+		this.rkfs = rkfs;
+	}
+
+	public Gongyingshangb getGys() {
+		return gys;
+	}
+
+	public void setGys(Gongyingshangb gys) {
+		this.gys = gys;
+	}
+
+	public Integer getRkid() {
         return rkid;
     }
 

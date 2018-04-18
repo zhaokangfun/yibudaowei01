@@ -28,7 +28,7 @@ var navs = [{
 {
 	"title" : "库房管理",
 	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "ruku/rkxx",
 	"spread" : false
 },
 {
