@@ -14,10 +14,38 @@
     <result column="yaopinid" jdbcType="INTEGER" property="yaopinid" />
     <result column="yaopinname" jdbcType="VARCHAR" property="yaopinname" />
   </resultMap>
+  
+   <resultMap id="BaseResult" type="com.rk.entity.Rukub">
+    <id column="rkid" jdbcType="INTEGER" property="rkid" />
+    <result column="rknumber" jdbcType="VARCHAR" property="rknumber" />
+    <result column="rktime" jdbcType="VARCHAR" property="rktime" />
+    <result column="rktypeid" jdbcType="INTEGER" property="rktypeid" />
+    <result column="gysid" jdbcType="INTEGER" property="gysid" />
+    <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
+    <result column="gouruprice" jdbcType="DOUBLE" property="gouruprice" />
+    <result column="rkcount" jdbcType="VARCHAR" property="rkcount" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="yaopinid" jdbcType="INTEGER" property="yaopinid" />
+    <result column="yaopinname" jdbcType="VARCHAR" property="yaopinname" />
+    	<association property="rkfs" javaType="com.rk.entity.Rukufangshib">
+    			<id column="rkfangshi" property="rkfangshi"/>
+    			<result column="rktype" property="rktype" />
+    	</association>
+    	<association property="gys" javaType="com.rk.entity.Gongyingshangb">
+    			<id column="gysid" property="gysid"/>
+    			<result column="gysname" property="gysname" />
+    	</association>
+  </resultMap>
   <sql id="Base_Column_List">
     rkid, rknumber, rktime, rktypeid, gysid, beizhu, gouruprice, rkcount, status, yaopinid, 
     yaopinname
   </sql>
+  
+  <!-- 查询入库全部信息 -->
+  <select id="Gellrk" resultMap="BaseResult">
+  		SELECT rknumber,rktime,rkfs.rktype,gys.gysname,gouruprice FROM rukub r,rukufangshib rkfs,gongyingshangb gys where r.rktypeid=rkfs.rkfangshi AND r.gysid=gys.gysid
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

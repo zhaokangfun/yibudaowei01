@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Rukub;
 
 public interface RukubService {
@@ -14,4 +16,10 @@ public interface RukubService {
     int updateByPrimaryKeySelective(Rukub record);
 
     int updateByPrimaryKey(Rukub record);
+    
+    /**
+     * 查询全部入库信息！
+     * @return
+     */
+    List<Rukub>Gellrk();
 }
