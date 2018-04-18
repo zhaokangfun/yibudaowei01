@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Xuexingb {
+import java.io.Serializable;
+
+public class Xuexingb  implements Serializable {
     private Integer xuexingid;
 
     private String xuexingtype;

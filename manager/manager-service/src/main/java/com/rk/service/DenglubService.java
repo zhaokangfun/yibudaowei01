@@ -14,4 +14,6 @@ public interface DenglubService {
     int updateByPrimaryKeySelective(Denglub record);
 
     int updateByPrimaryKey(Denglub record);
+    
+    Denglub dologin(String adminzh,String password);
 }

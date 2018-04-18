@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Paibantimeb {
+import java.io.Serializable;
+
+public class Paibantimeb  implements Serializable {
     private Integer pbid;
 
     private Integer banciid;

@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Keshib {
+import java.io.Serializable;
+
+public class Keshib implements Serializable  {
     private Integer keshiid;
 
     private String keshiname;
@@ -22,8 +24,18 @@ public class Keshib {
     private Integer shuxun;
 
     private Integer zwid;
+    
+    private Keshishuxing keshishuxing;
+    
+    public Keshishuxing getKeshishuxing() {
+		return keshishuxing;
+	}
 
-    public Integer getKeshiid() {
+	public void setKeshishuxing(Keshishuxing keshishuxing) {
+		this.keshishuxing = keshishuxing;
+	}
+
+	public Integer getKeshiid() {
         return keshiid;
     }
 

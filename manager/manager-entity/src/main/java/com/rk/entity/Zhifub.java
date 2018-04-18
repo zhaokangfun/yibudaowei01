@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Zhifub {
+import java.io.Serializable;
+
+public class Zhifub  implements Serializable {
     private Integer zfid;
 
     private String zhifuname;

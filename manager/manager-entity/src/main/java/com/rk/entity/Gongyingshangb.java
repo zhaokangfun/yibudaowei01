@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Gongyingshangb {
+import java.io.Serializable;
+
+public class Gongyingshangb  implements Serializable {
     private Integer gysid;
 
     private String gysnumber;

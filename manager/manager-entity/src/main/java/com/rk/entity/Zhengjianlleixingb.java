@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Zhengjianlleixingb {
+import java.io.Serializable;
+
+public class Zhengjianlleixingb  implements Serializable {
     private Integer zjtypeid;
 
     private String zjtypename;

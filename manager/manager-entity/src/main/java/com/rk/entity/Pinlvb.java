@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Pinlvb {
+import java.io.Serializable;
+
+public class Pinlvb  implements Serializable {
     private Integer plid;
 
     private String plname;

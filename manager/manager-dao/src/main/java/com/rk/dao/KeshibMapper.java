@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Keshib;
 
 public interface KeshibMapper {
@@ -14,4 +16,7 @@ public interface KeshibMapper {
     int updateByPrimaryKeySelective(Keshib record);
 
     int updateByPrimaryKey(Keshib record);
+    
+    //查询所有
+    List<Keshib> getAll();
 }

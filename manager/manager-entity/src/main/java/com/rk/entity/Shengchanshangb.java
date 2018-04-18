@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Shengchanshangb {
+import java.io.Serializable;
+
+public class Shengchanshangb implements Serializable  {
     private Integer scsid;
 
     private String scsnumber;

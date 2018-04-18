@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Fayaob {
+import java.io.Serializable;
+
+public class Fayaob  implements Serializable {
     private Integer fyid;
 
     private Integer hzid;

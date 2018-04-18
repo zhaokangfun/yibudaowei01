@@ -24,6 +24,9 @@
     from denglub
     where adminid = #{adminid,jdbcType=INTEGER}
   </select>
+  <select id="dologin" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select * from denglub where adminzh=#{adminzh,jdbcType=VARCHAR} and password=#{password,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from denglub
     where adminid = #{adminid,jdbcType=INTEGER}

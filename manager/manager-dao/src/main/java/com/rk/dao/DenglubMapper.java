@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.rk.entity.Denglub;
 
 public interface DenglubMapper {
@@ -14,4 +16,6 @@ public interface DenglubMapper {
     int updateByPrimaryKeySelective(Denglub record);
 
     int updateByPrimaryKey(Denglub record);
+    
+    Denglub dologin(@Param("adminzh") String adminzh,@Param("password") String password);
 }

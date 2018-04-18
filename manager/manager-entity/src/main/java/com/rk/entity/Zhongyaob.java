@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Zhongyaob {
+import java.io.Serializable;
+
+public class Zhongyaob  implements Serializable {
     private Integer zyid;
 
     private String zyname;

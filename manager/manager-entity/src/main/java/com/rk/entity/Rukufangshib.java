@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Rukufangshib {
+import java.io.Serializable;
+
+public class Rukufangshib  implements Serializable {
     private Integer rkfangshi;
 
     private String rktype;

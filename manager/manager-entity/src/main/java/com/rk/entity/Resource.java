@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Resource {
+import java.io.Serializable;
+
+public class Resource  implements Serializable {
     private Integer resourceid;
 
     private String resourcename;

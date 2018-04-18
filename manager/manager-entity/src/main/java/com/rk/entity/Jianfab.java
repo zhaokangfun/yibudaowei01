@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Jianfab {
+import java.io.Serializable;
+
+public class Jianfab implements Serializable  {
     private Integer jianfaid;
 
     private String name;

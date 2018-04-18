@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Jichuhechengb {
+import java.io.Serializable;
+
+public class Jichuhechengb  implements Serializable {
     private Integer jchcid;
 
     private String jchcname;

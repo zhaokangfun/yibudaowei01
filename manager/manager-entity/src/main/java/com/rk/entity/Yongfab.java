@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Yongfab {
+import java.io.Serializable;
+
+public class Yongfab  implements Serializable {
     private Integer yfid;
 
     private String yfname;

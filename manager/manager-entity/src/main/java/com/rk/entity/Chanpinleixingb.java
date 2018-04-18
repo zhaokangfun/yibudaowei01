@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Chanpinleixingb {
+import java.io.Serializable;
+
+public class Chanpinleixingb  implements Serializable {
     private Integer cptypeid;
 
     private String cptypename;
