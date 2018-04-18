@@ -26,6 +26,7 @@
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
+	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
 	<!-- <dubbo:service interface="com.mr.service.ShopGoodsTypeService" ref="ShopGoodsTypeService" />
 	<dubbo:service interface="com.mr.service.PictureService" ref="pictureService" /> -->
  	<dubbo:consumer check="false" timeout="300000" />
