@@ -3,6 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 public class Vipb implements Serializable {
+
     private Integer vipid;
 
     private String vipno;

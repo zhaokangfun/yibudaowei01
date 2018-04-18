@@ -19,4 +19,7 @@ public interface DenglubService {
     
     List<Denglub> listAll();
     
+
+    Denglub dologin(String adminzh,String password);
+
 }

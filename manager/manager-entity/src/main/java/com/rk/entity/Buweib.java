@@ -2,7 +2,8 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Buweib  implements Serializable {
+
+public class Buweib implements Serializable  {
     private Integer buweiid;
 
     private String name;

@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Qianmingb   implements Serializable {
+
     private Integer qmid;
 
     private Integer zcaoyid;

@@ -3,6 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 public class Yuyuestatusb implements Serializable {
+
     private Integer yystatusid;
 
     private String yystatusname;

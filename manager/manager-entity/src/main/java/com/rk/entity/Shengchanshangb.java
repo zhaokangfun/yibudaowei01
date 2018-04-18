@@ -3,6 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 public class Shengchanshangb implements Serializable {
+
     private Integer scsid;
 
     private String scsnumber;

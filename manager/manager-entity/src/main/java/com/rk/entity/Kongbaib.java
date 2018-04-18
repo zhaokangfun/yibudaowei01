@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Kongbaib   implements Serializable {
+
     private Integer kbid;
 
     private String biaoti;

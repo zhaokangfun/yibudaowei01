@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Fayaob   implements Serializable {
+
     private Integer fyid;
 
     private Integer hzid;

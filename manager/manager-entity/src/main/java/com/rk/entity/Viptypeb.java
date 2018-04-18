@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Viptypeb implements Serializable {
+
     private Integer viptypeid;
 
     private String viptypename;

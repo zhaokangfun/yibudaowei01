@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Pinlvb   implements Serializable {
+
     private Integer plid;
 
     private String plname;

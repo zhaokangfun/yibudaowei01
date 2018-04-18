@@ -3,6 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 public class Zhengjianlleixingb implements Serializable {
+
     private Integer zjtypeid;
 
     private String zjtypename;

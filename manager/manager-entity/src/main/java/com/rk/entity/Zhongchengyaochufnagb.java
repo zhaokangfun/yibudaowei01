@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Zhongchengyaochufnagb implements Serializable {
+
     private Integer zchengyid;
 
     private String zchengynumber;

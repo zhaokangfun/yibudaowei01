@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Huanzhexiangxib   implements Serializable {
+
     private Integer hzid;
 
     private String hzname;

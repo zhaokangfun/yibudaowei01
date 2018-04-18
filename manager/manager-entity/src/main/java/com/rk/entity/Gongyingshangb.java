@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Gongyingshangb   implements Serializable {
+
     private Integer gysid;
 
     private String gysnumber;

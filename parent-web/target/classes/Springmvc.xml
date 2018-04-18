@@ -57,7 +57,8 @@
 	<dubbo:application name="parent-web"/>
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
 	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
-	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluservice" />
+	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
 	 <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
+	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
 	 <!-- <dubbo:reference interface="com.mr.service.ShopGoodsService" id="shopGoodsService"/> -->
 </beans>

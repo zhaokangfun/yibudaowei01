@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Laiyuanb   implements Serializable {
+
     private Integer lyid;
 
     private String lyname;

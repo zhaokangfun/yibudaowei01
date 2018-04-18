@@ -5,56 +5,54 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rk.dao.DenglubMapper;
-import com.rk.entity.Denglub;
+import com.rk.dao.KeshibMapper;
+import com.rk.entity.Keshib;
 
-@Service("denglubservice")
-public class DengluServiceImpl  implements DenglubService
-{
-	
+@Service("keshibService")
+public class KeshibServiceImpl implements KeshibService {
+
 	@Autowired
-	private DenglubMapper dao;
-
+	private KeshibMapper keshibmapper;
+	
 	@Override
-	public int deleteByPrimaryKey(Integer adminid) {
+	public int deleteByPrimaryKey(Integer keshiid) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int insert(Denglub record) {
+	public int insert(Keshib record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int insertSelective(Denglub record) {
+	public int insertSelective(Keshib record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public Denglub selectByPrimaryKey(Integer adminid) {
+	public Keshib selectByPrimaryKey(Integer keshiid) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int updateByPrimaryKeySelective(Denglub record) {
+	public int updateByPrimaryKeySelective(Keshib record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int updateByPrimaryKey(Denglub record) {
+	public int updateByPrimaryKey(Keshib record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public List<Denglub> listAll() {
-		// TODO Auto-generated method stub
-		return dao.listAll();
+	public List<Keshib> getAll() {
+		return keshibmapper.getAll();
 	}
 
 }

@@ -3,6 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 public class Yongfab implements Serializable {
+
     private Integer yfid;
 
     private String yfname;

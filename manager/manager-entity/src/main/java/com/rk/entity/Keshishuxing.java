@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Keshishuxing   implements Serializable {
+
     private Integer keshishuxingid;
 
     private String keshishuxingname;

@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Gouyaob   implements Serializable {
+
     private Integer gyid;
 
     private Integer hzid;

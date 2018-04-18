@@ -14,6 +14,26 @@
     <result column="shuxun" jdbcType="INTEGER" property="shuxun" />
     <result column="zwid" jdbcType="INTEGER" property="zwid" />
   </resultMap>
+  <resultMap id="KeShiResultMap" type="com.rk.entity.Keshib">
+    <id column="keshiid" jdbcType="INTEGER" property="keshiid" />
+    <result column="keshiname" jdbcType="VARCHAR" property="keshiname" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="createtime" jdbcType="VARCHAR" property="createtime" />
+    <result column="keshitypeid" jdbcType="INTEGER" property="keshitypeid" />
+    <result column="yuyuestatus" jdbcType="INTEGER" property="yuyuestatus" />
+    <result column="keshiaddress" jdbcType="VARCHAR" property="keshiaddress" />
+    <result column="keshimiaoshu" jdbcType="VARCHAR" property="keshimiaoshu" />
+    <result column="parentid" jdbcType="INTEGER" property="parentid" />
+    <result column="shuxun" jdbcType="INTEGER" property="shuxun" />
+    <result column="zwid" jdbcType="INTEGER" property="zwid" />
+    
+    <association property="keshishuxing" javaType="com.rk.entity.Keshishuxing">
+    	<id column="keshishuxingid" jdbcType="INTEGER" property="keshishuxingid" />
+	    <result column="keshishuxingname" jdbcType="VARCHAR" property="keshishuxingname" />
+	    <result column="status" jdbcType="INTEGER" property="status" />
+    </association>
+    
+  </resultMap>
   <sql id="Base_Column_List">
     keshiid, keshiname, status, createtime, keshitypeid, yuyuestatus, keshiaddress, keshimiaoshu, 
     parentid, shuxun, zwid
@@ -23,6 +43,10 @@
     <include refid="Base_Column_List" />
     from keshib
     where keshiid = #{keshiid,jdbcType=INTEGER}
+  </select>
+  <!-- 查询所有 -->
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from keshib k,keshishuxing ks where k.keshitypeid=ks.keshishuxingid
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from keshib

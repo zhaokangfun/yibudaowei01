@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Liliaob   implements Serializable {
+
     private Integer llid;
 
     private String llnumber;
