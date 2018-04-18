@@ -11,7 +11,7 @@ var navs = [{
 },{
 	"title" : "今日就诊",
 	"icon" : "icon-text",
-	"href" : "page/links/linksList.html",
+	"href" : "banci/jinrijiuzhen",
 	"spread" : false
 },{
 	"title" : "收费管理",
@@ -27,7 +27,7 @@ var navs = [{
 {
 	"title" : "库房管理",
 	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "ruku/rkxx",
 	"spread" : false
 },
 {

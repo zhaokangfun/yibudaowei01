@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Cailiaotypeb {
+import java.io.Serializable;
+
+public class Cailiaotypeb  implements Serializable {
     private Integer cltypeid;
 
     private String cltypename;

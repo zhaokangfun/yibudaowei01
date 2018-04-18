@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Denglub;
 
 public interface DenglubMapper {
@@ -14,4 +16,6 @@ public interface DenglubMapper {
     int updateByPrimaryKeySelective(Denglub record);
 
     int updateByPrimaryKey(Denglub record);
+    
+    List<Denglub> listAll();
 }

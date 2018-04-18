@@ -58,5 +58,7 @@
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
 	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
 	 <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
+	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluservice" />
+	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
 	 <!-- <dubbo:reference interface="com.mr.service.ShopGoodsService" id="shopGoodsService"/> -->
 </beans>

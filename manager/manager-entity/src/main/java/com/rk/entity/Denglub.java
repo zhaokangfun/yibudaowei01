@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Denglub {
+import java.io.Serializable;
+
+public class Denglub   implements Serializable{
     private Integer adminid;
 
     private String adminzh;
