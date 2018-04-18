@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Denglub;
 
 public interface DenglubService {
@@ -16,4 +18,7 @@ public interface DenglubService {
     int updateByPrimaryKey(Denglub record);
     
     Denglub dologin(String adminzh,String password);
+    
+    List<Denglub> listAll();
+    
 }

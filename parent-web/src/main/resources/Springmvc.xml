@@ -59,5 +59,6 @@
 	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
 	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
+	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
 	 <!-- <dubbo:reference interface="com.mr.service.ShopGoodsService" id="shopGoodsService"/> -->
 </beans>

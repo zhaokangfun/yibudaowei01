@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +53,12 @@ public class DenglubServiceImpl implements DenglubService{
 	@Override
 	public Denglub dologin(String adminzh, String password) {
 		return denglubMapper.dologin(adminzh, password);
+	}
+
+	@Override
+	public List<Denglub> listAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

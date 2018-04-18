@@ -2,7 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Rukufangshib  implements Serializable {
+public class Rukufangshib implements Serializable {
     private Integer rkfangshi;
 
     private String rktype;
