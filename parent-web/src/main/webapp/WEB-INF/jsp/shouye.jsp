@@ -143,7 +143,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>
 	<script type="text/javascript" src="layui/layui.js" ></script>
-	<script type="text/javascript" src="layui/layui.js"></script>
+	
 	<script type="text/javascript" src="js/nav.js"></script>
 	<script type="text/javascript" src="js/leftNav.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>

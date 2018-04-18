@@ -20,18 +20,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="css/todayPatientList.css">
     <link rel="stylesheet" type="text/css" href="css/patientCard.css">
     <link rel="stylesheet" type="text/css" href="css/pricingCharge.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/public.js"></script>
-    <script type="text/javascript" src="js/cache.js"></script>
-    <script type="text/javascript" src="js/pawj.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/layui.css">
     <script type="text/javascript" src="js/layer.js"></script>
-    <script type="text/javascript" src="js/hz2pinyin.js"></script>
-    <script type="text/javascript" src="js/hz2wubi.js"></script>
-    <script type="text/javascript" src="js/mi_common.js"></script>
-    <script type="text/javascript" src="js/patient_depend_common.js"></script>
-    <script type="text/javascript" src="js/ybFastVisit.js"></script>
-    <script type="text/javascript" src="js/SpeechSynthesis.js"></script><!-- 叫号语音合成 -->
-    <script type="text/javascript" src="js/todayPatientList.js"></script>
+    <script type="text/javascript" src="js/layui.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
   <title>今日就诊</title>
 <link rel="stylesheet" href="css/layer.css" id="layuicss-skinlayercss"></head>
