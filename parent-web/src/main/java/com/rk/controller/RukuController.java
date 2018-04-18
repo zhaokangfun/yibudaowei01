@@ -15,7 +15,6 @@ import com.rk.service.RukubService;
 public class RukuController {
 
 	@Autowired
-	
 	private RukubService rkservice;
 	
 	/**
