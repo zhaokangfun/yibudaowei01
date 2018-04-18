@@ -3,7 +3,7 @@ package com.rk.entity;
 import java.io.Serializable;
 
 
-public class Jichuhechengb   implements Serializable {
+public class Jichuhechengb implements Serializable {
 
     private Integer jchcid;
 
