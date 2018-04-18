@@ -2,7 +2,11 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+<<<<<<< HEAD
 public class Jichuhechengb  implements Serializable {
+=======
+public class Jichuhechengb implements Serializable {
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
     private Integer jchcid;
 
     private String jchcname;

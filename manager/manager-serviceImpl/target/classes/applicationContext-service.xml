@@ -26,8 +26,13 @@
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
+<<<<<<< HEAD
 	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubService" />
 	<dubbo:service interface="com.rk.service.KeshibService" ref="keshibService" />
+=======
+	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
+	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubservice" />
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
 	<dubbo:service interface="com.rk.service.RukubService" ref="rukubService" />
 	<!-- <dubbo:service interface="com.mr.service.ShopGoodsTypeService" ref="ShopGoodsTypeService" />
 	<dubbo:service interface="com.mr.service.PictureService" ref="pictureService" /> -->
