@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Lianxirentypeb {
+import java.io.Serializable;
+
+public class Lianxirentypeb   implements Serializable {
     private Integer lxrtypeid;
 
     private String lxrtype;

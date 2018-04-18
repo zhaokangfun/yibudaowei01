@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Xuelib {
+import java.io.Serializable;
+
+public class Xuelib implements Serializable {
     private Integer xueliid;
 
     private String xueliname;

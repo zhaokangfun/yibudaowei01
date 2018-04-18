@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Xiangmub {
+import java.io.Serializable;
+
+public class Xiangmub implements Serializable {
     private Integer xiangmuid;
 
     private String xiangmuname;

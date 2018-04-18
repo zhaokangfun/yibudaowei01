@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Ypbianjiguigeb {
+import java.io.Serializable;
+
+public class Ypbianjiguigeb implements Serializable {
     private Integer ybbianjiid;
 
     private Integer jiliang;

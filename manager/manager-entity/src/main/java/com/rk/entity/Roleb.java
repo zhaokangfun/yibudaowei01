@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Roleb {
+import java.io.Serializable;
+
+public class Roleb   implements Serializable {
     private Integer roleid;
 
     private String rolename;

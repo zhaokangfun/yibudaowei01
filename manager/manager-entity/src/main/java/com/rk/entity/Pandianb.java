@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Pandianb {
+import java.io.Serializable;
+
+public class Pandianb   implements Serializable {
     private Integer pdid;
 
     private String pdnumber;

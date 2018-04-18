@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Zhoub {
+import java.io.Serializable;
+
+public class Zhoub implements Serializable {
     private Integer zhouid;
 
     private String howtime;

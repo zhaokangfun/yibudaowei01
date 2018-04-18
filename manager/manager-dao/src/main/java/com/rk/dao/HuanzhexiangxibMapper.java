@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Huanzhexiangxib;
 
 public interface HuanzhexiangxibMapper {
@@ -14,4 +16,6 @@ public interface HuanzhexiangxibMapper {
     int updateByPrimaryKeySelective(Huanzhexiangxib record);
 
     int updateByPrimaryKey(Huanzhexiangxib record);
+    
+    List<Huanzhexiangxib> listOnjzStatics(Integer jzstatus);
 }

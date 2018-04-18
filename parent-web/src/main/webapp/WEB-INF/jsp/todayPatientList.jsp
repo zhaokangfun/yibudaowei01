@@ -43,11 +43,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="card-tab-top clear" style="padding-right: 30px;">
                 <div class="com_status pat_com_status">
                     <ul id="tablist" class="clear">
-                        <li id="tab-wait" onclick="hei">候诊中<span id="tab-wait-count">(0)</span>
+                        <li class="tab-wait" onclick="reles(1)">候诊中<span id="tab-wait-count">(${OneSize})</span>
                         </li>
-                        <li id="tab-consult">治疗中<span id="tab-consult-count">(0)</span>
+                        <li class="tab-wait" onclick="reles(2)">治疗中<span id="tab-consult-count">(${TwoSize})</span>
                         </li>
-                        <li id="tab-finish">已完成<span id="tab-finish-count">(0)</span>
+                        <li class="tab-wait" onclick="reles(3)">已完成<span id="tab-finish-count">(${ThreeSize})</span>
                         </li>
                     </ul>
                 </div>
@@ -66,52 +66,98 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="cardBoxWrap">
                 <div class="memberInfoList cardBoxWrap-Info clear">
-                    <div class="hide">
-                 <!--        <div class="s_box" id="box_template">
+                    <div class="neirong">
+                    <c:forEach items="${list}" var="i">
+           <div class="s_box" id="box_template">
                             <div class="s_box_top">
                                 <div class="s_box_top_l">
                                     <img src="js/card_photo_man.png" alt="">
                                 </div>
                                 <div class="s_box_top_r">
                                     <span class="name_zhenshi">
-								<span class="patient_name">高圆圆</span>
+								<span class="patient_name">${i.hzname }</span>
                                     <span class="zhenshi"></span>
                                     </span>
-                                    <span class="patient_ageOrsex">0岁&nbsp;女</span>
+                                    <span class="patient_ageOrsex">${i.age}&nbsp;${i.sex }</span>
                                     <span class="treatment_information">初诊</span>
                                     <div class="docter_icon"></div>
-                                    <span class="docter_information">李医生</span>
-                                    <span class="patient_date">2016-08-22 08:30</span>
                                 </div>
-                            </div>
-                        </div> -->
+                        </div>
                         <div class="s_box_bot" id="box_bot_template1">
                             <span class="accepts">接诊</span>
                         </div>
-                        <div class="s_box_bot" id="box_bot_template2">
-                            <span class="continueCure">继续治疗</span>
-                            <span class="s_box_bot_border"></span>
-                            <span class="cureEnd">完成就诊</span>
-                        </div>
-                        <div class="s_box_bot clear" id="box_bot_template3">
-                            <span class="followup">新增随访</span>
-                            <span class="againClinical">重新接诊</span>
-                        </div>
+                    </div>
+                    </c:forEach>
                     </div>
                     <div class="f_box clear">
                         <div id="dataList" class="chargeCard clear"></div>
                     </div>
                 </div>
+                <c:if test="${list=null}">
                 <div id="nothing" class="">
                     <div class="no-data-msg">当前暂无就诊！</div>
                 </div>
-                <div id="my-page" class="page-nav"></div>
+                </c:if>
+               
             </div>
             <!-- end of .right-table-area -->
         </div>
         <!-- end of .tab-content -->
     </div>
     <script type="text/javascript">
+    //候诊中
+    
+    	function reles(hei){
+			$.post('banci/jiezhenzhuangtai.json',{'id':hei},function(data){
+				des(data);
+			})	
+			};
+    
+    		function des(result){
+    			var res=result;
+    			console.log(res);
+			 $(".neirong div").remove();
+			 console.log(result[0]);
+			 $.each(result,function(i,obj){
+				 var html='<div class="s_box" id="box_template">'
+                    	+'<div class="s_box_top">'
+                 	    +'<div class="s_box_top_l">'
+                        +'<img src="js/card_photo_man.png" alt="">'
+                 		+'</div>'
+                		+'<div class="s_box_top_r">'
+                     	+'<span class="name_zhenshi">'
+						+'<span class="patient_name">'+obj.hzname+'</span>'
+                    	+'<span class="zhenshi"></span>'
+                     	+'</span>'
+                     	+'<span class="patient_ageOrsex">0岁&nbsp;女</span>'
+                     	+'<span class="treatment_information">初诊</span>'
+                     	+'<div class="docter_icon"></div>'
+                     	+'<span class="patient_date">2016-08-22 08:30</span>'
+                 		+'</div>'
+           				+'</div>'
+         				+'<div class="s_box_bot" id="box_bot_template1">'
+         				+' <span class="accepts">接诊</span>'
+            			+'</div>'
+            			+'</div>'
+            		 $(".neirong").append(html);
+            			
+		      });
+			};
+    
+      /*    
+         <div class="s_box_bot" id="box_bot_template2">
+             <span class="continueCure">继续治疗</span>
+             <span class="s_box_bot_border"></span>
+             <span class="cureEnd">完成就诊</span>
+         </div>
+         <div class="s_box_bot clear" id="box_bot_template3">
+             <span class="followup">新增随访</span>
+             <span class="againClinical">重新接诊</span>
+         </div>
+     </div>' */
+		       
+		 
+    
     $('#parentIframe').on('click', function(){
         layer.open({
         type: 2,
@@ -122,11 +168,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         content: 'banci/kuaisujiezhen'
         });
       });
-    
-    $("#hei").on('click',function(){
-    	$("#hei").removeClass("cur");//删除样式
-    	$("#hei").addClass("cur"); //追加样式
-    });
     </script>
  </body>
 </html>

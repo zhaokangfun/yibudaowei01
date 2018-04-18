@@ -1,6 +1,8 @@
 package com.rk.entity;
 
-public class Tigecheckb {
+import java.io.Serializable;
+
+public class Tigecheckb implements Serializable {
     private Integer tigechekid;
 
     private Double tiwen;
