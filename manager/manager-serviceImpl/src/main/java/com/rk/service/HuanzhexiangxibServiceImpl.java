@@ -35,7 +35,7 @@ public class HuanzhexiangxibServiceImpl implements HuanzhexiangxibService {
 	@Override
 	public Huanzhexiangxib selectByPrimaryKey(Integer hzid) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectByPrimaryKey(hzid);
 	}
 
 	@Override

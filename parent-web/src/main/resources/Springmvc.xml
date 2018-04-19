@@ -55,19 +55,11 @@
 	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="parent-web"/>
-<<<<<<< HEAD
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
 	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
 	 <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
 	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
 	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
-=======
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
-	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
-	 <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
-	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluservice" />
-	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
->>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
-	 <!-- <dubbo:reference interface="com.mr.service.ShopGoodsService" id="shopGoodsService"/> -->
+	  <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
 </beans>

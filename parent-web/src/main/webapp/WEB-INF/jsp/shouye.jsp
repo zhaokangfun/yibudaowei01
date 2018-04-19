@@ -11,7 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="<%=basePath%>">
     <meta charset="UTF-8">
     <title>LarryCMS后台管理1.09版</title>
 	<meta name="keywords" content="LarryCMS后台登录界面" />
@@ -25,20 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="format-detection" content="telephone=no">	
 	<link rel="Shortcut Icon" href="/favicon.ico" />
 	<!-- load css -->
-	<link rel="stylesheet" type="text/css" href="common/layui/css/layui.css" media="all">
-	<link rel="stylesheet" type="text/css" href="common/css/global.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../common/layui/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../common/css/global.css" media="all">
 	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_bmgv5kod196q1tt9.css">
-	<link rel="stylesheet" type="text/css" href="css/backstage.css" media="all">
-		<script type="text/javascript" src="layui/layui.js" ></script>
-	<script type="text/javascript" src="js/nav.js"></script>
-	<script type="text/javascript" src="js/leftNav.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/backstage.css" media="all">
 </head>
 <body>
 <div class="layui-layout layui-layout-admin" id="layui_layout">
 	<!-- 顶部区域 -->
 	<div class="layui-header header-menu">
-		<div class="logo posb" id="log"><img src="common/images/logo.png"></div>
+		<div class="logo posb" id="log"><img src="../common/images/logo1.png"></div>
 		<div class="layui-main posb">
 		  	<!-- 左侧导航收缩开关 -->
 		  	<div class="side-menu-switch posb" id="toggle"><span class="switch"  ara-hidden="true"></span></div>
@@ -104,8 +99,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<!-- 移动导航 -->
 	<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
-	<div class="site-mobile-shade"></div>
+	<div class="site-mobile-shade"></div><!-- 
+	<script type="text/javascript" src="layui/layui.js" ></script>
+	
+	<script type="text/javascript" src="js/nav.js"></script>
+	<script type="text/javascript" src="js/leftNav.js"></script>
+	<script type="text/javascript" src="js/index.js"></script> -->
 
+=======
     <!-- 右侧主题内容 -->
     <div class="layui-body" id="larry-body">
         <div class="layui-tab" id="larry-tab" lay-filter="larryTab">
@@ -157,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      LarryCMS QQ群：<a href="https://jq.qq.com/?_wv=1027&amp;k=42fC4vT" target="_blank"><img border="0" src="../images/group.png" title="LarryCMS官方交流群"></a> 加群下载模板源码
           
                </div>
-               <p>2016-2017 © Write by Larry,LarryCMS. 版权所有,基于前端框架Layui1.09</p> 
+               <p>2016-2018 © Write by YuanMa,YIBUDAOWEI. 版权所有,YIBUDAOWEI0.0.1</p> 
          </div>
     </div>
     <!-- footer end -->
@@ -175,10 +176,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <label class="layui-form-label">主题选择</label>
                 <div class="layui-input-block">
                     <select lay-filter="larryTheme"  lay-verify="" id="themeName">
-                      <option value="larry">LarryCMS默认主题</option>
-                      <option value="A">LarryCMS深蓝主题</option>
-                      <option value="B">LarryCMS墨绿主题</option>
-                      <option value="larry_">更多主题以后添加</option>
+                      <option value="larry">YIBUDAOWEI默认主题</option>
+                      <option value="A">YIBUDAOWEI深蓝主题</option>
+                      <option value="B">YIBUDAOWEI墨绿主题</option>
+                      <!-- <option value="larry_">更多主题以后添加</option> -->
                     </select>     
                 </div>
             </div>
@@ -220,7 +221,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div class="lock-wrapper" id="lock-screen">
         <div id="time"></div>
         <div class="lock-box">
-             <img src="images/user.jpg" alt="">
+             <img src="../images/user.jpg" alt="">
              <h1>admin</h1>
              <form action="" class="layui-form lock-form">
                   <div class="layui-form-item">

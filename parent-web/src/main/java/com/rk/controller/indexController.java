@@ -59,9 +59,12 @@ public class indexController {
 	}
 	
 	@RequestMapping("kuaisujiezhen")
-	public String kuaisujiezhen(Model model){
+	public String kuaisujiezhen(Integer id,Model model){
+		System.out.println(id);
 		List<Denglub> yslist=dengluService.listAll();
+		Huanzhexiangxib hzxxb=hzxiangxiService.selectByPrimaryKey(id);
 		model.addAttribute("yslist", yslist);
+		model.addAttribute("hzxxb", hzxxb);
 		return "kuaisujiezhen";
 	}
 	

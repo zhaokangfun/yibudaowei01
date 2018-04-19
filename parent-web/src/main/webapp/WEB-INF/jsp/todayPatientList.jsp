@@ -21,11 +21,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="css/patientCard.css">
     <link rel="stylesheet" type="text/css" href="css/pricingCharge.css">
     <link rel="stylesheet" type="text/css" href="css/layui.css">
-    <script type="text/javascript" src="js/layer.js"></script>
-    <script type="text/javascript" src="js/layui.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
   <title>今日就诊</title>
-<link rel="stylesheet" href="css/layer.css" id="layuicss-skinlayercss"></head>
+<link rel="stylesheet" href="css/layer.css"></head>
 
 <body class="static-public-css todayPatient-list-css patient-card-css">
     <div id="list_div" class="content-inner">
@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <i class="t-pre fr"></i>
                 <span class="frbtn fr" id="yb-fast-reg" style="display:none;">医保接诊</span>
-                <span class="frbtn fr" id="parentIframe" >快速接诊</span>
+                <!-- <span class="frbtn fr" id="parentIframe" >快速接诊</span> -->
                 <span class="frbtn fr dsn" id="nextPatientBtn">接诊下一位</span>
             </div>
             <div class="cardBoxWrap">
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="neirong">
                     <c:forEach items="${list}" var="i">
            <div class="s_box" id="box_template">
-                            <div class="s_box_top">
+                            <div class="s_box_top" onclick="parentIframe(${i.hzid})">
                                 <div class="s_box_top_l">
                                     <img src="js/card_photo_man.png" alt="">
                                 </div>
@@ -69,13 +69,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="patient_name">${i.hzname }</span>
                                     <span class="zhenshi"></span>
                                     </span>
-                                    <span class="patient_ageOrsex">${i.age}&nbsp;${i.sex }</span>
-                                    <span class="treatment_information">初诊</span>
+                                    <span class="patient_ageOrsex">${i.age}&nbsp;&nbsp;&nbsp;${i.sex }</span>
+                                   
                                     <div class="docter_icon"></div>
                                 </div>
                         </div>
                         <div class="s_box_bot" id="box_bot_template1">
-                            <span class="accepts">接诊</span>
+                            <span class="accepts" >操作</span>
                         </div>
                     </div>
                     </c:forEach>
@@ -111,7 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			 console.log(result[0]);
 			 $.each(result,function(i,obj){
 				 var html='<div class="s_box" id="box_template">'
-                    	+'<div class="s_box_top">'
+                    	+'<div class="s_box_top"  onclick="parentIframe('+obj.hzid+')">'
                  	    +'<div class="s_box_top_l">'
                         +'<img src="js/card_photo_man.png" alt="">'
                  		+'</div>'
@@ -120,14 +120,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						+'<span class="patient_name">'+obj.hzname+'</span>'
                     	+'<span class="zhenshi"></span>'
                      	+'</span>'
-                     	+'<span class="patient_ageOrsex">0岁&nbsp;女</span>'
-                     	+'<span class="treatment_information">初诊</span>'
+                     	+'<span class="patient_ageOrsex">'+obj.age+'&nbsp;&nbsp;&nbsp;'+obj.sex+'</span>'
                      	+'<div class="docter_icon"></div>'
-                     	+'<span class="patient_date">2016-08-22 08:30</span>'
+                     	+'<span class="patient_date">'+obj.jztime+'</span>'
                  		+'</div>'
            				+'</div>'
          				+'<div class="s_box_bot" id="box_bot_template1">'
-         				+' <span class="accepts">接诊</span>'
+         				+' <span class="accepts">操作</span>'
             			+'</div>'
             			+'</div>'
             		 $(".neirong").append(html);
@@ -147,9 +146,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          </div>
      </div>' */
 		       
-		 
+     function parentIframe(hei){
+     layer.open({
+     type: 2,
+     title: '快速接诊中',
+     maxmin: true,
+     shadeClose: true, //点击遮罩关闭层
+     area : ['800px' , '520px'],
+     content: 'banci/kuaisujiezhen?id='+hei
+     });
+   };
     
-    $('#parentIframe').on('click', function(){
+ /*    $('#parentIframe').on('click', function(){
         layer.open({
         type: 2,
         title: '快速接诊中',
@@ -158,7 +166,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         area : ['800px' , '520px'],
         content: 'banci/kuaisujiezhen'
         });
-      });
+      }); */
     </script>
  </body>
 </html>
