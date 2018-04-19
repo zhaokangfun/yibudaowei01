@@ -2,6 +2,7 @@ package com.rk.service;
 
 import java.util.List;
 
+
 import com.rk.entity.Rukub;
 
 public interface RukubService {
@@ -21,5 +22,11 @@ public interface RukubService {
      * 查询全部入库信息！
      * @return
      */
-    List<Rukub>Gellrk();
+    List<Rukub> Gellrk();
+    
+    /** 
+     * 删除入库
+     * @return
+     */
+    int delerk(Integer rkid);
 }

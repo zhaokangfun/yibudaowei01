@@ -55,4 +55,10 @@ public class RukuServiceImpl implements RukubService {
 		return rkdao.Gellrk();
 	}
 
+	@Override
+	public int delerk(Integer rkid) {
+		// TODO Auto-generated method stub
+		return rkdao.delerk(rkid);
+	}
+
 }

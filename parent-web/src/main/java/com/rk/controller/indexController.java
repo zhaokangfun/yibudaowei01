@@ -23,14 +23,16 @@ public class indexController {
 	
 	@RequestMapping("/index.html")
 	public String show(Model model) {
-		List<Bancib> list=bancibService.getAll();
-		model.addAttribute("list", list);
 		return "shouye";
 	}
 	
 	@RequestMapping("main")
 	public String main(Model model) {
 		return "main";
+	}
+	@RequestMapping("main1")
+	public String main1(Model model) {
+		return "main1";
 	}
 	@RequestMapping("jinrijiuzhen")
 	public String todayPatient(Model model) {
@@ -44,4 +46,4 @@ public class indexController {
 		return "kuaisujiezhen";
 	}
 
-}	
+}

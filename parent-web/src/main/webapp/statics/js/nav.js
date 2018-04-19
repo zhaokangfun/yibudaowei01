@@ -1,5 +1,4 @@
 var navs = [{
-	
 	"title" : "后台首页",
 	"icon" : "icon-computer",
 	"href" : "page/main.html",
@@ -58,7 +57,7 @@ var navs = [{
 {
 	"title" : "基础设置",
 	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "jichu/jichu.html",
 	"spread" : false
 },
 {

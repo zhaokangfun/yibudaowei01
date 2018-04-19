@@ -2,6 +2,8 @@ package com.rk.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.rk.entity.Rukub;
 
 public interface RukubMapper {
@@ -21,5 +23,11 @@ public interface RukubMapper {
      * 查询全部入库信息！
      * @return
      */
-    List<Rukub>Gellrk();
+    List<Rukub> Gellrk();
+    
+    /** 
+     * 删除入库
+     * @return
+     */
+    int delerk(Integer rkid);
 }

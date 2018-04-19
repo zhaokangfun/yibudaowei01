@@ -1,5 +1,8 @@
 package com.rk.dao;
 
+import java.util.List;
+
+import com.rk.entity.Jichufuleib;
 import com.rk.entity.Jichuhechengb;
 
 public interface JichuhechengbMapper {
@@ -14,4 +17,5 @@ public interface JichuhechengbMapper {
     int updateByPrimaryKeySelective(Jichuhechengb record);
 
     int updateByPrimaryKey(Jichuhechengb record);
+    List<Jichuhechengb> SelectAll();
 }

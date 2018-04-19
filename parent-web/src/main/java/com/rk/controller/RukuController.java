@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rk.entity.Rukub;
 import com.rk.service.RukubService;
@@ -27,4 +28,21 @@ public class RukuController {
 		model.addAttribute("list",list);
 		return "RuKuxx";
 	}
+	
+	/**
+	 * 入库添加
+	 * @return
+	 */
+	@RequestMapping("rktj")
+	public String rktj(Model model) {
+		
+		return "xinzengrk";
+	}
+	@RequestMapping("delrk")
+	@ResponseBody
+	public int delrk(Integer rkid) {
+		int ret=rkservice.delerk(rkid);
+		return ret;
+	}
+	
 }
