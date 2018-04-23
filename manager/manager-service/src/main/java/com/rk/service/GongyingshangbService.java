@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Gongyingshangb;
 
 public interface GongyingshangbService {
@@ -14,4 +16,6 @@ public interface GongyingshangbService {
     int updateByPrimaryKeySelective(Gongyingshangb record);
 
     int updateByPrimaryKey(Gongyingshangb record);
+    
+    List<Gongyingshangb> gysGell();
 }

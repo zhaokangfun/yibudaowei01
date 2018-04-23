@@ -10,8 +10,8 @@
     <result column="scsid" jdbcType="INTEGER" property="scsid" />
     <result column="gysid" jdbcType="INTEGER" property="gysid" />
     <result column="ypbwnumber" jdbcType="VARCHAR" property="ypbwnumber" />
-    <result column="lsdw" jdbcType="VARCHAR" property="lsdw" />
-    <result column="dwid" jdbcType="VARCHAR" property="dwid" />
+    <result column="lsdw" jdbcType="INTEGER" property="lsdw" />
+    <result column="dwid" jdbcType="INTEGER" property="dwid" />
     <result column="kczhl" jdbcType="DOUBLE" property="kczhl" />
     <result column="lsprice" jdbcType="DOUBLE" property="lsprice" />
     <result column="maxprice" jdbcType="DOUBLE" property="maxprice" />
@@ -19,11 +19,29 @@
     <result column="wubi" jdbcType="VARCHAR" property="wubi" />
     <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
     <result column="status" jdbcType="INTEGER" property="status" />
+    <association property="dw" javaType="com.rk.entity.Danweib">
+    			<id column="dwid" property="dwid"/>
+    			<result column="dwname" property="dwname" />
+    	</association>
   </resultMap>
   <sql id="Base_Column_List">
     zyid, zyname, zyjdname, yptypeid, guige, scsid, gysid, ypbwnumber, lsdw, dwid, kczhl, 
     lsprice, maxprice, yfid, wubi, pinyin, status
   </sql>
+  
+  <!-- 许冲添加中药 -->
+  <insert id="addzy" parameterType="com.rk.entity.Zhongyaob">
+  	INSERT zhongyaob VALUES(DEFAULT,#{zyname},#{zyjdname},#{yptypeid},#{guige},#{scsid},#{gysid},#{ypbwnumber},#{lsdw},#{dwid},#{kczhl},#{lsprice},#{maxprice},#{yfid},#{wubi},#{pinyin},#{status})
+  </insert>
+  
+  <!-- 许冲查询中药 -->
+   <select id="Gellzy" resultMap="BaseResultMap">
+   	SELECT * from zhongyaob z,danweib d WHERE z.dwid=d.dwid
+   </select>
+  <select id="textSelect" resultMap="BaseResultMap">
+  	SELECT * FROM zhongyaob WHERE pinyin LIKE '%'#{pinyin}'%' and zyname like '%'#{pinyin}'%'
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

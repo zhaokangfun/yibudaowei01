@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" 
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
@@ -15,7 +15,8 @@
         http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- 启动扫描 -->
-	<context:component-scan base-package="com.rk.controller" />
+	<context:component-scan
+		base-package="com.rk.controller" />
 	<mvc:annotation-driven />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -25,8 +26,15 @@
 	
 	<mvc:resources location="/statics/" mapping="/**"/>
 	<!-- <mvc:annotation-driven>
+=======
+
+	<mvc:resources location="/statics/" mapping="/**" />
+
+	<mvc:annotation-driven>
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
 		<mvc:message-converters>
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+			<bean
+				class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/json;charset=UTF-8</value>
@@ -50,6 +58,7 @@
 				<property name="dateFormat" value="yyyy年MM月dd日 hh:mm:ss"></property>
 			</bean>
 		</mvc:message-converters>
+<<<<<<< HEAD
 	</mvc:annotation-driven> -->	
 	
 	<mvc:annotation-driven  >
@@ -72,24 +81,62 @@
         </mvc:message-converters>
 </mvc:annotation-driven>
 	
+
+	<!-- 引用dubbo服务 -->
+	<dubbo:application name="parent-web" />
+	<dubbo:registry protocol="zookeeper"
+		address="127.0.0.1:2181" />
+	<dubbo:reference
+		interface="com.rk.service.BancibService" id="bancibService" />
+	<dubbo:reference
+		interface="com.rk.service.DenglubService" id="denglubService" />
+	<dubbo:reference
+		interface="com.rk.service.HuanzhexiangxibService"
+		id="huanzhexiangxibservice" />
+	<dubbo:reference
+		interface="com.rk.service.KeshibService" id="keshibService" />
+	<dubbo:reference
+		interface="com.rk.service.RukubService" id="rukubService" />
+	<dubbo:reference
+		interface="com.rk.service.JichuhechengbService"
+		id="jichuhechengbService" />
+	<dubbo:reference
+		interface="com.rk.service.XiyaozhongchengyaobService"
+		id="xiyaozhongchengyaobService" />
+	<dubbo:reference
+		interface="com.rk.service.GongyingshangbService"
+		id="gongyingshangService" />
+	<dubbo:reference
+		interface="com.rk.service.ShengchanshangbService"
+		id="shengchanshangbService" />
+	<dubbo:reference
+		interface="com.rk.service.DanweibService" id="danweibService" />
+	<dubbo:reference
+		interface="com.rk.service.YongfabService" id="yongfabService" />
+	<dubbo:reference
+		interface="com.rk.service.PinlvbService" id="pinlvbService" />
+
+	<dubbo:reference
+		interface="com.rk.service.ZhongyaobService" id="zhongyaobService" />
+	<dubbo:reference
+		interface="com.rk.service.CailiaobService" id="cailiaobService" />
+	<dubbo:reference
+		interface="com.rk.service.JixingbService" id="jixingbService" />
+	<dubbo:reference
+		interface="com.rk.service.JianfabService" id="jianfabService" />
+	<dubbo:reference
+		interface="com.rk.service.GuominshibService" id="guominshibService" />
+	<dubbo:reference
+		interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
+	<dubbo:reference
+		interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
+	<dubbo:reference
+		interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
 	
 	<!-- 引用dubbo服务 -->
-	<dubbo:application name="parent-web"/>
-	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
-	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
-	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
 	 <dubbo:reference interface="com.rk.service.ShijianduanbService" id="shijianduanbService" />
-	 <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
-	 <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluService" />
-	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
-	 <dubbo:reference interface="com.rk.service.YuyueguizebService" id="yuyueguizebService" />
 	 <dubbo:reference interface="com.rk.service.YuyuehcbService" id="yuyuehcbService" />
-	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
 	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
 	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
-	  <dubbo:reference interface="com.rk.service.GuominshibService" id="guominshibService" />
-	  <dubbo:reference interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
-	  <dubbo:reference interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
-	  <dubbo:reference interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
 </beans>

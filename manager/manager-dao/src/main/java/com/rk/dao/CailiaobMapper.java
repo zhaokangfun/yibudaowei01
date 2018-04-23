@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Cailiaob;
 
 public interface CailiaobMapper {
@@ -14,4 +16,6 @@ public interface CailiaobMapper {
     int updateByPrimaryKeySelective(Cailiaob record);
 
     int updateByPrimaryKey(Cailiaob record);
+    
+    List<Cailiaob> Gellcl();
 }

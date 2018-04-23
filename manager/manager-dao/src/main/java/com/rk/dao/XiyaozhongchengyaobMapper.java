@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Xiyaozhongchengyaob;
 
 public interface XiyaozhongchengyaobMapper {
@@ -14,4 +16,15 @@ public interface XiyaozhongchengyaobMapper {
     int updateByPrimaryKeySelective(Xiyaozhongchengyaob record);
 
     int updateByPrimaryKey(Xiyaozhongchengyaob record);
+    
+    /*
+     * 西药中成药信息
+     */
+    List<Xiyaozhongchengyaob> Gellxizhong();
+    
+    /**
+     * 添加
+     * @return
+     */
+    int xizhongadd(Xiyaozhongchengyaob xz);
 }

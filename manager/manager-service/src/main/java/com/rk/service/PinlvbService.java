@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Pinlvb;
 
 public interface PinlvbService {
@@ -14,4 +16,6 @@ public interface PinlvbService {
     int updateByPrimaryKeySelective(Pinlvb record);
 
     int updateByPrimaryKey(Pinlvb record);
+    
+    List<Pinlvb> Gellpl();
 }

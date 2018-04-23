@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Cailiaob;
 
 public interface CailiaobService {
@@ -14,4 +16,6 @@ public interface CailiaobService {
     int updateByPrimaryKeySelective(Cailiaob record);
 
     int updateByPrimaryKey(Cailiaob record);
+    
+    List<Cailiaob> Gellcl();
 }
