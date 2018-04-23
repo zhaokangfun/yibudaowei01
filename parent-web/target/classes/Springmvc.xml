@@ -68,4 +68,5 @@
 	  <dubbo:reference interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
 	  <dubbo:reference interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
 	  <dubbo:reference interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
+	  <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
 </beans>
