@@ -10,6 +10,9 @@
   <sql id="Base_Column_List">
     yyhcid, banciid, kssjduan, jssjduan
   </sql>
+  <select id="listAll" resultMap="BaseResultMap">
+  	select * from yuyuehcb
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -57,7 +60,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Yuyuehcb">
+  <update id="updateBy" parameterType="com.rk.entity.Yuyuehcb">
     update yuyuehcb
     <set>
       <if test="banciid != null">
@@ -70,7 +73,7 @@
         jssjduan = #{jssjduan,jdbcType=INTEGER},
       </if>
     </set>
-    where yyhcid = #{yyhcid,jdbcType=INTEGER}
+    where yyhcid = #{yyhcid}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.rk.entity.Yuyuehcb">
     update yuyuehcb

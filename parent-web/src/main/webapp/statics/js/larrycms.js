@@ -97,11 +97,11 @@ layui.use(['elements', 'jquery', 'layer', 'larry', 'navtab', 'form', 'common'], 
                     });
                 });*/
 				
-				var pid_0 = [{"pid":"100","title":"后台首页","icon":"larry-houtaishouye","href":"jichu/jichu.html"},
-					{"pid":"101","title":"患者登记","icon":"larry-gerenxinxi5","href":"href"},
+				var pid_0 = [{"pid":"100","title":"后台首页","icon":"larry-houtaishouye","href":"../banci/index.html"},
+					{"pid":"101","title":"患者登记","icon":"larry-gerenxinxi5","href":"../huanzhe/huanzhedj.html"},
 					{"pid":"102","title":"用户管理","icon":"larry-10103","href":"/123165/456.html"},
 					{"pid":"103","title":"今日就诊","icon":"larry-kehuliebiao","href":"../banci/jinrijiuzhen"},
-					{"pid":"104","title":"基础设置","icon":"larry-xitongshezhi1","href":"fnks/dasda.html"},
+					{"pid":"104","title":"基础设置","icon":"larry-xitongshezhi1","href":"../jichu/jichu.html"},
 					{"pid":"105","title":"门诊发药","icon":"larry-circularxiangxi","href":"html/temp.html"},
 					{"pid":"106","title":"购药","icon":"larry-sql2","href":"html/temp.html"},
 					{"pid":"107","title":"库房管理","icon":"larry-xitongrizhi1","href":"html/temp.html"},

@@ -24,8 +24,7 @@
 	</bean>
 	
 	<mvc:resources location="/statics/" mapping="/**"/>
-	
-	<mvc:annotation-driven>
+	<!-- <mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -34,8 +33,7 @@
 					</list>
 				</property>
 			</bean>
-			<bean
-				class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/html;charset=UTF-8</value>
@@ -51,15 +49,39 @@
 				<property name="dateFormat" value="yyyy年MM月dd日 hh:mm:ss"></property>
 			</bean>
 		</mvc:message-converters>
-	</mvc:annotation-driven>	
+	</mvc:annotation-driven> -->	
+	
+	<mvc:annotation-driven  >
+<mvc:message-converters register-defaults="true">
+            <!-- 配置Fastjson支持 -->
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json</value>
+                    </list>
+                </property>
+                <property name="features">
+                    <list>
+                        <value>WriteMapNullValue</value>
+                        <value>QuoteFieldNames</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+</mvc:annotation-driven>
+	
 	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="parent-web"/>
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
 	 <dubbo:reference interface="com.rk.service.BancibService" id="bancibService" />
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
+	 <dubbo:reference interface="com.rk.service.ShijianduanbService" id="shijianduanbService" />
 	 <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
 	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
 	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
 	  <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
+	 <dubbo:reference interface="com.rk.service.YuyueguizebService" id="yuyueguizebService" />
+	 <dubbo:reference interface="com.rk.service.YuyuehcbService" id="yuyuehcbService" />
 </beans>

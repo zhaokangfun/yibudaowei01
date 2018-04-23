@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Yuyuehcb;
 
 public interface YuyuehcbMapper {
@@ -11,7 +13,9 @@ public interface YuyuehcbMapper {
 
     Yuyuehcb selectByPrimaryKey(Integer yyhcid);
 
-    int updateByPrimaryKeySelective(Yuyuehcb record);
+    int updateBy(Yuyuehcb record);
 
     int updateByPrimaryKey(Yuyuehcb record);
+    
+    List<Yuyuehcb> listAll();
 }

@@ -2,7 +2,8 @@ package com.rk.dao;
 
 import java.util.List;
 
-import com.rk.entity.Jichufuleib;
+import org.apache.ibatis.annotations.Param;
+
 import com.rk.entity.Jichuhechengb;
 
 public interface JichuhechengbMapper {
@@ -14,7 +15,7 @@ public interface JichuhechengbMapper {
 
     Jichuhechengb selectByPrimaryKey(Integer jchcid);
 
-    int updateByPrimaryKeySelective(Jichuhechengb record);
+    int updateBy(@Param("zhi")int zhi,@Param("id")int id);
 
     int updateByPrimaryKey(Jichuhechengb record);
     List<Jichuhechengb> SelectAll();

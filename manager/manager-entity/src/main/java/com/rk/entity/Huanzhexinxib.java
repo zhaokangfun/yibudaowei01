@@ -39,7 +39,7 @@ public class Huanzhexinxib    implements Serializable{
 
     private String xuexingid;
 
-    private String address;
+    private Integer address;
 
     private String addressxx;
 
@@ -183,11 +183,11 @@ public class Huanzhexinxib    implements Serializable{
         this.xuexingid = xuexingid;
     }
 
-    public String getAddress() {
+    public Integer getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Integer address) {
         this.address = address;
     }
 

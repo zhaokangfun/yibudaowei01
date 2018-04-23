@@ -39,9 +39,10 @@ public class jichuhechengbServiceImpl implements JichuhechengbService {
 	}
 
 	@Override
-	public int updateByPrimaryKeySelective(Jichuhechengb record) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int updateBy(int zhi,int id) {
+		int num=0;
+			num=jichuDao.updateBy(zhi, id);
+		return num;
 	}
 
 	@Override

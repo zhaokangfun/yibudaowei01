@@ -13,8 +13,9 @@ public interface JichuhechengbService {
 
     Jichuhechengb selectByPrimaryKey(Integer jchcid);
 
-    int updateByPrimaryKeySelective(Jichuhechengb record);
+    int updateBy(int zhi, int id);
 
     int updateByPrimaryKey(Jichuhechengb record);
+    
     List<Jichuhechengb> SelectAll();
 }
