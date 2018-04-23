@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Keshishuxing;
 
 public interface KeshishuxingMapper {
@@ -14,4 +16,6 @@ public interface KeshishuxingMapper {
     int updateByPrimaryKeySelective(Keshishuxing record);
 
     int updateByPrimaryKey(Keshishuxing record);
+    
+    List<Keshishuxing> getAll();
 }
