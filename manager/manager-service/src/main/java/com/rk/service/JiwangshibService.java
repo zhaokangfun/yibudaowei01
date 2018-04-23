@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Jiwangshib;
 
 public interface JiwangshibService {
@@ -14,4 +16,6 @@ public interface JiwangshibService {
     int updateByPrimaryKeySelective(Jiwangshib record);
 
     int updateByPrimaryKey(Jiwangshib record);
+    
+    List<Jiwangshib> listAll();
 }

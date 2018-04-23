@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Tigecheckb;
 
 public interface TigecheckbService {
@@ -14,4 +16,6 @@ public interface TigecheckbService {
     int updateByPrimaryKeySelective(Tigecheckb record);
 
     int updateByPrimaryKey(Tigecheckb record);
+    
+    List<Tigecheckb> listAll();
 }

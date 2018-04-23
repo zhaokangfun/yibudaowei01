@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Guominshib;
 
 public interface GuominshibMapper {
@@ -14,4 +16,7 @@ public interface GuominshibMapper {
     int updateByPrimaryKeySelective(Guominshib record);
 
     int updateByPrimaryKey(Guominshib record);
+    
+    
+    List<Guominshib> listAll();
 }

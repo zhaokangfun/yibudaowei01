@@ -33,6 +33,7 @@
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/json;charset=UTF-8</value>
+						<value>application/html;charset=UTF-8</value>
 					</list>
 				</property>
 			</bean>
@@ -97,4 +98,15 @@
 		interface="com.rk.service.JixingbService" id="jixingbService" />
 	<dubbo:reference
 		interface="com.rk.service.JianfabService" id="jianfabService" />
+	<dubbo:application name="parent-web" />
+	<dubbo:registry protocol="zookeeper"
+		address="127.0.0.1:2181" />
+	<dubbo:reference
+		interface="com.rk.service.GuominshibService" id="guominshibService" />
+	<dubbo:reference
+		interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
+	<dubbo:reference
+		interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
+	<dubbo:reference
+		interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
 </beans>
