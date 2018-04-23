@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Pinlvb;
 
 public interface PinlvbMapper {
@@ -14,4 +16,6 @@ public interface PinlvbMapper {
     int updateByPrimaryKeySelective(Pinlvb record);
 
     int updateByPrimaryKey(Pinlvb record);
+    
+    List<Pinlvb> Gellpl();
 }

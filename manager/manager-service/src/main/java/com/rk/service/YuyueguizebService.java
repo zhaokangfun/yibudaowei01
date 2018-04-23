@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Yuyueguizeb;
 
 public interface YuyueguizebService {
@@ -11,7 +13,9 @@ public interface YuyueguizebService {
 
     Yuyueguizeb selectByPrimaryKey(Integer yygzid);
 
-    int updateByPrimaryKeySelective(Yuyueguizeb record);
+    int updateBy(String zhi,int id);
 
     int updateByPrimaryKey(Yuyueguizeb record);
+    
+    List<Yuyueguizeb> SelectAll();
 }

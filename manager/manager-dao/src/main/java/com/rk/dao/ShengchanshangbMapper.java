@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Shengchanshangb;
 
 public interface ShengchanshangbMapper {
@@ -14,4 +16,6 @@ public interface ShengchanshangbMapper {
     int updateByPrimaryKeySelective(Shengchanshangb record);
 
     int updateByPrimaryKey(Shengchanshangb record);
+    
+    List<Shengchanshangb> sccsGell();
 }

@@ -19,6 +19,11 @@
     scsid, scsnumber, scsname, cptypeid, scsaddress, scsjiancheng, yyzznumber, wubi, 
     pinyin, jyxknumber, ylqxnuber, status
   </sql>
+  
+  <select id="sccsGell" resultMap="BaseResultMap">
+  		SELECT * FROM shengchanshangb
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Jianfab;
 
 public interface JianfabService {
@@ -14,4 +16,10 @@ public interface JianfabService {
     int updateByPrimaryKeySelective(Jianfab record);
 
     int updateByPrimaryKey(Jianfab record);
+    
+    /**
+     * 查询煎法
+     * @return
+     */
+    List<Jianfab> jianfaGell();
 }

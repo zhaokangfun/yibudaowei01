@@ -8,6 +8,10 @@
   <sql id="Base_Column_List">
     shijianduanid, sjdtime
   </sql>
+  
+  <select id="AllList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *  from shijianduanb
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

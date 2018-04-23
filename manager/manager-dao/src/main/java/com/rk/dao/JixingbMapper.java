@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Jixingb;
 
 public interface JixingbMapper {
@@ -14,4 +16,6 @@ public interface JixingbMapper {
     int updateByPrimaryKeySelective(Jixingb record);
 
     int updateByPrimaryKey(Jixingb record);
+    
+    List<Jixingb> Gelljx();
 }

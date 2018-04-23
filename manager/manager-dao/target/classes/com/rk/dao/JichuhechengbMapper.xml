@@ -69,24 +69,16 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Jichuhechengb">
+  <update id="updateBy" parameterType="java.lang.String">
     update jichuhechengb
     <set>
-      <if test="jchcname != null">
-        jchcname = #{jchcname,jdbcType=VARCHAR},
-      </if>
-      <if test="canshuzhi != null">
-        canshuzhi = #{canshuzhi,jdbcType=VARCHAR},
-      </if>
-      <if test="canshushuoming != null">
-        canshushuoming = #{canshushuoming,jdbcType=VARCHAR},
-      </if>
-      <if test="fuid != null">
-        fuid = #{fuid,jdbcType=INTEGER},
+      <if test="zhi != null">
+        canshuzhi = #{zhi},
       </if>
     </set>
-    where jchcid = #{jchcid,jdbcType=INTEGER}
+    where jchcid = #{id}
   </update>
+  
   <update id="updateByPrimaryKey" parameterType="com.rk.entity.Jichuhechengb">
     update jichuhechengb
     set jchcname = #{jchcname,jdbcType=VARCHAR},

@@ -18,18 +18,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="Keywords" content="">
     <script type="text/javascript" async="" src="../js/pawj.js"></script>
     <script type="text/javascript" src="../js/switch.js"></script>
+
     <link rel="stylesheet" href="../css/base_003.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="../css/pawj.css">
     <link rel="stylesheet" type="text/css" href="../css/storageManagement.css">
     <title></title>
 <script type="text/javascript" src="inboundlist_data/ipquery.html"></script></head>
+<script type="text/javascript" src="../common/layui/layui.js"></script>
 <body class="static-public-css storage-manage-css">
 <div class="content-inner">
     <div class="tab-content clear">
         <table class="m10 full-width-table tab-top">
-            <tbody><tr>
-                <td style="width: 14%; padding-left: 10px;"><a href="javascript:;" class="btn create-inbound top-btn fl tipso_style" style="margin-bottom: 0;">新增入库</a>
+            <tbody>
+            <tr>
+                <td style="width: 14%; padding-left: 10px;"><a href="rktj" class="btn create-inbound top-btn fl tipso_style" style="margin-bottom: 0;">新增入库</a>
                 </td>
                 <td style="width: 44%;" class="clear"><span class="form-item-title fl">入库日期：</span>
 
@@ -58,13 +61,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="table_content">
                 <div class="tableBox-head">
                     <table class="common-table full-width-table">
-                        <tbody><tr>
-                            <th width="12%">入库单号</th>
-                            <th width="10%">入库日期</th>
+                        <tbody>
+                        <tr>
+                            <th width="15%">入库单号</th>
+                            <th width="15%">入库日期</th>
                             <th width="8%">入库方式</th>
                             <th width="15%">供应商</th>
                             <th width="8%">入库总金额（元）</th>
-                            <th width="6%">状态</th>
+                            <th width="15%">状态</th>
                             <th>操作</th>
                         </tr>
                     </tbody></table>
@@ -73,22 +77,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <table id="warehousing_table" class="common-table full-width-table"><tbody>
                     <c:forEach items="${list}" var="b">
                     
-                    	<tr>
-                    		<td data-id="13293950eb8147e88f5385ba6772a5d3" width="12%">${b.rknumber}</td>
-                    		<td width="10%">${b.rktime}</td>
+                    	<tr style="text-align: center;">
+                    		<td data-id="13293950eb8147e88f5385ba6772a5d3" width="15%">${b.rknumber}</td>
+                    		<td width="15%">${b.rktime}</td>
                     		<td width="8%">${b.rkfs.rktype}</td>
-                    		<td style="text-align: right;padding-right:9px;" width="8%">${b.gys.gysname}</td>
-                    		<td style="color: red;" width="6%">未确认</td><td><a href="javascript:void(0);" onclick="inboundEdit.editPageClick(this);">修改</a>
-                    		<a href="javascript:void(0);" onclick="inboundConfirm.confirmPageClick(this);">确认</a>
-                    		<a href="javascript:void(0);" onclick="inBound.delInboundDoc(this);">删除</a>
-                    		</td>
+                    		<td style="text-align: right;padding-right:9px;" width="10%">${b.gys.gysname}</td>
+                    		<td width="17%">${b.gouruprice}</td>
+                    		<c:if test="${b.status==1}">
+                    			<td style="color: red;" width="10%">已确认</td>
+                    			
+	                    		<td>
+		                    		<a href="javascript:void(0);" onclick="">详情</a>
+		       
+	                    		</td>
+                    		</c:if>
+                    		<c:if test="${b.status==2}">
+                    			<td style="color: red;" width="10%">未确认</td>
+                    			<td>
+                    				<a href="javascript:void(0);" onclick="">确认</a>
+	                    			<a href="javascript:void(0);" onclick="">修改</a>
+		                    		<a href="javascript:void(0);" onclick="del(this,${b.rkid})">删除</a>
+	                    		</td>
+                    		</c:if>
+                    	
                     		</tr>
                     	</c:forEach>
-                    		</tbody></table>
+                    		</tbody>
+                    	</table>
                 </div>
             </div>
         </div>
-        <div id="my-page" class="page-nav table-page"><div class="pagination_tips">                                    共<span class="pagination_counts">8</span>条数据                                     <div class="pagination_select">                                        <span class="pagination_cell_count">20</span>                                        <span class="pagination_arrow"></span>                                        <div class="pagination_options_panel" style=""><span class="pagination_option" value="50">50</span><span class="pagination_option" value="20">20</span><span class="pagination_option" value="10">10</span></div>                                    </div> 条/页                            </div></div>
+        <div id="my-page" class="page-nav table-page">
+        	<div class="pagination_tips">
+        	                               共<span class="pagination_counts">8</span>条数据                                     <div class="pagination_select">                                        <span class="pagination_cell_count">20</span>                                        <span class="pagination_arrow"></span>                                        <div class="pagination_options_panel" style=""><span class="pagination_option" value="50">50</span><span class="pagination_option" value="20">20</span><span class="pagination_option" value="10">10</span></div>                                    </div> 条/页                            </div></div>
 
     </div>
     <!-- end of .tab-content -->
@@ -132,14 +153,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <!-- end of .content-inner -->
 <!-- end of .wrapper -->
+    <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/pawj-pro.js"></script>
-<script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/drugUtils.js"></script>
 <script type="text/javascript" src="../js/inbound.js"></script>
 <script type="text/javascript" src="../js/inboundlist.js"></script>
 <script type="text/javascript" src="../js/cache.js"></script>
 <script type="text/javascript" src="../js/tipso.js"></script>
 <script type="text/javascript" src="../js/setTipsoEvent.js"></script>
+
 <script type="text/javascript">
     //数据采集
     var _maq = _maq || [];
@@ -153,7 +175,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         var collection = document.createElement('script');
         collection.type = 'text/javascript';
         collection.async = true;
-        collection.src = '../resources/js/pawj.collection.js';
+        collection.src = '../js/pawj.collection.js';
         var sCollection = document.getElementsByTagName('script')[0];
         sCollection.parentNode.insertBefore(collection, sCollection);
     }
@@ -165,6 +187,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             window.addEventListener('load', async_ipquery);
         }
     });
+    
+    function del(obj,rkid){
+    	 var msg = "确定删除该条数据？";  
+    	 
+    	 if (confirm(msg)==true){  
+    		 
+    		 $.post('delrk',{"rkid":rkid},function(data){
+    	    		if(data==1){
+    	    			alert('删除成功！');
+    	    			$(obj).parents("tr").remove();
+    	    		}
+    	    	});
+    		 return true;  
+            
+         }else{  
+             return false;  
+         }  
+    	 
+    	
+    }
+    
+    
 </script>
 </body>
 </html>

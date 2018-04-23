@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Gongyingshangb;
 
 public interface GongyingshangbMapper {
@@ -14,4 +16,6 @@ public interface GongyingshangbMapper {
     int updateByPrimaryKeySelective(Gongyingshangb record);
 
     int updateByPrimaryKey(Gongyingshangb record);
+    
+    List<Gongyingshangb> gysGell();
 }

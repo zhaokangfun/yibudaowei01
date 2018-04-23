@@ -43,8 +43,13 @@
   
   <!-- 查询入库全部信息 -->
   <select id="Gellrk" resultMap="BaseResult">
-  		SELECT rknumber,rktime,rkfs.rktype,gys.gysname,gouruprice FROM rukub r,rukufangshib rkfs,gongyingshangb gys where r.rktypeid=rkfs.rkfangshi AND r.gysid=gys.gysid
+  		select * FROM rukub r,rukufangshib rkfs,gongyingshangb gys where r.rktypeid=rkfs.rkfangshi AND r.gysid=gys.gysid
   </select>
+  
+  
+  <delete id="delerk" parameterType="java.lang.Integer">
+  		DELETE FROM rukub WHERE rkid=#{rkid}
+  </delete>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

@@ -25,11 +25,32 @@
 	<!-- 用dubbo协议在20880端口暴露服务 -->
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:service interface="com.rk.service.XiyaozhongchengyaobService" ref="xiyaozhongchengyaobService" />
+	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
 	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubService" />
 	<dubbo:service interface="com.rk.service.HuanzhexiangxibService" ref="huanzhexiangxibservice" />
+	<dubbo:service interface="com.rk.service.ShijianduanbService" ref="shijianduanbService" />
 	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
 	<dubbo:service interface="com.rk.service.RukubService" ref="rukubService" />
+	<dubbo:service interface="com.rk.service.KeshibService" ref="keshibService" />
+	<dubbo:service interface="com.rk.service.YuyueguizebService" ref="yuyueguizebService" />
+	<dubbo:service interface="com.rk.service.YuyuehcbService" ref="yuyuehcbService" />
+
+
+	<dubbo:service interface="com.rk.service.GongyingshangbService" ref="gongyingshangbService" />
+	<dubbo:service interface="com.rk.service.ShengchanshangbService" ref="shengchanshangbService" />
+	<dubbo:service interface="com.rk.service.DanweibService" ref="danweibService" />
+	<dubbo:service interface="com.rk.service.YongfabService" ref="yongfabService" />
+	<dubbo:service interface="com.rk.service.PinlvbService" ref="pinlvbService" />
+	<dubbo:service interface="com.rk.service.ZhongyaobService" ref="zhongyaobService" />
+	<dubbo:service interface="com.rk.service.CailiaobService" ref="cailiaobService" />
+	<dubbo:service interface="com.rk.service.JixingbService" ref="jixingbService" />
+	<dubbo:service interface="com.rk.service.JianfabService" ref="jianfabService" />
+
+
 	<dubbo:service interface="com.rk.service.KeshibService" ref="keshibService" />
 	<dubbo:service interface="com.rk.service.KeshishuxingService" ref="keshishuxingService" />
 	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
