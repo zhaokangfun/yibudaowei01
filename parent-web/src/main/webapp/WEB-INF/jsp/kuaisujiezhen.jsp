@@ -23,18 +23,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <legend>分配医生</legend>
 </fieldset>
 <form class="layui-form" action="">
+	<!-- 病例 -->
+  <div class="layui-form-item">
+	    <label class="layui-form-label"><i style="color: red;">  *   </i>病例号</label>
+	    <div class="layui-input-block">
+	       <input name="blnumber" lay-verify="required" value="${hzxxb.blnumber}"  style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	    </div>
+   </div
  	<!-- 姓名 -->
   <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者姓名</label>
 	    <div class="layui-input-block">
-	       <input name="username" lay-verify="required" placeholder="${hzxxb.hzname}"  style="border: 0px; disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	       <input name="hzname" lay-verify="required" value="${hzxxb.hzname}"  style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
    </div>
     <!-- 性别 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者性别</label>
 	    <div class="layui-input-block">
-	  	 <input name="sex" lay-verify="required" placeholder="${hzxxb.sex}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	  	 <input name="sex" lay-verify="required" value="${hzxxb.sex}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
     </div>
     </div>
     
@@ -42,15 +49,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者年龄</label>
 	    <div class="layui-input-block">
-	       <input name="age" lay-verify="required" placeholder="${hzxxb.age}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	       <input name="age" lay-verify="required" value="${hzxxb.age}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
   </div>
   
-     <!-- 年龄 -->
+     <!-- 手机 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label">患者手机</label>
 	    <div class="layui-input-block">
-	       <input name="phone" lay-verify="required" placeholder="${hzxxb.phone}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	       <input name="phone" lay-verify="required" value="${hzxxb.phone}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	    </div>
+  </div>
+  
+    <!-- 来源 -->
+    <div class="layui-form-item">
+	    <label class="layui-form-label">患者来源</label>
+	    <div class="layui-input-block">
+	       <input name="laiyuan" lay-verify="required" value="${hzxxb.laiyuan}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+	    </div>
+  </div>
+   <!-- 接诊 -->
+    <div class="layui-form-item">
+	    <label class="layui-form-label">接诊时间</label>
+	    <div class="layui-input-block">
+	       <input name="jztime" lay-verify="required" value="${hzxxb.jztime}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
   </div>
   <div class="layui-form-item">
@@ -80,8 +102,6 @@ layui.use(['form', 'layedit', 'laydate'], function(){
   ,layer = layui.layer
   ,layedit = layui.layedit
   ,laydate = layui.laydate;
-
-  
 });
 </script>
 

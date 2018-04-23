@@ -8,6 +8,11 @@
   <sql id="Base_Column_List">
     jwsid, jwsms
   </sql>
+  <select id="listAll" resultMap="BaseResultMap">
+   select * from jiwangshib 
+  </select>
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

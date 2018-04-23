@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                         </div>
                         <div class="s_box_bot" id="box_bot_template1">
-                            <span class="accepts" >操作</span>
+                            <span class="accepts" onclick="chuzhen(${i.hzid})">操作</span>
                         </div>
                     </div>
                     </c:forEach>
@@ -97,6 +97,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <script type="text/javascript">
     //候诊中
+    
     
     	function reles(hei){
 			$.post('banci/jiezhenzhuangtai.json',{'id':hei},function(data){
@@ -126,47 +127,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  		+'</div>'
            				+'</div>'
          				+'<div class="s_box_bot" id="box_bot_template1">'
-         				+' <span class="accepts">操作</span>'
+         				+' <span class="accepts"><a href="banci/chuzhen?id='+obj.hzid+'">操作</a></span>'
             			+'</div>'
             			+'</div>'
             		 $(".neirong").append(html);
             			
 		      });
 			};
-    
-      /*    
-         <div class="s_box_bot" id="box_bot_template2">
-             <span class="continueCure">继续治疗</span>
-             <span class="s_box_bot_border"></span>
-             <span class="cureEnd">完成就诊</span>
-         </div>
-         <div class="s_box_bot clear" id="box_bot_template3">
-             <span class="followup">新增随访</span>
-             <span class="againClinical">重新接诊</span>
-         </div>
-     </div>' */
 		       
      function parentIframe(hei){
      layer.open({
      type: 2,
-     title: '快速接诊中',
+     title: false,
      maxmin: true,
      shadeClose: true, //点击遮罩关闭层
-     area : ['800px' , '520px'],
+     area : ['800px' , '600px'],
      content: 'banci/kuaisujiezhen?id='+hei
      });
    };
-    
- /*    $('#parentIframe').on('click', function(){
-        layer.open({
-        type: 2,
-        title: '快速接诊中',
-        maxmin: true,
-        shadeClose: true, //点击遮罩关闭层
-        area : ['800px' , '520px'],
-        content: 'banci/kuaisujiezhen'
-        });
-      }); */
+   
+   
+   
+  /*  function chuzhen(hei){
+	     layer.open({
+	     type: 2,
+	     title: false,
+	     maxmin: true,
+	     shadeClose: true, //点击遮罩关闭层
+	     area : ['800px' , '600px'],
+	     content: 'banci/chuzhen?id='+hei
+	     });
+	   }; */
     </script>
  </body>
 </html>
