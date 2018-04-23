@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Paibantimeb   implements Serializable {
-
+public class Paibantimeb  implements Serializable {
     private Integer pbid;
 
     private Integer banciid;

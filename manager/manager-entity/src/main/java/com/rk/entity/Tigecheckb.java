@@ -2,8 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Tigecheckb implements Serializable {
-
+public class Tigecheckb implements Serializable  {
     private Integer tigechekid;
 
     private Double tiwen;

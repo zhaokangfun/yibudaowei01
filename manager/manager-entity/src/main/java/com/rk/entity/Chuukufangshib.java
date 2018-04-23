@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Chuukufangshib   implements Serializable{
-
+public class Chuukufangshib implements Serializable  {
     private Integer ckfsid;
 
     private String cktype;

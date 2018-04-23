@@ -109,4 +109,11 @@
 		interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
 	<dubbo:reference
 		interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
+	
+	<!-- 引用dubbo服务 -->
+	<dubbo:application name="parent-web"/>
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>	
+	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluService" />
+	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
+	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
 </beans>

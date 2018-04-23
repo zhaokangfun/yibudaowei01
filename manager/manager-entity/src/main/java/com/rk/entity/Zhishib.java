@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Zhishib implements Serializable {
-
+public class Zhishib  implements Serializable {
     private Integer zsid;
 
     private String guanjianzi;

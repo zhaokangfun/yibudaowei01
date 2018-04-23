@@ -60,28 +60,13 @@ public class indexController {
 	}
 	@RequestMapping("jinrijiuzhen")
 	public String todayPatient(Model model) {
-		List<Huanzhexiangxib> list=hzxiangxiService.listOnjzStatics(1);
-		int OneSize=list.size();
-		List<Huanzhexiangxib> list1=hzxiangxiService.listOnjzStatics(2);
-		int TwoSize=list1.size();
-		List<Huanzhexiangxib> list2=hzxiangxiService.listOnjzStatics(3);
-		int ThreeSize=list2.size();
-		model.addAttribute("OneSize", OneSize);
-		model.addAttribute("list", list);
-		model.addAttribute("TwoSize", TwoSize);
-		model.addAttribute("list1", list1);
-		model.addAttribute("ThreeSize", ThreeSize);
-		model.addAttribute("list2", list2);
 		return "todayPatientList";
 	}
 	
 	@RequestMapping("kuaisujiezhen")
-	public String kuaisujiezhen(Integer id,Model model){
-		System.out.println(id);
+	public String kuaisujiezhen(Model model){
 		List<Denglub> yslist=dengluService.listAll();
-		Huanzhexiangxib hzxxb=hzxiangxiService.selectByPrimaryKey(id);
 		model.addAttribute("yslist", yslist);
-		model.addAttribute("hzxxb", hzxxb);
 		return "kuaisujiezhen";
 	}
 	

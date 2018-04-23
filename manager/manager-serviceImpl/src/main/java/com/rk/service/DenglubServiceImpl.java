@@ -12,7 +12,7 @@ import com.rk.entity.Denglub;
 public class DenglubServiceImpl implements DenglubService{
 
 	@Autowired
-	private DenglubMapper dao;
+	private DenglubMapper denglubMapper;
 	
 	@Override
 	public int deleteByPrimaryKey(Integer adminid) {
@@ -52,13 +52,13 @@ public class DenglubServiceImpl implements DenglubService{
 
 	@Override
 	public Denglub dologin(String adminzh, String password) {
-		return dao.dologin(adminzh, password);
+		return denglubMapper.dologin(adminzh, password);
 	}
 
 	@Override
 	public List<Denglub> listAll() {
 		// TODO Auto-generated method stub
-		return dao.listAll();
+		return null;
 	}
 
 }

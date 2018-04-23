@@ -15,6 +15,9 @@
     from keshishuxing
     where keshishuxingid = #{keshishuxingid,jdbcType=INTEGER}
   </select>
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from keshishuxing where status=1
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from keshishuxing
     where keshishuxingid = #{keshishuxingid,jdbcType=INTEGER}

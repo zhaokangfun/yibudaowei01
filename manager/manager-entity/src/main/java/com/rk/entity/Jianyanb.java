@@ -2,8 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Jianyanb   implements Serializable {
-
+public class Jianyanb implements Serializable  {
     private Integer jyid;
 
     private Integer hzid;

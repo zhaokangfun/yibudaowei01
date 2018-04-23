@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Tiefub implements Serializable {
-
+public class Tiefub  implements Serializable {
     private Integer tfid;
 
     private String tfnumber;

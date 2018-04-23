@@ -17,7 +17,7 @@ public interface HuanzhexiangxibService {
 
     int updateByPrimaryKey(Huanzhexiangxib record);
     
-    List<Huanzhexiangxib> listOnjzStatics(Integer jzstatus);
-    
     int updatebyhzStatus (Integer hzid,Integer status);	
+    
+    List<Huanzhexiangxib> listOnjzStatics(Integer jzstatus);
 }

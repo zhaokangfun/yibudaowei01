@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body style="background-color:white;">
 	             
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-  <legend>分配医生</legend>
+  <legend>快速接诊</legend>
 </fieldset>
 <form class="layui-form" action="">
 	<!-- 病例 -->
@@ -34,22 +34,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者姓名</label>
 	    <div class="layui-input-block">
+<<<<<<< HEAD
+	       <input name="username" lay-verify="required" placeholder="必填姓名" autocomplete="off" class="layui-input" type="text">
+=======
 	       <input name="hzname" lay-verify="required" value="${hzxxb.hzname}"  style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
 	    </div>
    </div>
     <!-- 性别 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者性别</label>
 	    <div class="layui-input-block">
+<<<<<<< HEAD
+	      <input name="sex" value="男" title="男" checked="" type="radio">
+	      <input name="sex" value="女" title="女" type="radio">
+	      <!--  加上这个 disabled=""  则该radio禁用 -->
+	      <input name="sex" value="密" title="保密" type="radio">
+=======
 	  	 <input name="sex" lay-verify="required" value="${hzxxb.sex}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
     </div>
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
     </div>
     
       <!-- 年龄 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者年龄</label>
 	    <div class="layui-input-block">
+<<<<<<< HEAD
+	      <input name="age" lay-verify="title" autocomplete="off"placeholder="年龄"   class="layui-input" type="text">
+=======
 	       <input name="age" lay-verify="required" value="${hzxxb.age}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
 	    </div>
   </div>
   
@@ -57,6 +72,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="layui-form-item">
 	    <label class="layui-form-label">患者手机</label>
 	    <div class="layui-input-block">
+<<<<<<< HEAD
+	      <input name="phone" lay-verify="title" autocomplete="off"placeholder="手机号码"   class="layui-input" type="text">
+=======
 	       <input name="phone" lay-verify="required" value="${hzxxb.phone}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
   </div>
@@ -73,6 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <label class="layui-form-label">接诊时间</label>
 	    <div class="layui-input-block">
 	       <input name="jztime" lay-verify="required" value="${hzxxb.jztime}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
 	    </div>
   </div>
   <div class="layui-form-item">

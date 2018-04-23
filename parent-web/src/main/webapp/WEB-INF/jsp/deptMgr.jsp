@@ -25,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="deptMgr_files/pawj.css">
 <link rel="stylesheet" type="text/css"
 	href="deptMgr_files/clinicManagement.css">
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
 <!-- <link rel="stylesheet" type="text/css" href="../resources/css/base.css?20180412134648" />
     <link rel="stylesheet" type="text/css" href="css/base.css?20180412134648" />-->
 <title></title>
@@ -37,8 +38,8 @@
 		<div class="right-arrow dsn"></div>
 		<div id="sub-menu" class="tab-nav clear" menu="FASTBUYDRUG01"
 			style="display: inline-block;">
-			<span id="CLINICSET01" menu="CLINICSET01" class="selected">科室管理</span><span
-				id="CLINICSET03" menu="CLINICSET03">角色管理</span><span
+			<span id="CLINICSET01" menu="CLINICSET01" class="selected" onclick="gokeshi()">科室管理</span><span
+				id="CLINICSET03" menu="CLINICSET03" onclick="clickaddjuese()">角色管理</span><span
 				id="CLINICSET02" menu="CLINICSET02">员工管理</span>
 		</div>
 	</div>
@@ -54,21 +55,22 @@
 			<div class="left-column">
 				<div class="left-column-inner clear">
 					<div class="left-column-head">科室列表</div>
-					
-						<ul id="treenav" class="left-column-menu dyn">
-							<li><a class="treenav_item active">全部</a></li>
-							<c:forEach items="${keshi }" var="k">
-								<li><a id="a_de96eed997f041018ae8d0e192ebb95d" title="${k.keshiname}">${k.keshiname}</a></li>
-							</c:forEach>
-						</ul>
-					
+
+					<ul id="treenav" class="left-column-menu dyn">
+						<li><a class="treenav_item active">全部</a></li>
+						<c:forEach items="${keshi }" var="k">
+							<li><a id="a_de96eed997f041018ae8d0e192ebb95d"
+								title="${k.keshiname}">${k.keshiname}</a></li>
+						</c:forEach>
+					</ul>
+
 				</div>
 			</div>
 			<!-- end of .left-column -->
 
 			<div class="tab-content-top"
 				style="padding-right: 28px; box-sizing: border-box;">
-				<a id="btn_add" class="btn top-btn fl"
+				<a id="btn_add" class="btn top-btn fl" onclick="addKeshib()"
 					wjperm="CLINICSET01-CREATE,CLINICSETUP01-CREATE">新增</a>
 
 				<div class="search-box fr">
@@ -80,7 +82,8 @@
 								readonly="readonly" type="text"> <i class="drop-icon"></i>
 							<ul class="drop-menu dsn" style="display: none;">
 							</ul>
-							<ul class="wjzs-drop-menu dsn" style="display: none;">
+							<ul class="wjzs-drop-menu dsn" id="yesorno"
+								style="display: none;">
 								<li class="drop-item drop_even" title="请选择" value=" "
 									data-value=" ">请选择</li>
 								<li class="drop-item drop_odd" title="是" value="1"
@@ -132,32 +135,30 @@
 							</tr>
 							<c:forEach items="${keshi }" var="k">
 								<tr>
-								<td>${k.keshiid}</td>
-								<td>${k.keshiname }</td>
-								<td>${k.keshishuxing.keshishuxingname}</td>
-								<td></td>
-								<td></td>
-								<td>${k.status==1?"是":"否" }</td>
-								<td><a id="btn_modify_0"
-									wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE"
-									onclick="showModifyPanel(0)">编辑</a><a id="btn_updateStat_0"
-									wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE"
-									onclick="updateStatus(this.id, 0, 1)">停用</a></td>
-							</tr>
+									<td>${k.keshiid}</td>
+									<td>${k.keshiname }</td>
+									<td>${k.keshishuxing.keshishuxingname}</td>
+									<td>${k.shuxun}</td>
+									<td>${k.parentid}</td>
+									<td>${k.yuyuestatus==1?"是":"否" }</td>
+									<c:if test="${k.status==1 }">
+										<td><a id="${k.keshiid}"
+											wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE"
+											onclick="showModifyPanel(0)">编辑</a><a
+											id="btn_updateStat_'+${k.keshiid }+'"
+											wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE"
+											onclick="updateStatus(${k.keshiid})">停用</a></td>
+									</c:if>
+									<c:if test="${k.status==2 }">
+										<td><a id="${k.keshiid}"
+											wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE"
+											onclick="showModifyPanel(0)">编辑</a><a
+											id="btn_updateStat_'+${k.keshiid }+'"
+											wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE"
+											onclick="updateStatus(${k.keshiid},this)">启用</a></td>
+									</c:if>
+								</tr>
 							</c:forEach>
-							<tr>
-								<td>001</td>
-								<td>皮肤科</td>
-								<td>门诊</td>
-								<td></td>
-								<td></td>
-								<td>是</td>
-								<td><a id="btn_modify_2"
-									wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE"
-									onclick="showModifyPanel(2)">编辑</a><a id="btn_updateStat_2"
-									wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE"
-									onclick="updateStatus(this.id, 2, 1)">停用</a></td>
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -176,11 +177,6 @@
 				<tbody>
 					<tr>
 						<td><span class="form-item-title"> <i
-								class="necessary">*</i>科室编号：
-						</span> <input id="departmentCode"
-							class="input-text validate(required, numAndLetter,maxlength(36))"
-							type="text"></td>
-						<td><span class="form-item-title"> <i
 								class="necessary">*</i>科室名称：
 						</span> <input id="departmentName"
 							class="input-text validate(required, maxlength(20))" type="text"></td>
@@ -195,22 +191,10 @@
 								<ul class="wjzs-drop-menu dsn" style="display: none;">
 									<li class="drop-item drop_even" title="请选择" value=" "
 										data-value=" ">请选择</li>
-									<li class="drop-item drop_odd" title="门诊" value="0"
-										data-value="0">门诊</li>
-									<li class="drop-item drop_even" title="体检常规" value="1"
-										data-value="1">体检常规</li>
-									<li class="drop-item drop_odd" title="体检检验" value="2"
-										data-value="2">体检检验</li>
-									<li class="drop-item drop_even" title="体检影像" value="3"
-										data-value="3">体检影像</li>
-									<li class="drop-item drop_odd" title="职能科室" value="4"
-										data-value="4">职能科室</li>
-									<li class="drop-item drop_even" title="药房" value="5"
-										data-value="5">药房</li>
-									<li class="drop-item drop_odd" title="住院" value="8"
-										data-value="8">住院</li>
-									<li class="drop-item drop_even" title="诊室" value="9"
-										data-value="9">诊室</li>
+									<c:forEach items="${kssx}" var="ks" varStatus="varstatus">
+										<li class="drop-item drop_even" title="${ks.keshishuxingname}"
+											value="${ks.keshishuxingid }" data-value="0">${ks.keshishuxingname}</li>
+									</c:forEach>
 								</ul>
 							</div></td>
 					</tr>
@@ -225,15 +209,10 @@
 								<ul class="wjzs-drop-menu dsn" style="display: none;">
 									<li class="drop-item drop_even" title="请选择" value=" "
 										data-value=" ">请选择</li>
-									<li class="drop-item drop_odd" title="耳鼻喉科"
-										value="de96eed997f041018ae8d0e192ebb95d"
-										data-value="de96eed997f041018ae8d0e192ebb95d">耳鼻喉科</li>
-									<li class="drop-item drop_even" title="外科"
-										value="2cddf1e99dc94c9c84af73efcceac028"
-										data-value="2cddf1e99dc94c9c84af73efcceac028">外科</li>
-									<li class="drop-item drop_odd" title="皮肤科"
-										value="c7fbe030d5a1445ba78e19956c10ee06"
-										data-value="c7fbe030d5a1445ba78e19956c10ee06">皮肤科</li>
+									<c:forEach items="${keshi }" var="k">
+										<li class="drop-item drop_odd" title="${k.keshiname }"
+											value="${k.keshiid }" data-value="${k.keshiid }">${k.keshiname }</li>
+									</c:forEach>
 								</ul>
 							</div></td>
 						<td><span class="form-item-title">显示顺序：</span> <input
@@ -243,8 +222,8 @@
 
 							<div class="drop">
 								<input id="isForBooking" class="input-text validate(required)"
-									placeholder="" readonly="readonly" type="text"> <i
-									class="drop-icon"></i>
+									placeholder="" readonly="readonly" type="text"> 
+									<i class="drop-icon"></i>
 								<ul class="drop-menu dsn" style="display: none;">
 								</ul>
 								<ul class="wjzs-drop-menu dsn" style="display: none;">
@@ -275,51 +254,109 @@
 			</table>
 
 			<div class="btn-group fr">
-				<a id="btn_cancle" class="btn btn-cancel fl">取消</a> <a id="btn_save"
-					class="btn fl" wjperm="CLINICSET01-SAVE,CLINICSETUP01-SAVE">保存</a>
+				<a id="btn_cancle" class="btn btn-cancel fl"
+					onclick="cencelKeshib()">取消</a> <a id="btn_save" onclick="addKeshi()" class="btn fl"
+					wjperm="CLINICSET01-SAVE,CLINICSETUP01-SAVE">保存</a>
 			</div>
 
 		</div>
 		<!-- end of .tab-content -->
 	</div>
 	<!-- end of .content-inner -->
-
-	<script type="text/javascript" src="deptMgr_files/pawj-pro.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<!--<script type="text/javascript" src="deptMgr_files/pawj-pro.js"></script>
 	<script type="text/javascript" src="deptMgr_files/cache.js"></script>
 	<script type="text/javascript" src="deptMgr_files/tree.js"></script>
 	<script type="text/javascript" src="deptMgr_files/jquery.js"></script>
-	<script type="text/javascript" src="deptMgr_files/deptMgr.js"></script>
-	<script>
-		var _maq = _maq || [];
-		_maq.push([ 'sysType', 'B' ], [ 'sysModel', 'CLINICSET' ], [ 'sysMenu',
-				'CLINICSET01' ]);
-
-		function async_ipquery() {
-			var script = document.createElement("script");
-			script.setAttribute("type", "text/javascript");
-			script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery'
-					: 'http://ip.ws.126.net/ipquery');
-			document.getElementsByTagName("head")[0].appendChild(script);
-			var collection = document.createElement('script');
-			collection.type = 'text/javascript';
-			collection.async = true;
-			collection.src = '../resources/js/pawj.collection.js';
-			var sCollection = document.getElementsByTagName('script')[0];
-			sCollection.parentNode.insertBefore(collection, sCollection);
-		}
-
-		$(function() {
-			if (window.attachEvent) {
-				window.attachEvent('onload', async_ipquery);
-			} else {
-				window.addEventListener('load', async_ipquery);
+	<script type="text/javascript" src="deptMgr_files/deptMgr.js"></script>-->
+	<script type="text/javascript">
+	$(function(){
+		//鼠标悬浮下拉框
+		$("div[class='drop']").hover(
+			function(){
+				$(this).children(".wjzs-drop-menu").css("display","block");
+			},
+			function(){
+				$(this).children(".wjzs-drop-menu").css("display","none");
 			}
+		);
+		//下拉框背景显示
+		$("ul[class='wjzs-drop-menu dsn'] li").hover(
+			function(){
+				$(this).css("background","#258FF1");
+			},
+			function(){
+				$(this).css("background","white");
+			} 
+		);
+		//点击获得下拉框的文本回显到input上并且获取下拉框的值
+		$("ul[class='wjzs-drop-menu dsn'] li").click(function(){
+			//$(this).parents("input").text($(this).attr("title"));
+			var test=$(this).attr("title");
+			var zhi=$(this).val();
+			$(this).parent().siblings().eq(0).val(test);
+			$(this).parent().siblings().eq(1).val(zhi);
+			console.log($(this).parent().siblings().eq(1).val());
 		});
+		$("div[id='sub-menu'] span").click(function(){
+			layer.msg("哈哈");
+			$(this).addClass("selected");
+			$(this).siblings().removeClass("selected");
+		});
+	});
+		//修改状态
+		function updateStatus(keshiid){
+			alert(keshiid);
+			$.post("zhensuoguanli/updatastatus.html",{"id":keshiid},function(e){
+				if(e>0){
+					layer.msg("已停用");
+				}else{
+					layer.msg("停用失败！");
+				}
+			});
+		}
+		//添加科室按钮
+		function addKeshib(){
+			$("#list_div").css("display","none");
+			$("#add_edit_div").css("display","block");
+		}
+		//取消添加科室按钮
+		function cencelKeshib(){
+			$("#list_div").css("display","block");
+			$("#add_edit_div").css("display","none");
+		}
+		function addKeshi(){
+			var keshiname=$("#departmentName").val();
+			var keshishuxing=$("#departmentType").next(".drop-icon").val();
+			var parentkeshi=$("#parentId").next(".drop-icon").val();
+			var shunxu=$("#orderNum").val();
+			var keshiaddress=$("#deptAddr").val();
+			var keshimiaoshu=$("#deptRemark").val();
+			var yuyuestatus=$("#isForBooking").next(".drop-icon").val();
+			console.log('预约'+yuyuestatus);
+			var jsondata={};
+			jsondata="'keshiname':"+keshiname+",'keshitypeid':"+keshishuxing+",'yuyuestatus':"+yuyuestatus+",'keshiaddress':"+keshiaddress+",'keshimiaoshu':"+keshimiaoshu+",'parentid':"+parentkeshi+",'shuxun':"+shunxu+"";
+			jsondata=JSON.stringify(jsondata);
+			console.log(jsondata);
+			$.post("zhensuoguanli/doAddKeshi.html",{"jsondata":jsondata},function(e){
+				if(e>0){
+					layer.msg("添加科室成功！");
+				}else{
+					layer.msg("添加失败！");
+				}
+			});
+		}
+		function clickaddjuese(){
+			window.location='role/Role.html';
+		}
+		function gokeshi(){
+			window.location='zhensuoguanli/deptMgr.html';
+		}
 	</script>
-
-
 	<div class="loading-mask" style="display: none;">
 		<span class="loading-content"></span>
 	</div>
+
 </body>
 </html>

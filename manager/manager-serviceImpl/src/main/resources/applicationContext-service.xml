@@ -27,6 +27,9 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.rk.service.XiyaozhongchengyaobService" ref="xiyaozhongchengyaobService" />
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
 	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubService" />
 	<dubbo:service interface="com.rk.service.HuanzhexiangxibService" ref="huanzhexiangxibservice" />
 	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
@@ -43,6 +46,10 @@
 	<dubbo:service interface="com.rk.service.JianfabService" ref="jianfabService" />
 
 
+	<dubbo:service interface="com.rk.service.KeshibService" ref="keshibService" />
+	<dubbo:service interface="com.rk.service.KeshishuxingService" ref="keshishuxingService" />
+	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
+	<dubbo:service interface="com.rk.service.RolebService" ref="rolebService" />
 	<dubbo:service interface="com.rk.service.GuominshibService" ref="guominshibService" />
 	<dubbo:service interface="com.rk.service.JiwangshibService" ref="jiwangshibService" />
 	<dubbo:service interface="com.rk.service.ChuzhenbService" ref="chuzhenbService" />
