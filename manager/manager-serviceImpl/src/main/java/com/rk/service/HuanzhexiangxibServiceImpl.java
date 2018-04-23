@@ -1,3 +1,4 @@
+
 package com.rk.service;
 
 import java.util.List;
@@ -17,19 +18,19 @@ public class HuanzhexiangxibServiceImpl implements HuanzhexiangxibService {
 	@Override
 	public int deleteByPrimaryKey(Integer hzid) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.deleteByPrimaryKey(hzid);
 	}
 
 	@Override
 	public int insert(Huanzhexiangxib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(record);
 	}
 
 	@Override
 	public int insertSelective(Huanzhexiangxib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insertSelective(record);
 	}
 
 	@Override
@@ -41,13 +42,13 @@ public class HuanzhexiangxibServiceImpl implements HuanzhexiangxibService {
 	@Override
 	public int updateByPrimaryKeySelective(Huanzhexiangxib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int updateByPrimaryKey(Huanzhexiangxib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.updateByPrimaryKey(record);
 	}
 
 	@Override
@@ -55,5 +56,13 @@ public class HuanzhexiangxibServiceImpl implements HuanzhexiangxibService {
 		// TODO Auto-generated method stub
 		return dao.listOnjzStatics(jzstatus);
 	}
+
+	@Override
+	public int updatebyhzStatus(Integer hzid, Integer status) {
+		// TODO Auto-generated method stub
+		return dao.updatebyhzStatus(hzid, status);
+	}
+	
+	
 
 }

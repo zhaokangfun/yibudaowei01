@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Pandianb   implements Serializable {
-
+public class Pandianb  implements Serializable {
     private Integer pdid;
 
     private String pdnumber;

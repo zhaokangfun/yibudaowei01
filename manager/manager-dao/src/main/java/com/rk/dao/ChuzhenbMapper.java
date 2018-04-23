@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Chuzhenb;
 
 public interface ChuzhenbMapper {
@@ -14,4 +16,6 @@ public interface ChuzhenbMapper {
     int updateByPrimaryKeySelective(Chuzhenb record);
 
     int updateByPrimaryKey(Chuzhenb record);
+    
+    List<Chuzhenb> listAll();
 }

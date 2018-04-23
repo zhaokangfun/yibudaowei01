@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Guominshib   implements Serializable {
-
+public class Guominshib implements Serializable  {
     private Integer gmsid;
 
     private String gmsname;

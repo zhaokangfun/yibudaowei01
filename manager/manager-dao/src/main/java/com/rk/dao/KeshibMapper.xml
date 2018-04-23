@@ -45,8 +45,18 @@
     where keshiid = #{keshiid,jdbcType=INTEGER}
   </select>
   <!-- 查询所有 -->
-  <select id="getAll" resultMap="BaseResultMap">
+  <select id="getAll" resultMap="KeShiResultMap">
   	select * from keshib k,keshishuxing ks where k.keshitypeid=ks.keshishuxingid
+  </select>
+  <!-- 根据预约状态查询 -->
+  <select id="getKeshiByYuYueStatus" parameterType="java.lang.Integer" resultMap="KeShiResultMap">
+  	select * from keshib k,keshishuxing ks where k.keshitypeid=ks.keshishuxingid 
+  	<if test="yuyuestatus==1">
+  		and  k.yuyuestatus=1
+  	</if>
+  	<if test="yuyuestatus==2">
+  		and k.yuyuestatus=2
+  	</if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from keshib

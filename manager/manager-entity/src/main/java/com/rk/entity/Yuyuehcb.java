@@ -2,8 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Yuyuehcb implements Serializable {
-
+public class Yuyuehcb  implements Serializable {
     private Integer yyhcid;
 
     private Integer banciid;

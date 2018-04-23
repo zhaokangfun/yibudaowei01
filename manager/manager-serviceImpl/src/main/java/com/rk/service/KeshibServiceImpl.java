@@ -34,14 +34,12 @@ public class KeshibServiceImpl implements KeshibService {
 
 	@Override
 	public Keshib selectByPrimaryKey(Integer keshiid) {
-		// TODO Auto-generated method stub
-		return null;
+		return keshibmapper.selectByPrimaryKey(keshiid);
 	}
 
 	@Override
 	public int updateByPrimaryKeySelective(Keshib record) {
-		// TODO Auto-generated method stub
-		return 0;
+		return keshibmapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
@@ -53,6 +51,11 @@ public class KeshibServiceImpl implements KeshibService {
 	@Override
 	public List<Keshib> getAll() {
 		return keshibmapper.getAll();
+	}
+
+	@Override
+	public List<Keshib> getKeshiByYuYueStatus(Integer yuyuestatus) {
+		return keshibmapper.getKeshiByYuYueStatus(yuyuestatus);
 	}
 
 }

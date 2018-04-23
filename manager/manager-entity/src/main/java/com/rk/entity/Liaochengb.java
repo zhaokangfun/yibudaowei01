@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Liaochengb   implements Serializable {
-
+public class Liaochengb implements Serializable  {
     private Integer lcid;
 
     private String lcnumber;

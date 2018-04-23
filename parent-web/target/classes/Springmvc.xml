@@ -30,6 +30,7 @@
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/json;charset=UTF-8</value>
+						<value>application/html;charset=UTF-8</value>
 					</list>
 				</property>
 			</bean>
@@ -79,9 +80,16 @@
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="denglubService" />
 	 <dubbo:reference interface="com.rk.service.ShijianduanbService" id="shijianduanbService" />
 	 <dubbo:reference interface="com.rk.service.HuanzhexiangxibService" id="huanzhexiangxibservice" />
-	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
+	 <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
+	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluService" />
 	 <dubbo:reference interface="com.rk.service.RukubService" id="rukubService" />
-	  <dubbo:reference interface="com.rk.service.JichuhechengbService" id="jichuhechengbService" />
 	 <dubbo:reference interface="com.rk.service.YuyueguizebService" id="yuyueguizebService" />
 	 <dubbo:reference interface="com.rk.service.YuyuehcbService" id="yuyuehcbService" />
+	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
+	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
+	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
+	  <dubbo:reference interface="com.rk.service.GuominshibService" id="guominshibService" />
+	  <dubbo:reference interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
+	  <dubbo:reference interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
+	  <dubbo:reference interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
 </beans>

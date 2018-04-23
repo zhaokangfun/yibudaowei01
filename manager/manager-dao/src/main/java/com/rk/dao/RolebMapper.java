@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Roleb;
 
 public interface RolebMapper {
@@ -14,4 +16,6 @@ public interface RolebMapper {
     int updateByPrimaryKeySelective(Roleb record);
 
     int updateByPrimaryKey(Roleb record);
+    
+    List<Roleb> getAll();
 }

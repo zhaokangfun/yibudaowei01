@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Jiwangshib   implements Serializable {
-
+public class Jiwangshib  implements Serializable {
     private Integer jwsid;
 
     private String jwsms;

@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Yaopintypeb implements Serializable {
-
+public class Yaopintypeb  implements Serializable {
     private Integer yptypeid;
 
     private String yptypename;

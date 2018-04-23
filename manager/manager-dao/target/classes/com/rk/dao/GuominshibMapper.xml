@@ -8,6 +8,12 @@
   <sql id="Base_Column_List">
     gmsid, gmsname
   </sql>
+  
+  <select id="listAll" resultMap="BaseResultMap">
+  select * from guominshib
+  </select>
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

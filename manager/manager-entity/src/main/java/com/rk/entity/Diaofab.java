@@ -2,8 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Diaofab   implements Serializable {
-
+public class Diaofab implements Serializable  {
     private Integer dfid;
 
     private String name;

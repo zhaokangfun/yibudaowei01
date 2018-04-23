@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Suifangb implements Serializable {
-
+public class Suifangb implements Serializable  {
     private Integer suifangid;
 
     private Integer hzid;

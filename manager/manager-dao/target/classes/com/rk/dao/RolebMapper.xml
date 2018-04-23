@@ -17,6 +17,10 @@
     from roleb
     where roleid = #{roleid,jdbcType=INTEGER}
   </select>
+  <!-- 返回所有 -->
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from roleb
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from roleb
     where roleid = #{roleid,jdbcType=INTEGER}

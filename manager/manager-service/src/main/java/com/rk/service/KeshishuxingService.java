@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Keshishuxing;
 
 public interface KeshishuxingService {
@@ -14,4 +16,6 @@ public interface KeshishuxingService {
     int updateByPrimaryKeySelective(Keshishuxing record);
 
     int updateByPrimaryKey(Keshishuxing record);
+    
+    List<Keshishuxing> getAll();
 }

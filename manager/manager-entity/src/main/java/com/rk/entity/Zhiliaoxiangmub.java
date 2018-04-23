@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Zhiliaoxiangmub implements Serializable {
-
+public class Zhiliaoxiangmub implements Serializable  {
     private Integer zlxmid;
 
     private String zlxmbianma;

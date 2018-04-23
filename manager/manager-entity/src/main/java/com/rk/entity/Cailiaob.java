@@ -2,9 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-
-public class Cailiaob  implements Serializable {
-
+public class Cailiaob implements Serializable  {
     private Integer clid;
 
     private String clbianma;
