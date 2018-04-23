@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Guominshib;
 
 public interface GuominshibService {
@@ -14,4 +16,6 @@ public interface GuominshibService {
     int updateByPrimaryKeySelective(Guominshib record);
 
     int updateByPrimaryKey(Guominshib record);
+    
+    List<Guominshib> listAll();
 }

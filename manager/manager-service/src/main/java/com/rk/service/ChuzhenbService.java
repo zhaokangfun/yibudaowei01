@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Chuzhenb;
 
 public interface ChuzhenbService {
@@ -14,4 +16,6 @@ public interface ChuzhenbService {
     int updateByPrimaryKeySelective(Chuzhenb record);
 
     int updateByPrimaryKey(Chuzhenb record);
+    
+    List<Chuzhenb> listAll();
 }

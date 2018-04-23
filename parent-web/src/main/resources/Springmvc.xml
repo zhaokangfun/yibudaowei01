@@ -31,6 +31,7 @@
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/json;charset=UTF-8</value>
+						<value>application/html;charset=UTF-8</value>
 					</list>
 				</property>
 			</bean>
@@ -63,5 +64,8 @@
 	 <dubbo:reference interface="com.rk.service.KeshibService" id="keshibService" />
 	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
 	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
-	 <!-- <dubbo:reference interface="com.mr.service.ShopGoodsService" id="shopGoodsService"/> -->
+	  <dubbo:reference interface="com.rk.service.GuominshibService" id="guominshibService" />
+	  <dubbo:reference interface="com.rk.service.JiwangshibService" id="jiwangshibService" />
+	  <dubbo:reference interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
+	  <dubbo:reference interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
 </beans>

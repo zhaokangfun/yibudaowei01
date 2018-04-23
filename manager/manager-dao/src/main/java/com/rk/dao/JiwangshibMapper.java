@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Jiwangshib;
 
 public interface JiwangshibMapper {
@@ -14,4 +16,6 @@ public interface JiwangshibMapper {
     int updateByPrimaryKeySelective(Jiwangshib record);
 
     int updateByPrimaryKey(Jiwangshib record);
+    
+    List<Jiwangshib> listAll();
 }

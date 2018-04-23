@@ -86,7 +86,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </div>
                         </div> -->
                         <div class="s_box_bot" id="box_bot_template1">
+<<<<<<< HEAD
                             <span class="accepts">接诊</span>
+=======
+                            <span class="accepts" onclick="chuzhen(${i.hzid})">操作</span>
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
                         </div>
                         <div class="s_box_bot" id="box_bot_template2">
                             <span class="continueCure">继续治疗</span>
@@ -112,6 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- end of .tab-content -->
     </div>
     <script type="text/javascript">
+<<<<<<< HEAD
     $('#parentIframe').on('click', function(){
         layer.open({
         type: 2,
@@ -127,6 +132,70 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	$("#hei").removeClass("cur");//删除样式
     	$("#hei").addClass("cur"); //追加样式
     });
+=======
+    //候诊中
+    
+    
+    	function reles(hei){
+			$.post('banci/jiezhenzhuangtai.json',{'id':hei},function(data){
+				des(data);
+			})	
+			};
+    
+    		function des(result){
+    			var res=result;
+    			console.log(res);
+			 $(".neirong div").remove();
+			 console.log(result[0]);
+			 $.each(result,function(i,obj){
+				 var html='<div class="s_box" id="box_template">'
+                    	+'<div class="s_box_top"  onclick="parentIframe('+obj.hzid+')">'
+                 	    +'<div class="s_box_top_l">'
+                        +'<img src="js/card_photo_man.png" alt="">'
+                 		+'</div>'
+                		+'<div class="s_box_top_r">'
+                     	+'<span class="name_zhenshi">'
+						+'<span class="patient_name">'+obj.hzname+'</span>'
+                    	+'<span class="zhenshi"></span>'
+                     	+'</span>'
+                     	+'<span class="patient_ageOrsex">'+obj.age+'&nbsp;&nbsp;&nbsp;'+obj.sex+'</span>'
+                     	+'<div class="docter_icon"></div>'
+                     	+'<span class="patient_date">'+obj.jztime+'</span>'
+                 		+'</div>'
+           				+'</div>'
+         				+'<div class="s_box_bot" id="box_bot_template1">'
+         				+' <span class="accepts"><a href="banci/chuzhen?id='+obj.hzid+'">操作</a></span>'
+            			+'</div>'
+            			+'</div>'
+            		 $(".neirong").append(html);
+            			
+		      });
+			};
+		       
+     function parentIframe(hei){
+     layer.open({
+     type: 2,
+     title: false,
+     maxmin: true,
+     shadeClose: true, //点击遮罩关闭层
+     area : ['800px' , '600px'],
+     content: 'banci/kuaisujiezhen?id='+hei
+     });
+   };
+   
+   
+   
+  /*  function chuzhen(hei){
+	     layer.open({
+	     type: 2,
+	     title: false,
+	     maxmin: true,
+	     shadeClose: true, //点击遮罩关闭层
+	     area : ['800px' , '600px'],
+	     content: 'banci/chuzhen?id='+hei
+	     });
+	   }; */
+>>>>>>> branch 'master' of https://github.com/liudapaoaaa/yibudaowei01.git
     </script>
  </body>
 </html>

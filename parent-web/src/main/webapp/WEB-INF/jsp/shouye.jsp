@@ -12,8 +12,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LarryCMS后台管理1.09版</title>
-	<meta name="keywords" content="LarryCMS后台登录界面" />
+    <title>YIBUDAOWEI</title>
+	<meta name="keywords" content="YIBUDAOWEI" />
     <meta name="description" content="LarryCMS Version:1.09" />
 	<meta name="Author" content="larry" />
 	<meta name="renderer" content="webkit">

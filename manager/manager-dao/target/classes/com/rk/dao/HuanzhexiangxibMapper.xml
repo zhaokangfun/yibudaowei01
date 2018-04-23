@@ -157,6 +157,12 @@
       </if>
     </trim>
   </insert>
+  
+  <update id="updatebyhzStatus"  parameterType="java.lang.Integer" >
+  update huanzhexiangxib  set jzstatus= #{status,jdbcType=VARCHAR} where hzid = #{hzid,jdbcType=INTEGER}
+  
+  </update>
+  
   <update id="updateByPrimaryKeySelective" parameterType="com.rk.entity.Huanzhexiangxib">
     update huanzhexiangxib
     <set>

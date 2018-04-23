@@ -11,40 +11,40 @@ import com.rk.entity.Bancib;
 @Service("bancibService")
 public class BancibServiceImpl implements BancibService {
 	@Autowired
-	private BancibMapper bancibMapper;
+	private BancibMapper dao;
 	
 	public int deleteByPrimaryKey(Integer banciid) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.deleteByPrimaryKey(banciid);
 	}
 
 	public int insert(Bancib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(record);
 	}
 
 	public int insertSelective(Bancib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insertSelective(record);
 	}
 
 	public Bancib selectByPrimaryKey(Integer banciid) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.selectByPrimaryKey(banciid);
 	}
 
 	public int updateByPrimaryKeySelective(Bancib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.updateByPrimaryKeySelective(record);
 	}
 
 	public int updateByPrimaryKey(Bancib record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.updateByPrimaryKey(record);
 	}
 
 	public List<Bancib> getAll() {
-		return bancibMapper.getAll();
+		return dao.getAll();
 	}
     
 }

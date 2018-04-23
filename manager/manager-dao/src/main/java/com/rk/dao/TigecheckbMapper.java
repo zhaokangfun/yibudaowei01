@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Tigecheckb;
 
 public interface TigecheckbMapper {
@@ -14,4 +16,6 @@ public interface TigecheckbMapper {
     int updateByPrimaryKeySelective(Tigecheckb record);
 
     int updateByPrimaryKey(Tigecheckb record);
+    
+    List<Tigecheckb> listAll();
 }
