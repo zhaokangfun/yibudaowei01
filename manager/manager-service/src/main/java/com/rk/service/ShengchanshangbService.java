@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Shengchanshangb;
 
 public interface ShengchanshangbService {
@@ -14,4 +16,6 @@ public interface ShengchanshangbService {
     int updateByPrimaryKeySelective(Shengchanshangb record);
 
     int updateByPrimaryKey(Shengchanshangb record);
+    
+    List<Shengchanshangb> sccsGell();
 }

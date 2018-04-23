@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Zhiliaoxiangmub {
+import java.io.Serializable;
+
+
+public class Zhiliaoxiangmub implements Serializable {
+
     private Integer zlxmid;
 
     private String zlxmbianma;

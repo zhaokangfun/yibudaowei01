@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
-public class Rukub implements Serializable {
+public class Rukub implements Serializable{
+
+
     private Integer rkid;
 
     private String rknumber;

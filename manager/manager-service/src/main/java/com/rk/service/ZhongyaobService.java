@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Zhongyaob;
 
 public interface ZhongyaobService {
@@ -14,4 +16,10 @@ public interface ZhongyaobService {
     int updateByPrimaryKeySelective(Zhongyaob record);
 
     int updateByPrimaryKey(Zhongyaob record);
+    
+    /**
+     * 中药
+     * @return
+     */
+    List<Zhongyaob> Gellzy();
 }

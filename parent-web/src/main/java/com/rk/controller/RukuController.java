@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rk.entity.Rukub;
+import com.rk.entity.Zhongyaob;
 import com.rk.service.RukubService;
 
 @Controller
@@ -44,5 +45,17 @@ public class RukuController {
 		int ret=rkservice.delerk(rkid);
 		return ret;
 	}
+	
+	/**
+	 * 文本框
+	 * @return
+	 */
+	@RequestMapping("textsele")
+	@ResponseBody
+	public List<Zhongyaob> textsele(String pinyin,Model model) {
+		List<Zhongyaob> list=rkservice.textSelect(pinyin);
+		return list;
+	}
+	
 	
 }

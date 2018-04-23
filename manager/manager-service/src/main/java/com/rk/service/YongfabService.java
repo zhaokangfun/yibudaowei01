@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Yongfab;
 
 public interface YongfabService {
@@ -14,4 +16,6 @@ public interface YongfabService {
     int updateByPrimaryKeySelective(Yongfab record);
 
     int updateByPrimaryKey(Yongfab record);
+    
+    List<Yongfab> Gellyf();
 }

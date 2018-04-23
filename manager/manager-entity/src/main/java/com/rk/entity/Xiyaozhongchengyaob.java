@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Xiyaozhongchengyaob {
+import java.io.Serializable;
+
+
+public class Xiyaozhongchengyaob implements Serializable {
+
     private Integer xyid;
 
     private String xyname;
@@ -34,12 +38,75 @@ public class Xiyaozhongchengyaob {
     private Integer yonfaid;
 
     private Integer plid;
+    
+    private Integer jiliang;
+
+    private Integer danweiid;
+
+    private Integer zhijishuliang;
+
+    private Integer zhijidanweiid;
+
+    private Integer kcdanwei;
 
     private String morenyongliang;
 
     private String yingyezhizhao;
+    
+    private Gongyingshangb gys;
+    
+    
 
-    public Integer getXyid() {
+    
+    public Integer getJiliang() {
+		return jiliang;
+	}
+
+	public void setJiliang(Integer jiliang) {
+		this.jiliang = jiliang;
+	}
+
+	public Integer getDanweiid() {
+		return danweiid;
+	}
+
+	public void setDanweiid(Integer danweiid) {
+		this.danweiid = danweiid;
+	}
+
+	public Integer getZhijishuliang() {
+		return zhijishuliang;
+	}
+
+	public void setZhijishuliang(Integer zhijishuliang) {
+		this.zhijishuliang = zhijishuliang;
+	}
+
+	public Integer getZhijidanweiid() {
+		return zhijidanweiid;
+	}
+
+	public void setZhijidanweiid(Integer zhijidanweiid) {
+		this.zhijidanweiid = zhijidanweiid;
+	}
+
+	public Integer getKcdanwei() {
+		return kcdanwei;
+	}
+
+	public void setKcdanwei(Integer kcdanwei) {
+		this.kcdanwei = kcdanwei;
+	}
+
+	public Gongyingshangb getGys() {
+		return gys;
+	}
+
+	public void setGys(Gongyingshangb gys) {
+		this.gys = gys;
+	}
+
+	public Integer getXyid() {
         return xyid;
     }
 

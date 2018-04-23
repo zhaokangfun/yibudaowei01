@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Yaopintypeb {
+import java.io.Serializable;
+
+
+public class Yaopintypeb implements Serializable {
+
     private Integer yptypeid;
 
     private String yptypename;

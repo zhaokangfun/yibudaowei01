@@ -3,30 +3,50 @@
 <mapper namespace="com.rk.dao.XiyaozhongchengyaobMapper">
   <resultMap id="BaseResultMap" type="com.rk.entity.Xiyaozhongchengyaob">
     <id column="xyid" jdbcType="INTEGER" property="xyid" />
-    <result column="xyname" jdbcType="VARCHAR" property="xyname" />
-    <result column="guige" jdbcType="VARCHAR" property="guige" />
-    <result column="jixingid" jdbcType="INTEGER" property="jixingid" />
-    <result column="guoyaozhunzi" jdbcType="VARCHAR" property="guoyaozhunzi" />
-    <result column="yptypeid" jdbcType="INTEGER" property="yptypeid" />
-    <result column="scsid" jdbcType="INTEGER" property="scsid" />
-    <result column="gysid" jdbcType="INTEGER" property="gysid" />
-    <result column="tiaoxingma" jdbcType="VARCHAR" property="tiaoxingma" />
-    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
-    <result column="ypbenweima" jdbcType="VARCHAR" property="ypbenweima" />
-    <result column="lsprice" jdbcType="DOUBLE" property="lsprice" />
-    <result column="maxprice" jdbcType="DOUBLE" property="maxprice" />
-    <result column="shifouchailing" jdbcType="INTEGER" property="shifouchailing" />
-    <result column="shifoukangjun" jdbcType="INTEGER" property="shifoukangjun" />
-    <result column="yonfaid" jdbcType="INTEGER" property="yonfaid" />
-    <result column="plid" jdbcType="INTEGER" property="plid" />
-    <result column="morenyongliang" jdbcType="VARCHAR" property="morenyongliang" />
-    <result column="yingyezhizhao" jdbcType="VARCHAR" property="yingyezhizhao" />
+    <result column="xyname" property="xyname" />
+    <result column="guige" property="guige" />
+    <result column="jixingid" property="jixingid" />
+    <result column="guoyaozhunzi" property="guoyaozhunzi" />
+    <result column="yptypeid" property="yptypeid" />
+    <result column="scsid" property="scsid" />
+    <result column="gysid" property="gysid" />
+    <result column="tiaoxingma" property="tiaoxingma" />
+    <result column="goodsname" property="goodsname" />
+    <result column="ypbenweima" property="ypbenweima" />
+    <result column="lsprice" property="lsprice" />
+    <result column="maxprice" property="maxprice" />
+    <result column="shifouchailing" property="shifouchailing" />
+    <result column="shifoukangjun" property="shifoukangjun" />
+    <result column="yonfaid" property="yonfaid" />
+    <result column="plid" property="plid" />
+      <result column="morenyongliang" property="morenyongliang" />
+    <result column="yingyezhizhao" property="yingyezhizhao" />
+     <result column="jiliang" property="jiliang" />
+    <result column="danweiid" property="danweiid" />
+    <result column="zhijishuliang" property="zhijishuliang" />
+    <result column="zhijidanweiid" property="zhijidanweiid" />
+    <result column="kcdanwei" property="kcdanwei" />
+    
+  
+   	<association property="gys" javaType="com.rk.entity.Gongyingshangb">
+    			<id column="gysid" property="gysid"/>
+    			<result column="gysname" property="gysname" />
+    	</association>
   </resultMap>
   <sql id="Base_Column_List">
     xyid, xyname, guige, jixingid, guoyaozhunzi, yptypeid, scsid, gysid, tiaoxingma, 
     goodsname, ypbenweima, lsprice, maxprice, shifouchailing, shifoukangjun, yonfaid, 
     plid, morenyongliang, yingyezhizhao
   </sql>
+  
+  <insert id="xizhongadd" parameterType="com.rk.entity.Xiyaozhongchengyaob">
+  	INSERT xiyaozhongchengyaob VALUES(DEFAULT,#{xyname},#{guige},#{jixingid},#{guoyaozhunzi},#{yptypeid},#{scsid},#{gysid},#{tiaoxingma},#{goodsname},#{ypbenweima},#{lsprice},#{maxprice},#{shifouchailing},#{shifoukangjun},#{yonfaid},#{plid},#{morenyongliang},Null,#{jiliang},#{danweiid},#{zhijishuliang},#{zhijidanweiid},#{kcdanwei})
+  </insert>
+  
+  <select id="Gellxizhong" resultMap="BaseResultMap">
+  	SELECT * from xiyaozhongchengyaob x,gongyingshangb g WHERE x.gysid=g.gysid
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Menzhenb {
+import java.io.Serializable;
+
+
+public class Menzhenb   implements Serializable {
+
     private Integer mzid;
 
     private String mzname;

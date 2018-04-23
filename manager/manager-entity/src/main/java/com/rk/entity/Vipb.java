@@ -1,6 +1,9 @@
 package com.rk.entity;
 
-public class Vipb {
+import java.io.Serializable;
+
+public class Vipb implements Serializable {
+
     private Integer vipid;
 
     private String vipno;

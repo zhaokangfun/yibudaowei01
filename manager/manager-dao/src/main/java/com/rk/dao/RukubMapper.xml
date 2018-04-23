@@ -46,6 +46,7 @@
   		select * FROM rukub r,rukufangshib rkfs,gongyingshangb gys where r.rktypeid=rkfs.rkfangshi AND r.gysid=gys.gysid
   </select>
   
+  
   <delete id="delerk" parameterType="java.lang.Integer">
   		DELETE FROM rukub WHERE rkid=#{rkid}
   </delete>

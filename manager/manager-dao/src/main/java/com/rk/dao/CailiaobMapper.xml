@@ -11,10 +11,19 @@
     <result column="cldanweiid" jdbcType="INTEGER" property="cldanweiid" />
     <result column="lsdj" jdbcType="DOUBLE" property="lsdj" />
     <result column="stataus" jdbcType="INTEGER" property="stataus" />
+     <association property="dw" javaType="com.rk.entity.Danweib">
+    			<id column="dwid" property="dwid"/>
+    			<result column="dwname" property="dwname" />
+    	</association>
   </resultMap>
   <sql id="Base_Column_List">
     clid, clbianma, clname, cltypeid, clguige, sfkc, cldanweiid, lsdj, stataus
   </sql>
+  
+  <select id="Gellcl" resultMap="BaseResultMap">
+  	SELECT * from cailiaob c,danweib d WHERE c.cldanweiid=d.dwid
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

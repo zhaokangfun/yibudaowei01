@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Kucunb {
+import java.io.Serializable;
+
+
+public class Kucunb   implements Serializable {
+
     private Integer kcid;
 
     private String kcnunmber;

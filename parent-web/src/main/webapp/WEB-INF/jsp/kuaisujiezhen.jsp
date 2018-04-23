@@ -20,31 +20,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body style="background-color:white;">
 	             
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-  <legend>快速接诊</legend>
+  <legend>分配医生</legend>
 </fieldset>
 <form class="layui-form" action="">
  	<!-- 姓名 -->
   <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者姓名</label>
 	    <div class="layui-input-block">
-	       <input name="username" lay-verify="required" placeholder="必填姓名" autocomplete="off" class="layui-input" type="text">
+	       <input name="username" lay-verify="required" placeholder="${hzxxb.hzname}"  style="border: 0px; disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
    </div>
     <!-- 性别 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者性别</label>
 	    <div class="layui-input-block">
-	      <input name="sex" value="男" title="男" checked="" type="radio">
-	      <input name="sex" value="女" title="女" type="radio">
-	      <!--  加上这个 disabled=""  则该radio禁用 -->
-	      <input name="sex" value="密" title="保密" type="radio">
+	  	 <input name="sex" lay-verify="required" placeholder="${hzxxb.sex}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
+    </div>
     </div>
     
       <!-- 年龄 -->
     <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者年龄</label>
 	    <div class="layui-input-block">
-	      <input name="age" lay-verify="title" autocomplete="off"placeholder="年龄"   class="layui-input" type="text">
+	       <input name="age" lay-verify="required" placeholder="${hzxxb.age}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
   </div>
   
@@ -52,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="layui-form-item">
 	    <label class="layui-form-label">患者手机</label>
 	    <div class="layui-input-block">
-	      <input name="phone" lay-verify="title" autocomplete="off"placeholder="手机号码"   class="layui-input" type="text">
+	       <input name="phone" lay-verify="required" placeholder="${hzxxb.phone}" style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
   </div>
   <div class="layui-form-item">

@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Cailiaob  implements Serializable {
+
     private Integer clid;
 
     private String clbianma;
@@ -20,8 +22,20 @@ public class Cailiaob  implements Serializable {
     private Double lsdj;
 
     private Integer stataus;
+    
+    private Danweib dw;
+    
+    
 
-    public Integer getClid() {
+    public Danweib getDw() {
+		return dw;
+	}
+
+	public void setDw(Danweib dw) {
+		this.dw = dw;
+	}
+
+	public Integer getClid() {
         return clid;
     }
 

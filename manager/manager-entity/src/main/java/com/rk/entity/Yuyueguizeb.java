@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Yuyueguizeb {
+import java.io.Serializable;
+
+
+public class Yuyueguizeb implements Serializable {
+
     private Integer yygzid;
 
     private String yygzname;

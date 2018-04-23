@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.rk.entity.Rukub;
+import com.rk.entity.Zhongyaob;
 
 public interface RukubService {
     int deleteByPrimaryKey(Integer rkid);
@@ -29,4 +30,10 @@ public interface RukubService {
      * @return
      */
     int delerk(Integer rkid);
+    
+    /**
+     * 文本框查询
+     * @return
+     */
+    List<Zhongyaob> textSelect(String pinyin);
 }

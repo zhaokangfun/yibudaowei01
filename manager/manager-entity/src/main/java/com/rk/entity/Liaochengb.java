@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Liaochengb {
+import java.io.Serializable;
+
+
+public class Liaochengb   implements Serializable {
+
     private Integer lcid;
 
     private String lcnumber;

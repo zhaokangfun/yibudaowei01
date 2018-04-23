@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Xinzengxiangmu {
+import java.io.Serializable;
+
+
+public class Xinzengxiangmu implements Serializable {
+
     private Integer xinzengid;
 
     private Integer xinzengtypeid;

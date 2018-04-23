@@ -8,6 +8,11 @@
   <sql id="Base_Column_List">
     jianfaid, name
   </sql>
+  
+  <select id="jianfaGell" resultMap="BaseResultMap">
+  	SELECT * FROM jianfab
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

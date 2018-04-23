@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Guominshib {
+import java.io.Serializable;
+
+
+public class Guominshib   implements Serializable {
+
     private Integer gmsid;
 
     private String gmsname;

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.rk.entity.Rukub;
+import com.rk.entity.Zhongyaob;
 
 public interface RukubMapper {
     int deleteByPrimaryKey(Integer rkid);
@@ -30,4 +31,5 @@ public interface RukubMapper {
      * @return
      */
     int delerk(Integer rkid);
+    
 }

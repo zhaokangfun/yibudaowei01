@@ -6,6 +6,11 @@
     <result column="plname" jdbcType="VARCHAR" property="plname" />
     <result column="beizhu" jdbcType="VARCHAR" property="beizhu" />
   </resultMap>
+  
+  <select id="Gellpl" resultMap="BaseResultMap">
+  	SELECT * from pinlvb
+  </select>
+  
   <sql id="Base_Column_List">
     plid, plname, beizhu
   </sql>

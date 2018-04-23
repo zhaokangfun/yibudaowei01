@@ -2,7 +2,9 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Chukub  implements Serializable {
+
     private Integer ckid;
 
     private String cknumber;

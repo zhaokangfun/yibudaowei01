@@ -63,13 +63,13 @@ var navs = [{
 {
 	"title" : "诊所管理",
 	"icon" : "&#xe620;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "zhensuoguanli/deptMgr.html",
 	"spread" : false
 },
 {
 	"title" : "字典维护",
 	"icon" : "&#xe642;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "../zidian/xiyao",
 	"spread" : false
 },
 {

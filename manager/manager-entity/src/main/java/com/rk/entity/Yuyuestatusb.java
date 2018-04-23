@@ -1,6 +1,9 @@
 package com.rk.entity;
 
-public class Yuyuestatusb {
+import java.io.Serializable;
+
+public class Yuyuestatusb implements Serializable {
+
     private Integer yystatusid;
 
     private String yystatusname;

@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Liliaob {
+import java.io.Serializable;
+
+
+public class Liliaob   implements Serializable {
+
     private Integer llid;
 
     private String llnumber;

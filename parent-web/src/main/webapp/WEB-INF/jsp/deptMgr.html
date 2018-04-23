@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="deptMgr_files/switch.js"></script><link rel="stylesheet" href="deptMgr_files/base_002.css"><link rel="stylesheet" href="deptMgr_files/base.css">
+    <link rel="stylesheet" type="text/css" href="deptMgr_files/pawj.css">
+    <link rel="stylesheet" type="text/css" href="deptMgr_files/clinicManagement.css">
+   <!-- <link rel="stylesheet" type="text/css" href="../resources/css/base.css?20180412134648" />
+    <link rel="stylesheet" type="text/css" href="css/base.css?20180412134648" />-->
+    <title></title>
+</head>
+
+<body class="static-public-css clinic-management-css">
+
+<div id="list_div" class="content-inner">
+	<!--查看帮助视频-->
+    <a href="https://www.pinganwj.com/help/1-2-2/1a735a2d-6d87-4456-b096-ffa03e045240" target="_blank" class="help_video_button_css" title="点击查看帮助视频" style="top: 18px;">?</a>
+    <div class="tab-content clear">
+        <div class="left-column">
+            <div class="left-column-inner clear">
+                <div class="left-column-head">科室列表</div>
+                <ul id="treenav" class="left-column-menu dyn"><li><a class="treenav_item active">全部</a></li><li><a id="a_de96eed997f041018ae8d0e192ebb95d" title="耳鼻喉科">耳鼻喉科</a></li><li><a id="a_2cddf1e99dc94c9c84af73efcceac028" title="外科">外科</a></li><li><a id="a_c7fbe030d5a1445ba78e19956c10ee06" title="皮肤科">皮肤科</a></li></ul>
+            </div>
+        </div>
+        <!-- end of .left-column -->
+
+        <div class="tab-content-top" style="padding-right: 28px;box-sizing: border-box;">
+            <a id="btn_add" class="btn top-btn fl" wjperm="CLINICSET01-CREATE,CLINICSETUP01-CREATE">新增</a>
+
+            <div class="search-box fr">
+                <div class="fl" style="margin-right: 5px;">
+                    <span class="form-item-title" style="margin-top: 0">开通预约：</span>
+
+                    <div class="drop f1">
+                        <input id="srch_isForBooking" class="input-text" placeholder="" readonly="readonly" type="text"> <i class="drop-icon"></i>
+                        <ul class="drop-menu dsn" style="display: none;">
+                        </ul>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="是" value="1" data-value="1">是</li><li class="drop-item drop_even" title="否" value="2" data-value="2">否</li></ul></div>
+                </div>
+					<span class="form-item-title" style="margin-top: 0; margin-left: 0;">是否启用：</span>
+
+                <div class="fl" style="margin-right: 5px;">
+                    <div class="drop f1">
+                        <input id="disabled" class="input-text" placeholder="" readonly="readonly" val="0" value="已启用" type="text"> <i class="drop-icon"></i>
+                        <ul class="drop-menu dsn" style="display: none;">
+                        </ul>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="全部" value=" " data-value=" ">全部</li><li class="drop-item drop_odd" title="已启用" value="0" data-value="0">已启用</li><li class="drop-item drop_even" title="已停用" value="1" data-value="1">已停用</li></ul></div>
+                </div>
+                <input id="sc_value" class="input-text fl" placeholder="编号/名称" type="text"> <a id="btn_search" class="btn search-btn js_search_btn fl"></a>
+            </div>
+        </div>
+        <!-- end of .tab-content-top -->
+
+        <div class="list-table-area clear">
+        	<div class="tb_detail_wrap">
+            <table id="tb_detailList" class="common-table full-width-table"><tbody><tr><th>科室编号</th><th>科室名称</th><th>科室属性</th><th>显示顺序</th><th>上级科室</th><th>开通预约</th><th>操作</th></tr><tr><td>003</td><td>耳鼻喉科</td><td>体检常规</td><td></td><td></td><td>是</td><td><a id="btn_modify_0" wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE" onclick="showModifyPanel(0)">编辑</a><a id="btn_updateStat_0" wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE" onclick="updateStatus(this.id, 0, 1)">停用</a></td></tr><tr><td>002</td><td>外科</td><td>门诊</td><td></td><td></td><td>是</td><td><a id="btn_modify_1" wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE" onclick="showModifyPanel(1)">编辑</a><a id="btn_updateStat_1" wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE" onclick="updateStatus(this.id, 1, 1)">停用</a></td></tr><tr><td>001</td><td>皮肤科</td><td>门诊</td><td></td><td></td><td>是</td><td><a id="btn_modify_2" wjperm="CLINICSET01-UPDATE,CLINICSETUP01-UPDATE" onclick="showModifyPanel(2)">编辑</a><a id="btn_updateStat_2" wjperm="CLINICSET01-DISABLE,CLINICSETUP01-DISABLE" onclick="updateStatus(this.id, 2, 1)">停用</a></td></tr></tbody></table>
+            </div>
+            <div id="my-page" class="page-nav"></div>
+        </div>
+        <!-- end of .right-table-area -->
+    </div>
+    <!-- end of .tab-content -->
+</div>
+<!-- end of .content-inner -->
+
+<div id="add_edit_div" class="content-inner" style="display: none">
+    <div class="tab-content clear">
+        <table class="input-table" style="margin-top: 40px; border-top: none;">
+            <tbody><tr>
+                <td><span class="form-item-title"> <i class="necessary">*</i>科室编号：
+					</span> <input id="departmentCode" class="input-text validate(required, numAndLetter,maxlength(36))" type="text"></td>
+                <td><span class="form-item-title"> <i class="necessary">*</i>科室名称：
+					</span> <input id="departmentName" class="input-text validate(required, maxlength(20))" type="text"></td>
+                <td><span class="form-item-title"> <i class="necessary">*</i>科室属性：
+					</span>
+
+                    <div class="drop">
+                        <input id="departmentType" class="input-text validate(required)" placeholder="" readonly="readonly" type="text"> <i class="drop-icon"></i>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="门诊" value="0" data-value="0">门诊</li><li class="drop-item drop_even" title="体检常规" value="1" data-value="1">体检常规</li><li class="drop-item drop_odd" title="体检检验" value="2" data-value="2">体检检验</li><li class="drop-item drop_even" title="体检影像" value="3" data-value="3">体检影像</li><li class="drop-item drop_odd" title="职能科室" value="4" data-value="4">职能科室</li><li class="drop-item drop_even" title="药房" value="5" data-value="5">药房</li><li class="drop-item drop_odd" title="住院" value="8" data-value="8">住院</li><li class="drop-item drop_even" title="诊室" value="9" data-value="9">诊室</li></ul></div>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="form-item-title">上级科室：</span>
+
+                    <div class="drop">
+                        <input id="parentId" class="input-text" placeholder="" readonly="readonly" type="text"> <i class="drop-icon"></i>
+                        <ul class="drop-menu dsn" style="display: none;">
+                        </ul>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="耳鼻喉科" value="de96eed997f041018ae8d0e192ebb95d" data-value="de96eed997f041018ae8d0e192ebb95d">耳鼻喉科</li><li class="drop-item drop_even" title="外科" value="2cddf1e99dc94c9c84af73efcceac028" data-value="2cddf1e99dc94c9c84af73efcceac028">外科</li><li class="drop-item drop_odd" title="皮肤科" value="c7fbe030d5a1445ba78e19956c10ee06" data-value="c7fbe030d5a1445ba78e19956c10ee06">皮肤科</li></ul></div>
+                </td>
+                <td><span class="form-item-title">显示顺序：</span> <input id="orderNum" class="input-text validate(digits,maxlength(3))" type="text"></td>
+                <td><span class="form-item-title"><i class="necessary">*</i>开通预约：</span>
+
+                    <div class="drop">
+                        <input id="isForBooking" class="input-text validate(required)" placeholder="" readonly="readonly" type="text"> <i class="drop-icon"></i>
+                        <ul class="drop-menu dsn" style="display: none;">
+                        </ul>
+                    <ul class="wjzs-drop-menu dsn" style="display: none;"><li class="drop-item drop_even" title="请选择" value=" " data-value=" ">请选择</li><li class="drop-item drop_odd" title="是" value="1" data-value="1">是</li><li class="drop-item drop_even" title="否" value="2" data-value="2">否</li></ul></div>
+                </td>
+                <td>
+            </td></tr>
+            <tr>
+                <td colspan="3"><span class="form-item-title"> <i class="necessary"></i>说明：
+					</span> <input id="deptRemark" class="input-text input-text-fw validate(maxlength(50))" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <span class="form-item-title"><i class="necessary"></i>地址：</span>
+                    <textarea id="deptAddr" class="input-textarea validate(maxlength(500))" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+        </tbody></table>
+
+        <div class="btn-group fr">
+            <a id="btn_cancle" class="btn btn-cancel fl">取消</a>
+            <a id="btn_save" class="btn fl" wjperm="CLINICSET01-SAVE,CLINICSETUP01-SAVE">保存</a>
+        </div>
+
+    </div>
+    <!-- end of .tab-content -->
+</div>
+<!-- end of .content-inner -->
+
+<script type="text/javascript" src="deptMgr_files/pawj-pro.js"></script>
+<script type="text/javascript" src="deptMgr_files/cache.js"></script>
+<script type="text/javascript" src="deptMgr_files/tree.js"></script>
+<script type="text/javascript" src="deptMgr_files/jquery.js"></script>
+<script type="text/javascript" src="deptMgr_files/deptMgr.js"></script>
+<script>
+    var _maq = _maq || [];
+    _maq.push(['sysType', 'B' ],['sysModel', 'CLINICSET' ],['sysMenu', 'CLINICSET01' ]);
+
+    function async_ipquery(){
+        var script = document.createElement("script");
+        script.setAttribute("type","text/javascript");
+        script.src = ('https:' == document.location.protocol ? 'https://ip.ws.126.net/ipquery' : 'http://ip.ws.126.net/ipquery');
+        document.getElementsByTagName("head")[0].appendChild(script);
+        var collection = document.createElement('script');
+        collection.type = 'text/javascript';
+        collection.async = true;
+        collection.src ='../resources/js/pawj.collection.js';
+        var sCollection = document.getElementsByTagName('script')[0];
+        sCollection.parentNode.insertBefore(collection, sCollection);
+    }
+
+    $(function(){
+        if (window.attachEvent) {
+            window.attachEvent('onload', async_ipquery);
+        } else {
+            window.addEventListener('load', async_ipquery);
+        }
+    });
+</script>
+
+
+<div class="loading-mask" style="display: none;"><span class="loading-content"></span></div></body></html>

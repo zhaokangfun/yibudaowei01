@@ -11,7 +11,7 @@ import com.rk.entity.Bancib;
 @Service("bancibService")
 public class BancibServiceImpl implements BancibService {
 	@Autowired
-	private BancibMapper bancibMapper;
+	private BancibMapper dao;
 	
 	public int deleteByPrimaryKey(Integer banciid) {
 		// TODO Auto-generated method stub
@@ -44,7 +44,7 @@ public class BancibServiceImpl implements BancibService {
 	}
 
 	public List<Bancib> getAll() {
-		return bancibMapper.getAll();
+		return dao.getAll();
 	}
     
 }

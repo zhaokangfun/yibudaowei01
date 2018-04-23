@@ -18,12 +18,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="Keywords" content="">
     <script type="text/javascript" async="" src="../js/pawj.js"></script>
     <script type="text/javascript" src="../js/switch.js"></script>
+
     <link rel="stylesheet" href="../css/base_003.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="../css/pawj.css">
     <link rel="stylesheet" type="text/css" href="../css/storageManagement.css">
     <title></title>
 <script type="text/javascript" src="inboundlist_data/ipquery.html"></script></head>
+<script type="text/javascript" src="../common/layui/layui.js"></script>
 <body class="static-public-css storage-manage-css">
 <div class="content-inner">
     <div class="tab-content clear">
@@ -151,15 +153,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <!-- end of .content-inner -->
 <!-- end of .wrapper -->
+    <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/pawj-pro.js"></script>
-<script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/drugUtils.js"></script>
 <script type="text/javascript" src="../js/inbound.js"></script>
 <script type="text/javascript" src="../js/inboundlist.js"></script>
 <script type="text/javascript" src="../js/cache.js"></script>
 <script type="text/javascript" src="../js/tipso.js"></script>
 <script type="text/javascript" src="../js/setTipsoEvent.js"></script>
-<script type="text/javascript" src="../common/layui/layui.js"></script>
+
 <script type="text/javascript">
     //数据采集
     var _maq = _maq || [];
@@ -187,13 +189,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     });
     
     function del(obj,rkid){
-    	layer.confirm('真的药删除吗?',function(){
-    	$.post('delrk',{"rkid":rkid},function(data){
-    		if(data==1){
-    			layer.msg("删除成功！")
-    		}
-    	});
-    });
+    	 var msg = "确定删除该条数据？";  
+    	 
+    	 if (confirm(msg)==true){  
+    		 
+    		 $.post('delrk',{"rkid":rkid},function(data){
+    	    		if(data==1){
+    	    			alert('删除成功！');
+    	    			$(obj).parents("tr").remove();
+    	    		}
+    	    	});
+    		 return true;  
+            
+         }else{  
+             return false;  
+         }  
+    	 
+    	
     }
     
     

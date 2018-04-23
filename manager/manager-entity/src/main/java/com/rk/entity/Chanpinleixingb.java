@@ -2,6 +2,7 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Chanpinleixingb   implements Serializable{
     private Integer cptypeid;
 

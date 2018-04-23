@@ -1,6 +1,10 @@
 package com.rk.entity;
 
-public class Kongbaib {
+import java.io.Serializable;
+
+
+public class Kongbaib   implements Serializable {
+
     private Integer kbid;
 
     private String biaoti;
