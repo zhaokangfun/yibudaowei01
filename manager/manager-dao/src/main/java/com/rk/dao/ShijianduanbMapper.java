@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Shijianduanb;
 
 public interface ShijianduanbMapper {
@@ -14,4 +16,6 @@ public interface ShijianduanbMapper {
     int updateByPrimaryKeySelective(Shijianduanb record);
 
     int updateByPrimaryKey(Shijianduanb record);
+    
+    List<Shijianduanb> AllList();
 }

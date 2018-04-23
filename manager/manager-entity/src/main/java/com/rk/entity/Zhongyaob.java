@@ -2,174 +2,185 @@ package com.rk.entity;
 
 import java.io.Serializable;
 
+
 public class Zhongyaob  implements Serializable {
     private Integer zyid;
 
-    private String zyname;
+	private String zyname;
 
-    private String zyjdname;
+	private String zyjdname;
 
-    private Integer yptypeid;
+	private Integer yptypeid;
 
-    private String guige;
+	private String guige;
 
-    private Integer scsid;
+	private Integer scsid;
 
-    private Integer gysid;
+	private Integer gysid;
 
-    private String ypbwnumber;
+	private String ypbwnumber;
 
-    private String lsdw;
+	private Integer lsdw;
 
-    private String dwid;
+	private Integer dwid;
 
-    private Double kczhl;
+	private Double kczhl;
 
-    private Double lsprice;
+	private Double lsprice;
 
-    private Double maxprice;
+	private Double maxprice;
 
-    private Integer yfid;
+	private Integer yfid;
 
-    private String wubi;
+	private String wubi;
 
-    private String pinyin;
+	private String pinyin;
 
-    private Integer status;
+	private Integer status;
 
-    public Integer getZyid() {
-        return zyid;
-    }
+	private Danweib dw;
 
-    public void setZyid(Integer zyid) {
-        this.zyid = zyid;
-    }
+	public Danweib getDw() {
+		return dw;
+	}
 
-    public String getZyname() {
-        return zyname;
-    }
+	public void setDw(Danweib dw) {
+		this.dw = dw;
+	}
 
-    public void setZyname(String zyname) {
-        this.zyname = zyname;
-    }
+	public Integer getZyid() {
+		return zyid;
+	}
 
-    public String getZyjdname() {
-        return zyjdname;
-    }
+	public void setZyid(Integer zyid) {
+		this.zyid = zyid;
+	}
 
-    public void setZyjdname(String zyjdname) {
-        this.zyjdname = zyjdname;
-    }
+	public String getZyname() {
+		return zyname;
+	}
 
-    public Integer getYptypeid() {
-        return yptypeid;
-    }
+	public void setZyname(String zyname) {
+		this.zyname = zyname;
+	}
 
-    public void setYptypeid(Integer yptypeid) {
-        this.yptypeid = yptypeid;
-    }
+	public String getZyjdname() {
+		return zyjdname;
+	}
 
-    public String getGuige() {
-        return guige;
-    }
+	public void setZyjdname(String zyjdname) {
+		this.zyjdname = zyjdname;
+	}
 
-    public void setGuige(String guige) {
-        this.guige = guige;
-    }
+	public Integer getYptypeid() {
+		return yptypeid;
+	}
 
-    public Integer getScsid() {
-        return scsid;
-    }
+	public void setYptypeid(Integer yptypeid) {
+		this.yptypeid = yptypeid;
+	}
 
-    public void setScsid(Integer scsid) {
-        this.scsid = scsid;
-    }
+	public String getGuige() {
+		return guige;
+	}
 
-    public Integer getGysid() {
-        return gysid;
-    }
+	public void setGuige(String guige) {
+		this.guige = guige;
+	}
 
-    public void setGysid(Integer gysid) {
-        this.gysid = gysid;
-    }
+	public Integer getScsid() {
+		return scsid;
+	}
 
-    public String getYpbwnumber() {
-        return ypbwnumber;
-    }
+	public void setScsid(Integer scsid) {
+		this.scsid = scsid;
+	}
 
-    public void setYpbwnumber(String ypbwnumber) {
-        this.ypbwnumber = ypbwnumber;
-    }
+	public Integer getGysid() {
+		return gysid;
+	}
 
-    public String getLsdw() {
-        return lsdw;
-    }
+	public void setGysid(Integer gysid) {
+		this.gysid = gysid;
+	}
 
-    public void setLsdw(String lsdw) {
-        this.lsdw = lsdw;
-    }
+	public String getYpbwnumber() {
+		return ypbwnumber;
+	}
 
-    public String getDwid() {
-        return dwid;
-    }
+	public void setYpbwnumber(String ypbwnumber) {
+		this.ypbwnumber = ypbwnumber;
+	}
 
-    public void setDwid(String dwid) {
-        this.dwid = dwid;
-    }
+	public Double getKczhl() {
+		return kczhl;
+	}
 
-    public Double getKczhl() {
-        return kczhl;
-    }
+	public Integer getLsdw() {
+		return lsdw;
+	}
 
-    public void setKczhl(Double kczhl) {
-        this.kczhl = kczhl;
-    }
+	public void setLsdw(Integer lsdw) {
+		this.lsdw = lsdw;
+	}
 
-    public Double getLsprice() {
-        return lsprice;
-    }
+	public Integer getDwid() {
+		return dwid;
+	}
 
-    public void setLsprice(Double lsprice) {
-        this.lsprice = lsprice;
-    }
+	public void setDwid(Integer dwid) {
+		this.dwid = dwid;
+	}
 
-    public Double getMaxprice() {
-        return maxprice;
-    }
+	public void setKczhl(Double kczhl) {
+		this.kczhl = kczhl;
+	}
 
-    public void setMaxprice(Double maxprice) {
-        this.maxprice = maxprice;
-    }
+	public Double getLsprice() {
+		return lsprice;
+	}
 
-    public Integer getYfid() {
-        return yfid;
-    }
+	public void setLsprice(Double lsprice) {
+		this.lsprice = lsprice;
+	}
 
-    public void setYfid(Integer yfid) {
-        this.yfid = yfid;
-    }
+	public Double getMaxprice() {
+		return maxprice;
+	}
 
-    public String getWubi() {
-        return wubi;
-    }
+	public void setMaxprice(Double maxprice) {
+		this.maxprice = maxprice;
+	}
 
-    public void setWubi(String wubi) {
-        this.wubi = wubi;
-    }
+	public Integer getYfid() {
+		return yfid;
+	}
 
-    public String getPinyin() {
-        return pinyin;
-    }
+	public void setYfid(Integer yfid) {
+		this.yfid = yfid;
+	}
 
-    public void setPinyin(String pinyin) {
-        this.pinyin = pinyin;
-    }
+	public String getWubi() {
+		return wubi;
+	}
 
-    public Integer getStatus() {
-        return status;
-    }
+	public void setWubi(String wubi) {
+		this.wubi = wubi;
+	}
 
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
+	public String getPinyin() {
+		return pinyin;
+	}
+
+	public void setPinyin(String pinyin) {
+		this.pinyin = pinyin;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 }

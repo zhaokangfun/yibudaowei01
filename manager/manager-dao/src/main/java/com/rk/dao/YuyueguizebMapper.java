@@ -1,5 +1,9 @@
 package com.rk.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.rk.entity.Yuyueguizeb;
 
 public interface YuyueguizebMapper {
@@ -11,7 +15,9 @@ public interface YuyueguizebMapper {
 
     Yuyueguizeb selectByPrimaryKey(Integer yygzid);
 
-    int updateByPrimaryKeySelective(Yuyueguizeb record);
+    int updateBy(@Param("zhi")String zhi,@Param("id")int id);
 
     int updateByPrimaryKey(Yuyueguizeb record);
+    
+    List<Yuyueguizeb> SelectAll();
 }

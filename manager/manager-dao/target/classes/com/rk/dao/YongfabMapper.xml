@@ -9,6 +9,11 @@
   <sql id="Base_Column_List">
     yfid, yfname, yndifen
   </sql>
+  
+  <select id="Gellyf" resultMap="BaseResultMap">
+  	SELECT * from yongfab
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

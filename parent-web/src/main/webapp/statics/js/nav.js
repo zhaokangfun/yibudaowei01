@@ -69,7 +69,7 @@ var navs = [{
 {
 	"title" : "字典维护",
 	"icon" : "&#xe642;",
-	"href" : "page/systemParameter/systemParameter.html",
+	"href" : "../zidian/xiyao",
 	"spread" : false
 },
 {

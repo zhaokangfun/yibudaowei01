@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Jixingb;
 
 public interface JixingbService {
@@ -14,4 +16,6 @@ public interface JixingbService {
     int updateByPrimaryKeySelective(Jixingb record);
 
     int updateByPrimaryKey(Jixingb record);
+    
+    List<Jixingb> Gelljx();
 }

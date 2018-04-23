@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Shijianduanb;
 
 public interface ShijianduanbService {
@@ -14,4 +16,6 @@ public interface ShijianduanbService {
     int updateByPrimaryKeySelective(Shijianduanb record);
 
     int updateByPrimaryKey(Shijianduanb record);
+    
+    List<Shijianduanb> AllList();
 }

@@ -19,6 +19,11 @@
     gysid, gysnumber, gysname, cptypeid, gysaddress, gysjiancheng, yyzznumber, wubi, 
     pinyin, jyxknumber, ylqxnumber, status
   </sql>
+  
+  <select id="gysGell" resultMap="BaseResultMap">
+  	SELECT * FROM gongyingshangb
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

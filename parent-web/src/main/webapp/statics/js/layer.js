@@ -84,6 +84,8 @@ var layer = {
   
   ready: function(callback){
     var cssname = 'skinlayercss', ver = '1172';
+    isLayui ? layui.addcss('modules/layer/default/layer.css?v='+layer.v+ver, callback, cssname)
+    : layer.link('../images/skin/default/layer.css?v='+layer.v+ver, callback, cssname);	
     isLayui ? layui.addcss('modules/layer/default/layer.css?v='+layer.V+ver, callback, cssname)
     : layer.link('../css/layer.css', callback, cssname);
     return this;
