@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Zhengjianlleixingb;
 
 public interface ZhengjianlleixingbService {
@@ -14,4 +16,5 @@ public interface ZhengjianlleixingbService {
     int updateByPrimaryKeySelective(Zhengjianlleixingb record);
 
     int updateByPrimaryKey(Zhengjianlleixingb record);
+    List<Zhengjianlleixingb> list();
 }

@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Laiyuanb;
 
 public interface LaiyuanbMapper {
@@ -14,4 +16,6 @@ public interface LaiyuanbMapper {
     int updateByPrimaryKeySelective(Laiyuanb record);
 
     int updateByPrimaryKey(Laiyuanb record);
+    //全部来源
+    List<Laiyuanb> listall();
 }

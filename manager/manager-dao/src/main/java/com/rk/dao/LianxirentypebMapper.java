@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Lianxirentypeb;
 
 public interface LianxirentypebMapper {
@@ -14,4 +16,6 @@ public interface LianxirentypebMapper {
     int updateByPrimaryKeySelective(Lianxirentypeb record);
 
     int updateByPrimaryKey(Lianxirentypeb record);
+    
+    List<Lianxirentypeb> lxrlist();
 }

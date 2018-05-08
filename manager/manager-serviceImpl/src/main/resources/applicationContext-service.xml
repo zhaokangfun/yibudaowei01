@@ -32,14 +32,17 @@
 	<dubbo:service interface="com.rk.service.BancibService" ref="bancibService" />
 	<dubbo:service interface="com.rk.service.DenglubService" ref="denglubService" />
 	<dubbo:service interface="com.rk.service.HuanzhexiangxibService" ref="huanzhexiangxibservice" />
+	<dubbo:service interface="com.rk.service.HuanzhexinxibService" ref="huanzhexinxibService" />
 	<dubbo:service interface="com.rk.service.ShijianduanbService" ref="shijianduanbService" />
 	<dubbo:service interface="com.rk.service.JichuhechengbService" ref="jichuhechengbService" />
 	<dubbo:service interface="com.rk.service.RukubService" ref="rukubService" />
 	<dubbo:service interface="com.rk.service.KeshibService" ref="keshibService" />
 	<dubbo:service interface="com.rk.service.YuyueguizebService" ref="yuyueguizebService" />
 	<dubbo:service interface="com.rk.service.YuyuehcbService" ref="yuyuehcbService" />
-
-
+	<dubbo:service interface="com.rk.service.LaiyuanbService" ref="laiyuanbService" />
+	<dubbo:service interface="com.rk.service.ZhengjianlleixingbService" ref="zhengjianlleixingbService" />
+	<dubbo:service interface="com.rk.service.ChinaService" ref="chinaService" />
+	
 	<dubbo:service interface="com.rk.service.GongyingshangbService" ref="gongyingshangbService" />
 	<dubbo:service interface="com.rk.service.ShengchanshangbService" ref="shengchanshangbService" />
 	<dubbo:service interface="com.rk.service.DanweibService" ref="danweibService" />
@@ -59,6 +62,8 @@
 	<dubbo:service interface="com.rk.service.JiwangshibService" ref="jiwangshibService" />
 	<dubbo:service interface="com.rk.service.ChuzhenbService" ref="chuzhenbService" />
 	<dubbo:service interface="com.rk.service.TigecheckbService" ref="tigecheckbService" />
+	<dubbo:service interface="com.rk.service.XuexingbService" ref="xuexingbService" />
+	<dubbo:service interface="com.rk.service.LianxirentypebService" ref="lianxirentypebService" />
  	<dubbo:consumer check="false" timeout="300000" />
     <dubbo:provider timeout="300000" />
 	<!-- 事务管理器 -->

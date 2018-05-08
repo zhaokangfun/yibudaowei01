@@ -58,7 +58,13 @@ public class DenglubServiceImpl implements DenglubService{
 	@Override
 	public List<Denglub> listAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return denglubMapper.listAll();
+	}
+
+	@Override
+	public List<Denglub> listkeshi(int parentId) {
+		// TODO Auto-generated method stub
+		return denglubMapper.listkeshi(parentId);
 	}
 
 }

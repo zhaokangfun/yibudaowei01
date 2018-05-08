@@ -19,11 +19,21 @@
     <result column="jiuzhencount" jdbcType="INTEGER" property="jiuzhencount" />
     <result column="jztime" jdbcType="VARCHAR" property="jztime" />
     <result column="zwid" jdbcType="INTEGER" property="zwid" />
+    <association property="huanzhexinxib" javaType="com.rk.entity.Huanzhexinxib">
+    	<id column="hzxxid" property="hzxxid" />
+    	
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     hzid, hzname, sex, age, laiyuan, phone, blnumber, gmsid, gmsstauts, jwsid, jwsstauts, 
     jztype, ksid, jzstatus, jiuzhencount, jztime, zwid
   </sql>
+  <select id="selectId" resultType="java.lang.Integer">
+  	select max(hzid) from huanzhexiangxib
+  </select>
+  <select id="selectBy" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+   select  *  from huanzhexiangxib hz LEFT JOIN huanzhexinxib xx ON xx.huanzheid=hz.hzid 
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

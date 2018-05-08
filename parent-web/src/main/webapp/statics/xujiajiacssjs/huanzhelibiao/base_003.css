@@ -1,0 +1,681 @@
+@charset "UTF-8";
+/********component.css -start- *******/
+.static-public-css .border_theme_color {
+  border-color: #258ff1 !important;
+}
+
+.static-public-css .text_theme_color {
+  color: #258ff1 !important;
+}
+
+.static-public-css .bg_theme_color {
+  background-color: #258ff1 !important;
+}
+
+.static-public-css .bg_half_theme_color {
+  background-color: #D3E8FC !important;
+}
+
+.static-public-css .input_drop .input_drop_save_btn {
+  background: #258ff1 !important;
+}
+
+.static-public-css span.logo-wj {
+  background: url(../images/spirit_icon.svg) -1px -424px no-repeat;
+}
+
+.static-public-css .tab-nav > span {
+  background-image: url("../images/baseImg/bg_gradient.png");
+}
+
+.static-public-css .tab-nav .selected {
+  background: #258ff1;
+}
+
+.static-public-css .tab-nav > a {
+  background-image: url("../images/baseImg/bg_gradient.png");
+}
+
+.static-public-css .tab-nav .selected {
+  background: #258ff1;
+}
+
+.static-public-css .tab-nav-new > a {
+  background-image: url("../images/baseImg/bg_gradient.png");
+}
+
+.static-public-css .tab-nav-new .selected {
+  background: #258ff1;
+}
+
+.static-public-css .pat-photo {
+  background-image: url("../images/baseImg/icon_pat_photo.png");
+}
+
+.static-public-css .pat-info #patStatus {
+  background-color: #258ff1;
+  font-size: 12px;
+}
+
+.static-public-css .pat-drop-status-open {
+  background-image: url("../images/baseImg/icon_patdropstatus_open.png");
+}
+
+.static-public-css .pat-drop-status-close {
+  background-image: url("../images/baseImg/icon_patdropstatus_close.png");
+}
+
+.static-public-css .btn-finish-visit {
+  color: #258ff1;
+}
+
+.static-public-css .icon_visit_finish {
+  background-image: url("../images/baseImg/icon_visit_finish.png");
+}
+
+.static-public-css .pat-visit-li {
+  color: #258ff1;
+}
+
+.static-public-css .left-arrow {
+  background: url(../images/spirit_icon.svg) 0 -195px no-repeat;
+}
+
+.static-public-css .right-arrow {
+  background: url(../images/spirit_icon.svg) 0 -236px no-repeat;
+}
+
+.static-public-css .dot-more {
+  background: url(../images/spirit_icon.svg) 0 -276px no-repeat;
+}
+
+.static-public-css .left-arrow:hover {
+  background: url(../images/spirit_icon.svg) 0 -215px no-repeat;
+}
+
+.static-public-css .right-arrow:hover {
+  background: url(../images/spirit_icon.svg) 0 -256px no-repeat;
+}
+
+.static-public-css .dot-active {
+  background: url(../images/spirit_icon.svg) 0 -295px no-repeat;
+}
+
+.static-public-css .menu-dd > li:hover {
+  color: #258ff1;
+}
+
+.static-public-css .tab-nav-submenu > .menuBox > li:hover {
+  color: #258ff1;
+}
+
+.static-public-css .tab-nav-submenu .selected {
+  color: #258ff1 !important;
+}
+
+.static-public-css .wholeClick.common-table tr:hover td {
+  color: #258ff1;
+}
+
+.static-public-css .common-table a {
+  color: #258ff1;
+}
+
+.static-public-css .input-text:focus,
+.static-public-css input:focus,
+.static-public-css textarea:focus,
+.static-public-css .input-textarea:focus {
+  border-color: #258FF1 !important;
+}
+
+.static-public-css input[readonly]:focus,
+.static-public-css textarea[readonly]:focus {
+  border-color: #dfdfdf !important;
+}
+
+.static-public-css .drop-icon {
+  background-image: url("../../images/icon_drop.png");
+}
+
+.static-public-css .drop-menu li.drop_over,
+.static-public-css .wjzs-drop-menu li.drop_over {
+  background: #258ff1;
+}
+
+.static-public-css .date-icon {
+  background-image: url("../images/baseImg/icon_date_highlight.png");
+}
+
+.static-public-css .submit-btn {
+  background: #258ff1;
+}
+
+.static-public-css .top-btn {
+  background: #258ff1;
+}
+
+.static-public-css .normal-btn {
+  background: #258ff1;
+}
+
+.static-public-css .normal-inverse-btn {
+  border: 1px solid #258ff1;
+  color: #258ff1;
+}
+
+.static-public-css .bl-title > h2 {
+  border-left: 2px solid #258ff1;
+}
+
+.static-public-css .necessary {
+  color: #ff6600;
+}
+
+.static-public-css .search-btn {
+  background-image: url("../../images/icon_search.png");
+  background-color: #258ff1;
+}
+
+.static-public-css .checkboxes li {
+  background-image: url("../images/baseImg/icon_checkbox.png");
+}
+
+.static-public-css .checkboxes li.checked {
+  background-image: url("../images/baseImg/icon_checkbox_checked.png");
+}
+
+.static-public-css .radio {
+  background-image: url("../images/baseImg/icon_radio.png");
+}
+
+.static-public-css .radio.checked {
+  background-image: url("../images/baseImg/icon_radio_checked.png");
+}
+
+.static-public-css .com_status .cur {
+  background: #258ff1;
+  border: 1px solid #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_click {
+  background-color: #258ff1 !important;
+  color: #fff !important;
+}
+
+.static-public-css .laydate_body .laydate_top {
+  border-top: 1px solid #258ff1;
+  background-color: #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_ym {
+  border: 1px solid #258ff1;
+  background-color: #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_ym .laydate_yms {
+  border: 1px solid #258ff1;
+  background-color: #258ff1;
+  color: #fff;
+}
+
+.static-public-css .laydate_body .laydate_y .laydate_yms a {
+  border-bottom: 1px solid #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_y .laydate_yms .laydate_chdown {
+  border-top: 1px solid #258ff1;
+  border-bottom: none;
+}
+
+.static-public-css .laydate_body .laydate_choose {
+  border-left: 1px solid #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_chprev {
+  border-left: none;
+  border-right: 1px solid #258ff1;
+}
+
+.static-public-css .laydate_body .laydate_bottom .laydate_btn a:hover {
+  background-color: #258ff1;
+  color: #00625A;
+}
+
+.static-public-css .laydate_body .laydate_m .laydate_yms span:hover,
+.static-public-css .laydate_body .laydate_time .laydate_hmsno span:hover,
+.static-public-css .laydate_body .laydate_y .laydate_yms ul li:hover,
+.static-public-css .laydate_body .laydate_table td:hover {
+  background-color: #258ff1;
+  color: #fff;
+}
+
+.static-public-css .drop-checkbox-wrap .wjzs-drop-show .drop-checkbox-item {
+  background: #258ff1;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li.drop_odd {
+  background: none;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li.drop_over {
+  background: #eff4f8;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li.drop_over span {
+  color: #333;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li span {
+  background: none;
+  padding-left: 0;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li span.active {
+  background: none;
+  padding-left: 0;
+}
+
+.static-public-css .wjzs-drop-checkbox-menu li.active {
+  background: #d9f9ff;
+}
+
+/********component.css -end- *******/
+/********jquery.autocomplete.css -start- *******/
+.static-public-css .ac_over,
+.static-public-css .drop_over {
+  background-color: #258ff1;
+  color: white;
+}
+
+.static-public-css .input_drop .over_item {
+  background: #258ff1 !important;
+  color: #fff;
+}
+
+/********jquery.autocomplete.css -end- *******/
+/********jquery.datetimepicker.css -start- *******/
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect {
+  right: -7px;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect {
+  right: 2px;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {
+  color: #258ff1;
+  background: none;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover div {
+  color: #258ff1;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td:hover,
+.static-public-css .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover {
+  color: #258ff1 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td:hover div,
+.static-public-css .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover div {
+  color: #258ff1;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {
+  background: #258ff1 !important;
+  box-shadow: #178FE5 0px 1px 3px 0px inset;
+  color: #fff;
+  font-weight: 700;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current div {
+  color: #fff;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {
+  color: #258ff1;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.static-public-css .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: #258ff1 !important;
+  box-shadow: #178FE5 0px 1px 3px 0px inset;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default div,
+.static-public-css .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current div,
+.static-public-css .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current div {
+  color: #fff;
+}
+
+.static-public-css .xdsoft_sel_btns span {
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  border: solid 1px #258ff1;
+  color: #258ff1;
+  cursor: pointer;
+}
+
+.static-public-css .xdsoft_sel_btns span.selected {
+  background-color: #258ff1;
+  border: solid 1px #258ff1;
+  color: white;
+}
+
+/********jquery.datetimepicker.css -end- *******/
+/********jquery.ketchup.css -start- *******/
+.static-public-css .ketchup-error-container ol {
+  color: #ff6600;
+}
+
+.static-public-css .ketchup-error-container ol li {
+  color: #ff6600;
+}
+
+.static-public-css .ketchup-error-container-alt li {
+  color: #ff6600;
+}
+
+/********jquery.ketchup.css -end- *******/
+/********pagination.css -start- *******/
+.static-public-css .pagination > li > a:hover,
+.static-public-css .pagination > li > span:hover,
+.static-public-css .pagination > li > a:focus,
+.static-public-css .pagination > li > span:focus {
+  color: #258ff1;
+}
+
+.static-public-css .pagination > .active > a,
+.static-public-css .pagination > .active > span,
+.static-public-css .pagination > .active > a:hover,
+.static-public-css .pagination > .active > span:hover,
+.static-public-css .pagination > .active > a:focus,
+.static-public-css .pagination > .active > span:focus {
+  background: #258ff1;
+  color: #fff !important;
+  border: 1px solid #258ff1;
+}
+
+/********pagination.css -end- *******/
+/********pawj.reveal.css -start- *******/
+.static-public-css .bn-size {
+  color: #258ff1;
+  border: 1px #258ff1 solid;
+}
+
+.static-public-css .btn-success {
+  background: #258ff1;
+  color: #fff;
+}
+
+/********pawj.reveal.css -end- *******/
+/********public.css -start- *******/
+.static-public-css {
+  /*树形样式 end*/
+  /*输入框数据校验start*/
+}
+
+.static-public-css .dropbox li a:hover {
+  background-color: #258ff1;
+  color: #fff;
+}
+
+.static-public-css .side-nav-item.current {
+  background: #258ff1;
+}
+
+.static-public-css .side-more {
+  background-image: url("../images/baseImg/nav_icon/down_normal.png");
+}
+
+.static-public-css .side-more:hover {
+  background-image: url("../images/baseImg/nav_icon/down_hover.png");
+}
+
+.static-public-css .side-more_no {
+  background-image: url("../images/baseImg/nav_icon/down_no.png");
+}
+
+.static-public-css .side-bak {
+  background-image: url("../images/baseImg/nav_icon/up_normal.png");
+}
+
+.static-public-css .side-bak:hover {
+  background-image: url("../images/baseImg/nav_icon/up_hover.png");
+}
+
+.static-public-css .side-bak_no {
+  background-image: url("../images/baseImg/nav_icon/up_no.png");
+}
+
+.static-public-css .side_info_tips p {
+  background: #258ff1;
+  color: #fff !important;
+}
+
+.static-public-css .side_info_tips p.normal_tips:after {
+  background-image: url("../images/baseImg/icon_sideNavTriright.png");
+}
+
+.static-public-css .side_info_tips p.mini_tips:before {
+  background-image: url("../images/baseImg/icon_sideNavTrileft.png");
+}
+
+.static-public-css .pagination > li > a:hover,
+.static-public-css .pagination > li > span:hover {
+  color: #258ff1;
+}
+
+.static-public-css .pagination > .active > a,
+.static-public-css .pagination > .active > span,
+.static-public-css .pagination > .active > a:hover,
+.static-public-css .pagination > .active > span:hover,
+.static-public-css .pagination > .active > a:focus,
+.static-public-css .pagination > .active > span:focus {
+  background: #258ff1;
+  border: 1px solid #258ff1;
+}
+
+.static-public-css #treenav a.active {
+  color: #258ff1;
+}
+
+.static-public-css .pawjzs-error {
+  border-color: #ff6600 !important;
+  color: #ff6600 !important;
+}
+
+.static-public-css .loading-mask {
+  background-image: url("../images/baseImg/loading.gif");
+}
+
+.static-public-css .noteColor {
+  color: #ff6600 !important;
+}
+
+.static-public-css .css_appimg_wrap {
+  background-image: url("../images/baseImg/ewm_bg.png");
+}
+
+.static-public-css .checkbox-item span,
+.static-public-css .radio-item span {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .radio-item span {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .checkbox-item span.active {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .radio-item span.active {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .checkbox-item.disabled span {
+  color: #999;
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .radio-item.disabled span {
+  color: #999;
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .checkbox-item.disabled span.active {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .radio-item.disabled span.active {
+  background-image: url("../images/baseImg/all_input_icon.png");
+}
+
+.static-public-css .tablesort th {
+  background-image: url("../images/baseImg/tablesortbg.gif") !important;
+}
+
+.static-public-css .tablesort th.tablesortascending {
+  background-image: url("../images/baseImg/tablesortasc.gif") !important;
+}
+
+.static-public-css .tablesort th.tablesortdescending {
+  background-image: url("../images/baseImg/tablesortdesc.gif") !important;
+}
+
+.static-public-css .telIcon {
+  background-image: url("../images/baseImg/tel.png");
+}
+
+.static-public-css .telIcon:active,
+.static-public-css .telIcon.active {
+  background-image: url("../images/baseImg/tel-on.png");
+}
+
+
+
+
+.static-public-css .helpItem .help-a:hover {
+  color: #258ff1;
+}
+
+.static-public-css .message_remind_ul li:hover a {
+  color: #258ff1;
+}
+
+.static-public-css .rich_text_editor a {
+  color: #258ff1;
+}
+
+.static-public-css .help_video_button_css {
+  background: #258ff1;
+}
+
+/********public.css -end- *******/
+/********tooth_choose.css -start- *******/
+.static-public-css .sel_tab .act {
+  color: #258ff1;
+  border-bottom: 2px solid #258ff1;
+}
+
+.static-public-css .select_location {
+  background-image: url("../images/baseImg/select_location.png");
+}
+
+.static-public-css .sel_tab_con .audlt .chosen,
+.static-public-css .sel_tab_con .ruya .chosen {
+  border: 1px solid #258ff1;
+  background: #258ff1;
+}
+
+.static-public-css .sel_tab_con ul li .chosen {
+  border: 1px solid #258ff1;
+  background: #258ff1;
+}
+
+/********tooth_choose.css -end- *******/
+/********语音输入 -start- *******/
+.voice-input-css .icon-voice {
+  background: url("../images/baseImg/voice.png") no-repeat center;
+}
+
+.voice-input-css #pop_recorder .icon-voice {
+  background: url("../images/baseImg/voice.png") no-repeat center;
+}
+
+.voice-input-css #pop_recorder .close_recorder:hover {
+  background: url(../images/baseImg/close_recorder.svg) no-repeat;
+  background-size: 20px 20px;
+}
+
+.voice-input-css #pop_recorder .bg_round_1 {
+  background: rgba(37, 143, 241, 0.2);
+}
+
+.voice-input-css #pop_recorder .bg_round_2 {
+  background: rgba(37, 143, 241, 0.3);
+}
+
+.voice-input-css #pop_recorder .b_box > .start_recorder,
+.voice-input-css #pop_recorder .b_box > .end_recorder {
+  background: rgba(37, 143, 241, 0.5);
+}
+
+.voice-input-css #pop_recorder .b_box .icon_recorder {
+  background-color: rgba(37, 143, 241, 0.5);
+}
+
+.voice-input-css #pop p a {
+  color: #258ff1;
+}
+
+.voice-input-css #pop p a:hover {
+  color: #4d4444;
+}
+
+.voice-input-css #pop .right a {
+  color: #258ff1;
+}
+
+.voice-input-css #pop #a {
+  background: rgba(37, 143, 241, 0.5);
+}
+
+.voice-input-css #pop #a.talking {
+  background: url("../images/baseImg/voice_icon.png") no-repeat center rgba(37, 143, 241, 0.5);
+}
+
+.voice-input-css #pop .a-box {
+  background: rgba(37, 143, 241, 0.4);
+}
+
+.voice-input-css #pop .a-box.rotate {
+  animation: animated_div 1.5s linear 0s infinite normal running;
+  -moz-animation: animated_div 1.5s linear 0s infinite normal running;
+  -webkit-animation: animated_div 1.5s linear 0s infinite normal running;
+  -o-animation: animated_div 1.5s linear 0s infinite normal running;
+  background: url("../images/baseImg/voice_round.png") no-repeat center rgba(37, 143, 241, 0.4);
+}
+
+.voice-input-css #pop .icon-voice {
+  background: url("../images/baseImg/voice.png") no-repeat center;
+}
+
+.voice-input-css #pop .icon-close {
+  background: #258ff1;
+}
+
+/********语音输入 -end- *******/
+/********卡片样式 -start- *******/
+.patient-card-css .s_box_top {
+  background-color: #258ff1;
+}
+
+/********卡片样式 -end- *******/

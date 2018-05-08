@@ -13,15 +13,22 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="sex" jdbcType="CHAR" property="sex" />
     <result column="mzid" jdbcType="INTEGER" property="mzid" />
+    <result column="zhiwei" jdbcType="INTEGER" property="zhiwei" />
   </resultMap>
   <sql id="Base_Column_List">
     adminid, adminzh, adminname, password, status, createtime, roleid, keshiid, phone, 
-    sex, mzid
+    sex, mzid,zhiwei
   </sql>
+  <select id="listkeshi" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  select * from denglub where zhiwei=1 
+  <if test="parentId==0">
+  	and keshiid=#{parentId}
+  </if>
+  
+  </select>
   <select id="listAll" resultMap="BaseResultMap">
   select * from denglub
   </select>
-  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

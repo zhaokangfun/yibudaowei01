@@ -24,8 +24,18 @@ public class Denglub implements Serializable{
     private String sex;
 
     private Integer mzid;
+    
+    private Integer zhiwei;
 
-    public Integer getAdminid() {
+    public Integer getZhiwei() {
+		return zhiwei;
+	}
+
+	public void setZhiwei(Integer zhiwei) {
+		this.zhiwei = zhiwei;
+	}
+
+	public Integer getAdminid() {
         return adminid;
     }
 
