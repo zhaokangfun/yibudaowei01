@@ -8,6 +8,10 @@
   <sql id="Base_Column_List">
     lyid, lyname
   </sql>
+  
+  <select id="listall" resultMap="BaseResultMap">
+  		select * from laiyuanb 
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Laiyuanb;
 
 public interface LaiyuanbService {
@@ -14,4 +16,6 @@ public interface LaiyuanbService {
     int updateByPrimaryKeySelective(Laiyuanb record);
 
     int updateByPrimaryKey(Laiyuanb record);
+    
+    List<Laiyuanb> listall();
 }

@@ -62,6 +62,18 @@ public class HuanzhexiangxibServiceImpl implements HuanzhexiangxibService {
 		// TODO Auto-generated method stub
 		return dao.updatebyhzStatus(hzid, status);
 	}
+
+	@Override
+	public int selectId() {
+		// TODO Auto-generated method stub
+		return dao.selectId();
+	}
+
+	@Override
+	public List<Huanzhexiangxib> selectBy() {
+		// TODO Auto-generated method stub
+		return dao.selectBy();
+	}
 	
 	
 

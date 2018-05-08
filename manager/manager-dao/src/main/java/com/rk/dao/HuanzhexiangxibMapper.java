@@ -21,5 +21,8 @@ public interface HuanzhexiangxibMapper {
     
     List<Huanzhexiangxib> listOnjzStatics(Integer jzstatus);
     
+    int selectId();
+    
+    List<Huanzhexiangxib> selectBy();
     int updatebyhzStatus (@Param("hzid") Integer hzid,@Param("status") Integer status);	
 }

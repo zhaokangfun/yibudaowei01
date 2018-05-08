@@ -63,4 +63,9 @@ public class DengluServiceImpl  implements DenglubService
 		return null;
 	}
 
+	@Override
+	public List<Denglub> listkeshi(int parentId) {
+		return null;
+	}
+
 }

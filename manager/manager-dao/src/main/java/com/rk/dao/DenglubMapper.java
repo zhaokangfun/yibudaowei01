@@ -20,4 +20,6 @@ public interface DenglubMapper {
     
     Denglub dologin(@Param("adminzh") String adminzh,@Param("password") String password);
     List<Denglub> listAll();
+    List<Denglub> listkeshi(@Param("parentId")int parentId);
+    
 }

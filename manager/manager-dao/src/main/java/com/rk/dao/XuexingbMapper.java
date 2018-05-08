@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Xuexingb;
 
 public interface XuexingbMapper {
@@ -14,4 +16,6 @@ public interface XuexingbMapper {
     int updateByPrimaryKeySelective(Xuexingb record);
 
     int updateByPrimaryKey(Xuexingb record);
+    
+    List<Xuexingb> list();
 }

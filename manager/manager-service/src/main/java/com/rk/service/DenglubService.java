@@ -2,6 +2,7 @@ package com.rk.service;
 
 import java.util.List;
 
+
 import com.rk.entity.Denglub;
 
 public interface DenglubService {
@@ -21,4 +22,5 @@ public interface DenglubService {
     
     List<Denglub> listAll();
     
+    List<Denglub> listkeshi(int parentId);
 }

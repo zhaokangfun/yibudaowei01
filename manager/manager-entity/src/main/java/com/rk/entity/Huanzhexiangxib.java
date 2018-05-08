@@ -36,8 +36,18 @@ public class Huanzhexiangxib  implements Serializable {
     private String jztime;
 
     private Integer zwid;
+    
+    private Huanzhexinxib huanzhexinxib;
+    
+    public Huanzhexinxib getHuanzhexinxib() {
+		return huanzhexinxib;
+	}
 
-    public Integer getHzid() {
+	public void setHuanzhexinxib(Huanzhexinxib huanzhexinxib) {
+		this.huanzhexinxib = huanzhexinxib;
+	}
+
+	public Integer getHzid() {
         return hzid;
     }
 

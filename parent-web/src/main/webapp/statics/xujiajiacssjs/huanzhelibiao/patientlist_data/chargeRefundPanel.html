@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <script type="text/javascript" src="../switch.js"></script><link rel="stylesheet" href="../base_003.css"><link rel="stylesheet" href="chargeRefundPanel_data/base.css">
+    <link rel="stylesheet" type="text/css" href="../pawj.css">
+    <link rel="stylesheet" type="text/css" href="chargeRefundPanel_data/chargeRefundPanel.css">
+    <title></title>
+</head>
+<body class="static-public-css charge-management-css">
+
+
+<div class="content-inner">
+
+	
+	<!--弹框 退费-->
+   <div class="refundpop refund_apply">
+       <div class="popstyle">
+           <div class="popcontent">
+               <div class="refundinfo charge-info-css">
+                <!-- head 1 姓名 电话 医生-->
+						<table class="input-tableWrap" style="text-align: left; margin: 6px 0 2px;">
+							<tbody><tr>
+								<td style="padding-left: 15px;">
+									<div id="basicInfo_">
+										<span class="person"></span> 
+										<span class="line-ht clearClass" id="patientName_"></span>																				
+										<span class="line-ht clearClass" id="patientSex_"></span> 
+										<span class="line-ht clearClass" id="patientAge_"></span>
+									</div>
+								</td>
+								<td>
+									<div id="mobilePhone_">
+										<span class="phone"></span> 
+										<span class="line-ht clearClass" id="patientPhone_"></span> 
+									</div>
+								</td>
+								<td>
+									<div id="doctorInfo_">
+										<span class="department"></span> 
+										<span class="line-ht clearClass" id="doctorDept_"></span> 
+										<span class="line-ht clearClass" id="doctorName_"></span>
+									</div>
+								</td>
+							</tr>
+						</tbody></table>
+               <!-- head 2  收费流水： 结算类型：-->						
+					<table class="input-table" style="text-align: left;border: 0px;">
+                       <tbody><tr>
+                           <td style="padding-left: 15px;width:50%">
+                               <span class="form-item-title">收费流水：</span>
+                               <span class="line-ht clearClass" id="chargeNo_"></span>
+                           </td>
+                           <td>
+                               <span class="form-item-title ">结算类型：</span>
+                               <span class="line-ht clearClass" id="paymentType_"></span>
+                           </td>
+                       </tr>
+                   </tbody></table>
+               <!-- head 3 支付方式： 欠费： 优惠金额：-->
+					<table class="input-table" style="text-align: left; border: 0px;">
+                       <tbody><tr>
+                           <td style="padding-left: 15px;width:50%">
+                               <span class="form-item-title">支付方式：</span>
+                               <span class="line-ht clearClass" style="white-space: pre;" id="payType_"></span>
+                           </td>
+                           <td>
+                               <span class="form-item-title">优惠金额：</span>
+                               <span class="line-ht clearClass" id="discountFee_"></span>
+                           </td>
+                       </tr>
+                   </tbody></table>
+                   <div style="padding: 0 15px;">
+	                   <table class="refund-table dd_table" style="text-align: left; margin-left:0;">
+	                     <colgroup width="10px"></colgroup>
+	                     <colgroup width="40px"></colgroup>
+	                     <colgroup width="120px"></colgroup>
+	                     <colgroup width="70px"></colgroup>
+	                     <colgroup width="40px"></colgroup>
+	                     <colgroup width="40px"></colgroup>
+	                     <colgroup width="55px"></colgroup>
+	                     <colgroup width="60px"></colgroup>
+	                     <colgroup width="60px"></colgroup>
+	                     <colgroup width="60px"></colgroup>
+	                     <colgroup width="60px"></colgroup>
+	                     <thead>
+	                       <tr>
+	                           <th style="border-left: none;"><span class="fl"><i class="checkbox" id="checkAll"></i></span><span class="line-ht"></span></th>
+	                           <th>组号</th>
+	                           <th>项目名称</th>
+	                           <th>规格</th>
+	                           <th>剂数</th>
+	                           <th>总量</th>
+	                           <th>单位</th>
+	                           <th>单价</th>
+	                           <th>金额</th>
+                           	   <th>退费数量</th>
+	                           <th>发药状态</th>
+	                       </tr>
+	                      </thead>
+	                   </table>
+                   </div>
+                   <div class="show-refund" style="margin: 0px 15px; border: 1px solid #dfdfdf; border-top: 0;">
+                       <table class="refund-table common-table" style="border:0;">
+                            <colgroup width="36px"></colgroup>
+	                        <colgroup width="40px"></colgroup>
+	                        <colgroup width="120px"></colgroup>
+	                        <colgroup width="70px"></colgroup>
+	                        <colgroup width="40px"></colgroup>
+	                        <colgroup width="40px"></colgroup>
+	                        <colgroup width="55px"></colgroup>
+	                        <colgroup width="60px"></colgroup>
+	                        <colgroup width="60px"></colgroup>
+	                        <colgroup width="60px"></colgroup>
+	                        <colgroup width="60px"></colgroup>
+	                       
+	                        <!-- 明细列表 -->
+                            <tbody id="record-items-info" class="clearClass">
+                            </tbody>
+                       </table>
+                   </div>
+                   <div class="cause_box">
+                       <hr style="width:98%;">
+                       <table class="input-table " style="border: 0px;margin-left: 19px;">
+	                       <tbody><tr>
+	                           <td>
+	                               <span class="form-item-title" style="width: 112px;">退费方式：</span>
+					               <div class="drop" id="refundPayTypeDiv" style="width:40%;">
+					                   <input class="input-text" id="refundPayType" name="paymentType" readonly="readonly" type="text">
+					                   <i class="drop-icon"></i>
+					               </div>
+	                           </td>
+	                           <td id="owe-money-tip">
+	                               <span class="line-ht">欠费提醒：</span>
+	                               <span class="high-light-money">￥</span><span class="line-ht high-light-money clearClass" id="totalOweMoney"></span>
+	                               <span class="owe-monony-exp" title="注：若存在欠费，则退款将用于冲抵欠费。">？</span>
+	                               <span style="display:none;" class="fl"><i class="checkbox checked" id="isCounteract" style="width: 300px;line-height: 15px;padding-left: 20px;margin: 10px;">冲抵欠费</i></span>
+	                           </td>
+	                           <td>
+	                               <span class="line-ht">应退：</span>
+	                               <span class="high-light-money">￥</span><span id="refund_money_id" class="high-light-money  line-ht clearClass"></span>
+	                               <span class="dsn clearClass" id="total_money_id"></span>
+	                               <span class="dsn clearClass" id="small_money_id"></span>
+	                               <span class="dsn clearClass" id="discount_value_id"></span>
+	                               <span id="accounting_value_id clearClass" class="dsn"></span>
+	                           </td>
+	                       </tr>
+                   </tbody></table>
+                   </div>
+                   <div class="cause_box">
+                       <span class="form-item-title"><i class="necessary">*</i>退费原因：</span>
+                       <input class="input-text validate(required)" id="refund_reason_id" style="margin-left: 20px;" type="text">
+                   </div>
+                   <div class="warm-tip">温馨提示：当前退费为不可逆动作，请谨慎操作！</div>
+                   <div class="btn clear">
+                       <div class="exit" id="refund-panel-close-bn">关闭</div>
+                       <div class="sub"><a class="normal-btn disabled" href="javascript:doRefund();" id="refund_btn_id">退费</a></div><!-- WJPerm="CASH02-SAVE" -->
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+  
+</div>
+<!-- end of .content-inner -->
+
+
+<script type="text/javascript" src="chargeRefundPanel_data/jquery.js"></script>
+<script type="text/javascript" src="public.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/pawj.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/plupload.js"></script>
+<script type="text/javascript" src="../cache.js"></script>
+<script type="text/javascript" src="chargeUtil.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/chargeBizUtil.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/sessionCache.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/ybUtils.js"></script>
+<script type="text/javascript" src="mi_common.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/ybOperate.js"></script>
+<script type="text/javascript" src="chargeRefundPanel_data/chargeRefundPanel.js"></script>
+
+
+
+</body></html>

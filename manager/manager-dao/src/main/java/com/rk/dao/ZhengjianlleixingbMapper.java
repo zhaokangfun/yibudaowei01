@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Zhengjianlleixingb;
 
 public interface ZhengjianlleixingbMapper {
@@ -14,4 +16,6 @@ public interface ZhengjianlleixingbMapper {
     int updateByPrimaryKeySelective(Zhengjianlleixingb record);
 
     int updateByPrimaryKey(Zhengjianlleixingb record);
+    
+    List<Zhengjianlleixingb> list();
 }

@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?1hrc2e');
+  src:  url('fonts/icomoon.eot?1hrc2e#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?1hrc2e') format('truetype'),
+    url('fonts/icomoon.woff?1hrc2e') format('woff'),
+    url('fonts/icomoon.svg?1hrc2e#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-more_menu:before {
+  content: "\e92b";
+}
+.icon-adverse_event:before {
+  content: "\e900";
+}
+.icon-appt_clinical:before {
+  content: "\e901";
+}
+.icon-authority_management:before {
+  content: "\e902";
+}
+.icon-buy_medicine:before {
+  content: "\e903";
+}
+.icon-charging_management:before {
+  content: "\e904";
+}
+.icon-chinese_medicine:before {
+  content: "\e905";
+}
+.icon-consilia_management:before {
+  content: "\e906";
+}
+.icon-course_mgr_special:before {
+  content: "\e907";
+}
+.icon-customer_consult:before {
+  content: "\e908";
+}
+.icon-data_index:before {
+  content: "\e909";
+}
+.icon-dentist_report:before {
+  content: "\e90a";
+}
+.icon-doc_center:before {
+  content: "\e90b";
+}
+.icon-examination_hospital:before {
+  content: "\e90c";
+}
+.icon-followup_management:before {
+  content: "\e90d";
+}
+.icon-hygiene_statistics:before {
+  content: "\e90e";
+}
+.icon-insurance_management:before {
+  content: "\e90f";
+}
+.icon-main_data_management:before {
+  content: "\e910";
+}
+.icon-md_dict_management:before {
+  content: "\e911";
+}
+.icon-mec_doctor_management:before {
+  content: "\e912";
+}
+.icon-mec_nurse_management:before {
+  content: "\e913";
+}
+.icon-mec_setting_management:before {
+  content: "\e914";
+}
+.icon-mec_sum_management:before {
+  content: "\e915";
+}
+.icon-medical_image_station:before {
+  content: "\e916";
+}
+.icon-medicine_management:before {
+  content: "\e917";
+}
+.icon-member_management:before {
+  content: "\e918";
+}
+.icon-message_management:before {
+  content: "\e919";
+}
+.icon-order_management:before {
+  content: "\e91a";
+}
+.icon-os_nurse_station:before {
+  content: "\e91b";
+}
+.icon-patient_center:before {
+  content: "\e91c";
+}
+.icon-patient_file_management:before {
+  content: "\e91d";
+}
+.icon-patient_management:before {
+  content: "\e91e";
+}
+.icon-problem_feedback:before {
+  content: "\e91f";
+}
+.icon-reserve_management:before {
+  content: "\e920";
+}
+.icon-sale_drug:before {
+  content: "\e921";
+}
+.icon-scrm_management:before {
+  content: "\e922";
+}
+.icon-store_mgr:before {
+  content: "\e923";
+}
+.icon-sum_mec_doctor_management:before {
+  content: "\e924";
+}
+.icon-tcm_knowledge_base:before {
+  content: "\e925";
+}
+.icon-teeth_disinfection:before {
+  content: "\e926";
+}
+.icon-teeth_process:before {
+  content: "\e927";
+}
+.icon-telemedicine:before {
+  content: "\e928";
+}
+.icon-transfer_treatment:before {
+  content: "\e929";
+}
+.icon-wx_clinic:before {
+  content: "\e92a";
+}

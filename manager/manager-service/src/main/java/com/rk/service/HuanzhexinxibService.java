@@ -14,4 +14,5 @@ public interface HuanzhexinxibService {
     int updateByPrimaryKeySelective(Huanzhexinxib record);
 
     int updateByPrimaryKey(Huanzhexinxib record);
+   
 }
