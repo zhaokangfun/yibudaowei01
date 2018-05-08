@@ -18,4 +18,6 @@ public interface RolebMapper {
     int updateByPrimaryKey(Roleb record);
     
     List<Roleb> getAll();
+    
+    int selMaxid();
 }

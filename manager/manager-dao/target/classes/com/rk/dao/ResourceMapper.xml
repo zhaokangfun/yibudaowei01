@@ -17,6 +17,10 @@
     from resource
     where resourceid = #{resourceid,jdbcType=INTEGER}
   </select>
+  <!-- 查询全部已经启用的 -->
+  <select id="getAll" resultMap="BaseResultMap">
+  	select * from resource where status=1 
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from resource
     where resourceid = #{resourceid,jdbcType=INTEGER}

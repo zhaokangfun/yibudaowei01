@@ -48,14 +48,20 @@
   <select id="getAll" resultMap="KeShiResultMap">
   	select * from keshib k,keshishuxing ks where k.keshitypeid=ks.keshishuxingid
   </select>
-  <!-- 根据预约状态查询 -->
-  <select id="getKeshiByYuYueStatus" parameterType="java.lang.Integer" resultMap="KeShiResultMap">
+  <!-- 条件查询 -->
+  <select id="getKeshiByYuYueStatus" parameterType="com.rk.entity.Keshib" resultMap="KeShiResultMap">
   	select * from keshib k,keshishuxing ks where k.keshitypeid=ks.keshishuxingid 
-  	<if test="yuyuestatus==1">
-  		and  k.yuyuestatus=1
+  	<if test="yuyuestatus!=null">
+  		and  k.yuyuestatus=yuyuestatus
   	</if>
-  	<if test="yuyuestatus==2">
-  		and k.yuyuestatus=2
+  	<if test="status!=null">
+  		and k.status=status
+  	</if>
+  	<if test="keshiname!=null">
+  		and k.keshiname=keshiname
+  	</if>
+  	<if test="keshiid!=null">
+  		and k.keshiid=keshiid
   	</if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

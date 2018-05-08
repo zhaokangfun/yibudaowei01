@@ -19,6 +19,6 @@ public interface KeshibMapper {
     
     //查询所有
     List<Keshib> getAll();
-    //根据预约状态查询
-    List<Keshib> getKeshiByYuYueStatus(Integer yuyuestatus);
+    //根据条件查询
+    List<Keshib> getKeshiByYuYueStatus(Keshib keshib);
 }

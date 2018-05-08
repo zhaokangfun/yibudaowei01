@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -10,7 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="fm"%>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -19,14 +19,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<details>
+		<summary>
+			aasdda
+		</summary>
+		<p>
+			ASdadAdsadsadsadsadsadsad萨达
+		</p>
+	</details>
+	<p>我是甲甲的哥哥</p>
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="js/layer.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			alert("asd");
-			layer.msg("asd",{icon:1,time:2000});
-		});
 	</script>
 </body>
 </html>

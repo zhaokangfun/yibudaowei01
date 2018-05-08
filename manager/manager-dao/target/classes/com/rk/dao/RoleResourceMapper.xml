@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rk.dao.RoleResourceMapper">
+  <resultMap id="BaseResultMap" type="com.rk.entity.RoleResource">
+    <result column="roleid" jdbcType="INTEGER" property="roleid" />
+    <result column="resourceid" jdbcType="INTEGER" property="resourceid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.rk.entity.RoleResource">
+    insert into role_resource (roleid, resourceid)
+    values (#{roleid,jdbcType=INTEGER}, #{resourceid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rk.entity.RoleResource">
+    insert into role_resource
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        roleid,
+      </if>
+      <if test="resourceid != null">
+        resourceid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleid != null">
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="resourceid != null">
+        #{resourceid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

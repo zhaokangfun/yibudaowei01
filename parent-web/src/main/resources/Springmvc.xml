@@ -98,10 +98,12 @@
 		interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
 	<dubbo:reference
 		interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
-	
+	 <dubbo:reference interface="com.rk.service.ResourceService" id="resourceService" />
 	 <dubbo:reference interface="com.rk.service.ShijianduanbService" id="shijianduanbService" />
 	 <dubbo:reference interface="com.rk.service.DenglubService" id="dengluService" />
 	 <dubbo:reference interface="com.rk.service.YuyuehcbService" id="yuyuehcbService" />
 	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
 	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
+	 <dubbo:reference interface="com.rk.service.YuyueguizebService" id="yuyueguizebService" />
+	 <dubbo:reference interface="com.rk.service.RoleResourceService" id="roleResourceService" />
 </beans>

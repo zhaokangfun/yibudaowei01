@@ -1,1 +1,718 @@
-.clinic-management-css .tab-content{border:1px solid #dfdfdf}.clinic-management-css .left-column{border-right:1px solid #dfdfdf}.clinic-management-css .left-column-head{border:solid #dfdfdf;border-width:1px 0;background:#efefef;color:#5c5c5c}.clinic-management-css .left-column-menu .has-submenu{background:url("../../resources/images/baseImg/icon_drop.png") left 12px no-repeat}.clinic-management-css .left-column-list .current>a,.clinic-management-css .left-column-menu .current>a{color:#258ff1}.clinic-management-css .btn-group .btn{background:#258ff1}.clinic-management-css .btn-group .btn.btn-cancel{border:1px solid #258ff1;background:#f9f9f9;color:#258ff1}.clinic-management-css .btn-add{border:1px solid #258ff1;background:#f9f9f9;color:#258ff1}.clinic-management-css .icon-btn-add{background:url("../images/baseImg/icon_add.png") no-repeat}.clinic-management-css .input-textarea{border:1px solid #dfdfdf;background:#fff}.clinic-management-css .working-department-checkboxes{border:1px solid #dfdfdf;background:#fff}.clinic-management-css #role_management .level1-checkboxes{background:#eff4f8}.clinic-management-css #role_management .left-column-list .delete{background:url("../images/baseImg/icon_delete_item.png") no-repeat}.clinic-management-css .drop-select{border:1px solid #dfdfdf}.clinic-management-css .drop-select-menu{background:#fff;border:1px solid #dfdfdf}.clinic-management-css .input-table{border-top:1px solid #dfdfdf}.clinic-management-css .popup-account-setting p,.clinic-management-css .popup-pwd-reset-success p{color:#5c5c5c}.clinic-management-css .param-edit-area{border-left:1px solid #dfdfdf}.clinic-management-css .param-edit-area .param-table-content{border-bottom:1px solid #dfdfdf;border-top:1px solid #dfdfdf}.clinic-management-css .borderSet{border:0 solid #dfdfdf}.clinic-management-css #list_div .tb_detail_wrap{border:1px solid #dfdfdf}.clinic-management-css .table-content{border-bottom:1px solid #dfdfdf;border-top:1px solid #dfdfdf}.clinic-management-css .btn-refresh{background:url("../images/baseImg/create-vip.png") center no-repeat #258ff1}.clinic-management-css .checkboxes-chooseBox #permissionDiv{border-bottom:1px solid #dfdfdf}.clinic-management-css .change-number{color:#258ff1}.clinic-management-css input.input-text[disabled]{color:#999!important}.clinic-management-css .no-img{color:#f60}.clinic-management-css .no-img:before{border-bottom:2px solid #999}.clinic-management-css .no-img:after{border-left:2px solid #999}.clinic-management-css .these-ul .second-col{border:1px solid #666}.clinic-management-css .these-ul .third-col{color:#258ff1}.clinic-management-css .btn-groups{border:1px solid #258ff1}.clinic-management-css .cancel-btn{color:#258ff1;background:#fff}.clinic-management-css .save-btn{color:#fff;background:#258ff1}.clinic-management-css #imgOne{background:url("../../resources/images/baseImg/delete_phote.png") no-repeat}.clinic-management-css .add-photo i{background:url("../../resources/images/baseImg/delete_phote.png") no-repeat}.add-doctor-css .addDoctor-info{border-bottom:1px solid #dfdfdf}.add-doctor-css .phoneInfo{border-bottom:1px solid #dfdfdf}.add-doctor-css .doctor-blue-btn{color:#258ff1}.add-doctor-css .upload-qualification{border-bottom:1px solid #dfdfdf}.add-doctor-css .upload-hint{color:#f60;background:url("../../resources/images/baseImg/login/lg-error.png") left center no-repeat}.add-doctor-css .detail_more_up{background:url("../../resources/images/baseImg/arrow_up.png") no-repeat}.add-doctor-css .detail_more_down{background:url("../../resources/images/baseImg/arrow_down.png") no-repeat}.add-doctor-css .upload-qualification-info{border-bottom:1px solid #dfdfdf}.add-doctor-css .other-setInfo{border-bottom:1px solid #dfdfdf}.add-doctor-css .other-setInfo-hint span{color:#f60}.add-doctor-css #changeNumber .popTop{border-bottom:1px solid #dfdfdf}.add-doctor-css #changeNumber .securityCode{color:#fff;background:#c0c0c0}.add-doctor-css #changeNumber .hint{color:#f60}.add-doctor-css #changeNumber .btn-wrap .btn{border:1px solid #258ff1;background:#258ff1}.add-doctor-css #changeNumber .btn-wrap .cancleButton{color:#258ff1}.add-doctor-css #jumpToClinicCenter{color:#258ff1}.add-doctor-css #detail_title{color:#258ff1}.authority-manage-css .tab-content{border:1px solid #dfdfdf}.authority-manage-css .left-column{border-right:1px solid #dfdfdf}.authority-manage-css .right-table-area{border-left:1px solid #dfdfdf}.authority-manage-css .left-column-head{border-bottom:1px solid #dfdfdf;background:#efefef;color:#5c5c5c}.authority-manage-css .left-column-menu .has-submenu{background:url("../../resources/images/baseImg/icon_drop.png") left 12px no-repeat}.authority-manage-css .left-column-list .current>a,.authority-manage-css .left-column-menu .current>a{color:#258ff1}.authority-manage-css .icon-delete{background:url("../../resources/images/baseImg/garbage.png") no-repeat}.authority-manage-css .note-text{color:#a4a4a4}.authority-manage-css .popup-account-setting p,.authority-manage-css .popup-pwd-reset-success p{color:#5c5c5c}.authority-manage-css .checkbox{background:url("../../resources/images/baseImg/icon_checkbox.png") left center no-repeat;color:#5c5c5c}.authority-manage-css .checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") left center no-repeat}.authority-manage-css .date-separator{color:#258ff1}.authority-manage-css .input-text.invalid-input{background:#ffede4;border-color:#f60}.authority-manage-css .popup-role-preview .popCon{border:1px solid #dfdfdf}.authority-manage-css .popup-role-preview li{color:#a4a4a4}.authority-manage-css .popup-role-preview .fl{border-right:1px solid #dfdfdf}.authority-manage-css .popup-role-preview .fl li.current{color:#258ff1}.authority-manage-css .in-use{background:#258ff1;color:#fff}.authority-manage-css .drop-checkboxes{background:#fff}.authority-manage-css .drop-checkboxes-menu-wrapper{background:#fff;border:1px solid #dfdfdf}.authority-manage-css .drop-checkbox{background:url("../../resources/images/baseImg/icon_checkbox.png") 10px center no-repeat}.authority-manage-css .drop-checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px center no-repeat}.authority-manage-css .drop-checkboxes>p{border:1px solid #dfdfdf;background:#fff}.authority-manage-css .tip{background:#eff4f8;color:#a4a4a4}.authority-manage-css .expand{background:url("../../resources/images/baseImg/icon_zk.png") no-repeat}.authority-manage-css .contract{background:url("../../resources/images/baseImg/icon_sq.png") no-repeat}.authority-manage-css .ulFlag{border:1px solid #f60}.employee-css .icon-delete{background:url("../../resources/images/baseImg/garbage.png") no-repeat}.employee-css .popup-account-setting p,.employee-css .popup-pwd-reset-success p{color:#5c5c5c}.employee-css .checkbox{background:url("../../resources/images/baseImg/icon_checkbox.png") left center no-repeat;color:#5c5c5c}.employee-css .checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") left center no-repeat}.employee-css .date-separator{color:#258ff1}.employee-css .icon-add{background:url("../images/baseImg/icon_add.png") no-repeat}.employee-css .popup-role-preview .popCon{border:1px solid #dfdfdf}.employee-css .popup-role-preview li{color:#a4a4a4}.employee-css .popup-role-preview .fl{border-right:1px solid #dfdfdf}.employee-css .popup-role-preview .fl li.current{color:#258ff1}.employee-css .in-use{background:#258ff1;color:#fff}.employee-css .drop-checkboxes{background:#fff}.employee-css .drop-checkboxes-menu-wrapper{background:#fff;border:1px solid #dfdfdf}.employee-css .drop-checkbox{padding-left:30px;background:url("../../resources/images/baseImg/icon_checkbox.png") 10px center no-repeat}.employee-css .drop-checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px center no-repeat}.employee-css .drop-checkboxes>p{font-size:12px;border:1px solid #dfdfdf;background:#fff}.employee-css .tip{background:#eff4f8;color:#a4a4a4}.employee-css .disableClick{background-color:#aaa}.label-set-css .tab-content{border:1px solid #dfdfdf}.label-set-css .labelSet-content .table-wrap{border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf}.label-set-css .labelSet-content .common-table td .btn{color:#258ff1;border:1px solid #258ff1;background:#fff}.label-set-css .labelSet-content .common-table td input:not([readonly=readonly]){border:1px solid #dfdfdf;background:#fff}.label-set-css .labelSet-content .common-table td .btn.save{color:#fff;background:#258ff1}.label-set-css .labelSet-content .common-table td .btn.cancel{color:#f60;border:1px solid #f60}.paramMgr-css .form-item-title{color:#242f44}.paramMgr-css .form-item-nop{color:#c0c0c0}.paramMgr-css #mem_title{color:#f9f9f9}.paramMgr-css .select-length .drop-icon{background-color:#fff}.rolePre-css .icon-delete{background:url("../../resources/images/baseImg/garbage.png") no-repeat}.rolePre-css .note-text{color:#a4a4a4}.rolePre-css .popup-account-setting p,.rolePre-css .popup-pwd-reset-success p{color:#5c5c5c}.rolePre-css .checkbox{background:url("../../resources/images/baseImg/icon_checkbox.png") left center no-repeat;color:#5c5c5c}.rolePre-css .checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") left center no-repeat}.rolePre-css .date-separator{color:#258ff1}.rolePre-css .icon-add{background:url("../images/baseImg/icon_add.png") no-repeat}.rolePre-css .popup-role-preview .popCon{border:1px solid #dfdfdf}.rolePre-css .popup-role-preview li{color:#a4a4a4}.rolePre-css .popup-role-preview .fl{border-right:1px solid #dfdfdf}.rolePre-css .popup-role-preview .fl li.current{color:#258ff1}.rolePre-css .in-use{background:#258ff1;color:#fff}.rolePre-css .drop-checkboxes{background:#fff}.rolePre-css .drop-checkboxes-menu-wrapper{background:#fff;border:1px solid #dfdfdf}.rolePre-css .drop-checkbox{background:url("../../resources/images/baseImg/icon_checkbox.png") 10px center no-repeat}.rolePre-css .drop-checkbox.checked{background:url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px center no-repeat}.rolePre-css .drop-checkboxes>p{border:1px solid #dfdfdf;background:#fff}.rolePre-css .tip{background:#eff4f8;color:#a4a4a4}.rolePre-css .disableClick{background-color:#aaa}.tcmDrug-match-css .tab-content{border:1px solid #dfdfdf}.tcmDrug-match-css .labelSet-content .table-wrap{border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf}.tcmDrug-match-css .labelSet-content .common-table td .btn{color:#258ff1;border:1px solid #258ff1;background:#fff}.tcmDrug-match-css .labelSet-content .common-table td input:not([readonly=readonly]){border:1px solid #dfdfdf;background:#fff}.tcmDrug-match-css .labelSet-content .common-table td .btn.save{color:#fff;background:#258ff1}.tcmDrug-match-css .labelSet-content .common-table td .btn.cancel{color:#f60;border:1px solid #f60}.employee-edit-css .person-img .img-input{background:url("../../resources/images/baseImg/wx-add.png") center center no-repeat #fff}.employee-edit-css .employee-list .employee-item a{color:#258ff1}.employee-edit-css .employee-list .checked{color:#258ff1}.employee-edit-css .employee-list .doctor-div .tips a{color:#258ff1}.employee-edit-css .btn-wrap .btn{border:1px solid #258ff1;background:#258ff1}.employee-edit-css .btn-wrap .btn-return,.employee-edit-css .btn-wrap .btn-cancel{color:#258ff1}.employee-edit-css .newEmpPop .code span,.employee-edit-css .newEmpPop .countdown span{color:#258ff1}.employee-edit-css .employee-pop .ver-msg{color:#f60}.employee-edit-css .employee-pop .employeeTel-list li a{color:#258ff1}.employee-edit-css .employee-pop .employeeTel-list li a span{color:#258ff1}.employee-edit-css .employee-pop .preview-content .preview-menu li.active{color:#258ff1}.employee-edit-css .employee-pop .preview-content .preview-list ul li{background:url("../../resources/images/baseImg/treezk.png") no-repeat left 10px}.employee-edit-css .drop-checkbox-wrap .wjzs-drop-show .drop-checkbox-item{background:#258ff1}.employee-edit-css .btn-wrap .btn-return,.employee-edit-css .btn-wrap .btn-cancel{color:#258ff1;background:0}.employee-edit-css .wjzs-drop-checkbox-menu li{padding:6px 5px;float:none}.employee-edit-css .wjzs-drop-checkbox-menu li.drop_odd{background:0}.employee-edit-css .wjzs-drop-checkbox-menu li.drop_over{background:#eff4f8}.employee-edit-css .wjzs-drop-checkbox-menu li.drop_over span{color:#333}.employee-edit-css .wjzs-drop-checkbox-menu li span{background:0;padding-left:0}.employee-edit-css .wjzs-drop-checkbox-menu li span.active{background:0;padding-left:0}.employee-edit-css .wjzs-drop-checkbox-menu li.active{background:#d9f9ff}.employee-edit-css .disabledDrop{pointer-events:none!important;background:#f3f3f3}.employee-edit-css .warn{color:#f60}
+.clinic-management-css .tab-content {
+	border: 1px solid #dfdfdf
+}
+
+.clinic-management-css .left-column {
+	border-right: 1px solid #dfdfdf
+}
+
+.clinic-management-css .left-column-head {
+	border: solid #dfdfdf;
+	border-width: 1px 0;
+	background: #efefef;
+	color: #5c5c5c
+}
+
+.clinic-management-css .left-column-menu .has-submenu {
+	background: url("../../resources/images/baseImg/icon_drop.png") left
+		12px no-repeat
+}
+
+.clinic-management-css .left-column-list .current>a,
+	.clinic-management-css .left-column-menu .current>a {
+	color: #258ff1
+}
+
+.clinic-management-css .btn-group .btn {
+	background: #258ff1
+}
+
+.clinic-management-css .btn-group .btn.btn-cancel {
+	border: 1px solid #258ff1;
+	background: #f9f9f9;
+	color: #258ff1
+}
+
+.clinic-management-css .btn-add {
+	border: 1px solid #258ff1;
+	background: #f9f9f9;
+	color: #258ff1
+}
+
+.clinic-management-css .icon-btn-add {
+	background: url("../images/baseImg/icon_add.png") no-repeat
+}
+
+.clinic-management-css .input-textarea {
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.clinic-management-css .working-department-checkboxes {
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.clinic-management-css #role_management .level1-checkboxes {
+	background: #eff4f8
+}
+
+.clinic-management-css #role_management .left-column-list .delete {
+	background: url("../images/baseImg/icon_delete_item.png") no-repeat
+}
+
+.clinic-management-css .drop-select {
+	border: 1px solid #dfdfdf
+}
+
+.clinic-management-css .drop-select-menu {
+	background: #fff;
+	border: 1px solid #dfdfdf
+}
+
+.clinic-management-css .input-table {
+	border-top: 1px solid #dfdfdf
+}
+
+.clinic-management-css .popup-account-setting p, .clinic-management-css .popup-pwd-reset-success p
+	{
+	color: #5c5c5c
+}
+
+.clinic-management-css .param-edit-area {
+	border-left: 1px solid #dfdfdf
+}
+
+.clinic-management-css .param-edit-area .param-table-content {
+	border-bottom: 1px solid #dfdfdf;
+	border-top: 1px solid #dfdfdf
+}
+
+.clinic-management-css .borderSet {
+	border: 0 solid #dfdfdf
+}
+
+.clinic-management-css #list_div .tb_detail_wrap {
+	border: 1px solid #dfdfdf
+}
+
+.clinic-management-css .table-content {
+	border-bottom: 1px solid #dfdfdf;
+	border-top: 1px solid #dfdfdf
+}
+
+.clinic-management-css .btn-refresh {
+	background: url("../images/baseImg/create-vip.png") center no-repeat
+		#258ff1
+}
+
+.clinic-management-css .checkboxes-chooseBox #permissionDiv {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.clinic-management-css .change-number {
+	color: #258ff1
+}
+
+.clinic-management-css input.input-text[disabled] {
+	color: #999 !important
+}
+
+.clinic-management-css .no-img {
+	color: #f60
+}
+
+.clinic-management-css .no-img:before {
+	border-bottom: 2px solid #999
+}
+
+.clinic-management-css .no-img:after {
+	border-left: 2px solid #999
+}
+
+.clinic-management-css .these-ul .second-col {
+	border: 1px solid #666
+}
+
+.clinic-management-css .these-ul .third-col {
+	color: #258ff1
+}
+
+.clinic-management-css .btn-groups {
+	border: 1px solid #258ff1
+}
+
+.clinic-management-css .cancel-btn {
+	color: #258ff1;
+	background: #fff
+}
+
+.clinic-management-css .save-btn {
+	color: #fff;
+	background: #258ff1
+}
+
+.clinic-management-css #imgOne {
+	background: url("../../resources/images/baseImg/delete_phote.png")
+		no-repeat
+}
+
+.clinic-management-css .add-photo i {
+	background: url("../../resources/images/baseImg/delete_phote.png")
+		no-repeat
+}
+
+.add-doctor-css .addDoctor-info {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css .phoneInfo {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css .doctor-blue-btn {
+	color: #258ff1
+}
+
+.add-doctor-css .upload-qualification {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css .upload-hint {
+	color: #f60;
+	background: url("../../resources/images/baseImg/login/lg-error.png")
+		left center no-repeat
+}
+
+.add-doctor-css .detail_more_up {
+	background: url("../../resources/images/baseImg/arrow_up.png") no-repeat
+}
+
+.add-doctor-css .detail_more_down {
+	background: url("../../resources/images/baseImg/arrow_down.png")
+		no-repeat
+}
+
+.add-doctor-css .upload-qualification-info {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css .other-setInfo {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css .other-setInfo-hint span {
+	color: #f60
+}
+
+.add-doctor-css #changeNumber .popTop {
+	border-bottom: 1px solid #dfdfdf
+}
+
+.add-doctor-css #changeNumber .securityCode {
+	color: #fff;
+	background: #c0c0c0
+}
+
+.add-doctor-css #changeNumber .hint {
+	color: #f60
+}
+
+.add-doctor-css #changeNumber .btn-wrap .btn {
+	border: 1px solid #258ff1;
+	background: #258ff1
+}
+
+.add-doctor-css #changeNumber .btn-wrap .cancleButton {
+	color: #258ff1
+}
+
+.add-doctor-css #jumpToClinicCenter {
+	color: #258ff1
+}
+
+.add-doctor-css #detail_title {
+	color: #258ff1
+}
+
+.authority-manage-css .tab-content {
+	border: 1px solid #dfdfdf
+}
+
+.authority-manage-css .left-column {
+	border-right: 1px solid #dfdfdf
+}
+
+.authority-manage-css .right-table-area {
+	border-left: 1px solid #dfdfdf
+}
+
+.authority-manage-css .left-column-head {
+	border-bottom: 1px solid #dfdfdf;
+	background: #efefef;
+	color: #5c5c5c
+}
+
+.authority-manage-css .left-column-menu .has-submenu {
+	background: url("../../resources/images/baseImg/icon_drop.png") left
+		12px no-repeat
+}
+
+.authority-manage-css .left-column-list .current>a,
+	.authority-manage-css .left-column-menu .current>a {
+	color: #258ff1
+}
+
+.authority-manage-css .icon-delete {
+	background: url("../../resources/images/baseImg/garbage.png") no-repeat
+}
+
+.authority-manage-css .note-text {
+	color: #a4a4a4
+}
+
+.authority-manage-css .popup-account-setting p, .authority-manage-css .popup-pwd-reset-success p
+	{
+	color: #5c5c5c
+}
+
+.authority-manage-css .checkbox {
+	background: url("../../resources/images/baseImg/icon_checkbox.png") left
+		center no-repeat;
+	color: #5c5c5c
+}
+
+.authority-manage-css .checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") left
+		center no-repeat
+}
+
+.authority-manage-css .date-separator {
+	color: #258ff1
+}
+
+.authority-manage-css .input-text.invalid-input {
+	background: #ffede4;
+	border-color: #f60
+}
+
+.authority-manage-css .popup-role-preview .popCon {
+	border: 1px solid #dfdfdf
+}
+
+.authority-manage-css .popup-role-preview li {
+	color: #a4a4a4
+}
+
+.authority-manage-css .popup-role-preview .fl {
+	border-right: 1px solid #dfdfdf
+}
+
+.authority-manage-css .popup-role-preview .fl li.current {
+	color: #258ff1
+}
+
+.authority-manage-css .in-use {
+	background: #258ff1;
+	color: #fff
+}
+
+.authority-manage-css .drop-checkboxes {
+	background: #fff
+}
+
+.authority-manage-css .drop-checkboxes-menu-wrapper {
+	background: #fff;
+	border: 1px solid #dfdfdf
+}
+
+.authority-manage-css .drop-checkbox {
+	background: url("../../resources/images/baseImg/icon_checkbox.png") 10px
+		center no-repeat
+}
+
+.authority-manage-css .drop-checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px
+		center no-repeat
+}
+
+.authority-manage-css .drop-checkboxes>p {
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.authority-manage-css .tip {
+	background: #eff4f8;
+	color: #a4a4a4
+}
+
+.authority-manage-css .expand {
+	background: url("../../resources/images/baseImg/icon_zk.png") no-repeat
+}
+
+.authority-manage-css .contract {
+	background: url("../../resources/images/baseImg/icon_sq.png") no-repeat
+}
+
+.authority-manage-css .ulFlag {
+	border: 1px solid #f60
+}
+
+.employee-css .icon-delete {
+	background: url("../../resources/images/baseImg/garbage.png") no-repeat
+}
+
+.employee-css .popup-account-setting p, .employee-css .popup-pwd-reset-success p
+	{
+	color: #5c5c5c
+}
+
+.employee-css .checkbox {
+	background: url("../../resources/images/baseImg/icon_checkbox.png") left
+		center no-repeat;
+	color: #5c5c5c
+}
+
+.employee-css .checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") left
+		center no-repeat
+}
+
+.employee-css .date-separator {
+	color: #258ff1
+}
+
+.employee-css .icon-add {
+	background: url("../images/baseImg/icon_add.png") no-repeat
+}
+
+.employee-css .popup-role-preview .popCon {
+	border: 1px solid #dfdfdf
+}
+
+.employee-css .popup-role-preview li {
+	color: #a4a4a4
+}
+
+.employee-css .popup-role-preview .fl {
+	border-right: 1px solid #dfdfdf
+}
+
+.employee-css .popup-role-preview .fl li.current {
+	color: #258ff1
+}
+
+.employee-css .in-use {
+	background: #258ff1;
+	color: #fff
+}
+
+.employee-css .drop-checkboxes {
+	background: #fff
+}
+
+.employee-css .drop-checkboxes-menu-wrapper {
+	background: #fff;
+	border: 1px solid #dfdfdf
+}
+
+.employee-css .drop-checkbox {
+	padding-left: 30px;
+	background: url("../../resources/images/baseImg/icon_checkbox.png") 10px
+		center no-repeat
+}
+
+.employee-css .drop-checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px
+		center no-repeat
+}
+
+.employee-css .drop-checkboxes>p {
+	font-size: 12px;
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.employee-css .tip {
+	background: #eff4f8;
+	color: #a4a4a4
+}
+
+.employee-css .disableClick {
+	background-color: #aaa
+}
+
+.label-set-css .tab-content {
+	border: 1px solid #dfdfdf
+}
+
+.label-set-css .labelSet-content .table-wrap {
+	border-top: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf
+}
+
+.label-set-css .labelSet-content .common-table td .btn {
+	color: #258ff1;
+	border: 1px solid #258ff1;
+	background: #fff
+}
+
+.label-set-css .labelSet-content .common-table td input:not ([readonly=readonly]
+	){
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.label-set-css .labelSet-content .common-table td .btn.save {
+	color: #fff;
+	background: #258ff1
+}
+
+.label-set-css .labelSet-content .common-table td .btn.cancel {
+	color: #f60;
+	border: 1px solid #f60
+}
+
+.paramMgr-css .form-item-title {
+	color: #242f44
+}
+
+.paramMgr-css .form-item-nop {
+	color: #c0c0c0
+}
+
+.paramMgr-css #mem_title {
+	color: #f9f9f9
+}
+
+.paramMgr-css .select-length .drop-icon {
+	background-color: #fff
+}
+
+.rolePre-css .icon-delete {
+	background: url("../../resources/images/baseImg/garbage.png") no-repeat
+}
+
+.rolePre-css .note-text {
+	color: #a4a4a4
+}
+
+.rolePre-css .popup-account-setting p, .rolePre-css .popup-pwd-reset-success p
+	{
+	color: #5c5c5c
+}
+
+.rolePre-css .checkbox {
+	background: url("../../resources/images/baseImg/icon_checkbox.png") left
+		center no-repeat;
+	color: #5c5c5c
+}
+
+.rolePre-css .checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") left
+		center no-repeat
+}
+
+.rolePre-css .date-separator {
+	color: #258ff1
+}
+
+.rolePre-css .icon-add {
+	background: url("../images/baseImg/icon_add.png") no-repeat
+}
+
+.rolePre-css .popup-role-preview .popCon {
+	border: 1px solid #dfdfdf
+}
+
+.rolePre-css .popup-role-preview li {
+	color: #a4a4a4
+}
+
+.rolePre-css .popup-role-preview .fl {
+	border-right: 1px solid #dfdfdf
+}
+
+.rolePre-css .popup-role-preview .fl li.current {
+	color: #258ff1
+}
+
+.rolePre-css .in-use {
+	background: #258ff1;
+	color: #fff
+}
+
+.rolePre-css .drop-checkboxes {
+	background: #fff
+}
+
+.rolePre-css .drop-checkboxes-menu-wrapper {
+	background: #fff;
+	border: 1px solid #dfdfdf
+}
+
+.rolePre-css .drop-checkbox {
+	background: url("../../resources/images/baseImg/icon_checkbox.png") 10px
+		center no-repeat
+}
+
+.rolePre-css .drop-checkbox.checked {
+	background:
+		url("../../resources/images/baseImg/icon_checkbox_checked.png") 10px
+		center no-repeat
+}
+
+.rolePre-css .drop-checkboxes>p {
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.rolePre-css .tip {
+	background: #eff4f8;
+	color: #a4a4a4
+}
+
+.rolePre-css .disableClick {
+	background-color: #aaa
+}
+
+.tcmDrug-match-css .tab-content {
+	border: 1px solid #dfdfdf
+}
+
+.tcmDrug-match-css .labelSet-content .table-wrap {
+	border-top: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf
+}
+
+.tcmDrug-match-css .labelSet-content .common-table td .btn {
+	color: #258ff1;
+	border: 1px solid #258ff1;
+	background: #fff
+}
+
+.tcmDrug-match-css .labelSet-content .common-table td input:not ([readonly=readonly]
+	){
+	border: 1px solid #dfdfdf;
+	background: #fff
+}
+
+.tcmDrug-match-css .labelSet-content .common-table td .btn.save {
+	color: #fff;
+	background: #258ff1
+}
+
+.tcmDrug-match-css .labelSet-content .common-table td .btn.cancel {
+	color: #f60;
+	border: 1px solid #f60
+}
+
+.employee-edit-css .person-img .img-input {
+	background: url("../../resources/images/baseImg/wx-add.png") center
+		center no-repeat #fff
+}
+
+.employee-edit-css .employee-list .employee-item a {
+	color: #258ff1
+}
+
+.employee-edit-css .employee-list .checked {
+	color: #258ff1
+}
+
+.employee-edit-css .employee-list .doctor-div .tips a {
+	color: #258ff1
+}
+
+.employee-edit-css .btn-wrap .btn {
+	border: 1px solid #258ff1;
+	background: #258ff1
+}
+
+.employee-edit-css .btn-wrap .btn-return, .employee-edit-css .btn-wrap .btn-cancel
+	{
+	color: #258ff1
+}
+
+.employee-edit-css .newEmpPop .code span, .employee-edit-css .newEmpPop .countdown span
+	{
+	color: #258ff1
+}
+
+.employee-edit-css .employee-pop .ver-msg {
+	color: #f60
+}
+
+.employee-edit-css .employee-pop .employeeTel-list li a {
+	color: #258ff1
+}
+
+.employee-edit-css .employee-pop .employeeTel-list li a span {
+	color: #258ff1
+}
+
+.employee-edit-css .employee-pop .preview-content .preview-menu li.active
+	{
+	color: #258ff1
+}
+
+.employee-edit-css .employee-pop .preview-content .preview-list ul li {
+	background: url("../../resources/images/baseImg/treezk.png") no-repeat
+		left 10px
+}
+
+.employee-edit-css .drop-checkbox-wrap .wjzs-drop-show .drop-checkbox-item
+	{
+	background: #258ff1
+}
+
+.employee-edit-css .btn-wrap .btn-return, .employee-edit-css .btn-wrap .btn-cancel
+	{
+	color: #258ff1;
+	background: 0
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li {
+	padding: 6px 5px;
+	float: none
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li.drop_odd {
+	background: 0
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li.drop_over {
+	background: #eff4f8
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li.drop_over span {
+	color: #333
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li span {
+	background: 0;
+	padding-left: 0
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li span.active {
+	background: 0;
+	padding-left: 0
+}
+
+.employee-edit-css .wjzs-drop-checkbox-menu li.active {
+	background: #d9f9ff
+}
+
+.employee-edit-css .disabledDrop {
+	pointer-events: none !important;
+	background: #f3f3f3
+}
+
+.employee-edit-css .warn {
+	color: #f60
+}

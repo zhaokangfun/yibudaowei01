@@ -28,8 +28,7 @@ public class RolebServiceImpl implements RolebService {
 
 	@Override
 	public int insertSelective(Roleb record) {
-		// TODO Auto-generated method stub
-		return 0;
+		return roleMapper.insertSelective(record);
 	}
 
 	@Override
@@ -53,6 +52,11 @@ public class RolebServiceImpl implements RolebService {
 	@Override
 	public List<Roleb> getAll() {
 		return roleMapper.getAll();
+	}
+
+	@Override
+	public int selMaxid() {
+		return roleMapper.selMaxid();
 	}
 	 
 }

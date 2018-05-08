@@ -1,5 +1,7 @@
 package com.rk.service;
 
+import java.util.List;
+
 import com.rk.entity.Resource;
 
 public interface ResourceService {
@@ -14,4 +16,6 @@ public interface ResourceService {
     int updateByPrimaryKeySelective(Resource record);
 
     int updateByPrimaryKey(Resource record);
+    
+    List<Resource> getAll();
 }

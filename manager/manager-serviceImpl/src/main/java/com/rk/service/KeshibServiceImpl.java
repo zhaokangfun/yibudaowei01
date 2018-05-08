@@ -28,8 +28,7 @@ public class KeshibServiceImpl implements KeshibService {
 
 	@Override
 	public int insertSelective(Keshib record) {
-		// TODO Auto-generated method stub
-		return 0;
+		return keshibmapper.insertSelective(record);
 	}
 
 	@Override
@@ -54,8 +53,9 @@ public class KeshibServiceImpl implements KeshibService {
 	}
 
 	@Override
-	public List<Keshib> getKeshiByYuYueStatus(Integer yuyuestatus) {
-		return keshibmapper.getKeshiByYuYueStatus(yuyuestatus);
+	public List<Keshib> getKeshiByYuYueStatus(Keshib keshi) {
+		return keshibmapper.getKeshiByYuYueStatus(keshi);
 	}
+
 
 }

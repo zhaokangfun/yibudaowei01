@@ -19,4 +19,6 @@ public interface RolebService {
     int updateByPrimaryKey(Roleb record);
     
     List<Roleb> getAll();
+    
+    int selMaxid();
 }

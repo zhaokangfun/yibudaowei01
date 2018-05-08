@@ -134,7 +134,7 @@
 }
 
 .static-public-css .drop-icon {
-  background-image: url("../images/baseImg/icon_drop.png");
+  background-image: url("../images/icon_drop.png");
 }
 
 .static-public-css .drop-menu li.drop_over,
@@ -172,7 +172,7 @@
 }
 
 .static-public-css .search-btn {
-  background-image: url("../images/baseImg/icon_search.png");
+  background-image: url("../images/icon_search.png");
   background-color: #258ff1;
 }
 
