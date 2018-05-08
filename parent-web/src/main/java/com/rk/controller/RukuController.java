@@ -47,7 +47,7 @@ public class RukuController {
 	}
 	
 	/**
-	 * 文本框
+	 * 文本框（没用上）
 	 * @return
 	 */
 	@RequestMapping("textsele")

@@ -55,4 +55,10 @@ public class CailiaoServiceImpl implements CailiaobService {
 		return cldao.Gellcl();
 	}
 
+	@Override
+	public int addcailiao(Cailiaob cl) {
+		// TODO Auto-generated method stub
+		return cldao.addcailiao(cl);
+	}
+
 }

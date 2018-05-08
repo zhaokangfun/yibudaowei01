@@ -12,6 +12,25 @@
   <select id="listall" resultMap="BaseResultMap">
   		select * from laiyuanb 
   </select>
+  <select id="Gelllaiyuan" resultMap="BaseResultMap">
+  	SELECT * FROM laiyuanb
+  </select>
+  
+   <select id="ylidgell" resultMap="BaseResultMap">
+  	SELECT * FROM laiyuanb where lyid=#{lyid}
+  </select>
+  
+   <select id="idhq" resultType="int">
+  		SELECT max(lyid) FROM laiyuanb
+  </select>
+  
+<insert id="lyadd" parameterType="com.rk.entity.Laiyuanb" useGeneratedKeys="true" keyProperty="lyid">
+  
+  	INSERT laiyuanb VALUES(DEFAULT,#{lyname})
+    
+  </insert>
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

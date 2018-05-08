@@ -108,19 +108,36 @@ border-radius: 50%
 				<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">药品/材料</h1>
 			</div>
 				</a>
-		<a href="xiyao">
+		<a href="../zhenliaoxm/zhenliao">
 		<div class="class2">
+		<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">诊疗项目</h1>
 		</div>
 		</a>
 
-		<div class="class3"></div>
-		<div class="class4"></div>
+	<a href="../zuhe/zuhezhiliaoxmlist?zhlx=1">
+		<div class="class3">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">组合项目</h1>
+		</div>
+	</a>
+		
+		<a href="../yewu/yewuzidianjiemian">
+		<div class="class4">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">业务字典</h1>
+		</div>
+		</a>
+		<div class="class5">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">统计分类</h1>
+		</div>
+		<div class="class6">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">疗程字典</h1>
+		</div>
 
-		<div class="class5"></div>
-		<div class="class6"></div>
-
-		<div class="class7"></div>
-		<div class="class8"></div>
+		<div class="class7">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">附加收费</h1>
+		</div>
+		<div class="class8">
+			<h1 style="padding-top: 35px;padding-left: 60px;color:#FFFFFF;">诊疗项目</h1>
+		</div>
 	</body>
 
 </html>

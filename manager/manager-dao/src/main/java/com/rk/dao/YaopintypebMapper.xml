@@ -11,12 +11,36 @@
   <sql id="Base_Column_List">
     yptypeid, yptypename, pinyin, shunxun, status
   </sql>
+  
+  
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from yaopintypeb
     where yptypeid = #{yptypeid,jdbcType=INTEGER}
   </select>
+  
+  	<!-- 药品类型查询 -->
+    <select id="Gellyptype" resultMap="BaseResultMap">
+  		SELECT * FROM yaopintypeb
+  	</select>
+  	
+  	<!-- 查询最大的id，相当于查询添加后自增的id -->
+  	 <select id="maxid" resultType="int">
+  		SELECT max(yptypeid) FROM yaopintypeb
+  	</select>
+ 	
+ 	<!-- 根据查询的id去查出数据返回对象,json解析拼接！ -->
+ 	 <select id="idselect" resultMap="BaseResultMap">
+  		SELECT * FROM yaopintypeb where yptypeid=#{yptypeid}
+  	</select> 
+	
+	<!-- 添加！ -->
+	<insert id="yptypeadd" parameterType="com.rk.entity.Yaopintypeb">
+		INSERT yaopintypeb VALUES(DEFAULT,#{yptypename},#{pinyin},#{shunxun},DEFAULT)
+	</insert>
+	  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from yaopintypeb
     where yptypeid = #{yptypeid,jdbcType=INTEGER}

@@ -55,4 +55,10 @@ public class ZhongyaoServiceImpl implements ZhongyaobService {
 		return zydao.Gellzy();
 	}
 
+	@Override
+	public int addzy(Zhongyaob zy) {
+		// TODO Auto-generated method stub
+		return zydao.addzy(zy);
+	}
+
 }

@@ -7,10 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.rk.dao.LaiyuanbMapper;
 import com.rk.entity.Laiyuanb;
+
+
 @Service("laiyuanbService")
 public class LaiyuanbServiceImpl implements LaiyuanbService {
+
 	@Autowired
-	private LaiyuanbMapper laiyuanDao;
+	private LaiyuanbMapper lydao;
+	
 	@Override
 	public int deleteByPrimaryKey(Integer lyid) {
 		// TODO Auto-generated method stub
@@ -48,9 +52,36 @@ public class LaiyuanbServiceImpl implements LaiyuanbService {
 	}
 
 	@Override
+	public List<Laiyuanb> Gelllaiyuan() {
+		// TODO Auto-generated method stub
+		return lydao.Gelllaiyuan();
+	}
+
+	@Override
+	public int lyadd(String lyname) {
+		// TODO Auto-generated method stub
+		return lydao.lyadd(lyname);
+	}
+
+	@Override
+	public Laiyuanb ylidgell(int lyid) {
+		// TODO Auto-generated method stub
+		return lydao.ylidgell(lyid);
+	}
+
+	@Override
+	public int idhq() {
+		// TODO Auto-generated method stub
+		return lydao.idhq();
+	}
+
+	@Override
 	public List<Laiyuanb> listall() {
 		// TODO Auto-generated method stub
-		return laiyuanDao.listall();
+		return null;
 	}
+
+
+
 
 }

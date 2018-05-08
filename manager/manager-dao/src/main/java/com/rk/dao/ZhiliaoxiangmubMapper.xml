@@ -19,6 +19,15 @@
     zlxmid, zlxmbianma, zlxmname, zlxmdanjia, zlxmdanwei, xiangmufenleiid, maxprice, 
     pinyin, beizhu, ticheng, shifoumenzhen, status
   </sql>
+  
+  <select id="Gellzllist" resultMap="BaseResultMap">
+  		select * from Zhiliaoxiangmub
+  </select>
+  
+  <insert id="addzlxm" parameterType="com.rk.entity.Zhiliaoxiangmub">
+  		INSERT zhiliaoxiangmub VALUES(DEFAULT,#{zlxmbianma},#{zlxmname},#{zlxmdanjia},#{zlxmdanwei},#{xiangmufenleiid},#{maxprice},#{pinyin},#{beizhu},#{ticheng},#{shifoumenzhen},DEFAULT)
+  </insert>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

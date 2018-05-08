@@ -8,6 +8,11 @@
   <sql id="Base_Column_List">
     cltypeid, cltypename
   </sql>
+  
+  <select id="Gellcltype" resultMap="BaseResultMap">
+  	SELECT * from cailiaotypeb
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

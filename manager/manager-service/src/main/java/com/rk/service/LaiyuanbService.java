@@ -18,4 +18,23 @@ public interface LaiyuanbService {
     int updateByPrimaryKey(Laiyuanb record);
     
     List<Laiyuanb> listall();
+    /**
+     * 来源
+     * @return
+     */
+    List<Laiyuanb> Gelllaiyuan();
+    /**
+     * 来源添加
+     * @param
+     * @return
+     */
+    int lyadd(String lyname);
+    
+    /**
+     * 来源id
+     * @return
+     */
+    Laiyuanb ylidgell(int lyid);
+    
+    int idhq();
 }
