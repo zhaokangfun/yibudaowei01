@@ -31,7 +31,7 @@
   
   <!-- 许冲添加中药 -->
   <insert id="addzy" parameterType="com.rk.entity.Zhongyaob">
-  	INSERT zhongyaob VALUES(DEFAULT,#{zyname},#{zyjdname},#{yptypeid},#{guige},#{scsid},#{gysid},#{ypbwnumber},#{lsdw},#{dwid},#{kczhl},#{lsprice},#{maxprice},#{yfid},#{wubi},#{pinyin},#{status})
+  	INSERT zhongyaob VALUES(DEFAULT,#{zyname},#{zyjdname},#{yptypeid},#{guige},#{scsid},#{gysid},#{ypbwnumber},#{lsdw},#{dwid},#{kczhl},#{lsprice},#{maxprice},#{yfid},#{wubi},#{pinyin},DEFAULT)
   </insert>
   
   <!-- 许冲查询中药 -->

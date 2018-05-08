@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="layui-input-block">
 	       <input name="blnumber" lay-verify="required" value="${hzxxb.blnumber}"  style="border: 0px;" disabled="disabled" autocomplete="off" class="layui-input" type="text">
 	    </div>
-   </div
+   </div>
  	<!-- 姓名 -->
   <div class="layui-form-item">
 	    <label class="layui-form-label"><i style="color: red;">  *   </i>患者姓名</label>

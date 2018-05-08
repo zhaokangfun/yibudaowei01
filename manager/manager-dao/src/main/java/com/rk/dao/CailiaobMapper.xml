@@ -20,6 +20,10 @@
     clid, clbianma, clname, cltypeid, clguige, sfkc, cldanweiid, lsdj, stataus
   </sql>
   
+  <insert id="addcailiao" parameterType="com.rk.entity.Cailiaob">
+  		INSERT cailiaob VALUES(DEFAULT,#{clbianma},#{clname},#{cltypeid},#{clguige},#{sfkc},#{cldanweiid},#{lsdj},DEFAULT)
+  </insert>
+  
   <select id="Gellcl" resultMap="BaseResultMap">
   	SELECT * from cailiaob c,danweib d WHERE c.cldanweiid=d.dwid
   </select>

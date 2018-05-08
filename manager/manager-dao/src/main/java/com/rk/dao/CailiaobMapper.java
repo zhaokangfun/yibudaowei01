@@ -18,4 +18,9 @@ public interface CailiaobMapper {
     int updateByPrimaryKey(Cailiaob record);
     
     List<Cailiaob> Gellcl();
+    /**
+     * 添加材料
+     * @return
+     */
+    int addcailiao(Cailiaob cl);
 }

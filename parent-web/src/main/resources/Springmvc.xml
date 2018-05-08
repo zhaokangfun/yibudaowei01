@@ -98,6 +98,11 @@
 		interface="com.rk.service.ChuzhenbService" id="chuzhenbService" />
 	<dubbo:reference
 		interface="com.rk.service.TigecheckbService" id="tigecheckbService" />
+	<dubbo:reference interface="com.rk.service.YuyueguizebService" id="yuyueguizebService" />
+	
+	<dubbo:reference interface="com.rk.service.XiangmubService" id="xiangmubService" />
+	
+	<dubbo:reference interface="com.rk.service.YaopintypebService" id="yaopintypebService" />
 	
 	<!-- 引用dubbo服务 -->
 	 <dubbo:reference interface="com.rk.service.ShijianduanbService" id="shijianduanbService" />
@@ -105,4 +110,9 @@
 	 <dubbo:reference interface="com.rk.service.YuyuehcbService" id="yuyuehcbService" />
 	 <dubbo:reference interface="com.rk.service.KeshishuxingService" id="keshishuxingService" />
 	 <dubbo:reference interface="com.rk.service.RolebService" id="rolebService" />
+	<dubbo:reference interface="com.rk.service.CailiaotypebService" id="cailiaotypebService" />
+		<dubbo:reference interface="com.rk.service.ZhiliaoxiangmufenleibService" id="zhiliaoxiangmufenleibService" />
+		<dubbo:reference interface="com.rk.service.ZhiliaoxiangmubService" id="zhiliaoxiangmubService" />
+		<dubbo:reference interface="com.rk.service.ZhiweibService" id="zhiweibService" />
+		<dubbo:reference interface="com.rk.service.LaiyuanbService" id="laiyuanbService" />
 </beans>

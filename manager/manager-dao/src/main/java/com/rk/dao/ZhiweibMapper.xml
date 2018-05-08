@@ -12,7 +12,25 @@
   </resultMap>
   <sql id="Base_Column_List">
     zhiweiid, zhiweiname, status, pinyin, shunxu, sfyiwurenyuan, zwid
+  
   </sql>
+  
+  <insert id="addzw" parameterType="com.rk.entity.Zhiweib">
+  	INSERT zhiweib VALUES(DEFAULT,#{zhiweiname},DEFAULT,#{pinyin},#{shunxu},#{sfyiwurenyuan},DEFAULT)
+  </insert>
+  
+  <select id="Gellyszhiwei" resultMap="BaseResultMap">
+  	SELECT * FROM zhiweib ORDER BY shunxu
+  </select>
+
+	<select id="qiyong" resultMap="BaseResultMap">
+  	SELECT * FROM zhiweib where status=1 ORDER BY shunxu
+  </select>
+  
+    <select id="jinyong" resultMap="BaseResultMap">
+  	SELECT * FROM zhiweib where status=1 ORDER BY shunxu
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

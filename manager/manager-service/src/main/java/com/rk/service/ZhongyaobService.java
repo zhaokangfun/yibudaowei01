@@ -22,4 +22,10 @@ public interface ZhongyaobService {
      * @return
      */
     List<Zhongyaob> Gellzy();
+    
+    /**
+     * 添加中药
+     * @return
+     */
+    int addzy(Zhongyaob zy);
 }

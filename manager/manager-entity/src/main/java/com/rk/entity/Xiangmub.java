@@ -14,7 +14,9 @@ public class Xiangmub  implements Serializable {
     private Integer danweiid;
 
     private Integer didian;
-
+    
+    private Integer zhlx;
+    
     private String pinyin;
 
     private String beizhu;
@@ -27,7 +29,17 @@ public class Xiangmub  implements Serializable {
 
     private Integer xinzengid;
 
-    public Integer getXiangmuid() {
+    
+    
+    public Integer getZhlx() {
+		return zhlx;
+	}
+
+	public void setZhlx(Integer zhlx) {
+		this.zhlx = zhlx;
+	}
+
+	public Integer getXiangmuid() {
         return xiangmuid;
     }
 

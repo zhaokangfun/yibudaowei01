@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rk.entity.Cailiaob;
+import com.rk.entity.Cailiaotypeb;
 import com.rk.entity.Danweib;
 import com.rk.entity.Gongyingshangb;
 import com.rk.entity.Jixingb;
@@ -18,6 +19,7 @@ import com.rk.entity.Yongfab;
 import com.rk.entity.Zhongyaob;
 import com.rk.service.CailiaobService;
 import com.rk.service.CailiaodanweiService;
+import com.rk.service.CailiaotypebService;
 import com.rk.service.DanweibService;
 import com.rk.service.GongyingshangbService;
 import com.rk.service.JixingbService;
@@ -25,6 +27,7 @@ import com.rk.service.PinlvbService;
 import com.rk.service.ShengchanshangbService;
 import com.rk.service.XiyaozhongchengyaobService;
 import com.rk.service.YongfabService;
+import com.rk.service.ZhiliaoxiangmufenleibService;
 import com.rk.service.ZhongyaobService;
 
 @Controller
@@ -54,11 +57,21 @@ public class zidianController {
 	
 	@Autowired
 	
+	private CailiaotypebService clser;
+	
+	@Autowired
+	
 	private CailiaobService clservice;
 	
 	@Autowired
 	
 	private JixingbService jxservice;
+	
+	/**
+	 * 西药/中成药/材料/三个列表展示
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("xiyao")
 	public String xiyao(Model model) {
 		List<Xiyaozhongchengyaob>list=xzy.Gellxizhong();
@@ -99,5 +112,18 @@ public class zidianController {
 		model.addAttribute("yf",yf);
 		return "XiyaozhongchengyaoAdd";
 	}
-	
+	/**
+	 * 材料查询
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("cailiao")
+	public String cailiao(Model model) {
+		List<Cailiaotypeb> clltypelist=clser.Gellcltype();
+		List<Danweib> danwei=dw.Gelldw();
+		
+		model.addAttribute("dw",danwei);
+		model.addAttribute("clltypelist",clltypelist);
+		return "cailiaoadd";
+	}
 }

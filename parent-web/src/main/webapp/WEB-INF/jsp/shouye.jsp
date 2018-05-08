@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="layui-layout layui-layout-admin" id="layui_layout">
 	<!-- 顶部区域 -->
 	<div class="layui-header header-menu">
-		<div class="logo posb" id="log"><img src="../common/images/logo.png"></div>
+		<div class="logo posb" id="log"><img src="../common/images/logo1.png"></div>
 		<div class="layui-main posb">
 		  	<!-- 左侧导航收缩开关 -->
 		  	<div class="side-menu-switch posb" id="toggle"><span class="switch"  ara-hidden="true"></span></div>

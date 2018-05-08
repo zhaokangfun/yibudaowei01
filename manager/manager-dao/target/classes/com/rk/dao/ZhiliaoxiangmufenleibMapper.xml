@@ -12,6 +12,24 @@
   <sql id="Base_Column_List">
     zkxmtypeid, zlxmtypename, pinyin, wubi, paixu, status
   </sql>
+  
+  <insert id="typeadd" parameterType="com.rk.entity.Zhiliaoxiangmufenleib">
+  	INSERT zhiliaoxiangmufenleib VALUES(DEFAULT,#{zlxmtypename},#{pinyin},#{wubi},#{paixu},DEFAULT)
+  </insert>
+  
+  <select id="idgell" resultType="int">
+  	select max(zkxmtypeid) from Zhiliaoxiangmufenleib
+  </select>
+  
+  <select id="idselect" resultMap="BaseResultMap">
+  	select * from Zhiliaoxiangmufenleib where zkxmtypeid=#{zkxmtypeid}
+  </select>
+  
+  
+  <select id="Gellzlxm" resultMap="BaseResultMap">
+  	select * from Zhiliaoxiangmufenleib ORDER BY paixu
+  </select>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="../css/pawj.min.css">
 <link rel="stylesheet" type="text/css" href="../css/drugDictionary.css">
 <link rel="stylesheet" type="text/css" href="../css/easy.css">
+<link rel="stylesheet" type="text/css" href="../css/layui.css/">
+<link rel="stylesheet" type="text/css" href="../css/global.css/">
 <title>药品字典</title>
 <script type="text/javascript" src="mdcDictDrug_data/ipquery.html"></script>
 
@@ -174,7 +176,7 @@
 								<div class="easy-autocomplete">
 
 									<select name="jixingid"
-										style="width: 250px; border: 1px solid red">
+										style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 240px; height: 28px;">
 										<option value="0">请选择:</option>
 										<c:forEach items="${jxlist}" var="b">
 											<option value="${b.jxid}">${b.jixingname}</option>
@@ -191,30 +193,33 @@
 						<li id="drugManuFactorName-li" class="info-item"><span
 							class="form-item-title"><i class="necessary">&nbsp;</i>厂家：</span>
 
-							<select name="scsid" style="width: 250px; border: 1px solid red">
-							<c:forEach items="${scs}" var="b">
+							<select name="scsid" style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 230px; height: 28px;">
+								<option value="0">请选择:</option>
+								<c:forEach items="${scs}" var="b">
 									<option value="${b.scsid}">${b.scsname}</option>
-							</c:forEach>
-								</select>
-							</li>
+								</c:forEach>
+						</select></li>
 
 						<li id="drugManuFactorName-li" class="info-item"><span
 							class="form-item-title"><i class="necessary">&nbsp;</i>供应商：</span>
+							
+								<select name="gysid" style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 230px; height: 28px;">
+							<option value="0">请选择:</option>
 							<c:forEach items="${gys}" var="b">
-								<select name="gysid" style="width: 250px; border: 1px solid red">
 									<option value="${b.gysid}">${b.gysname}</option>
+							</c:forEach>
 								</select>
-							</c:forEach></li>
+							</li>
 
 
 						<li id="drugManuFactorName-li" class="info-item"><span
 							class="form-item-title"><i class="necessary">&nbsp;</i>药品类型：</span>
 
 							<select name="yptypeid"
-							style="width: 250px; border: 1px solid red">
-								<option value="1">请选择:</option>
-								<option value="2">西药</option>
-								<option value="3">中成药</option>
+							style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 230px; height: 28px;">
+								<option value="0">请选择:</option>
+								<option value="1">西药</option>
+								<option value="2">中成药</option>
 						</select></li>
 
 
@@ -247,7 +252,7 @@
 
 							<div>
 								<select name="danweiid"
-									style="width: 50px; border: 1px solid red; margin-left: 15px; width: 100px; height: 28px;">
+									style="width: 50px; border: 1px solid #cccc; margin-left: 15px; width: 100px; height: 28px;">
 									<c:forEach items="${dw}" var="b">
 										<option value="${b.dwid}">${b.dwname}</option>
 									</c:forEach>
@@ -255,12 +260,12 @@
 									class="input-text validate(required, drugDecimal, number, minEliminateZero(0))"
 									placeholder="制剂数量" val="" type="text" name="zhijishuliang"
 									style="width: 150px;"> <select name="zhijidanweiid"
-									style="width: 50px; border: 1px solid red; margin-left: 15px; width: 100px; height: 28px;">
+									style="width: 50px; border: 1px solid #cccc; margin-left: 15px; width: 100px; height: 28px;">
 									<c:forEach items="${dw}" var="b">
 										<option value="${b.dwid}">${b.dwname}</option>
 									</c:forEach>
 								</select> <span>/</span> <select name="kcdanwei"
-									style="width: 50px; border: 1px solid red; margin-left: 15px; width: 100px; height: 28px;">
+									style="width: 50px; border: 1px solid #cccc; margin-left: 15px; width: 100px; height: 28px;">
 									<c:forEach items="${dw}" var="b">
 										<option value="${b.dwid}">${b.dwname}</option>
 									</c:forEach>
@@ -323,17 +328,18 @@
 					</ul>
 					<ul class="clear">
 						<li class="info-item"><span class="form-item-title"><i
-								class="necessary">*</i>是否拆零：</span> <select name="shifouchailing"
-							style="width: 250px; border: 1px solid red">
+								class="necessary">*</i>是否拆零：</span>
+						<select name="shifouchailing"
+							style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 100px; height: 28px;">
 								<option value="1">是</option>
-								<option value="1">否</option>
+								<option value="2">否</option>
 						</select></li>
 
 						<li class="info-item"><span class="form-item-title"><i
 								class="necessary">*</i>是否抗菌药物：</span> <select name="shifoukangjun"
-							style="width: 250px; border: 1px solid red">
+							style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 100px; height: 28px;">
 								<option value="1">是</option>
-								<option value="1">否</option>
+								<option value="2">否</option>
 						</select></li>
 					</ul>
 				</div>
@@ -345,21 +351,21 @@
 						<li class="info-item"><span class="form-item-title">默认用法：</span>
 
 							<select name="yonfaid"
-							style="width: 250px; border: 1px solid red">
+							style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 230px; height: 28px;">
 								<c:forEach items="${yf}" var="b">
 									<option value="${b.yfid}">${b.yfname}</option>
 								</c:forEach>
 						</select></li>
 						<li class="info-item"><span class="form-item-title">默认频率：</span>
-							<div class="drop">
+							
 
-								<select name="plid" style="width: 250px; border: 1px solid red">
+								<select name="plid" style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 100px; height: 28px;">
 									<c:forEach items="${pl}" var="b">
 										<option value="${b.plid}">${b.plname}</option>
 									</c:forEach>
 								</select>
 
-							</div></li>
+					</li>
 						<li class="info-item"><span class="form-item-title">默认用量：</span>
 							<input id="drugDose"
 							class="input-text validate(drugDecimal, number, minEliminateZero(0))"
@@ -598,15 +604,10 @@
 				data : $("#form-article-add").serialize(),
 				cache : false,
 				success : function(data) {
-					if (data > 0) {
-						alert('成功！');
-
-						/* var index=parent.layer.getFrameIndex(Window.name);
-						parent.location.reload();
-						parent.layer.close(index);
-						layer.msg('成功！',{icon:1,time:3000}); */
+						alert('成功!');
+						window.location.href = '../zidian/xiyao';
 					}
-				}
+				
 			})
 
 		}

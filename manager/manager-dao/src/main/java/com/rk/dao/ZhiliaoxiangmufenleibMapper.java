@@ -1,5 +1,7 @@
 package com.rk.dao;
 
+import java.util.List;
+
 import com.rk.entity.Zhiliaoxiangmufenleib;
 
 public interface ZhiliaoxiangmufenleibMapper {
@@ -14,4 +16,12 @@ public interface ZhiliaoxiangmufenleibMapper {
     int updateByPrimaryKeySelective(Zhiliaoxiangmufenleib record);
 
     int updateByPrimaryKey(Zhiliaoxiangmufenleib record);
+    
+    List<Zhiliaoxiangmufenleib> Gellzlxm();
+    
+    int typeadd(Zhiliaoxiangmufenleib record);
+    
+    int idgell();
+    
+    Zhiliaoxiangmufenleib idselect(int zkxmtypeid);
 }

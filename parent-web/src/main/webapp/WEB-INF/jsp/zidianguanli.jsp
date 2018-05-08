@@ -79,13 +79,13 @@
 
 					<!-- 登录日志 -->
 					<div class="layui-tab-item layui-field-box" style="">
-					<a href="../zhongyao/Zhongyaoadd"><li class="layui-btn "><i class="layui-icon"></i>添加中藥</li></a>
+					<a href="../zhongyao/Zhongyaoadd"><li class="layui-btn "><i class="layui-icon"></i>添加中药</li></a>
 						<table class="layui-table table-hover" lay-even="" lay-skin="nob">
 							<thead>
 								<tr>
 									<th hidden="ture">ID</th>
 									<th style="text-align: center;">名称</th>
-									<th width="200px;">规格</th>
+									<th width="200px;">格规</th>
 									<th>类型</th>
 									<th>零售价</th>
 									<th>零售单位</th>
@@ -116,6 +116,7 @@
 						</table>
 					</div>
 					<div class="layui-tab-item layui-field-box">
+					<a href="../zidian/cailiao"><li class="layui-btn "><i class="layui-icon"></i>添加材料</li></a>
 						<table class="layui-table table-hover" lay-even="" lay-skin="nob">
 							<thead>
 								<tr>
@@ -144,12 +145,7 @@
 
 
 
-					<div class="larry-table-page clearfix"
-						style="float: right; width: 100%; background-color: #fff;">
-						<a href="javascript:;" class="layui-btn layui-btn-small"
-							style="float: right; margin-right: 50px; margin-top: 5px; width: 100px; height: 35px;"><i
-							class="iconfont icon-shanchu1"></i>&nbsp;&nbsp;保存&nbsp;&nbsp;</a>
-					</div>
+					
 				</div>
 
 

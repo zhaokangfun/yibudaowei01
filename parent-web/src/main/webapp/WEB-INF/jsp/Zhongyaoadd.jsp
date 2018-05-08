@@ -28,7 +28,6 @@
 <title>药品字典</title>
 <script type="text/javascript" src="mdcDictDrug_data/ipquery.html"></script>
 </head>
-
 <body class="static-public-css drug-dictionary">
 
 	<div id="list_div" class="content-inner drugDicWrap  dsn">
@@ -842,6 +841,7 @@
 		<!-- <input id="cn_pyCode" type="hidden"/>
     <input id="cn_wbCode" type="hidden"/> -->
 		<input id="cn_pDrugId" type="hidden">
+	<form action="" method="post" id="from2">
 		<div class="tab-content clear">
 			<div class="bl-title">
 				<h2>药品信息</h2>
@@ -849,54 +849,60 @@
 			<div class="infoBox">
 				<ul class="clear">
 					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">*</i>药品名称：</span> <input id="cn_drugId" type="hidden">
-						<input id="cn_drugName"
+							class="necessary">*</i>药品名称：</span> 
+							<input id="cn_drugId" type="hidden">
+						<input id="cn_drugName" name="zyname"
 						class="input-text validate(required, maxlength(25))"
 						maxlength="25" type="text"></li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">&nbsp;</i>经典药名：</span>
 						<div class="info-item-wrap">
 							<div class="easy-autocomplete">
-								<input id="cn_drugCommonName"
+								<input id="cn_drugCommonName" name="zyjdname"
 									class="easy-input validate(maxlength(50))">
 								<ul class="easy-resault"></ul>
 							</div>
 						</div></li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">*</i>药品分类：</span>
-
-
-							<select name="jixingid"
-								style="width: 250px; border: 1px solid #cccc; margin-top: 7px;">
+						
+						<select name="yptypeid"
+								 style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 260px; height: 28px;">
 								<option value="0">请选择:</option>
 
 								<option value="1">中药饮片</option>
 								<option value="2">中药颗粒</option>
 							</select>
-					</li>
+						
+						</li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">*</i>规格：</span> <input id="cn_drugPackageSpec"
-						class="input-text validate(required, maxlength(20))" type="text">
+						class="input-text validate(required, maxlength(20))" name="guige" type="text">
 					</li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">&nbsp;</i>拼音码：</span> <input id="cn_pyCode"
-						class="input-text validate(maxlength(25))" maxlength="25"
+						class="input-text validate(maxlength(25))" name="pinyin" maxlength="25"
 						type="text"></li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">&nbsp;</i>五笔码：</span> <input id="cn_wbCode"
-						class="input-text validate(maxlength(25))" maxlength="25"
+						class="input-text validate(maxlength(25))" name="wubi" maxlength="25"
 						type="text"></li>
 					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">&nbsp;</i>厂商：</span> <input id="cn_drugManuFactorName"
-						class="input-text validate(maxlength(50))" type="text"> <input
-						id="cn_drugManuFactorId" value="" type="hidden"></li>
-					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">&nbsp;</i>产地：</span> <input id="cn_productionPlace"
-						class="input-text validate(maxlength(25))" type="text"></li>
+							class="necessary">&nbsp;</i>厂商：</span> 
+							
+							 <select name="scsid"  style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 260px; height: 28px;">
+								<option value="0">请选择：</option>
+								<c:forEach items="${scs}" var="b">
+									<option value="${b.scsid}">${b.scsname}</option>
+								</c:forEach>
+							</select>
+							
+							</li>
+					
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">&nbsp;</i>药品本位码：</span> <input
 						id="cn_drugStandardCode"
-						class="input-text validate(maxlength(50))" type="text"></li>
+						class="input-text validate(maxlength(50))" name="ypbwnumber" type="text"></li>
 				</ul>
 			</div>
 			<div class="bl-title">
@@ -906,22 +912,20 @@
 				<ul class="clear">
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">*</i>零售单位：</span>
-							
-							<select name="jixingid"
-								style="width: 250px; border: 1px solid #cccc; margin-top: 7px;">
+						<select name="lsdw"
+								style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 260px; height: 28px;">
 								<option value="0">请选择:</option>
 								<c:forEach items="${dwlist}" var="b">			
 									<option value="${b.dwid}">${b.dwname}</option>
 								
 								</c:forEach>
 							</select>
-							
 					</li>
 					<li class="info-item"><span class="form-item-title"><i
 							class="necessary">*</i>库存单位：</span>
 						
-							<select name="jixingid"
-								style="width: 250px; border: 1px solid #cccc; margin-top: 7px;">
+							<select name="dwid"
+								style="width: 50px; border: 1px solid #cccc; margin-left:3px; width: 260px; height: 28px;">
 								<option value="0">请选择:</option>
 								<c:forEach items="${dwlist}" var="b">			
 									<option value="${b.dwid}">${b.dwname}</option>
@@ -930,17 +934,20 @@
 							</select>
 					</li>
 					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">*</i>库存转换率：</span> <input id="cn_drugStoreUnitRate"
+							class="necessary">*</i>库存转换率：</span>
+							 <input id="cn_drugStoreUnitRate" name="kczhl"
 						class="input-text validate(required, decimal(4), minEliminateZero(0))"
 						placeholder="1g=?g" type="text"></li>
 					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">*</i>零售价：</span> <input id="cn_drugRetailPrice"
+							class="necessary">*</i>零售价：</span> 
+							<input id="cn_drugRetailPrice" name="lsprice"
 						class="input-text validate(required,number,notspace,decimal(4),maxlength(8),min(0))"
 						maxlength="10" type="text"> <span class="unitTag">元
 							/ <span id="cn_retailUnitTag">g</span>
 					</span></li>
 					<li class="info-item"><span class="form-item-title"><i
-							class="necessary">&nbsp;</i>最高限价：</span> <input id="cn_ceilingPrice"
+							class="necessary">&nbsp;</i>最高限价：</span> 
+							<input id="cn_ceilingPrice" name="maxprice"
 						class="input-text validate(number,notspace,decimal(4),maxlength(8),min(0))"
 						type="text"> <span class="unitTag">元 / <span
 							id="cn_ceilingPrice-suffix">g</span></span></li>
@@ -952,9 +959,8 @@
 			<div class="infoBox">
 				<ul class="clear">
 					<li class="info-item"><span class="form-item-title1">默认用法/煎法：</span>
-					
 						
-							<select name="jixingid"
+						<select name="yfid"
 								style="width: 250px; border: 1px solid #cccc; margin-top: 2px; height:30px;">
 								<option value="0">请选择:</option>
 								<c:forEach items="${jflist}" var="b">			
@@ -962,14 +968,15 @@
 								
 								</c:forEach>
 							</select>	
-	
+						</li>
 				</ul>
 			</div>
 			<div class="footBtn clear">
-				<span class="btn submit-btn fr">保存</span> <span
+				<span class="btn submit-btn fr" onclick="ckadde()">保存</span> <span
 					class="btn normal-inverse-btn fr">取消</span>
 			</div>
 		</div>
+		</form>
 		<!-- end of .tab-content -->
 	</div>
 
@@ -1072,6 +1079,24 @@
 	<script type="text/javascript" src="../js/drugDictionaryCn.js"></script>
 	<script type="text/javascript" src="../js/addChineseMedic.js"></script>
 	<script type="text/javascript" src="../js/mdcDictMaterialNew.js"></script>
+	
+	<script type="text/javascript">
+		function ckadde() {
+			$.ajax({
+				type : 'post',
+				url : '../zhongyao/addzy',
+				data : $("#from2").serialize(),
+				cache : false,
+				success : function(data) {
+					if (data > 0) {
+						alert('成功!');
+					}
+				}
+			})
+
+		}
+	</script>
+	
 	<script type="text/javascript">
 		//数据采集
 		var _maq = _maq || [];
